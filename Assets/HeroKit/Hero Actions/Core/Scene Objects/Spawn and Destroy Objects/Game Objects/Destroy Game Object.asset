@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Destroy Game Object
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 188f51749a71c1c4fa0d49f05f8d28e9, type: 3}
+  actionFields: {fileID: 11500000, guid: ff3ff129f4a73ff4a80433a0479e5d8c, type: 3}
+  title: 
+  description: 'Destroy a game object.
+
+
+    Warning: Do not destroy a game object that exists in a pool. This will result
+    in debugger errors. Instead, turn the object off.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

@@ -1,0 +1,909 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: Variables Controller
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties:
+    - propertyTemplate: {fileID: 11400000, guid: a20e5a1a9acaf3d45ad20fee9ba832d3,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Health
+            value: 23
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items: []
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    visible: 1
+  states:
+    states:
+    - name: 
+      visible: 1
+      heroEvent:
+      - name: 'Change Integer 0: health (A)'
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: def101bc51c21fe44baa26ca24294135,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000100000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 00000000000000000000000001000000000000000100000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 07cb8c1ced8fc92499f25105492aae54,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 030000000000000000000000010000000fc6530000000000
+            floats: []
+            strings:
+            - Integer 0 Health Points
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000100000002000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 25
+      - name: 'Change Integer 1: magic (B)'
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: edd425b650464944fb595eda201887e5,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000000000000200000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000100000002000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000200000002000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 07cb8c1ced8fc92499f25105492aae54,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 030000000000000000000000010000008d51870000000000
+            floats: []
+            strings:
+            - 'Integer 1: Magic Points'
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000200000002000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 26
+      - name: 'Change String 0: name (Key C)'
+        visible: 1
+        actions:
+        - name: Hero is Bob
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: b6b29844c2277df448008502a753891e,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000001000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 01
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 1
+          actionTemplate: {fileID: 11400000, guid: 057e513a18a9bb6408e9af65dc5ea303,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 010000000000000001000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000003000000020000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: b064d338029fdf5499b0a5862b43072a,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 1
+          actionTemplate: {fileID: 11400000, guid: 057e513a18a9bb6408e9af65dc5ea303,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 010000000000000001000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000002000000020000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 0bcf2ded230db8a479e401b97cb2f0c1,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 2c6470a13c1265f46b1fe99897fb9f96,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 010000000000000001000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: c7a9cd8d557f7b7498091ad53d0f8a40,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 03000000000000000000000001000000476d360000000000
+            floats: []
+            strings:
+            - 'String 1: Hero Name'
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000001000000020000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 27
+      - name: 'Change String 2: stats (Key D)'
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: c7a9cd8d557f7b7498091ad53d0f8a40,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 030000000000000000000000010000005e283b0000000000
+            floats: []
+            strings:
+            - 'String 1: Hero Stats'
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000004000000020000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 28
+      heroVisuals:
+        imageType: 1
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    visible: 1
+  lists:
+    visible: 1
+    ints:
+      visible: 0
+      items:
+      - name: Health Points
+        value: 60
+      - name: Magic Points
+        value: 20
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items:
+      - name: Hero is Bob
+        value: 1
+    strings:
+      visible: 0
+      items:
+      - name: Current Hero's Name
+        value: Bob
+        useVariables: 0
+      - name: Hero A (Bob)
+        value: Bob
+        useVariables: 0
+      - name: Hero B (Mary)
+        value: Mary
+        useVariables: 0
+      - name: Hero Stats
+        value: Health is [V-I-0], Magic is [V-I-1]
+        useVariables: 1
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 1

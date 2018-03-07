@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849745c35d6afd547a1f1baa8af0dda1, type: 3}
+  m_Name: AbilityProperties
+  m_EditorClassIdentifier: 
+  description: 
+  properties:
+    visible: 0
+    ints:
+      visible: 0
+      items:
+      - name: Item Type
+        value: 0
+      - name: Meter Count
+        value: 0
+      - name: Meter ID 1
+        value: 0
+      - name: Meter ID 2
+        value: 0
+      - name: Meter ID 3
+        value: 0
+      - name: Meter ID 4
+        value: 0
+      - name: Meter ID 5
+        value: 0
+      - name: Meter ID 6
+        value: 0
+      - name: Meter ID 7
+        value: 0
+      - name: Meter ID 8
+        value: 0
+      - name: Meter ID 9
+        value: 0
+      - name: Meter ID 10
+        value: 0
+      - name: Meter Value 1
+        value: 0
+      - name: Meter Value 2
+        value: 0
+      - name: Meter Value 3
+        value: 0
+      - name: Meter Value 4
+        value: 0
+      - name: Meter Value 5
+        value: 0
+      - name: Meter Value 6
+        value: 0
+      - name: Meter Value 7
+        value: 0
+      - name: Meter Value 8
+        value: 0
+      - name: Meter Value 9
+        value: 0
+      - name: Meter Value 10
+        value: 0
+      - name: 'Meter 1: Change Type'
+        value: 0
+      - name: 'Meter 2: Change Type'
+        value: 0
+      - name: 'Meter 3: Change Type'
+        value: 0
+      - name: 'Meter 4: Change Type'
+        value: 0
+      - name: 'Meter 5: Change Type'
+        value: 0
+      - name: 'Meter 6: Change Type'
+        value: 0
+      - name: 'Meter 7: Change Type'
+        value: 0
+      - name: 'Meter 8: Change Type'
+        value: 0
+      - name: 'Meter 9: Change Type'
+        value: 0
+      - name: 'Meter 10: Change Type'
+        value: 0
+      - name: Target of Ability
+        value: 0
+      - name: How to use Ability on Target
+        value: 0
+      - name: Range of Ability
+        value: 0
+      - name: Speed of projectile
+        value: 0
+      - name: Success Rate
+        value: 0
+      - name: Incantation Time
+        value: 0
+      - name: Target Count A
+        value: 0
+      - name: Target Count B
+        value: 0
+      - name: Chain radius
+        value: 0
+      - name: 'Exp Meter: Max'
+        value: 0
+      - name: Exp on Use
+        value: 0
+      - name: Ability Morph ID
+        value: 0
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items:
+      - name: Use Affixes
+        value: 0
+      - name: Use Sockets
+        value: 0
+      - name: Two-Handed Item
+        value: 0
+      - name: Needs Ammunition
+        value: 0
+      - name: Target is Random
+        value: 0
+      - name: Chain attack
+        value: 0
+      - name: Use Exp Meter
+        value: 0
+    strings:
+      visible: 0
+      items:
+      - name: Item Name
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Item Description
+        value: 
+        useVariables: 0
+        useTextField: 0
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items:
+      - name: Icon for Item
+        value: {fileID: 0}
+        objectType: 2
+        sceneID: 0
+        sceneName: 
+      - name: Caster Animation
+        value: {fileID: 0}
+        objectType: 4
+        sceneID: 0
+        sceneName: 
+      - name: Target Animation
+        value: {fileID: 0}
+        objectType: 4
+        sceneID: 0
+        sceneName: 
+      - name: Projectile Animation
+        value: {fileID: 0}
+        objectType: 4
+        sceneID: 0
+        sceneName: 

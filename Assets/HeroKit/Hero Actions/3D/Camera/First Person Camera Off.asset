@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: First Person Camera Off
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 100eae95f8404cc4bb29e8eaa002ba71, type: 3}
+  actionFields: {fileID: 11500000, guid: 189ab59956e4c534f916c74f7b8be58b, type: 3}
+  title: 
+  description: Have the first person camera stop following an object.
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}

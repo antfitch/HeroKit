@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Get String from Template
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: f4438e2fa55af2f42b7e427fe4c09aec, type: 3}
+  actionFields: {fileID: 11500000, guid: 78b4af94648e6c94fb02eab5190f3c1d, type: 3}
+  title: 
+  description: Get a string that exists in a hero object template.
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

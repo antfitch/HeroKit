@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Rotate Start 2D
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 9e9d8d2ae2a44e84bba614a7ba6617c9, type: 3}
+  actionFields: {fileID: 11500000, guid: cb619f5799e524849a111a91f26c014e, type: 3}
+  title: 
+  description: Rotate an object clockwise or counterclockwise.
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

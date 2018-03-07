@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb66907c88ac6d47bd003ce455a99f3, type: 3}
+  m_Name: HeroKitGlobals
+  m_EditorClassIdentifier: 
+  globals:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items:
+      - name: '[Item Description]'
+        value: {fileID: 11400000, guid: 86c50c74b0d58ff419e5db5907f87086, type: 2}
+        heroKitGameObjects: []
+    unityObjects:
+      visible: 0
+      items: []

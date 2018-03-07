@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Use Snapshot on Audio Mixer
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: bb815248d59987b4492471641e2f618d, type: 3}
+  actionFields: {fileID: 11500000, guid: 6e4681f998443814b91e0bb7786e9478, type: 3}
+  title: 
+  description: "An Audio Mixer can contain one or more snapshots. A snapshot contains
+    audio settings. When you execute a snapshot, the settings assigned to the snapshot's
+    audio mixer are replaced with the settings in the snapshot. \n\nSome things you
+    can do with a snapshot: \n-Change the overall volume for all audio files assigned
+    to the audio mixer.\n-Mute all audio files assigned to the audio mixer.\n-Ignore
+    audio effects on audio files assigned to the audio mixer. "
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

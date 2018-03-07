@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Stop Using Object in All Scenes
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 5e9b831841c9ac94ea91e55f8226876e, type: 3}
+  actionFields: {fileID: 11500000, guid: 4167c178b19291741af9fba9a34835ec, type: 3}
+  title: 
+  description: 'If you have a hero kit object that persists in all scenes and you
+    no longer want the object to be available in all scenes, use this action to remove
+    the persistence.
+
+
+    Note: If you use this action, it clones the hero object. If you have any references
+    to the hero object in a variable list, you will need to re-add the cloned hero
+    object to the list.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849745c35d6afd547a1f1baa8af0dda1, type: 3}
+  m_Name: Affixes
+  m_EditorClassIdentifier: 
+  description: 
+  properties:
+    visible: 0
+    ints:
+      visible: 0
+      items:
+      - name: '[Item Description]'
+        value: 0
+      - name: '[Item Description]'
+        value: 0
+    floats:
+      visible: 0
+      items:
+      - name: '[Item Description]'
+        value: 0
+      - name: '[Item Description]'
+        value: 0
+    bools:
+      visible: 0
+      items:
+      - name: Bronze
+        value: 0
+      - name: Iron
+        value: 0
+      - name: Gold
+        value: 0
+    strings:
+      visible: 0
+      items:
+      - name: string 1
+        value: 
+        useVariables: 0
+        useTextField: 1
+      - name: string 2
+        value: 
+        useVariables: 0
+        useTextField: 0
+    gameObjects:
+      visible: 0
+      items:
+      - name: game object 1
+        value: {fileID: 0}
+      - name: go 2
+        value: {fileID: 0}
+    heroObjects:
+      visible: 0
+      items:
+      - name: h1
+        value: {fileID: 0}
+        heroKitGameObjects: []
+      - name: h2
+        value: {fileID: 0}
+        heroKitGameObjects: []
+    unityObjects:
+      visible: 0
+      items:
+      - name: ui1
+        value: {fileID: 0}
+        objectType: 1
+        sceneID: 0
+        sceneName: 
+      - name: ui2
+        value: {fileID: 0}
+        objectType: 1
+        sceneID: 0
+        sceneName: 

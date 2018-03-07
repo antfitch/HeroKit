@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: Bat for Filtering
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 11400000, guid: a20e5a1a9acaf3d45ad20fee9ba832d3, type: 2}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items:
+        - name: Health
+          value: 0
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties:
+    - propertyTemplate: {fileID: 11400000, guid: a20e5a1a9acaf3d45ad20fee9ba832d3,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Health
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items: []
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    visible: 1
+  states:
+    states:
+    - name: Bat
+      visible: 0
+      heroEvent: []
+      heroVisuals:
+        imageType: 2
+        rigidbodyType: 1
+        prefab: {fileID: 1000013827195344, guid: 94c6927881684dc47b48898e91efe86a,
+          type: 2}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 1
+        animator: {fileID: 95000012289870092, guid: 94c6927881684dc47b48898e91efe86a,
+          type: 2}
+        animatorController: {fileID: 22100000, guid: 22e813f43021b1d4f8653d159b5a6d0f,
+          type: 2}
+        avatar: {fileID: 9000000, guid: 34f6a9b8a222ba44c8c4cdfb7a6b715c, type: 3}
+        rigidbody: {fileID: 54600503265479996, guid: e4bd51041c059584a829d1d3f032c8cb,
+          type: 2}
+      intConditions: []
+      boolConditions: []
+    visible: 1
+  lists:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

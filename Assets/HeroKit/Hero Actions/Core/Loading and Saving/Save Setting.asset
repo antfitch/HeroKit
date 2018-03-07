@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Save Setting
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: c98a813d9102d5948959d648f80ca3f7, type: 3}
+  actionFields: {fileID: 11500000, guid: 19c1eb656f1b91247be2309e08461c26, type: 3}
+  title: 
+  description: "Save a setting for your game on the Player's machine. For example:
+    Music Volume, Sound Volume, Language Type. \n\nAlert: Before you use this action,
+    make sure your Project has the correct information in the Player Preference Form.
+    (Toolbar: Edit > Project Settings > Player) \n\nNote: This page shows you where
+    settings are stored on the player's machine: https://docs.unity3d.com/ScriptReference/PlayerPrefs.html"
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Hide Image
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: d6ac11deaab265247a2ad82e7662b96e, type: 3}
+  actionFields: {fileID: 11500000, guid: accdbba63470a9149b546e5f7d8c0f12, type: 3}
+  title: 
+  description: 'Hide an image on the screen.
+
+
+    Note: Image ID is a unique identifier for the image. An image is assigned to a
+    game object with this ID. The ID also determines sort order. For example, 0=closer
+    to player, 100=farther away from player.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

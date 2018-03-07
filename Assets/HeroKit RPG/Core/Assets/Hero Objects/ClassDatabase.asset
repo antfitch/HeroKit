@@ -1,0 +1,312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: ClassDatabase
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties:
+    - propertyTemplate: {fileID: 11400000, guid: 7c2cf32442ac64741a3c277246509897,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Weapon Type ID
+            value: 1
+          - name: Weapon ID
+            value: -1
+          - name: Armor Type ID
+            value: 3
+          - name: Armor ID
+            value: 2
+          - name: Condition ID
+            value: 2
+          - name: Element ID
+            value: 2
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Knight
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+          - name: Weapon Type Mask
+            value: 0111
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Type Mask
+            value: 111
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask
+            value: 61
+            useVariables: 0
+            useTextField: 0
+          - name: Element Type Mask
+            value: 2400
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 7c2cf32442ac64741a3c277246509897,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Weapon Type ID
+            value: 0
+          - name: Weapon ID
+            value: 0
+          - name: Armor Type ID
+            value: 0
+          - name: Armor ID
+            value: 0
+          - name: Condition ID
+            value: 0
+          - name: Element ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Mage
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+          - name: Weapon Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Type Mask
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Element Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 7c2cf32442ac64741a3c277246509897,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Weapon Type ID
+            value: 0
+          - name: Weapon ID
+            value: 0
+          - name: Armor Type ID
+            value: 0
+          - name: Armor ID
+            value: 0
+          - name: Condition ID
+            value: 0
+          - name: Element ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Paladin
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+          - name: Weapon Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Type Mask
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Element Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 7c2cf32442ac64741a3c277246509897,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Weapon Type ID
+            value: 0
+          - name: Weapon ID
+            value: 0
+          - name: Armor Type ID
+            value: 0
+          - name: Armor ID
+            value: 0
+          - name: Condition ID
+            value: 1
+          - name: Element ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Necromancer
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+          - name: Weapon Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Type Mask
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask
+            value: 10
+            useVariables: 0
+            useTextField: 0
+          - name: Element Type Mask
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    visible: 1
+  states:
+    states: []
+    visible: 0
+  lists:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Turn Canvas On
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 9015bf0aded6af74c980bfe8dc00df3a, type: 3}
+  actionFields: {fileID: 11500000, guid: 6adf9df664c50424cb141c6db79082d5, type: 3}
+  title: 
+  description: 'Turn a canvas on. This is useful if you want to show a UI menu.
+
+
+    Note: There must be a Canvas component attached to the game object you want to
+    show or hide.
+
+
+    Note: You can only reference one hero object. If you reference a list of hero
+    objects, the first hero object in the list is used.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

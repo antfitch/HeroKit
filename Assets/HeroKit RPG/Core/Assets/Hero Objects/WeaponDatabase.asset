@@ -1,0 +1,576 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: WeaponDatabase
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties:
+    - propertyTemplate: {fileID: 11400000, guid: 6bad48f17bd29bd4f8acb0d7b02140db,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Count
+            value: 0
+          - name: Affix ID 1
+            value: 0
+          - name: Affix ID 2
+            value: 0
+          - name: Affix ID 3
+            value: 0
+          - name: Affix ID 4
+            value: 0
+          - name: Affix ID 5
+            value: 0
+          - name: Affix ID 6
+            value: 0
+          - name: Socket Count
+            value: 0
+          - name: Socket Count 1
+            value: 0
+          - name: Socket Count 2
+            value: 0
+          - name: Socket Count 3
+            value: 0
+          - name: Socket Count 4
+            value: 0
+          - name: Socket Count 5
+            value: 0
+          - name: Socket Count 6
+            value: 0
+          - name: Item Type
+            value: 1
+          - name: Attack Speed
+            value: 10
+          - name: Ammo Type
+            value: 1
+          - name: Ammo Distance
+            value: 25
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Use Affixes
+            value: 0
+          - name: Use Sockets
+            value: 0
+          - name: Two-Handed Item
+            value: 0
+          - name: Needs Ammunition
+            value: 1
+        strings:
+          visible: 0
+          items:
+          - name: Item Name
+            value: Wooden Sword
+            useVariables: 0
+            useTextField: 0
+          - name: Item Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon for Item
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: 6bad48f17bd29bd4f8acb0d7b02140db,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Count
+            value: 0
+          - name: Affix ID 1
+            value: 0
+          - name: Affix ID 2
+            value: 0
+          - name: Affix ID 3
+            value: 0
+          - name: Affix ID 4
+            value: 0
+          - name: Affix ID 5
+            value: 0
+          - name: Affix ID 6
+            value: 0
+          - name: Socket Count
+            value: 0
+          - name: Socket Count 1
+            value: 0
+          - name: Socket Count 2
+            value: 0
+          - name: Socket Count 3
+            value: 0
+          - name: Socket Count 4
+            value: 0
+          - name: Socket Count 5
+            value: 0
+          - name: Socket Count 6
+            value: 0
+          - name: Item Type
+            value: 2
+          - name: Attack Speed
+            value: 0
+          - name: Ammo Type
+            value: 0
+          - name: Ammo Distance
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Use Affixes
+            value: 0
+          - name: Use Sockets
+            value: 0
+          - name: Two-Handed Item
+            value: 0
+          - name: Needs Ammunition
+            value: 0
+        strings:
+          visible: 0
+          items:
+          - name: Item Name
+            value: Iron Axe
+            useVariables: 0
+            useTextField: 0
+          - name: Item Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon for Item
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: 6bad48f17bd29bd4f8acb0d7b02140db,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Count
+            value: 0
+          - name: Affix ID 1
+            value: 0
+          - name: Affix ID 2
+            value: 0
+          - name: Affix ID 3
+            value: 0
+          - name: Affix ID 4
+            value: 0
+          - name: Affix ID 5
+            value: 0
+          - name: Affix ID 6
+            value: 0
+          - name: Socket Count
+            value: 0
+          - name: Socket Count 1
+            value: 0
+          - name: Socket Count 2
+            value: 0
+          - name: Socket Count 3
+            value: 0
+          - name: Socket Count 4
+            value: 0
+          - name: Socket Count 5
+            value: 0
+          - name: Socket Count 6
+            value: 0
+          - name: Item Type
+            value: 1
+          - name: Attack Speed
+            value: 0
+          - name: Ammo Type
+            value: 0
+          - name: Ammo Distance
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Use Affixes
+            value: 0
+          - name: Use Sockets
+            value: 0
+          - name: Two-Handed Item
+            value: 0
+          - name: Needs Ammunition
+            value: 0
+        strings:
+          visible: 0
+          items:
+          - name: Item Name
+            value: Iron Sword
+            useVariables: 0
+            useTextField: 0
+          - name: Item Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon for Item
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: 6bad48f17bd29bd4f8acb0d7b02140db,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Count
+            value: 0
+          - name: Affix ID 1
+            value: 0
+          - name: Affix ID 2
+            value: 0
+          - name: Affix ID 3
+            value: 0
+          - name: Affix ID 4
+            value: 0
+          - name: Affix ID 5
+            value: 0
+          - name: Affix ID 6
+            value: 0
+          - name: Socket Count
+            value: 0
+          - name: Socket Count 1
+            value: 0
+          - name: Socket Count 2
+            value: 0
+          - name: Socket Count 3
+            value: 0
+          - name: Socket Count 4
+            value: 0
+          - name: Socket Count 5
+            value: 0
+          - name: Socket Count 6
+            value: 0
+          - name: Item Type
+            value: 2
+          - name: Attack Speed
+            value: 0
+          - name: Ammo Type
+            value: 0
+          - name: Ammo Distance
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Use Affixes
+            value: 0
+          - name: Use Sockets
+            value: 0
+          - name: Two-Handed Item
+            value: 0
+          - name: Needs Ammunition
+            value: 0
+        strings:
+          visible: 0
+          items:
+          - name: Item Name
+            value: Fire Axe
+            useVariables: 0
+            useTextField: 0
+          - name: Item Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon for Item
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    visible: 1
+  states:
+    states:
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    visible: 0
+  lists:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

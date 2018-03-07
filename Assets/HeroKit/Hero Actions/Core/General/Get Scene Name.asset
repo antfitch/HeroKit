@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Get Scene Name
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: b2c50265b3f654e44a9cf3cd2399fa7a, type: 3}
+  actionFields: {fileID: 11500000, guid: 057962de2f65b104f87e6674845989a7, type: 3}
+  title: 
+  description: Get the name of the currently active scene.
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Delete Persistent Object
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 03c3188f4f87e84479fae5cd5a28983c, type: 3}
+  actionFields: {fileID: 11500000, guid: 5ed9b099474245b4ab64620576d9193d, type: 3}
+  title: 
+  description: "Deletes the hero object from the scene.\n\nNote: Only use this with
+    persistent hero objects (objects that appear in all scenes). If you need \nto
+    delete a non-persistent hero object, use the \"Turn Hero Object On or Off\" action.
+    If you don't, your deleted hero object will be back when you return to the scene."
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

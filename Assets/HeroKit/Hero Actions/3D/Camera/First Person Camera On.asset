@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: First Person Camera On
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 3f92802825af4ce4590c8c2db944c536, type: 3}
+  actionFields: {fileID: 11500000, guid: d4c23397eb32a3c45a50cf9336d3e4b3, type: 3}
+  title: 
+  description: "3D camera shows what the object sees. \n\nNotes:\nCamera follows object.\nYou
+    see the game world through the player's eyes.\n\nNote: You can only reference
+    one hero object. \nIf you reference a list of hero objects, the first\nhero object
+    in the list is used."
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

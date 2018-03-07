@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Change Move Animation 2D
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 1d0595d5220374b48b1b86416e250945, type: 3}
+  actionFields: {fileID: 11500000, guid: 82f0c89d79999dc4896c81292102cccb, type: 3}
+  title: 
+  description: '2D sprites can have seperate animations for each direction in which
+    they move. Which animation plays is determined by the bool or trigger attached
+    to the animation''s animator controller. If you don''t want to use the defaults,
+    you can use your own names.
+
+
+    NOTE: If you don''t enter a custom value in an animation name field, the default
+    animation name is used (or the last animation name that you used for this field).
+
+
+    The default bool names are: Move Default, Move Left, Move Right, Move Up, Move
+    Down, Move Up Left, Move Up Right, Move Down Left, Move Down Right.
+
+
+    The default trigger names are: Face Default, Face Left, Face Right, Face Up, Face
+    Down, Face Up Left, Face Up Right, Face Down Left, Face Down Right.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

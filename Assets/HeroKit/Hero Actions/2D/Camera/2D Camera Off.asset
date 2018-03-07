@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: 2D Camera Off
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: d4b60d097cc8fcf479da6913b33026ca, type: 3}
+  actionFields: {fileID: 11500000, guid: a2947e424cf95014081e97d928752b73, type: 3}
+  title: 
+  description: Have the 2D camera stop following an object.
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

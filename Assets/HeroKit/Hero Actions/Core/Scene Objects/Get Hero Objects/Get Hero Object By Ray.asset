@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Get Hero Object By Ray
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 4a9e04146f521654da21782553a61a47, type: 3}
+  actionFields: {fileID: 11500000, guid: ce727a5c23e870d42b481bf0810b2121, type: 3}
+  title: 
+  description: 'Shoot a ray in a specific direction from a game object. Get any hero
+    objects it hits. Hero objects must have colliders to be found with the ray.
+
+
+    Note: You can only reference one hero object. If you reference a list of hero
+    objects, the first hero object in the list is used.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

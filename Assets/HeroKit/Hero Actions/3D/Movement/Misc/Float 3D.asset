@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Float 3D
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: f2762b2ebc402cb46908d113153b6e06, type: 3}
+  actionFields: {fileID: 11500000, guid: d429a166c21c7df4fad6b5555daffc54, type: 3}
+  title: 
+  description: 'Rise an object into the air and let it float.
+
+
+    Note: gravity is turned off with this action. To drop the object, use the Gravity
+    On action.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

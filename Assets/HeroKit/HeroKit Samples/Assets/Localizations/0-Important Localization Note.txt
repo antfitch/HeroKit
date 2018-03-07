@@ -1,0 +1,12 @@
+Localizations are saved in CSV files. A CSV file is a spreadsheet. 
+You can create spreadsheets in programs like Google Sheets or Microsoft Excel.
+
+In the first column, enter your keys.
+In the second column, enter the localized text.
+
+IMPORTANT: Your special characters will not appear in your game unless
+you save your CSV file as CSV UTF-8. By default, Google Sheets does this for you,
+but you will need to specifically save your file with this setting in Microsoft Excel.
+
+IMPORANT NOTE ABOUT AUDIO:
+Audio must be saved in an Assets/Resources folder. If it isn't, it can't be localized.

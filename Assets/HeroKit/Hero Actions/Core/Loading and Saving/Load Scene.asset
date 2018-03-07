@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Load Scene
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 6b21f58c0986a73488c8bbc5f85a2b4c, type: 3}
+  actionFields: {fileID: 11500000, guid: 8639b7972dde5c742b6a174255e57e44, type: 3}
+  title: 
+  description: "Load a scene. \n\nRestore Original scene: \nIf you have previously
+    visited the scene, the state of the hero kit objects in the scene were saved.
+    If you don't want this to happen, mark the \"Restore original scene?\" checkbox.
+    \n\nDestroy non-persistent clones: \nIf a persistent object exists in the scene
+    you are about to visit by default, and you are using that persistent object in
+    the current scene, mark the \"Destroy clones of persistent objects\" checkbox.\n\nWarning:
+    This action gets a scene by name. If you change the name of a scene, you need
+    to return to this action to update it. The action will automatically update it
+    when you open the action. \n\nNote: This action adds the scene to your project's
+    build settings so you don't have to manually do this yourself. \n\nNote: If you
+    no longer want this scene in your game, you must remove it from the build settings
+    manually. To do this, \nclick File > Build Settings. Then uncheck the scene in
+    the \"Scenes In Build\" list."
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

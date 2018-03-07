@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Change Move Settings 2D RPG
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: fbe98e4a2e93c3b41b246d7137105208, type: 3}
+  actionFields: {fileID: 11500000, guid: 7573a9f74a2202a448f84c3446636d31, type: 3}
+  title: 
+  description: 'Change settings specifically for a 2D RPG sprite that needs to move.
+
+
+    You can specify the directions in which your sprite can move. You can also specify
+    the animations that can play when your sprite moves.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

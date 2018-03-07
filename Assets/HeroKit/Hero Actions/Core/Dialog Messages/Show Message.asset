@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Show Message
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: ca070fe0392873d45b51b44cbb940c3a, type: 3}
+  actionFields: {fileID: 11500000, guid: a306950386f7609409d22bfe0d2a5e46, type: 3}
+  title: 'Message: '
+  description: "Display a message in a dialog box. The message can have choice buttons
+    and portraits. Rich text and variables are supported in dialog and choices fields.\n\nRich
+    text codes:\n------------------------------------------\nBold: <b>text here</b>\nItalics:
+    <i>text here</i>\nColor: <color=#00ffffff>text here</color>\nSize: <size=50>text
+    here</size> \n\nVariable codes:\n------------------------------------------\n[V-I-0]
+    = Variables, Integers (slot 0)\n[V-B-0] = Variables, Bools (slot 0) \n[V-S-0]
+    = Variables, Strings (slot 0)\n[P-0-I-0] = Properties (slot 0), Integers (slot
+    0)\n[P-0-B-0] = Properties (slot 0), Bools (slot 0)\n[P-0-S-0] = Properties (slot
+    0), Strings (slot 0)\n[G-I-0] = Globals, Integers (slot 0)\n[G-B-0] = Globals,
+    Bools (slot 0)\n[G-S-0] = Globals, Strings (slot 0)"
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

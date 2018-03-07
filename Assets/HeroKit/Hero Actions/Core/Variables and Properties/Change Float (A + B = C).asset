@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Change Float (A + B = C)
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 73a6cae2d4da53e4d82edd20812fab9e, type: 3}
+  actionFields: {fileID: 11500000, guid: e004c396f928ef04fb413c85e62305b7, type: 3}
+  title: 
+  description: 'Change the value of a float. (Example: C = A + B)
+
+
+    Note: If you get a value from a hero object group, the value assigned to the first
+    hero object in the group is referenced.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

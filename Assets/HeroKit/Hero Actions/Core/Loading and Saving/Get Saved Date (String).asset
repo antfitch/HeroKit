@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Get Saved Date (String)
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: e9c55fb0fa1aba442becafe25d3891c4, type: 3}
+  actionFields: {fileID: 11500000, guid: 00522cd33aee8c6418da287a0b6d2387, type: 3}
+  title: 
+  description: 'Get''s the date when a game was last saved.
+
+
+    Example format for 12 hrs 30 mins, 23 secs:
+
+    ---------------------------------------------------
+
+    Format: h:mm:ss
+
+    Result: 12:30:23
+
+
+    YEAR (example: 2008)
+
+    ---------------------------------------------------
+
+    yy = 08
+
+    yyyy = 2008
+
+
+    MONTH (example: March)
+
+    ---------------------------------------------------
+
+    M = 3
+
+    MM = 03
+
+    MMM = Mar
+
+    MMMM = March
+
+
+    DAY (example: Sunday, Day 9 of the month)
+
+    ---------------------------------------------------
+
+    d = 9
+
+    dd = 09
+
+    ddd = Sun
+
+    dddd = Sunday
+
+
+    HOUR (example: 13)
+
+    ---------------------------------------------------
+
+    h = 1 (12 hour clock)
+
+    hh = 01 (12 hour clock)
+
+    H = 13 (24 hour clock)
+
+    HH = 13 (24 hour clock)
+
+
+    MINUTES (example: 5)
+
+    ---------------------------------------------------
+
+    m = 5
+
+    mm = 05
+
+
+    SECONDS (example: 3)
+
+    ---------------------------------------------------
+
+    s = 3
+
+    ss = 03
+
+
+    Note: You can use any DayTime formatting options supported by C#. The options
+    above are the more popular formats.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Change Bool
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 451c8d0334f578d469d1f9ca6b844a22, type: 3}
+  actionFields: {fileID: 11500000, guid: 96fd642460359e149ae5bbb7a5c480d8, type: 3}
+  title: 
+  description: "Changes the value of a bool. \n\nNote: If you get a value from a hero
+    object group, the value assigned to the first hero object in the group is referenced."
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  version: 

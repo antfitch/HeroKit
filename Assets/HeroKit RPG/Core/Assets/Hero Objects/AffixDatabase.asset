@@ -1,0 +1,464 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: AffixDatabase
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties:
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 3
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Critical Hit Chance
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: Increases value of object by 10. Enhances Max HP. Costs MP to use.
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#8E0000'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Critical Hit Damage
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#512CB0'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Increase Physical Strength
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#D8D8D8'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Increase Magical Strength
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#D8D8D8'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Increase Attack Speed
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#FFFFFF'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: + Damage %
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#FFFFFF'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: + Damage
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#FFFFFF'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Total Resistance
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#FFFFFF'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    - propertyTemplate: {fileID: 11400000, guid: ea8c58f95a49d9d4c87239c51604ab06,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Affix Type ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: + Health per hit
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: Siphon health from the enemy.
+            useVariables: 0
+            useTextField: 0
+          - name: Color
+            value: '#FFFFFF'
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items:
+          - name: Icon
+            value: {fileID: 0}
+            objectType: 2
+            sceneID: 0
+            sceneName: 
+    visible: 1
+  states:
+    states: []
+    visible: 0
+  lists:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

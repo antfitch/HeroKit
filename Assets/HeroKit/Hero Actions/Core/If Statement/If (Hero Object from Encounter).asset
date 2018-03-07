@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: If (Hero Object from Encounter)
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 819a2f6c375d37d4e8dcd90e59c56c91, type: 3}
+  actionFields: {fileID: 11500000, guid: 55dc451e5b0558044b4d1a4c9b1a6f23, type: 3}
+  title: 
+  description: 'Checks to see if this object has had an encounter with another hero
+    object.
+
+
+    WARNING: This action can only be used with an event that has the "When to run
+    field" set to "Encounter another object." If you use this action with any other
+    type of event, it will always evaluate false. To check if you are using the correct
+    type of event, click on the event in the menu list.
+
+
+    Note: You can only reference one hero object. If you reference a list of hero
+    objects, the first hero object in the list is used.'
+  indentThis: 0
+  indentNext: 1
+  titleColor: {r: 0, g: 0.5384617, b: 1, a: 0}
+  version: 

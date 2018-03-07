@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: 2D Camera On
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 37eb93e42dfd2b94c9abe3f9608c5214, type: 3}
+  actionFields: {fileID: 11500000, guid: a0531baedcd4528439603d6aac26570f, type: 3}
+  title: 
+  description: "2D camera follows an object from a distance. \n\nNotes:\nCamera follows
+    object.\n\nNote: You can only reference one hero object. \nIf you reference a
+    list of hero objects, the first\nhero object in the list is used."
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

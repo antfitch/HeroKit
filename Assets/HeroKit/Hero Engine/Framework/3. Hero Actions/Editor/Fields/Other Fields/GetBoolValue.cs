@@ -1,0 +1,95 @@
+﻿// --------------------------------------------------------------
+// Copyright (c) 2016-2017 Aveyond Studios. 
+// All Rights Reserved.
+// --------------------------------------------------------------
+using HeroKit.Scene;
+using SimpleGUI;
+using HeroKit.Editor.ActionBlockFields;
+
+namespace HeroKit.Editor.ActionField
+{
+    /// <summary>
+    /// Action field for the hero kit editor. Work with a bool.
+    /// </summary>
+    public static class GetBoolValue
+    {
+        // --------------------------------------------------------------
+        // Action Fields
+        // --------------------------------------------------------------
+
+        /// <summary>
+        /// Get a bool.
+        /// </summary>
+        /// <param name="title">Title for action field.</param>
+        /// <param name="actionParams">Action field parameters.</param>
+        /// <param name="actionField">Action field.</param>
+        /// <param name="titleToLeft">Show the title on the left?</param>
+        /// <returns>The result.</returns>
+        public static bool BuildField(string title, HeroActionParams actionParams, HeroActionField actionField, bool titleToLeft = false)
+        {
+            // create the fields
+            BoolValueData data = CreateFieldData(title, actionField);
+
+            //-----------------------------------------
+            // Display this title above the field
+            //-----------------------------------------
+            if (data.title != "" && !titleToLeft) SimpleLayout.Label(data.title);
+            SimpleLayout.BeginHorizontal();
+            if (data.title != "" && titleToLeft) SimpleLayout.Label(data.title);
+
+            //-----------------------------------------
+            // Get the bool list you want to work with.
+            // The bool list is in hero object editor > Variables
+            //-----------------------------------------
+            data.fieldValue = SimpleLayout.BoolField(data.fieldValue);
+
+            //-----------------------------------------
+            // assign values back to hero object fields
+            //-----------------------------------------
+            actionField.bools[0] = data.fieldValue;
+
+            //-----------------------------------------
+            // Visual stuff
+            //-----------------------------------------
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+
+            // return result
+            return actionField.bools[0];
+        }
+
+        // --------------------------------------------------------------
+        // Initialize Action Field
+        // --------------------------------------------------------------
+
+        /// <summary>
+        /// Create the subfields that we need for this action field.
+        /// </summary>
+        /// <param name="title">The title of the action.</param>
+        /// <param name="actionField">The action field.</param>
+        /// <returns>The data for this action field.</returns>
+        private static BoolValueData CreateFieldData(string title, HeroActionField actionField)
+        {
+            BoolValueData data = new BoolValueData();
+            data.Init(ref actionField);
+            data.title = title;
+            data.fieldValue = actionField.bools[0];
+
+            return data;
+        }
+    }
+
+    /// <summary>
+    /// Data needed to use GetBoolValue.
+    /// </summary>
+    public struct BoolValueData : ITitle
+    {
+        public void Init(ref HeroActionField actionField)
+        {
+            ActionCommon.CreateActionField(ref actionField.bools, 1, false);
+        }
+
+        public string title { get; set; }
+        public bool fieldValue;
+    }
+}
