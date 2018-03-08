@@ -260,8 +260,14 @@ namespace HeroKit.RpgEditor
         // get a list of all items in a database
         public static DropDownValues conditionSeverityList()
         {
-            string[] items = { "1=Very weak against this", "2=Weak against this", "3=Neutral",
-                               "4=Strong against this", "5=Very strong against this", "6-Immune to this"};
+            string[] items = { "1=No defense against this",
+                               "2=Very weak against this",
+                               "3=Weak against this",
+                               "4=Neutral",
+                               "5=Strong against this",
+                               "6=Very strong against this",
+                               "7-Immune to this"
+                             };
             DropDownValues itemsList = new DropDownValues();
             itemsList.setValues("", items);
             return itemsList;
@@ -1150,6 +1156,20 @@ namespace HeroKit.RpgEditor
             for (int i = 0; i < bitArray.Length; i++)
             {
                 if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+        // generate a list of items of a specific type in bit array
+        public static void getOnInBitarray(BitArray bitArray, DropDownValues items, int itemType, HeroObject database, int itemTypeSlot)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (database.propertiesList.properties[i].itemProperties.ints.items[itemTypeSlot].value == itemType)
                 {
                     SimpleLayout.BeginHorizontal();
                     bitArray[i] = SimpleLayout.BoolField(bitArray[i]);

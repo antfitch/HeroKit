@@ -101,6 +101,7 @@ namespace HeroKit.RpgEditor
             DrawBasics();
             DrawWeaponTypes();
             DrawArmorTypes();
+            DrawAbilityTypes();
             DrawConditions();
             DrawElements();
         }
@@ -128,9 +129,10 @@ namespace HeroKit.RpgEditor
         {
             // weapon type field
             DropDownValues weaponTypeList = HeroKitCommon.databaseList(HeroKitCommon.weaponTypeDatabase);
+            DropDownValues weaponsAll = HeroKitCommon.databaseList(HeroKitCommon.weaponDatabase);
 
             // resize string if things have changed
-            stringFields[2].value = HeroKitCommon.ResizeBitString(stringFields[2].value, weaponTypeList.items.Length);
+            stringFields[2].value = HeroKitCommon.ResizeBitString(stringFields[2].value, weaponsAll.items.Length);
 
             // convert bitstring into bitarray
             BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[2].value);
@@ -157,13 +159,7 @@ namespace HeroKit.RpgEditor
                 // Create the add item drop down box
                 // -------------------------------------
                 SimpleLayout.BeginHorizontal();
-                intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, weaponTypeList, 0, 150);
-                DropDownValues weaponsAll = HeroKitCommon.databaseList(HeroKitCommon.weaponDatabase);
-                DropDownValues weaponList = HeroKitCommon.databaseTypeList(HeroKitCommon.weaponDatabase, 14, intFields[0].value);
-                // weapons list (weapons of one type only)
-                intFields[1].value = SimpleLayout.DropDownList(intFields[1].value, weaponList, 0, 150);
-                // show [add] [remove] after weapons
-                HeroKitCommon.addRemoveButton(bitArray, intFields[1].value, weaponList);             
+                intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, weaponTypeList, 0, 150);                
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
@@ -171,7 +167,7 @@ namespace HeroKit.RpgEditor
                 // Create the items list
                 // -------------------------------------
                 SimpleLayout.Line();
-                HeroKitCommon.getOnInBitarray(bitArray, weaponsAll);
+                HeroKitCommon.getOnInBitarray(bitArray, weaponsAll, intFields[0].value, HeroKitCommon.weaponDatabase, 14);
             }
 
             SimpleLayout.EndVertical();
@@ -179,14 +175,14 @@ namespace HeroKit.RpgEditor
             // create bit string from bit array & save
             stringFields[2].value = HeroKitCommon.CreateBitString(bitArray);
         }
-
         private static void DrawArmorTypes()
         {
             // weapon type field
             DropDownValues armorTypeList = HeroKitCommon.databaseList(HeroKitCommon.armorTypeDatabase);
+            DropDownValues armorAll = HeroKitCommon.databaseList(HeroKitCommon.armorDatabase);
 
             // resize string if things have changed
-            stringFields[3].value = HeroKitCommon.ResizeBitString(stringFields[3].value, armorTypeList.items.Length);
+            stringFields[3].value = HeroKitCommon.ResizeBitString(stringFields[3].value, armorAll.items.Length);
 
             // convert bitstring into bitarray
             BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[3].value);
@@ -213,11 +209,7 @@ namespace HeroKit.RpgEditor
                 // Create the add item drop down box
                 // -------------------------------------
                 SimpleLayout.BeginHorizontal();
-                intFields[2].value = SimpleLayout.DropDownList(intFields[2].value, armorTypeList, 0, 150);
-                DropDownValues armorAll = HeroKitCommon.databaseList(HeroKitCommon.armorDatabase);
-                DropDownValues armorList = HeroKitCommon.databaseTypeList(HeroKitCommon.armorDatabase, 14, intFields[2].value);
-                intFields[3].value = SimpleLayout.DropDownList(intFields[3].value, armorList, 0, 150);
-                HeroKitCommon.addRemoveButton(bitArray, intFields[3].value, armorList);
+                intFields[2].value = SimpleLayout.DropDownList(intFields[2].value, armorTypeList, 0, 150);                
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
@@ -225,13 +217,63 @@ namespace HeroKit.RpgEditor
                 // Create the items list
                 // -------------------------------------
                 SimpleLayout.Line();
-                HeroKitCommon.getOnInBitarray(bitArray, armorAll);
+                HeroKitCommon.getOnInBitarray(bitArray, armorAll, intFields[2].value, HeroKitCommon.armorDatabase, 14);
             }
 
             SimpleLayout.EndVertical();
 
             // create bit string from bit array & save
             stringFields[3].value = HeroKitCommon.CreateBitString(bitArray);
+        }
+        private static void DrawAbilityTypes()
+        {
+            // weapon type field
+            DropDownValues abilityTypeList = HeroKitCommon.databaseList(HeroKitCommon.abilityTypeDatabase);
+            DropDownValues abilityAll = HeroKitCommon.databaseList(HeroKitCommon.abilityDatabase);
+
+            // resize string if things have changed
+            stringFields[6].value = HeroKitCommon.ResizeBitString(stringFields[6].value, abilityAll.items.Length);
+
+            // convert bitstring into bitarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[6].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label("Ability types allowed for this class");
+            SimpleLayout.Space();
+            string buttonText = showAbility ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleAbility, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showAbility)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[1].value = SimpleLayout.DropDownList(intFields[1].value, abilityTypeList, 0, 150);               
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                HeroKitCommon.getOnInBitarray(bitArray, abilityAll, intFields[1].value, HeroKitCommon.abilityDatabase, 0);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[6].value = HeroKitCommon.CreateBitString(bitArray);
         }
 
         private static DropDownValues severity = HeroKitCommon.conditionSeverityList();
@@ -347,6 +389,12 @@ namespace HeroKit.RpgEditor
         private static void toggleArmorType()
         {
             showArmor = !showArmor;
+        }
+
+        private static bool showAbility = false;
+        private static void toggleAbility()
+        {
+            showAbility = !showAbility;
         }
 
         private static bool showConditions = false;
