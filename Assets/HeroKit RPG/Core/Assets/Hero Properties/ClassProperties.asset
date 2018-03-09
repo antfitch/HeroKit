@@ -19,11 +19,11 @@ MonoBehaviour:
       items:
       - name: Weapon Type ID
         value: 0
-      - name: Weapon ID
+      - name: Ability Type ID
         value: 0
       - name: Armor Type ID
         value: 0
-      - name: Armor ID
+      - name: Meter ID
         value: 0
       - name: Condition ID
         value: 0
@@ -59,6 +59,18 @@ MonoBehaviour:
         useVariables: 0
         useTextField: 0
       - name: Element Type Mask
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Abilities Type Mask
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Meter Mask (bools for checkboxes)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Meter Mask (ints)
         value: 
         useVariables: 0
         useTextField: 0

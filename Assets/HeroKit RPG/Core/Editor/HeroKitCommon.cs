@@ -1043,6 +1043,17 @@ namespace HeroKit.RpgEditor
 
 
 
+        // make bit = 0
+        static int ZeroBit(int value, int position)
+        {
+            return value & ~(1 << position);
+        }
+
+        // make bit = 1
+        static int OneBit(int value, int position)
+        {
+            return value | (1 << position);
+        }
 
 
         public static BitArray CreateBitArray(string str)
@@ -1087,19 +1098,6 @@ namespace HeroKit.RpgEditor
 
             return str;
         }
-
-        // make bit = 0
-        static int ZeroBit(int value, int position)
-        {
-            return value & ~(1 << position);
-        }
-
-        // make bit = 1
-        static int OneBit(int value, int position)
-        {
-            return value | (1 << position);
-        }
-
         // [add] [remove] buttons for search that gets all items of a type or one item of a type 
         public static void addRemoveButton(BitArray bitArray, int itemID, DropDownValues itemList)
         {
@@ -1123,7 +1121,7 @@ namespace HeroKit.RpgEditor
         {
             // turn an item of a specific type on
             if (ID >= 0)
-                bitArray[ID] = true;
+                bitArray[ID-1] = true;
         }
         // turn all items of a specific type on in the bit array
         public static void addAllToBitarray(BitArray bitArray, DropDownValues items)
@@ -1131,7 +1129,7 @@ namespace HeroKit.RpgEditor
             // start at 1 because 0 = -1 (all)
             for (int i = 1; i < items.ids.Length; i++)
             {
-                bitArray[items.ids[i]] = true;
+                bitArray[items.ids[i-1]] = true;
             }
         }
         // turn an item off in the bit array
@@ -1139,7 +1137,7 @@ namespace HeroKit.RpgEditor
         {
             // turn an item of a specific type on
             if (ID >= 0)
-                bitArray[ID] = false;
+                bitArray[ID-1] = false;
         }
         // turn all items of a specific type off in the bit array
         public static void removeAllFromBitarray(BitArray bitArray, DropDownValues items)
@@ -1147,7 +1145,7 @@ namespace HeroKit.RpgEditor
             // start at 1 because 0 = -1 (all)
             for (int i = 1; i < items.ids.Length; i++)
             {
-                bitArray[items.ids[i]] = false;
+                bitArray[items.ids[i-1]] = false;
             }
         }
         // generate a list of items in bit array
@@ -1179,8 +1177,6 @@ namespace HeroKit.RpgEditor
             }
         }
 
-
-
         public static int[] CreateIntArray(string str)
         {
             int[] intArray = new int[str.Length];
@@ -1197,6 +1193,36 @@ namespace HeroKit.RpgEditor
             foreach (int num in intArray)
             {
                 str += num.ToString();
+            }
+            return str;
+        }
+        public static int[] CreateIntArrayLarge(string str)
+        {
+            int seperatorCount = str.Count(x => x == '|');
+            int[] intArray = new int[str.Length - seperatorCount];
+            string tempInt = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == '|')
+                {
+                    intArray[i] = Int32.Parse(tempInt);
+                    tempInt = "";
+                    continue;
+                }
+                else
+                {
+                    tempInt = tempInt + str[i];
+                }
+            }
+            return intArray;
+        }
+        public static string CreateIntStringLarge(int[] intArray)
+        {
+            // Display all ints.
+            string str = "";
+            foreach (int num in intArray)
+            {
+                str += num.ToString() + "|";
             }
             return str;
         }
@@ -1250,7 +1276,7 @@ namespace HeroKit.RpgEditor
                 intArray[items.ids[i-1]] = 0;
             }
         }
-        // generate a list of items in bit array
+        // generate a list of items in bit array (ints can be 0-9)
         public static void getOnInIntarray(int[] intArray, DropDownValues items, DropDownValues choices)
         {
             for (int i = 0; i < intArray.Length; i++)
@@ -1272,6 +1298,25 @@ namespace HeroKit.RpgEditor
                     // show drop down list
                     intArray[i] = SimpleLayout.DropDownList(intArray[i], choices, 0, 300);
 
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+
+
+        // generate a list of items in bit array
+        public static void getOnInComboarray(BitArray bitArray, int[] intArray, DropDownValues items)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Space(4);
+                    intArray[i] = SimpleLayout.IntField(intArray[i], 50);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.Space();                
                     SimpleLayout.EndHorizontal();
                 }
             }

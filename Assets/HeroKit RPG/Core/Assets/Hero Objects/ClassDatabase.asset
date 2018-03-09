@@ -47,16 +47,16 @@ MonoBehaviour:
           items:
           - name: Weapon Type ID
             value: 1
-          - name: Weapon ID
-            value: -1
+          - name: Ability Type ID
+            value: 1
           - name: Armor Type ID
             value: 3
-          - name: Armor ID
-            value: 2
+          - name: Meter ID
+            value: 1
           - name: Condition ID
             value: 2
           - name: Element ID
-            value: 2
+            value: 1
         floats:
           visible: 0
           items: []
@@ -83,11 +83,23 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask
-            value: 61
+            value: 71
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask
-            value: 2400
+            value: 1400
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Type Mask
+            value: 1000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (bools for checkboxes)
+            value: 100
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (ints)
+            value: 0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -108,11 +120,11 @@ MonoBehaviour:
           items:
           - name: Weapon Type ID
             value: 0
-          - name: Weapon ID
+          - name: Ability Type ID
             value: 0
           - name: Armor Type ID
             value: 0
-          - name: Armor ID
+          - name: Meter ID
             value: 0
           - name: Condition ID
             value: 0
@@ -151,6 +163,18 @@ MonoBehaviour:
             value: 0000
             useVariables: 0
             useTextField: 0
+          - name: Abilities Type Mask
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -169,11 +193,11 @@ MonoBehaviour:
           items:
           - name: Weapon Type ID
             value: 0
-          - name: Weapon ID
+          - name: Ability Type ID
             value: 0
           - name: Armor Type ID
             value: 0
-          - name: Armor ID
+          - name: Meter ID
             value: 0
           - name: Condition ID
             value: 0
@@ -212,6 +236,18 @@ MonoBehaviour:
             value: 0000
             useVariables: 0
             useTextField: 0
+          - name: Abilities Type Mask
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -230,11 +266,11 @@ MonoBehaviour:
           items:
           - name: Weapon Type ID
             value: 0
-          - name: Weapon ID
+          - name: Ability Type ID
             value: 0
           - name: Armor Type ID
             value: 0
-          - name: Armor ID
+          - name: Meter ID
             value: 0
           - name: Condition ID
             value: 1
@@ -271,6 +307,18 @@ MonoBehaviour:
             useTextField: 0
           - name: Element Type Mask
             value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Type Mask
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask (ints)
+            value: 
             useVariables: 0
             useTextField: 0
         gameObjects:

@@ -341,6 +341,915 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
+    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Variance
+            value: 0
+          - name: Money Count
+            value: 0
+          - name: 'Money 1: ID'
+            value: 0
+          - name: 'Money 2: ID'
+            value: 0
+          - name: 'Money 3: ID'
+            value: 0
+          - name: 'Money 4: ID'
+            value: 0
+          - name: 'Money 5: ID'
+            value: 0
+          - name: 'Money 6: ID'
+            value: 0
+          - name: 'Money 7: ID'
+            value: 0
+          - name: 'Money 8: ID'
+            value: 0
+          - name: 'Money 9: ID'
+            value: 0
+          - name: 'Money 10: ID'
+            value: 0
+          - name: 'Money 1: Value'
+            value: 0
+          - name: 'Money 2: Value'
+            value: 0
+          - name: 'Money 3: Value'
+            value: 0
+          - name: 'Money 4: Value'
+            value: 0
+          - name: 'Money 5: Value'
+            value: 0
+          - name: 'Money 6: Value'
+            value: 0
+          - name: 'Money 7: Value'
+            value: 0
+          - name: 'Money 8: Value'
+            value: 0
+          - name: 'Money 9: Value'
+            value: 0
+          - name: 'Money 10: Value'
+            value: 0
+          - name: Stat Count
+            value: 0
+          - name: 'Stat 1: ID'
+            value: 0
+          - name: 'Stat 2: ID'
+            value: 0
+          - name: 'Stat 3: ID'
+            value: 0
+          - name: 'Stat 4: ID'
+            value: 0
+          - name: 'Stat 5: ID'
+            value: 0
+          - name: 'Stat 6: ID'
+            value: 0
+          - name: 'Stat 7: ID'
+            value: 0
+          - name: 'Stat 8: ID'
+            value: 0
+          - name: 'Stat 9: ID'
+            value: 0
+          - name: 'Stat 10: ID'
+            value: 0
+          - name: 'Stat 1: Value'
+            value: 0
+          - name: 'Stat 2: Value'
+            value: 0
+          - name: 'Stat 3: Value'
+            value: 0
+          - name: 'Stat 4: Value'
+            value: 0
+          - name: 'Stat 5: Value'
+            value: 0
+          - name: 'Stat 6: Value'
+            value: 0
+          - name: 'Stat 7: Value'
+            value: 0
+          - name: 'Stat 8: Value'
+            value: 0
+          - name: 'Stat 9: Value'
+            value: 0
+          - name: 'Stat 10: Value'
+            value: 0
+          - name: 'Stat 1: Change Type'
+            value: 0
+          - name: 'Stat 2: Change Type'
+            value: 0
+          - name: 'Stat 3: Change Type'
+            value: 0
+          - name: 'Stat 4: Change Type'
+            value: 0
+          - name: 'Stat 5: Change Type'
+            value: 0
+          - name: 'Stat 6: Change Type'
+            value: 0
+          - name: 'Stat 7: Change Type'
+            value: 0
+          - name: 'Stat 8: Change Type'
+            value: 0
+          - name: 'Stat 9: Change Type'
+            value: 0
+          - name: 'Stat 10: Change Type'
+            value: 0
+          - name: Meter Count
+            value: 0
+          - name: 'Meter 1: ID'
+            value: 0
+          - name: 'Meter 2: ID'
+            value: 0
+          - name: 'Meter 3: ID'
+            value: 0
+          - name: 'Meter 4: ID'
+            value: 0
+          - name: 'Meter 5: ID'
+            value: 0
+          - name: 'Meter 6: ID'
+            value: 0
+          - name: 'Meter 7: ID'
+            value: 0
+          - name: 'Meter 8: ID'
+            value: 0
+          - name: 'Meter 9: ID'
+            value: 0
+          - name: 'Meter 10: ID'
+            value: 0
+          - name: 'Meter 1: Value'
+            value: 0
+          - name: 'Meter 2: Value'
+            value: 0
+          - name: 'Meter 3: Value'
+            value: 0
+          - name: 'Meter 4: Value'
+            value: 0
+          - name: 'Meter 5: Value'
+            value: 0
+          - name: 'Meter 6: Value'
+            value: 0
+          - name: 'Meter 7: Value'
+            value: 0
+          - name: 'Meter 8: Value'
+            value: 0
+          - name: 'Meter 9: Value'
+            value: 0
+          - name: 'Meter 10: Value'
+            value: 0
+          - name: 'Meter 1: Change Type'
+            value: 0
+          - name: 'Meter 2: Change Type'
+            value: 0
+          - name: 'Meter 3: Change Type'
+            value: 0
+          - name: 'Meter 4: Change Type'
+            value: 0
+          - name: 'Meter 5: Change Type'
+            value: 0
+          - name: 'Meter 6: Change Type'
+            value: 0
+          - name: 'Meter 7: Change Type'
+            value: 0
+          - name: 'Meter 8: Change Type'
+            value: 0
+          - name: 'Meter 9: Change Type'
+            value: 0
+          - name: 'Meter 10: Change Type'
+            value: 0
+          - name: Element Count
+            value: 0
+          - name: 'Elem 1: ID'
+            value: 0
+          - name: 'Elem 2: ID'
+            value: 0
+          - name: 'Elem 3: ID'
+            value: 0
+          - name: 'Elem 4: ID'
+            value: 0
+          - name: 'Elem 5: ID'
+            value: 0
+          - name: 'Elem 6: ID'
+            value: 0
+          - name: 'Elem 7: ID'
+            value: 0
+          - name: 'Elem 8: ID'
+            value: 0
+          - name: 'Elem 9: ID'
+            value: 0
+          - name: 'Elem 10: ID'
+            value: 0
+          - name: 'Elem 1: Value'
+            value: 0
+          - name: 'Elem 2: Value'
+            value: 0
+          - name: 'Elem 3: Value'
+            value: 0
+          - name: 'Elem 4: Value'
+            value: 0
+          - name: 'Elem 5: Value'
+            value: 0
+          - name: 'Elem 6: Value'
+            value: 0
+          - name: 'Elem 7: Value'
+            value: 0
+          - name: 'Elem 8: Value'
+            value: 0
+          - name: 'Elem 9: Value'
+            value: 0
+          - name: 'Elem 10: Value'
+            value: 0
+          - name: Cond Count
+            value: 0
+          - name: 'Cond 1: ID'
+            value: 0
+          - name: 'Cond 2: ID'
+            value: 0
+          - name: 'Cond 3: ID'
+            value: 0
+          - name: 'Cond 4: ID'
+            value: 0
+          - name: 'Cond 5: ID'
+            value: 0
+          - name: 'Cond 6: ID'
+            value: 0
+          - name: 'Cond 7: ID'
+            value: 0
+          - name: 'Cond 8: ID'
+            value: 0
+          - name: 'Cond 9: ID'
+            value: 0
+          - name: 'Cond 10: ID'
+            value: 0
+          - name: 'Cond 1: Value'
+            value: 0
+          - name: 'Cond 2: Value'
+            value: 0
+          - name: 'Cond 3: Value'
+            value: 0
+          - name: 'Cond 4: Value'
+            value: 0
+          - name: 'Cond 5: Value'
+            value: 0
+          - name: 'Cond 6: Value'
+            value: 0
+          - name: 'Cond 7: Value'
+            value: 0
+          - name: 'Cond 8: Value'
+            value: 0
+          - name: 'Cond 9: Value'
+            value: 0
+          - name: 'Cond 10: Value'
+            value: 0
+          - name: 'Cond 1: Change Type'
+            value: 0
+          - name: 'Cond 2: Change Type'
+            value: 0
+          - name: 'Cond 3: Change Type'
+            value: 0
+          - name: 'Cond 4: Change Type'
+            value: 0
+          - name: 'Cond 5: Change Type'
+            value: 0
+          - name: 'Cond 6: Change Type'
+            value: 0
+          - name: 'Cond 7: Change Type'
+            value: 0
+          - name: 'Cond 8: Change Type'
+            value: 0
+          - name: 'Cond 9: Change Type'
+            value: 0
+          - name: 'Cond 10: Change Type'
+            value: 0
+          - name: Item Weight
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Remove all conditions
+            value: 0
+          - name: Is Stackable
+            value: 0
+        strings:
+          visible: 0
+          items: []
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Variance
+            value: 0
+          - name: Money Count
+            value: 0
+          - name: 'Money 1: ID'
+            value: 0
+          - name: 'Money 2: ID'
+            value: 0
+          - name: 'Money 3: ID'
+            value: 0
+          - name: 'Money 4: ID'
+            value: 0
+          - name: 'Money 5: ID'
+            value: 0
+          - name: 'Money 6: ID'
+            value: 0
+          - name: 'Money 7: ID'
+            value: 0
+          - name: 'Money 8: ID'
+            value: 0
+          - name: 'Money 9: ID'
+            value: 0
+          - name: 'Money 10: ID'
+            value: 0
+          - name: 'Money 1: Value'
+            value: 0
+          - name: 'Money 2: Value'
+            value: 0
+          - name: 'Money 3: Value'
+            value: 0
+          - name: 'Money 4: Value'
+            value: 0
+          - name: 'Money 5: Value'
+            value: 0
+          - name: 'Money 6: Value'
+            value: 0
+          - name: 'Money 7: Value'
+            value: 0
+          - name: 'Money 8: Value'
+            value: 0
+          - name: 'Money 9: Value'
+            value: 0
+          - name: 'Money 10: Value'
+            value: 0
+          - name: Stat Count
+            value: 0
+          - name: 'Stat 1: ID'
+            value: 0
+          - name: 'Stat 2: ID'
+            value: 0
+          - name: 'Stat 3: ID'
+            value: 0
+          - name: 'Stat 4: ID'
+            value: 0
+          - name: 'Stat 5: ID'
+            value: 0
+          - name: 'Stat 6: ID'
+            value: 0
+          - name: 'Stat 7: ID'
+            value: 0
+          - name: 'Stat 8: ID'
+            value: 0
+          - name: 'Stat 9: ID'
+            value: 0
+          - name: 'Stat 10: ID'
+            value: 0
+          - name: 'Stat 1: Value'
+            value: 0
+          - name: 'Stat 2: Value'
+            value: 0
+          - name: 'Stat 3: Value'
+            value: 0
+          - name: 'Stat 4: Value'
+            value: 0
+          - name: 'Stat 5: Value'
+            value: 0
+          - name: 'Stat 6: Value'
+            value: 0
+          - name: 'Stat 7: Value'
+            value: 0
+          - name: 'Stat 8: Value'
+            value: 0
+          - name: 'Stat 9: Value'
+            value: 0
+          - name: 'Stat 10: Value'
+            value: 0
+          - name: 'Stat 1: Change Type'
+            value: 0
+          - name: 'Stat 2: Change Type'
+            value: 0
+          - name: 'Stat 3: Change Type'
+            value: 0
+          - name: 'Stat 4: Change Type'
+            value: 0
+          - name: 'Stat 5: Change Type'
+            value: 0
+          - name: 'Stat 6: Change Type'
+            value: 0
+          - name: 'Stat 7: Change Type'
+            value: 0
+          - name: 'Stat 8: Change Type'
+            value: 0
+          - name: 'Stat 9: Change Type'
+            value: 0
+          - name: 'Stat 10: Change Type'
+            value: 0
+          - name: Meter Count
+            value: 0
+          - name: 'Meter 1: ID'
+            value: 0
+          - name: 'Meter 2: ID'
+            value: 0
+          - name: 'Meter 3: ID'
+            value: 0
+          - name: 'Meter 4: ID'
+            value: 0
+          - name: 'Meter 5: ID'
+            value: 0
+          - name: 'Meter 6: ID'
+            value: 0
+          - name: 'Meter 7: ID'
+            value: 0
+          - name: 'Meter 8: ID'
+            value: 0
+          - name: 'Meter 9: ID'
+            value: 0
+          - name: 'Meter 10: ID'
+            value: 0
+          - name: 'Meter 1: Value'
+            value: 0
+          - name: 'Meter 2: Value'
+            value: 0
+          - name: 'Meter 3: Value'
+            value: 0
+          - name: 'Meter 4: Value'
+            value: 0
+          - name: 'Meter 5: Value'
+            value: 0
+          - name: 'Meter 6: Value'
+            value: 0
+          - name: 'Meter 7: Value'
+            value: 0
+          - name: 'Meter 8: Value'
+            value: 0
+          - name: 'Meter 9: Value'
+            value: 0
+          - name: 'Meter 10: Value'
+            value: 0
+          - name: 'Meter 1: Change Type'
+            value: 0
+          - name: 'Meter 2: Change Type'
+            value: 0
+          - name: 'Meter 3: Change Type'
+            value: 0
+          - name: 'Meter 4: Change Type'
+            value: 0
+          - name: 'Meter 5: Change Type'
+            value: 0
+          - name: 'Meter 6: Change Type'
+            value: 0
+          - name: 'Meter 7: Change Type'
+            value: 0
+          - name: 'Meter 8: Change Type'
+            value: 0
+          - name: 'Meter 9: Change Type'
+            value: 0
+          - name: 'Meter 10: Change Type'
+            value: 0
+          - name: Element Count
+            value: 0
+          - name: 'Elem 1: ID'
+            value: 0
+          - name: 'Elem 2: ID'
+            value: 0
+          - name: 'Elem 3: ID'
+            value: 0
+          - name: 'Elem 4: ID'
+            value: 0
+          - name: 'Elem 5: ID'
+            value: 0
+          - name: 'Elem 6: ID'
+            value: 0
+          - name: 'Elem 7: ID'
+            value: 0
+          - name: 'Elem 8: ID'
+            value: 0
+          - name: 'Elem 9: ID'
+            value: 0
+          - name: 'Elem 10: ID'
+            value: 0
+          - name: 'Elem 1: Value'
+            value: 0
+          - name: 'Elem 2: Value'
+            value: 0
+          - name: 'Elem 3: Value'
+            value: 0
+          - name: 'Elem 4: Value'
+            value: 0
+          - name: 'Elem 5: Value'
+            value: 0
+          - name: 'Elem 6: Value'
+            value: 0
+          - name: 'Elem 7: Value'
+            value: 0
+          - name: 'Elem 8: Value'
+            value: 0
+          - name: 'Elem 9: Value'
+            value: 0
+          - name: 'Elem 10: Value'
+            value: 0
+          - name: Cond Count
+            value: 0
+          - name: 'Cond 1: ID'
+            value: 0
+          - name: 'Cond 2: ID'
+            value: 0
+          - name: 'Cond 3: ID'
+            value: 0
+          - name: 'Cond 4: ID'
+            value: 0
+          - name: 'Cond 5: ID'
+            value: 0
+          - name: 'Cond 6: ID'
+            value: 0
+          - name: 'Cond 7: ID'
+            value: 0
+          - name: 'Cond 8: ID'
+            value: 0
+          - name: 'Cond 9: ID'
+            value: 0
+          - name: 'Cond 10: ID'
+            value: 0
+          - name: 'Cond 1: Value'
+            value: 0
+          - name: 'Cond 2: Value'
+            value: 0
+          - name: 'Cond 3: Value'
+            value: 0
+          - name: 'Cond 4: Value'
+            value: 0
+          - name: 'Cond 5: Value'
+            value: 0
+          - name: 'Cond 6: Value'
+            value: 0
+          - name: 'Cond 7: Value'
+            value: 0
+          - name: 'Cond 8: Value'
+            value: 0
+          - name: 'Cond 9: Value'
+            value: 0
+          - name: 'Cond 10: Value'
+            value: 0
+          - name: 'Cond 1: Change Type'
+            value: 0
+          - name: 'Cond 2: Change Type'
+            value: 0
+          - name: 'Cond 3: Change Type'
+            value: 0
+          - name: 'Cond 4: Change Type'
+            value: 0
+          - name: 'Cond 5: Change Type'
+            value: 0
+          - name: 'Cond 6: Change Type'
+            value: 0
+          - name: 'Cond 7: Change Type'
+            value: 0
+          - name: 'Cond 8: Change Type'
+            value: 0
+          - name: 'Cond 9: Change Type'
+            value: 0
+          - name: 'Cond 10: Change Type'
+            value: 0
+          - name: Item Weight
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Remove all conditions
+            value: 0
+          - name: Is Stackable
+            value: 0
+        strings:
+          visible: 0
+          items: []
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Variance
+            value: 0
+          - name: Money Count
+            value: 0
+          - name: 'Money 1: ID'
+            value: 0
+          - name: 'Money 2: ID'
+            value: 0
+          - name: 'Money 3: ID'
+            value: 0
+          - name: 'Money 4: ID'
+            value: 0
+          - name: 'Money 5: ID'
+            value: 0
+          - name: 'Money 6: ID'
+            value: 0
+          - name: 'Money 7: ID'
+            value: 0
+          - name: 'Money 8: ID'
+            value: 0
+          - name: 'Money 9: ID'
+            value: 0
+          - name: 'Money 10: ID'
+            value: 0
+          - name: 'Money 1: Value'
+            value: 0
+          - name: 'Money 2: Value'
+            value: 0
+          - name: 'Money 3: Value'
+            value: 0
+          - name: 'Money 4: Value'
+            value: 0
+          - name: 'Money 5: Value'
+            value: 0
+          - name: 'Money 6: Value'
+            value: 0
+          - name: 'Money 7: Value'
+            value: 0
+          - name: 'Money 8: Value'
+            value: 0
+          - name: 'Money 9: Value'
+            value: 0
+          - name: 'Money 10: Value'
+            value: 0
+          - name: Stat Count
+            value: 0
+          - name: 'Stat 1: ID'
+            value: 0
+          - name: 'Stat 2: ID'
+            value: 0
+          - name: 'Stat 3: ID'
+            value: 0
+          - name: 'Stat 4: ID'
+            value: 0
+          - name: 'Stat 5: ID'
+            value: 0
+          - name: 'Stat 6: ID'
+            value: 0
+          - name: 'Stat 7: ID'
+            value: 0
+          - name: 'Stat 8: ID'
+            value: 0
+          - name: 'Stat 9: ID'
+            value: 0
+          - name: 'Stat 10: ID'
+            value: 0
+          - name: 'Stat 1: Value'
+            value: 0
+          - name: 'Stat 2: Value'
+            value: 0
+          - name: 'Stat 3: Value'
+            value: 0
+          - name: 'Stat 4: Value'
+            value: 0
+          - name: 'Stat 5: Value'
+            value: 0
+          - name: 'Stat 6: Value'
+            value: 0
+          - name: 'Stat 7: Value'
+            value: 0
+          - name: 'Stat 8: Value'
+            value: 0
+          - name: 'Stat 9: Value'
+            value: 0
+          - name: 'Stat 10: Value'
+            value: 0
+          - name: 'Stat 1: Change Type'
+            value: 0
+          - name: 'Stat 2: Change Type'
+            value: 0
+          - name: 'Stat 3: Change Type'
+            value: 0
+          - name: 'Stat 4: Change Type'
+            value: 0
+          - name: 'Stat 5: Change Type'
+            value: 0
+          - name: 'Stat 6: Change Type'
+            value: 0
+          - name: 'Stat 7: Change Type'
+            value: 0
+          - name: 'Stat 8: Change Type'
+            value: 0
+          - name: 'Stat 9: Change Type'
+            value: 0
+          - name: 'Stat 10: Change Type'
+            value: 0
+          - name: Meter Count
+            value: 0
+          - name: 'Meter 1: ID'
+            value: 0
+          - name: 'Meter 2: ID'
+            value: 0
+          - name: 'Meter 3: ID'
+            value: 0
+          - name: 'Meter 4: ID'
+            value: 0
+          - name: 'Meter 5: ID'
+            value: 0
+          - name: 'Meter 6: ID'
+            value: 0
+          - name: 'Meter 7: ID'
+            value: 0
+          - name: 'Meter 8: ID'
+            value: 0
+          - name: 'Meter 9: ID'
+            value: 0
+          - name: 'Meter 10: ID'
+            value: 0
+          - name: 'Meter 1: Value'
+            value: 0
+          - name: 'Meter 2: Value'
+            value: 0
+          - name: 'Meter 3: Value'
+            value: 0
+          - name: 'Meter 4: Value'
+            value: 0
+          - name: 'Meter 5: Value'
+            value: 0
+          - name: 'Meter 6: Value'
+            value: 0
+          - name: 'Meter 7: Value'
+            value: 0
+          - name: 'Meter 8: Value'
+            value: 0
+          - name: 'Meter 9: Value'
+            value: 0
+          - name: 'Meter 10: Value'
+            value: 0
+          - name: 'Meter 1: Change Type'
+            value: 0
+          - name: 'Meter 2: Change Type'
+            value: 0
+          - name: 'Meter 3: Change Type'
+            value: 0
+          - name: 'Meter 4: Change Type'
+            value: 0
+          - name: 'Meter 5: Change Type'
+            value: 0
+          - name: 'Meter 6: Change Type'
+            value: 0
+          - name: 'Meter 7: Change Type'
+            value: 0
+          - name: 'Meter 8: Change Type'
+            value: 0
+          - name: 'Meter 9: Change Type'
+            value: 0
+          - name: 'Meter 10: Change Type'
+            value: 0
+          - name: Element Count
+            value: 0
+          - name: 'Elem 1: ID'
+            value: 0
+          - name: 'Elem 2: ID'
+            value: 0
+          - name: 'Elem 3: ID'
+            value: 0
+          - name: 'Elem 4: ID'
+            value: 0
+          - name: 'Elem 5: ID'
+            value: 0
+          - name: 'Elem 6: ID'
+            value: 0
+          - name: 'Elem 7: ID'
+            value: 0
+          - name: 'Elem 8: ID'
+            value: 0
+          - name: 'Elem 9: ID'
+            value: 0
+          - name: 'Elem 10: ID'
+            value: 0
+          - name: 'Elem 1: Value'
+            value: 0
+          - name: 'Elem 2: Value'
+            value: 0
+          - name: 'Elem 3: Value'
+            value: 0
+          - name: 'Elem 4: Value'
+            value: 0
+          - name: 'Elem 5: Value'
+            value: 0
+          - name: 'Elem 6: Value'
+            value: 0
+          - name: 'Elem 7: Value'
+            value: 0
+          - name: 'Elem 8: Value'
+            value: 0
+          - name: 'Elem 9: Value'
+            value: 0
+          - name: 'Elem 10: Value'
+            value: 0
+          - name: Cond Count
+            value: 0
+          - name: 'Cond 1: ID'
+            value: 0
+          - name: 'Cond 2: ID'
+            value: 0
+          - name: 'Cond 3: ID'
+            value: 0
+          - name: 'Cond 4: ID'
+            value: 0
+          - name: 'Cond 5: ID'
+            value: 0
+          - name: 'Cond 6: ID'
+            value: 0
+          - name: 'Cond 7: ID'
+            value: 0
+          - name: 'Cond 8: ID'
+            value: 0
+          - name: 'Cond 9: ID'
+            value: 0
+          - name: 'Cond 10: ID'
+            value: 0
+          - name: 'Cond 1: Value'
+            value: 0
+          - name: 'Cond 2: Value'
+            value: 0
+          - name: 'Cond 3: Value'
+            value: 0
+          - name: 'Cond 4: Value'
+            value: 0
+          - name: 'Cond 5: Value'
+            value: 0
+          - name: 'Cond 6: Value'
+            value: 0
+          - name: 'Cond 7: Value'
+            value: 0
+          - name: 'Cond 8: Value'
+            value: 0
+          - name: 'Cond 9: Value'
+            value: 0
+          - name: 'Cond 10: Value'
+            value: 0
+          - name: 'Cond 1: Change Type'
+            value: 0
+          - name: 'Cond 2: Change Type'
+            value: 0
+          - name: 'Cond 3: Change Type'
+            value: 0
+          - name: 'Cond 4: Change Type'
+            value: 0
+          - name: 'Cond 5: Change Type'
+            value: 0
+          - name: 'Cond 6: Change Type'
+            value: 0
+          - name: 'Cond 7: Change Type'
+            value: 0
+          - name: 'Cond 8: Change Type'
+            value: 0
+          - name: 'Cond 9: Change Type'
+            value: 0
+          - name: 'Cond 10: Change Type'
+            value: 0
+          - name: Item Weight
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Remove all conditions
+            value: 0
+          - name: Is Stackable
+            value: 0
+        strings:
+          visible: 0
+          items: []
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
     visible: 1
   states:
     states: []

@@ -322,6 +322,26 @@ namespace SimpleGUI
         }
 
         /// <summary>
+        /// A button with text and a specific background style assigned to it.
+        /// </summary>
+        /// <typeparam name="T0">The type assigned to the first parameter you are passing in with the method.</typeparam>
+        /// <typeparam name="T1">The type assigned to the second parameter you are passing in with the method.</typeparam>
+        /// <typeparam name="T2">The type assigned to the third parameter you are passing in with the method.</typeparam>
+        /// <param name="text">The text on the button.</param>
+        /// <param name="method">The method to execute when the button is pressed. Method has one parameter. Ex: hello(firstName, lastName).</param>
+        /// <param name="arg1">The first parameter to pass into the method when it is executed.</param>
+        /// <param name="arg2">The second parameter to pass into the method when it is executed.</param>
+        /// <param name="arg3">The third parameter to pass into the method when it is executed.</param>
+        /// <param name="style">The background style assigned to the button.</param>
+        /// <param name="width">The width of the button.</param>
+        public static void Button<T0, T1, T2>(string text, UnityAction<T0, T1, T2> method, T0 arg1, T1 arg2, T2 arg3, GUIStyle style, int width = 0)
+        {
+            GUIContent content = Fields.Content.ContentDefault;
+            content.text = text;
+            Fields.Button.setValues(method, arg1, arg2, arg3, style, content, width);
+        }
+
+        /// <summary>
         /// A button with pre-specified content (could be text, an image, both) and a background style assigned to it.
         /// </summary>
         /// <param name="content">The GUI Content object that contains the content to display on the button.</param>

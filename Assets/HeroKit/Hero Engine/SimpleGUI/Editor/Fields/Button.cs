@@ -84,6 +84,7 @@ namespace SimpleGUI.Fields
         /// </summary>
         /// <typeparam name="T0">First parameter type to pass into the method.</typeparam>
         /// <typeparam name="T1">Second parameter type to pass into the method.</typeparam>
+        /// <typeparam name="T2">Third parameter type to pass into the method.</typeparam>
         /// <param name="method">The method to execute when button is clicked.</param>
         /// <param name="arg1">The first parameter to pass into the method.</param>
         /// <param name="arg2">The second parameter to pass into the method.</param>
@@ -101,6 +102,32 @@ namespace SimpleGUI.Fields
             {
                 if (Event.current.button == 0)
                     method(arg1, arg2);
+            }
+        }
+
+        /// <summary>
+        /// Button that has the same action for left and right click. (two parameters)
+        /// </summary>
+        /// <typeparam name="T0">First parameter type to pass into the method.</typeparam>
+        /// <typeparam name="T1">Second parameter type to pass into the method.</typeparam>
+        /// <param name="method">The method to execute when button is clicked.</param>
+        /// <param name="arg1">The first parameter to pass into the method.</param>
+        /// <param name="arg2">The second parameter to pass into the method.</param>
+        /// <param name="arg3">The third parameter to pass into the method.</param>
+        /// <param name="buttonStyle">Background style for this button.</param>
+        /// <param name="buttonContent">Content style for this button.</param>
+        /// <param name="buttonWidth">Width of this button.</param>
+        public static void setValues<T0, T1, T2>(UnityAction<T0, T1, T2> method, T0 arg1, T1 arg2, T2 arg3, GUIStyle buttonStyle, GUIContent buttonContent, int buttonWidth = 0)
+        {
+            // set the position of the button
+            buttonStyle.fixedWidth = buttonWidth;
+            Rect position = GUILayoutUtility.GetRect(buttonContent, buttonStyle);
+
+            // draw the button
+            if (GUI.Button(position, buttonContent, buttonStyle))
+            {
+                if (Event.current.button == 0)
+                    method(arg1, arg2, arg3);
             }
         }
 

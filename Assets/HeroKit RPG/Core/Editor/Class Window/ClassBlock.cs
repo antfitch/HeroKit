@@ -104,6 +104,7 @@ namespace HeroKit.RpgEditor
             DrawAbilityTypes();
             DrawConditions();
             DrawElements();
+            DrawMeters();
         }
 
         /// <summary>
@@ -378,6 +379,58 @@ namespace HeroKit.RpgEditor
             // create bit string from bit array & save
             stringFields[5].value = HeroKitCommon.CreateIntString(intArray);
         }
+        private static void DrawMeters()
+        {
+            DropDownValues meters = HeroKitCommon.databaseList(HeroKitCommon.meterDatabase);
+
+            // resize string if things have changed
+            stringFields[7].value = HeroKitCommon.ResizeBitString(stringFields[7].value, meters.items.Length);
+            stringFields[8].value = HeroKitCommon.ResizeBitString(stringFields[8].value, meters.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[7].value);
+            int[] intArray = HeroKitCommon.CreateIntArrayLarge(stringFields[8].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label("Adjust max value of meters by amount entered");
+            SimpleLayout.Space();
+            string buttonText = showMeters ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleMeters, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showMeters)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[3].value = SimpleLayout.DropDownList(intFields[3].value, meters, 0, 150);
+                HeroKitCommon.addRemoveButton(bitArray, intFields[3].value, meters);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                HeroKitCommon.getOnInComboarray(bitArray, intArray, meters);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[7].value = HeroKitCommon.CreateBitString(bitArray);
+            stringFields[8].value = HeroKitCommon.CreateIntStringLarge(intArray);
+        }
 
         private static bool showWeapons = false;
         private static void toggleWeaponType()
@@ -407,6 +460,12 @@ namespace HeroKit.RpgEditor
         private static void toggleElements()
         {
             showElements = !showElements;
+        }
+
+        private static bool showMeters = false;
+        private static void toggleMeters()
+        {
+            showMeters = !showMeters;
         }
     }
 }
