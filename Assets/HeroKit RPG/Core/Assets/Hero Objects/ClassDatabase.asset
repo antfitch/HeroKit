@@ -57,6 +57,8 @@ MonoBehaviour:
             value: 2
           - name: Element ID
             value: 1
+          - name: Stats ID
+            value: 2
         floats:
           visible: 0
           items: []
@@ -87,7 +89,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask
-            value: 1400
+            value: 110
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask
@@ -95,11 +97,19 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes)
-            value: 100
+            value: 1100
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints)
-            value: 0|0|
+            value: 10|5|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (bools for checkboxes)
+            value: 11000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (ints)
+            value: 10|-5|0|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -129,6 +139,8 @@ MonoBehaviour:
           - name: Condition ID
             value: 0
           - name: Element ID
+            value: 0
+          - name: Stats ID
             value: 0
         floats:
           visible: 0
@@ -160,18 +172,26 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask
-            value: 0000
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (ints)
             value: 
             useVariables: 0
             useTextField: 0
@@ -202,6 +222,8 @@ MonoBehaviour:
           - name: Condition ID
             value: 0
           - name: Element ID
+            value: 0
+          - name: Stats ID
             value: 0
         floats:
           visible: 0
@@ -233,19 +255,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask
-            value: 0000
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints)
-            value: 
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (bools for checkboxes)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (ints)
+            value: 0|0|0|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -275,6 +305,8 @@ MonoBehaviour:
           - name: Condition ID
             value: 1
           - name: Element ID
+            value: 0
+          - name: Stats ID
             value: 0
         floats:
           visible: 0
@@ -306,18 +338,26 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask
-            value: 0000
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask (ints)
             value: 
             useVariables: 0
             useTextField: 0

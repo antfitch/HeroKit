@@ -11,15 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4099316608df6468036816bed9a822, type: 3}
   m_Name: HeroKitSession
   m_EditorClassIdentifier: 
-  heroObject: {fileID: 11400000, guid: 71b1606e6d492ae4da4546a84e91bcf8, type: 2}
-  mainMenuTypeID: 4
-  mainMenuStateID: -1
-  mainMenuEventID: -1
-  mainMenuActionID: -1
+  heroObject: {fileID: 11400000, guid: 130beee313f01d64e9096f36271c2b71, type: 2}
+  mainMenuTypeID: 3
+  mainMenuStateID: 0
+  mainMenuEventID: 3
+  mainMenuActionID: 3
   mainMenuVariableID: -1
   mainMenuGlobalID: -1
-  mainMenuPropertyFocus: 1
-  mainMenuStateFocus: 0
+  mainMenuPropertyFocus: 0
+  mainMenuStateFocus: 1
   mainMenuVariableFocus: 0
   mainMenuGlobalFocus: 0
   mainMenuSettingsFocus: 0

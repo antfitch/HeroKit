@@ -552,6 +552,26 @@ namespace HeroKit.Scene
             // return game object attached to child transform
             return child.gameObject;
         }
+        /// <summary>
+        /// Turn the renderer on a game object on or off.
+        /// Notes: the renderer determines whether visuals on a game object are visible.
+        /// </summary>
+        /// <param name="transform">Transform of the game object.</param>
+        /// <param name="enabled">Turn visuals on (true), or turn visuals off (false).</param>
+        public static void toggleRenderer(Transform transform, bool enabled)
+        {
+            if (transform.childCount > 0)
+            {
+                foreach (Transform child in transform)
+                {
+                    toggleRenderer(child, enabled);
+                }
+            }
+
+            Renderer renderer = transform.gameObject.GetComponent<Renderer>();
+            if (renderer != null)
+                transform.gameObject.GetComponent<Renderer>().enabled = enabled;
+        }
 
         //-------------------------------------------
         // State Changes

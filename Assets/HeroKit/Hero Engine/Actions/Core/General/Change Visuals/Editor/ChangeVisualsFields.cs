@@ -5,7 +5,7 @@
 using HeroKit.Scene;
 using SimpleGUI;
 using HeroKit.Editor.ActionField;
-using UnityEngine;
+using HeroKit.Editor.HeroField;
 
 namespace HeroKit.Editor.ActionBlockFields
 {
@@ -21,7 +21,7 @@ namespace HeroKit.Editor.ActionBlockFields
             //-----------------------------------------
             // create the action fields if they don't exist
             //-----------------------------------------
-            ActionCommon.CreateActionFieldsOnHeroObject(heroAction, 6);
+            ActionCommon.CreateActionFieldsOnHeroObject(heroAction, 8);
 
             //-----------------------------------------
             // create the fields for this action
@@ -43,6 +43,15 @@ namespace HeroKit.Editor.ActionBlockFields
             if (changeRigidbody)
             {
                 GetRigidbodyValue.BuildField("", actionParams, heroAction.actionFields[5]);
+            }
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+            bool changeHidden = GetBoolValue.BuildField("Show or hide visuals?", actionParams, heroAction.actionFields[6], true);
+            if (changeHidden)
+            {
+                string[] choices = { "Show Visuals", "Hide Visuals" };
+                GetDropDownField.BuildField("", actionParams, heroAction.actionFields[7], new GenericListField(choices), true);
             }
             SimpleLayout.EndVertical();
         }

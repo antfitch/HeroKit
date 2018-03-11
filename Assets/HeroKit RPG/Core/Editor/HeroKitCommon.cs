@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using System.Text;
 
 namespace HeroKit.RpgEditor
 {
@@ -1086,18 +1087,128 @@ namespace HeroKit.RpgEditor
             // if string length is different than items length, adjust string
             if (str.Length != itemsLength)
             {
-                int diff = Mathf.Abs(str.Length - itemsLength);
-
                 // increase string on right side (items were added)
                 if (str.Length < itemsLength)
+                {
+                    int diff = Mathf.Abs(str.Length - itemsLength);
                     str = str + new string('0', diff);
+                }
                 // decrease string on right side (items were removed)
                 else if (str.Length > itemsLength)
-                    str = str.Substring(0, diff);
+                    str = str.Substring(0, itemsLength);
             }
 
             return str;
         }
+        public static int[] CreateIntArray(string str)
+        {
+            int[] intArray = new int[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                intArray[i] = (int)Char.GetNumericValue(str[i]);
+            }
+            return intArray;
+        }
+        public static string CreateIntString(int[] intArray)
+        {
+            // Display all ints.
+            string str = "";
+            foreach (int num in intArray)
+            {
+                str += num.ToString();
+            }
+            return str;
+        }
+        public static int[] CreateIntArrayLarge(string str)
+        {
+            int seperatorCount = str.Count(x => x == '|');
+            int[] intArray = new int[seperatorCount];
+            string tempInt = "";
+            int intCount = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == '|')
+                {
+                    intArray[intCount] = Int32.Parse(tempInt);
+                    tempInt = "";
+                    intCount++;
+                    continue;
+                }
+                else
+                {
+                    tempInt = tempInt + str[i];
+                }
+            }
+            return intArray;
+        }
+        public static string CreateIntStringLarge(int[] intArray)
+        {
+            // Display all ints.
+            string str = "";
+            foreach (int num in intArray)
+            {
+                str += num.ToString() + "|";
+            }
+            return str;
+        }
+        public static string ResizeIntStringLarge(string str, int itemsLength)
+        {
+            int seperatorCount = str.Count(x => x == '|');
+
+            // if string length is different than items length, adjust string
+            if (seperatorCount != itemsLength)
+            {
+                // increase string on right side (items were added)
+                if (seperatorCount < itemsLength)
+                {
+                    int diff = Mathf.Abs(seperatorCount - itemsLength);
+                    str = str + RepeatSubstring("0|", diff);
+                }
+
+                // decrease string on right side (items were removed)
+                else if (seperatorCount > itemsLength)
+                {
+                    // get index of seperator for last item in list (itemsLength)
+                    int index = GetNthIndex(str, '|', itemsLength);
+
+                    // delete anything after that seperator
+                    str = str.Substring(0, index + 1);
+                }
+            }
+
+            return str;
+        }
+        // repeat a substring
+        public static string RepeatSubstring(string substring, int count)
+        {
+            if (!string.IsNullOrEmpty(substring))
+            {
+                StringBuilder builder = new StringBuilder(substring.Length * count);
+                for (int i = 0; i < count; i++) builder.Append(substring);
+                return builder.ToString();
+            }
+            return string.Empty;
+        }
+        // get nth index of a character in a string
+        public static int GetNthIndex(string str, char character, int number)
+        {
+            int count = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == character)
+                {
+                    count++;
+                    if (count == number)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
+
+
         // [add] [remove] buttons for search that gets all items of a type or one item of a type 
         public static void addRemoveButton(BitArray bitArray, int itemID, DropDownValues itemList)
         {
@@ -1177,55 +1288,8 @@ namespace HeroKit.RpgEditor
             }
         }
 
-        public static int[] CreateIntArray(string str)
-        {
-            int[] intArray = new int[str.Length];
-            for (int i = 0; i < str.Length; i++)
-            {
-                intArray[i] = (int)Char.GetNumericValue(str[i]);
-            }
-            return intArray;
-        }
-        public static string CreateIntString(int[] intArray)
-        {
-            // Display all ints.
-            string str = "";
-            foreach (int num in intArray)
-            {
-                str += num.ToString();
-            }
-            return str;
-        }
-        public static int[] CreateIntArrayLarge(string str)
-        {
-            int seperatorCount = str.Count(x => x == '|');
-            int[] intArray = new int[str.Length - seperatorCount];
-            string tempInt = "";
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str[i] == '|')
-                {
-                    intArray[i] = Int32.Parse(tempInt);
-                    tempInt = "";
-                    continue;
-                }
-                else
-                {
-                    tempInt = tempInt + str[i];
-                }
-            }
-            return intArray;
-        }
-        public static string CreateIntStringLarge(int[] intArray)
-        {
-            // Display all ints.
-            string str = "";
-            foreach (int num in intArray)
-            {
-                str += num.ToString() + "|";
-            }
-            return str;
-        }
+
+
         // [add] [remove] buttons for search that gets all items of a type or one item of a type 
         public static void addRemoveButton(int[] intArray, int itemID, DropDownValues itemList)
         {

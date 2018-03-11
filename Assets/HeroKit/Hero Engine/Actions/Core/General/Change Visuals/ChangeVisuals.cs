@@ -48,15 +48,17 @@ namespace HeroKit.Scene.Actions
 
             HeroKitObject[] targetObject = HeroObjectFieldValue.GetValueE(heroKitObject, 0, 1);
             bool changePrefab = BoolValue.GetValue(heroKitObject, 2);
-            GameObject prefab = PrefabValue.GetValue(heroKitObject, 3);
+            GameObject prefab = (changePrefab) ? PrefabValue.GetValue(heroKitObject, 3) : null;
             bool changeRigidbody = BoolValue.GetValue(heroKitObject, 4);
-            Rigidbody rigidbody = RigidbodyValue.GetValue(heroKitObject, 5);
+            Rigidbody rigidbody = (changeRigidbody) ? RigidbodyValue.GetValue(heroKitObject, 5) : null;
+            bool changeHidden = BoolValue.GetValue(heroKitObject, 6);
+            int isHidden = (changeHidden) ? DropDownListValue.GetValue(heroKitObject, 7) : 0;
 
             bool runThis = (targetObject != null);
 
             // execute action for all objects in list
             for (int i = 0; runThis && i < targetObject.Length; i++)
-                ExecuteOnTarget(targetObject[i], changePrefab, prefab, changeRigidbody, rigidbody);
+                ExecuteOnTarget(targetObject[i], changePrefab, prefab, changeRigidbody, rigidbody, changeHidden, isHidden);
 
             // show debug message
             if (heroKitObject.debugHeroObject)
@@ -68,13 +70,27 @@ namespace HeroKit.Scene.Actions
             return -99;
         }
 
-        public void ExecuteOnTarget(HeroKitObject targetObject, bool changePrefab, GameObject prefab, bool changeRigidbody, Rigidbody rigidbody)
+        public void ExecuteOnTarget(HeroKitObject targetObject, bool changePrefab, GameObject prefab, 
+                                    bool changeRigidbody, Rigidbody rigidbody,
+                                    bool changeVisual, int isHidden)
         {
             if (changePrefab)
                 HeroKitCommonRuntime.AddPrefab(targetObject.gameObject, prefab, false, HeroKitCommonRuntime.visualsName);
 
             if (changeRigidbody)
                 HeroKitCommonRuntime.AddRigidbody(rigidbody, targetObject.gameObject);
+
+            if (changeVisual)
+            {
+                GameObject visuals = HeroKitCommonRuntime.GetVisualsGameObject(targetObject.gameObject);
+
+                // show visuals
+                if (isHidden == 1)
+                    HeroKitCommonRuntime.toggleRenderer(visuals.transform, true);
+                // hide visuals
+                else if (isHidden == 2)
+                    HeroKitCommonRuntime.toggleRenderer(visuals.transform, false);
+            }
         }
 
         // Not used

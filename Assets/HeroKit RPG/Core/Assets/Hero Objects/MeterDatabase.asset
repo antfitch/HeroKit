@@ -143,6 +143,41 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
+    - propertyTemplate: {fileID: 11400000, guid: 9fffc89f19b7d3c41bb7106a1f3139f0,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Max Value
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: blah
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
     visible: 1
   states:
     states: []

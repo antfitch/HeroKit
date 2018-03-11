@@ -29,6 +29,8 @@ MonoBehaviour:
         value: 0
       - name: Element ID
         value: 0
+      - name: Stats ID
+        value: 0
     floats:
       visible: 0
       items: []
@@ -71,6 +73,14 @@ MonoBehaviour:
         useVariables: 0
         useTextField: 0
       - name: Meter Mask (ints)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Stats Mask (bools for checkboxes)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Stats Mask (ints)
         value: 
         useVariables: 0
         useTextField: 0

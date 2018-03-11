@@ -105,6 +105,7 @@ namespace HeroKit.RpgEditor
             DrawConditions();
             DrawElements();
             DrawMeters();
+            DrawStats();
         }
 
         /// <summary>
@@ -385,7 +386,7 @@ namespace HeroKit.RpgEditor
 
             // resize string if things have changed
             stringFields[7].value = HeroKitCommon.ResizeBitString(stringFields[7].value, meters.items.Length);
-            stringFields[8].value = HeroKitCommon.ResizeBitString(stringFields[8].value, meters.items.Length);
+            stringFields[8].value = HeroKitCommon.ResizeIntStringLarge(stringFields[8].value, meters.items.Length);
 
             // convert intstring into intarray
             BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[7].value);
@@ -399,7 +400,7 @@ namespace HeroKit.RpgEditor
 
             // Line 1: types allowed... [hide or show]
             SimpleLayout.BeginHorizontal();
-            SimpleLayout.Label("Adjust max value of meters by amount entered");
+            SimpleLayout.Label("Adjust meters (add or subtract value from meter max)");
             SimpleLayout.Space();
             string buttonText = showMeters ? "hide" : "show";
             SimpleLayout.Button(buttonText, toggleMeters, Button.StyleA);
@@ -430,6 +431,58 @@ namespace HeroKit.RpgEditor
             // create bit string from bit array & save
             stringFields[7].value = HeroKitCommon.CreateBitString(bitArray);
             stringFields[8].value = HeroKitCommon.CreateIntStringLarge(intArray);
+        }
+        private static void DrawStats()
+        {
+            DropDownValues stats = HeroKitCommon.databaseList(HeroKitCommon.statsDatabase);
+
+            // resize string if things have changed
+            stringFields[9].value = HeroKitCommon.ResizeBitString(stringFields[9].value, stats.items.Length);
+            stringFields[10].value = HeroKitCommon.ResizeIntStringLarge(stringFields[10].value, stats.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[9].value);
+            int[] intArray = HeroKitCommon.CreateIntArrayLarge(stringFields[10].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label("Adjust stats (add or subtract value from base stat)");
+            SimpleLayout.Space();
+            string buttonText = showStats ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleStats, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showStats)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[6].value = SimpleLayout.DropDownList(intFields[6].value, stats, 0, 150);
+                HeroKitCommon.addRemoveButton(bitArray, intFields[6].value, stats);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                HeroKitCommon.getOnInComboarray(bitArray, intArray, stats);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[9].value = HeroKitCommon.CreateBitString(bitArray);
+            stringFields[10].value = HeroKitCommon.CreateIntStringLarge(intArray);
         }
 
         private static bool showWeapons = false;
@@ -466,6 +519,12 @@ namespace HeroKit.RpgEditor
         private static void toggleMeters()
         {
             showMeters = !showMeters;
+        }
+
+        private static bool showStats = false;
+        private static void toggleStats()
+        {
+            showStats = !showStats;
         }
     }
 }

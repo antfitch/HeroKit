@@ -88,7 +88,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Ice
+            value: ice
             useVariables: 0
             useTextField: 0
           - name: Description
@@ -121,40 +121,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Earth
-            useVariables: 0
-            useTextField: 0
-          - name: Description
-            value: 
-            useVariables: 0
-            useTextField: 1
-        gameObjects:
-          visible: 0
-          items: []
-        heroObjects:
-          visible: 0
-          items: []
-        unityObjects:
-          visible: 0
-          items: []
-    - propertyTemplate: {fileID: 11400000, guid: 05b9d828c62cbc54d939fa9a3cb83db2,
-        type: 2}
-      itemProperties:
-        visible: 0
-        ints:
-          visible: 0
-          items: []
-        floats:
-          visible: 0
-          items: []
-        bools:
-          visible: 0
-          items: []
-        strings:
-          visible: 0
-          items:
-          - name: Name
-            value: Water
+            value: wind
             useVariables: 0
             useTextField: 0
           - name: Description
