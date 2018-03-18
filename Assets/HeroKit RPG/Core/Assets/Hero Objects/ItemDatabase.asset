@@ -46,7 +46,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Affix Count
-            value: 0
+            value: 1
           - name: Affix ID 1
             value: 4
           - name: Affix ID 2
@@ -174,21 +174,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
         type: 2}
       itemProperties:
@@ -255,21 +240,6 @@ MonoBehaviour:
           - name: Icon for Item
             value: {fileID: 0}
             objectType: 2
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
             sceneID: 0
             sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
@@ -340,21 +310,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
         type: 2}
       itemProperties:
@@ -421,21 +376,6 @@ MonoBehaviour:
           - name: Icon for Item
             value: {fileID: 0}
             objectType: 2
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
             sceneID: 0
             sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
@@ -506,21 +446,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
         type: 2}
       itemProperties:
@@ -589,21 +514,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 0bc19c6e5ea04bf4e8e9b2e84eda9a14,
         type: 2}
       itemProperties:
@@ -670,21 +580,6 @@ MonoBehaviour:
           - name: Icon for Item
             value: {fileID: 0}
             objectType: 2
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
             sceneID: 0
             sceneName: 
     visible: 1

@@ -55,7 +55,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Double Hit
+            value: 5% max increase
             useVariables: 0
             useTextField: 0
           - name: Formula

@@ -59,6 +59,10 @@ MonoBehaviour:
             value: 1
           - name: Stats ID
             value: 2
+          - name: Stats Inc ID
+            value: 1
+          - name: Meter Inc ID
+            value: 2
         floats:
           visible: 0
           items: []
@@ -97,7 +101,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes)
-            value: 1100
+            value: 1000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints)
@@ -108,8 +112,24 @@ MonoBehaviour:
             value: 11000
             useVariables: 0
             useTextField: 0
-          - name: Stats Mask (ints)
+          - name: Stats Mask Start (ints)
             value: 10|-5|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (bools for checkboxes)
+            value: 10000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (ints)
+            value: 1|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (bools for checkboxes)
+            value: 0100
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (ints)
+            value: 0|1|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -141,6 +161,10 @@ MonoBehaviour:
           - name: Element ID
             value: 0
           - name: Stats ID
+            value: 0
+          - name: Stats Inc ID
+            value: 0
+          - name: Meter Inc ID
             value: 0
         floats:
           visible: 0
@@ -188,11 +212,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Stats Mask (bools for checkboxes)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
-          - name: Stats Mask (ints)
-            value: 
+          - name: Stats Mask Start (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (bools for checkboxes)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (bools for checkboxes)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (ints)
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -224,6 +264,10 @@ MonoBehaviour:
           - name: Element ID
             value: 0
           - name: Stats ID
+            value: 0
+          - name: Stats Inc ID
+            value: 0
+          - name: Meter Inc ID
             value: 0
         floats:
           visible: 0
@@ -274,8 +318,24 @@ MonoBehaviour:
             value: 00000
             useVariables: 0
             useTextField: 0
-          - name: Stats Mask (ints)
+          - name: Stats Mask Start (ints)
             value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (bools for checkboxes)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (bools for checkboxes)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (ints)
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -307,6 +367,10 @@ MonoBehaviour:
           - name: Element ID
             value: 0
           - name: Stats ID
+            value: 0
+          - name: Stats Inc ID
+            value: 0
+          - name: Meter Inc ID
             value: 0
         floats:
           visible: 0
@@ -354,11 +418,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Stats Mask (bools for checkboxes)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
-          - name: Stats Mask (ints)
-            value: 
+          - name: Stats Mask Start (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (bools for checkboxes)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stats Mask Increment (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (bools for checkboxes)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Mask Increment (ints)
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
         gameObjects:

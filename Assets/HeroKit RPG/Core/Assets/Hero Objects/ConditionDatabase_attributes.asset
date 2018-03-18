@@ -47,278 +47,24 @@ MonoBehaviour:
           items:
           - name: Variance
             value: 0
-          - name: Money Count
+          - name: Money ID
             value: 0
-          - name: 'Money 1: ID'
-            value: 0
-          - name: 'Money 2: ID'
-            value: 0
-          - name: 'Money 3: ID'
-            value: 0
-          - name: 'Money 4: ID'
-            value: 0
-          - name: 'Money 5: ID'
-            value: 0
-          - name: 'Money 6: ID'
-            value: 0
-          - name: 'Money 7: ID'
-            value: 0
-          - name: 'Money 8: ID'
-            value: 1
-          - name: 'Money 9: ID'
-            value: 0
-          - name: 'Money 10: ID'
-            value: 0
-          - name: 'Money 1: Value'
-            value: 0
-          - name: 'Money 2: Value'
-            value: 0
-          - name: 'Money 3: Value'
-            value: 0
-          - name: 'Money 4: Value'
-            value: 0
-          - name: 'Money 5: Value'
-            value: 0
-          - name: 'Money 6: Value'
-            value: 0
-          - name: 'Money 7: Value'
-            value: 0
-          - name: 'Money 8: Value'
-            value: 0
-          - name: 'Money 9: Value'
-            value: 0
-          - name: 'Money 10: Value'
-            value: 0
-          - name: Stat Count
-            value: 0
-          - name: 'Stat 1: ID'
-            value: 1
-          - name: 'Stat 2: ID'
-            value: 0
-          - name: 'Stat 3: ID'
-            value: 0
-          - name: 'Stat 4: ID'
-            value: 0
-          - name: 'Stat 5: ID'
-            value: 0
-          - name: 'Stat 6: ID'
-            value: 0
-          - name: 'Stat 7: ID'
-            value: 0
-          - name: 'Stat 8: ID'
-            value: 0
-          - name: 'Stat 9: ID'
-            value: 0
-          - name: 'Stat 10: ID'
-            value: 0
-          - name: 'Stat 1: Value'
-            value: 0
-          - name: 'Stat 2: Value'
-            value: 2
-          - name: 'Stat 3: Value'
-            value: 0
-          - name: 'Stat 4: Value'
-            value: 0
-          - name: 'Stat 5: Value'
-            value: 0
-          - name: 'Stat 6: Value'
-            value: 0
-          - name: 'Stat 7: Value'
-            value: 0
-          - name: 'Stat 8: Value'
-            value: 2
-          - name: 'Stat 9: Value'
-            value: 1
-          - name: 'Stat 10: Value'
-            value: 2
-          - name: 'Stat 1: Change Type'
-            value: 0
-          - name: 'Stat 2: Change Type'
-            value: 0
-          - name: 'Stat 3: Change Type'
-            value: 0
-          - name: 'Stat 4: Change Type'
-            value: 0
-          - name: 'Stat 5: Change Type'
-            value: 1
-          - name: 'Stat 6: Change Type'
+          - name: Stats ID
             value: 3
-          - name: 'Stat 7: Change Type'
-            value: 0
-          - name: 'Stat 8: Change Type'
-            value: 0
-          - name: 'Stat 9: Change Type'
-            value: 0
-          - name: 'Stat 10: Change Type'
-            value: 0
-          - name: Meter Count
-            value: 0
-          - name: 'Meter 1: ID'
+          - name: Meter ID
             value: 2
-          - name: 'Meter 2: ID'
+          - name: Element ID
             value: 0
-          - name: 'Meter 3: ID'
-            value: 0
-          - name: 'Meter 4: ID'
-            value: 0
-          - name: 'Meter 5: ID'
-            value: 0
-          - name: 'Meter 6: ID'
-            value: 0
-          - name: 'Meter 7: ID'
-            value: 0
-          - name: 'Meter 8: ID'
-            value: 0
-          - name: 'Meter 9: ID'
-            value: 0
-          - name: 'Meter 10: ID'
-            value: 0
-          - name: 'Meter 1: Value'
-            value: 0
-          - name: 'Meter 2: Value'
-            value: 0
-          - name: 'Meter 3: Value'
-            value: 0
-          - name: 'Meter 4: Value'
-            value: 0
-          - name: 'Meter 5: Value'
-            value: 0
-          - name: 'Meter 6: Value'
-            value: 0
-          - name: 'Meter 7: Value'
-            value: 0
-          - name: 'Meter 8: Value'
-            value: 0
-          - name: 'Meter 9: Value'
-            value: 0
-          - name: 'Meter 10: Value'
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 2
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
-          - name: Element Count
-            value: 0
-          - name: 'Elem 1: ID'
-            value: 1
-          - name: 'Elem 2: ID'
-            value: 0
-          - name: 'Elem 3: ID'
-            value: 0
-          - name: 'Elem 4: ID'
-            value: 0
-          - name: 'Elem 5: ID'
-            value: 0
-          - name: 'Elem 6: ID'
-            value: 0
-          - name: 'Elem 7: ID'
-            value: 0
-          - name: 'Elem 8: ID'
-            value: 0
-          - name: 'Elem 9: ID'
-            value: 0
-          - name: 'Elem 10: ID'
-            value: 0
-          - name: 'Elem 1: Value'
-            value: 1
-          - name: 'Elem 2: Value'
-            value: 0
-          - name: 'Elem 3: Value'
-            value: 0
-          - name: 'Elem 4: Value'
-            value: 0
-          - name: 'Elem 5: Value'
-            value: 0
-          - name: 'Elem 6: Value'
-            value: 0
-          - name: 'Elem 7: Value'
-            value: 0
-          - name: 'Elem 8: Value'
-            value: 0
-          - name: 'Elem 9: Value'
-            value: 0
-          - name: 'Elem 10: Value'
-            value: 0
-          - name: Cond Count
-            value: 0
-          - name: 'Cond 1: ID'
-            value: 2
-          - name: 'Cond 2: ID'
-            value: 0
-          - name: 'Cond 3: ID'
-            value: 0
-          - name: 'Cond 4: ID'
-            value: 0
-          - name: 'Cond 5: ID'
-            value: 0
-          - name: 'Cond 6: ID'
-            value: 0
-          - name: 'Cond 7: ID'
-            value: 0
-          - name: 'Cond 8: ID'
-            value: 0
-          - name: 'Cond 9: ID'
-            value: 0
-          - name: 'Cond 10: ID'
-            value: 0
-          - name: 'Cond 1: Value'
-            value: 2
-          - name: 'Cond 2: Value'
-            value: 0
-          - name: 'Cond 3: Value'
-            value: 0
-          - name: 'Cond 4: Value'
-            value: 0
-          - name: 'Cond 5: Value'
-            value: 0
-          - name: 'Cond 6: Value'
-            value: 0
-          - name: 'Cond 7: Value'
-            value: 0
-          - name: 'Cond 8: Value'
-            value: 0
-          - name: 'Cond 9: Value'
-            value: 0
-          - name: 'Cond 10: Value'
-            value: 0
-          - name: 'Cond 1: Change Type'
-            value: 0
-          - name: 'Cond 2: Change Type'
-            value: 0
-          - name: 'Cond 3: Change Type'
-            value: 0
-          - name: 'Cond 4: Change Type'
-            value: 0
-          - name: 'Cond 5: Change Type'
-            value: 0
-          - name: 'Cond 6: Change Type'
-            value: 0
-          - name: 'Cond 7: Change Type'
-            value: 0
-          - name: 'Cond 8: Change Type'
-            value: 0
-          - name: 'Cond 9: Change Type'
-            value: 0
-          - name: 'Cond 10: Change Type'
+          - name: Condition ID
             value: 0
           - name: Item Weight
             value: 0
+          - name: Affix ID
+            value: 0
+          - name: Socket ID
+            value: 0
+          - name: Meter 2 ID
+            value: 1
         floats:
           visible: 0
           items: []
@@ -331,7 +77,75 @@ MonoBehaviour:
             value: 1
         strings:
           visible: 0
-          items: []
+          items:
+          - name: Money ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Money Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat ID Mask (bools)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Value Mask (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter ID Mask (bools)
+            value: 1100
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Value Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Type Mask (ints)
+            value: 1000
+            useVariables: 0
+            useTextField: 0
+          - name: Element ID Mask (bools)
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Conditions ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Percentage Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Affix ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Socket ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Type Mask (drop-down, int)
+            value: 20000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -350,278 +164,24 @@ MonoBehaviour:
           items:
           - name: Variance
             value: 0
-          - name: Money Count
+          - name: Money ID
             value: 0
-          - name: 'Money 1: ID'
+          - name: Stats ID
             value: 0
-          - name: 'Money 2: ID'
+          - name: Meter ID
             value: 0
-          - name: 'Money 3: ID'
+          - name: Element ID
             value: 0
-          - name: 'Money 4: ID'
-            value: 0
-          - name: 'Money 5: ID'
-            value: 0
-          - name: 'Money 6: ID'
-            value: 0
-          - name: 'Money 7: ID'
-            value: 0
-          - name: 'Money 8: ID'
-            value: 1
-          - name: 'Money 9: ID'
-            value: 0
-          - name: 'Money 10: ID'
-            value: 0
-          - name: 'Money 1: Value'
-            value: 0
-          - name: 'Money 2: Value'
-            value: 0
-          - name: 'Money 3: Value'
-            value: 0
-          - name: 'Money 4: Value'
-            value: 0
-          - name: 'Money 5: Value'
-            value: 0
-          - name: 'Money 6: Value'
-            value: 0
-          - name: 'Money 7: Value'
-            value: 0
-          - name: 'Money 8: Value'
-            value: 0
-          - name: 'Money 9: Value'
-            value: 0
-          - name: 'Money 10: Value'
-            value: 0
-          - name: Stat Count
-            value: 0
-          - name: 'Stat 1: ID'
-            value: 0
-          - name: 'Stat 2: ID'
-            value: 0
-          - name: 'Stat 3: ID'
-            value: 0
-          - name: 'Stat 4: ID'
-            value: 0
-          - name: 'Stat 5: ID'
-            value: 0
-          - name: 'Stat 6: ID'
-            value: 0
-          - name: 'Stat 7: ID'
-            value: 0
-          - name: 'Stat 8: ID'
-            value: 0
-          - name: 'Stat 9: ID'
-            value: 0
-          - name: 'Stat 10: ID'
-            value: 0
-          - name: 'Stat 1: Value'
-            value: 0
-          - name: 'Stat 2: Value'
-            value: 0
-          - name: 'Stat 3: Value'
-            value: 0
-          - name: 'Stat 4: Value'
-            value: 0
-          - name: 'Stat 5: Value'
-            value: 0
-          - name: 'Stat 6: Value'
-            value: 0
-          - name: 'Stat 7: Value'
-            value: 0
-          - name: 'Stat 8: Value'
-            value: 0
-          - name: 'Stat 9: Value'
-            value: 0
-          - name: 'Stat 10: Value'
-            value: 0
-          - name: 'Stat 1: Change Type'
-            value: 0
-          - name: 'Stat 2: Change Type'
-            value: 0
-          - name: 'Stat 3: Change Type'
-            value: 0
-          - name: 'Stat 4: Change Type'
-            value: 0
-          - name: 'Stat 5: Change Type'
-            value: 0
-          - name: 'Stat 6: Change Type'
-            value: 0
-          - name: 'Stat 7: Change Type'
-            value: 0
-          - name: 'Stat 8: Change Type'
-            value: 0
-          - name: 'Stat 9: Change Type'
-            value: 0
-          - name: 'Stat 10: Change Type'
-            value: 0
-          - name: Meter Count
-            value: 0
-          - name: 'Meter 1: ID'
-            value: 0
-          - name: 'Meter 2: ID'
-            value: 0
-          - name: 'Meter 3: ID'
-            value: 0
-          - name: 'Meter 4: ID'
-            value: 0
-          - name: 'Meter 5: ID'
-            value: 0
-          - name: 'Meter 6: ID'
-            value: 0
-          - name: 'Meter 7: ID'
-            value: 0
-          - name: 'Meter 8: ID'
-            value: 0
-          - name: 'Meter 9: ID'
-            value: 0
-          - name: 'Meter 10: ID'
-            value: 0
-          - name: 'Meter 1: Value'
-            value: 0
-          - name: 'Meter 2: Value'
-            value: 0
-          - name: 'Meter 3: Value'
-            value: 0
-          - name: 'Meter 4: Value'
-            value: 0
-          - name: 'Meter 5: Value'
-            value: 0
-          - name: 'Meter 6: Value'
-            value: 0
-          - name: 'Meter 7: Value'
-            value: 0
-          - name: 'Meter 8: Value'
-            value: 0
-          - name: 'Meter 9: Value'
-            value: 0
-          - name: 'Meter 10: Value'
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 0
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
-          - name: Element Count
-            value: 0
-          - name: 'Elem 1: ID'
-            value: 0
-          - name: 'Elem 2: ID'
-            value: 0
-          - name: 'Elem 3: ID'
-            value: 0
-          - name: 'Elem 4: ID'
-            value: 0
-          - name: 'Elem 5: ID'
-            value: 0
-          - name: 'Elem 6: ID'
-            value: 0
-          - name: 'Elem 7: ID'
-            value: 0
-          - name: 'Elem 8: ID'
-            value: 0
-          - name: 'Elem 9: ID'
-            value: 0
-          - name: 'Elem 10: ID'
-            value: 0
-          - name: 'Elem 1: Value'
-            value: 0
-          - name: 'Elem 2: Value'
-            value: 0
-          - name: 'Elem 3: Value'
-            value: 0
-          - name: 'Elem 4: Value'
-            value: 0
-          - name: 'Elem 5: Value'
-            value: 0
-          - name: 'Elem 6: Value'
-            value: 0
-          - name: 'Elem 7: Value'
-            value: 0
-          - name: 'Elem 8: Value'
-            value: 0
-          - name: 'Elem 9: Value'
-            value: 0
-          - name: 'Elem 10: Value'
-            value: 0
-          - name: Cond Count
-            value: 0
-          - name: 'Cond 1: ID'
-            value: 0
-          - name: 'Cond 2: ID'
-            value: 0
-          - name: 'Cond 3: ID'
-            value: 0
-          - name: 'Cond 4: ID'
-            value: 0
-          - name: 'Cond 5: ID'
-            value: 0
-          - name: 'Cond 6: ID'
-            value: 0
-          - name: 'Cond 7: ID'
-            value: 0
-          - name: 'Cond 8: ID'
-            value: 0
-          - name: 'Cond 9: ID'
-            value: 0
-          - name: 'Cond 10: ID'
-            value: 0
-          - name: 'Cond 1: Value'
-            value: 0
-          - name: 'Cond 2: Value'
-            value: 0
-          - name: 'Cond 3: Value'
-            value: 0
-          - name: 'Cond 4: Value'
-            value: 0
-          - name: 'Cond 5: Value'
-            value: 0
-          - name: 'Cond 6: Value'
-            value: 0
-          - name: 'Cond 7: Value'
-            value: 0
-          - name: 'Cond 8: Value'
-            value: 0
-          - name: 'Cond 9: Value'
-            value: 0
-          - name: 'Cond 10: Value'
-            value: 0
-          - name: 'Cond 1: Change Type'
-            value: 0
-          - name: 'Cond 2: Change Type'
-            value: 0
-          - name: 'Cond 3: Change Type'
-            value: 0
-          - name: 'Cond 4: Change Type'
-            value: 0
-          - name: 'Cond 5: Change Type'
-            value: 0
-          - name: 'Cond 6: Change Type'
-            value: 0
-          - name: 'Cond 7: Change Type'
-            value: 0
-          - name: 'Cond 8: Change Type'
-            value: 0
-          - name: 'Cond 9: Change Type'
-            value: 0
-          - name: 'Cond 10: Change Type'
+          - name: Condition ID
             value: 0
           - name: Item Weight
             value: 0
+          - name: Affix ID
+            value: 0
+          - name: Socket ID
+            value: 0
+          - name: Meter 2 ID
+            value: 1
         floats:
           visible: 0
           items: []
@@ -634,7 +194,75 @@ MonoBehaviour:
             value: 0
         strings:
           visible: 0
-          items: []
+          items:
+          - name: Money ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Money Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat ID Mask (bools)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Value Mask (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter ID Mask (bools)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Value Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Type Mask (ints)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Element ID Mask (bools)
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Conditions ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Percentage Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Affix ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Socket ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Type Mask (drop-down, int)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -653,277 +281,23 @@ MonoBehaviour:
           items:
           - name: Variance
             value: 0
-          - name: Money Count
+          - name: Money ID
             value: 0
-          - name: 'Money 1: ID'
+          - name: Stats ID
             value: 0
-          - name: 'Money 2: ID'
+          - name: Meter ID
             value: 0
-          - name: 'Money 3: ID'
+          - name: Element ID
             value: 0
-          - name: 'Money 4: ID'
-            value: 0
-          - name: 'Money 5: ID'
-            value: 0
-          - name: 'Money 6: ID'
-            value: 0
-          - name: 'Money 7: ID'
-            value: 0
-          - name: 'Money 8: ID'
-            value: 0
-          - name: 'Money 9: ID'
-            value: 0
-          - name: 'Money 10: ID'
-            value: 0
-          - name: 'Money 1: Value'
-            value: 0
-          - name: 'Money 2: Value'
-            value: 0
-          - name: 'Money 3: Value'
-            value: 0
-          - name: 'Money 4: Value'
-            value: 0
-          - name: 'Money 5: Value'
-            value: 0
-          - name: 'Money 6: Value'
-            value: 0
-          - name: 'Money 7: Value'
-            value: 0
-          - name: 'Money 8: Value'
-            value: 0
-          - name: 'Money 9: Value'
-            value: 0
-          - name: 'Money 10: Value'
-            value: 0
-          - name: Stat Count
-            value: 0
-          - name: 'Stat 1: ID'
-            value: 0
-          - name: 'Stat 2: ID'
-            value: 0
-          - name: 'Stat 3: ID'
-            value: 0
-          - name: 'Stat 4: ID'
-            value: 0
-          - name: 'Stat 5: ID'
-            value: 0
-          - name: 'Stat 6: ID'
-            value: 0
-          - name: 'Stat 7: ID'
-            value: 0
-          - name: 'Stat 8: ID'
-            value: 0
-          - name: 'Stat 9: ID'
-            value: 0
-          - name: 'Stat 10: ID'
-            value: 0
-          - name: 'Stat 1: Value'
-            value: 0
-          - name: 'Stat 2: Value'
-            value: 0
-          - name: 'Stat 3: Value'
-            value: 0
-          - name: 'Stat 4: Value'
-            value: 0
-          - name: 'Stat 5: Value'
-            value: 0
-          - name: 'Stat 6: Value'
-            value: 0
-          - name: 'Stat 7: Value'
-            value: 0
-          - name: 'Stat 8: Value'
-            value: 0
-          - name: 'Stat 9: Value'
-            value: 0
-          - name: 'Stat 10: Value'
-            value: 0
-          - name: 'Stat 1: Change Type'
-            value: 0
-          - name: 'Stat 2: Change Type'
-            value: 0
-          - name: 'Stat 3: Change Type'
-            value: 0
-          - name: 'Stat 4: Change Type'
-            value: 0
-          - name: 'Stat 5: Change Type'
-            value: 0
-          - name: 'Stat 6: Change Type'
-            value: 0
-          - name: 'Stat 7: Change Type'
-            value: 0
-          - name: 'Stat 8: Change Type'
-            value: 0
-          - name: 'Stat 9: Change Type'
-            value: 0
-          - name: 'Stat 10: Change Type'
-            value: 0
-          - name: Meter Count
-            value: 0
-          - name: 'Meter 1: ID'
-            value: 0
-          - name: 'Meter 2: ID'
-            value: 0
-          - name: 'Meter 3: ID'
-            value: 0
-          - name: 'Meter 4: ID'
-            value: 0
-          - name: 'Meter 5: ID'
-            value: 0
-          - name: 'Meter 6: ID'
-            value: 0
-          - name: 'Meter 7: ID'
-            value: 0
-          - name: 'Meter 8: ID'
-            value: 0
-          - name: 'Meter 9: ID'
-            value: 0
-          - name: 'Meter 10: ID'
-            value: 0
-          - name: 'Meter 1: Value'
-            value: 0
-          - name: 'Meter 2: Value'
-            value: 0
-          - name: 'Meter 3: Value'
-            value: 0
-          - name: 'Meter 4: Value'
-            value: 0
-          - name: 'Meter 5: Value'
-            value: 0
-          - name: 'Meter 6: Value'
-            value: 0
-          - name: 'Meter 7: Value'
-            value: 0
-          - name: 'Meter 8: Value'
-            value: 0
-          - name: 'Meter 9: Value'
-            value: 0
-          - name: 'Meter 10: Value'
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 0
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
-          - name: Element Count
-            value: 0
-          - name: 'Elem 1: ID'
-            value: 0
-          - name: 'Elem 2: ID'
-            value: 0
-          - name: 'Elem 3: ID'
-            value: 0
-          - name: 'Elem 4: ID'
-            value: 0
-          - name: 'Elem 5: ID'
-            value: 0
-          - name: 'Elem 6: ID'
-            value: 0
-          - name: 'Elem 7: ID'
-            value: 0
-          - name: 'Elem 8: ID'
-            value: 0
-          - name: 'Elem 9: ID'
-            value: 0
-          - name: 'Elem 10: ID'
-            value: 0
-          - name: 'Elem 1: Value'
-            value: 0
-          - name: 'Elem 2: Value'
-            value: 0
-          - name: 'Elem 3: Value'
-            value: 0
-          - name: 'Elem 4: Value'
-            value: 0
-          - name: 'Elem 5: Value'
-            value: 0
-          - name: 'Elem 6: Value'
-            value: 0
-          - name: 'Elem 7: Value'
-            value: 0
-          - name: 'Elem 8: Value'
-            value: 0
-          - name: 'Elem 9: Value'
-            value: 0
-          - name: 'Elem 10: Value'
-            value: 0
-          - name: Cond Count
-            value: 0
-          - name: 'Cond 1: ID'
-            value: 0
-          - name: 'Cond 2: ID'
-            value: 0
-          - name: 'Cond 3: ID'
-            value: 0
-          - name: 'Cond 4: ID'
-            value: 0
-          - name: 'Cond 5: ID'
-            value: 0
-          - name: 'Cond 6: ID'
-            value: 0
-          - name: 'Cond 7: ID'
-            value: 0
-          - name: 'Cond 8: ID'
-            value: 0
-          - name: 'Cond 9: ID'
-            value: 0
-          - name: 'Cond 10: ID'
-            value: 0
-          - name: 'Cond 1: Value'
-            value: 0
-          - name: 'Cond 2: Value'
-            value: 0
-          - name: 'Cond 3: Value'
-            value: 0
-          - name: 'Cond 4: Value'
-            value: 0
-          - name: 'Cond 5: Value'
-            value: 0
-          - name: 'Cond 6: Value'
-            value: 0
-          - name: 'Cond 7: Value'
-            value: 0
-          - name: 'Cond 8: Value'
-            value: 0
-          - name: 'Cond 9: Value'
-            value: 0
-          - name: 'Cond 10: Value'
-            value: 0
-          - name: 'Cond 1: Change Type'
-            value: 0
-          - name: 'Cond 2: Change Type'
-            value: 0
-          - name: 'Cond 3: Change Type'
-            value: 0
-          - name: 'Cond 4: Change Type'
-            value: 0
-          - name: 'Cond 5: Change Type'
-            value: 0
-          - name: 'Cond 6: Change Type'
-            value: 0
-          - name: 'Cond 7: Change Type'
-            value: 0
-          - name: 'Cond 8: Change Type'
-            value: 0
-          - name: 'Cond 9: Change Type'
-            value: 0
-          - name: 'Cond 10: Change Type'
+          - name: Condition ID
             value: 0
           - name: Item Weight
+            value: 0
+          - name: Affix ID
+            value: 0
+          - name: Socket ID
+            value: 0
+          - name: Meter 2 ID
             value: 0
         floats:
           visible: 0
@@ -937,7 +311,75 @@ MonoBehaviour:
             value: 0
         strings:
           visible: 0
-          items: []
+          items:
+          - name: Money ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Money Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Element ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Conditions ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask (drop-down, ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Percentage Mask (drop-down, ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Affix ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Socket ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Type Mask (drop-down, int)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []

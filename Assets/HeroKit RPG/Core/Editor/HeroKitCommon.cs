@@ -274,6 +274,15 @@ namespace HeroKit.RpgEditor
             return itemsList;
         }
 
+        public static DropDownValues showList()
+        {
+            // list of stat change types              
+            string[] changeType = { "Show All", "Show Selected", "Show Not Selected" };
+            DropDownValues itemsList = new DropDownValues();
+            itemsList.setValues("", changeType);
+            return itemsList;
+        }
+
         //-------------------------------------------
         // Modify data in a menu
         //-------------------------------------------
@@ -593,378 +602,304 @@ namespace HeroKit.RpgEditor
 
 
         //-------------------------------------------
-        // Stats for items and attributes
+        // Checkbox, Item name, item value (int)
         //-------------------------------------------
-
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
-        public static void DrawMonetaryValue(List<IntField> intFields_att, List<BoolField> boolFields_att, string title="Set monetary value")
+        public static void DrawItemValue(List<StringField> stringFields, List<IntField> intFields, string title, 
+                                         int boolMaskID, int intMaskID, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         HeroObject database)
         {
+            DropDownValues itemList = HeroKitCommon.databaseList(database);
+
+            // resize string if things have changed
+            stringFields[boolMaskID].value = HeroKitCommon.ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[intMaskID].value = HeroKitCommon.ResizeIntStringLarge(stringFields[intMaskID].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = HeroKitCommon.CreateIntArrayLarge(stringFields[intMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            int countField = 1;
-            int itemMaxCount = 10;
-
-            // title bar
+            // Line 1: types allowed... [hide or show]
             SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
             SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
             SimpleLayout.EndHorizontal();
 
-            // list of values
-            string[] items = new string[HeroKitCommon.moneyDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.moneyDatabase.propertiesList.properties.Count; i++)
+            if (showItem)
             {
-                items[i] = HeroKitCommon.moneyDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues moneyList = new DropDownValues();
-            moneyList.setValues("", items);
-
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
-
                 SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, moneyList, 0, 150);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeID].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getOnInComboarray(bitArray, intArray, itemList);
             }
 
             SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = HeroKitCommon.CreateBitString(bitArray);
+            stringFields[intMaskID].value = HeroKitCommon.CreateIntStringLarge(intArray);
         }
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
-        public static void DrawMeters(List<IntField> intFields_att, List<BoolField> boolFields_att, string title="Change meters", int startIndex = 53)
+        public static void DrawMoneyValue(List<StringField> stringFields, List<IntField> intFields, string title = "Worth of item")
         {
+            DrawItemValue(stringFields, intFields, title, 0, 1, 1, showMoney, toggleMoney, HeroKitCommon.moneyDatabase);
+        }
+        public static void DrawStatsValue(List<StringField> stringFields, List<IntField> intFields, string title = "Change stats")
+        {
+            DrawItemValue(stringFields, intFields, title, 2, 3, 2, showStats, toggleStats, HeroKitCommon.statsDatabase);
+        }
+
+        //-------------------------------------------
+        // Checkbox, Item name, item value (int), drop-down list
+        //-------------------------------------------
+        public static void DrawItemValueB(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int intMaskID, int selectMaskID, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         DropDownValues itemList, DropDownValues selectionList, string intFieldLabel="")
+        {
+            // resize string if things have changed
+            stringFields[boolMaskID].value = ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[intMaskID].value = ResizeIntStringLarge(stringFields[intMaskID].value, itemList.items.Length);
+            stringFields[selectMaskID].value = ResizeBitString(stringFields[selectMaskID].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = CreateIntArrayLarge(stringFields[intMaskID].value);
+            int[] selectArray = CreateIntArray(stringFields[selectMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            int countField = startIndex;
-            int itemMaxCount = 10;
-
-            // title bar
+            // Line 1: types allowed... [hide or show]
             SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
             SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
             SimpleLayout.EndHorizontal();
 
-            // list of meters
-            string[] items = new string[HeroKitCommon.meterDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.meterDatabase.propertiesList.properties.Count; i++)
+            if (showItem)
             {
-                items[i] = HeroKitCommon.meterDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues meterList = new DropDownValues();
-            meterList.setValues("", items);           
+                SimpleLayout.Line();
 
-            // list of stat change types
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeID].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getDropdownComboarrayB(bitArray, intArray, selectArray, itemList, selectionList, intFieldLabel);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = CreateBitString(bitArray);
+            stringFields[intMaskID].value = CreateIntStringLarge(intArray);
+            stringFields[selectMaskID].value = CreateIntString(selectArray);
+        }
+        public static void DrawMeterValue(List<StringField> stringFields, List<IntField> intFields, string title = "Change meters")
+        {
             DropDownValues changeList = new DropDownValues();
             string[] changeItems = { "value", "% of value", "max value" };
             changeList.setValues("", changeItems);
 
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
+            DropDownValues meterList = databaseList(meterDatabase);
 
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, meterList, 0, 150);
-                    intFields_att[s + itemMaxCount * 2 + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount * 2 + i].value, changeList, 0, 100);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
-            }
-
-            SimpleLayout.EndVertical();
+            DrawItemValueB(stringFields, intFields, title, 4, 5, 6, 3, showMeters, toggleMeters, meterList, changeList);
         }
-        public static void DrawMetersB(List<IntField> intFields_att, List<BoolField> boolFields_att, string title = "Change meters")
+        public static void DrawMeterValue_Conditions(List<StringField> stringFields, List<IntField> intFields, string title = "Change meters")
         {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            int countField = 53;
-            int itemMaxCount = 10;
-
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
-            SimpleLayout.Label(title);
-            SimpleLayout.EndHorizontal();
-
-            // list of meters
-            string[] items = new string[HeroKitCommon.meterDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.meterDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.meterDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues meterList = new DropDownValues();
-            meterList.setValues("", items);
-
-            // list of stat change types
             DropDownValues changeList = new DropDownValues();
-            string[] changeItems = { "temporary", "permanent" };
+            string[] changeItems = { "permanent", "temporary" };
             changeList.setValues("", changeItems);
 
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
+            DropDownValues meterList = databaseList(meterDatabase);
 
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, meterList, 0, 150);
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    SimpleLayout.Label("%");
-                    SimpleLayout.Space();
-                    intFields_att[s + itemMaxCount * 2 + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount * 2 + i].value, changeList, 0, 100);
-                    SimpleLayout.EndHorizontal();
-                }
-            }
-
-            SimpleLayout.EndVertical();
+            DrawItemValueB(stringFields, intFields, title, 4, 5, 6, 3, showMeters, toggleMeters, meterList, changeList, "%");
         }
-        public static void DrawMetersC(List<IntField> intFields_att, List<BoolField> boolFields_att, string title = "Change meters", int startIndex = 53)
+        public static void DrawStatValue_Conditions(List<StringField> stringFields, List<IntField> intFields, string title = "Change stats")
         {
-            // meter & formula
-
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            int countField = startIndex;
-            int itemMaxCount = 10;
-
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
-            SimpleLayout.Label(title);
-            SimpleLayout.EndHorizontal();
-
-            // list of meters
-            string[] items = new string[HeroKitCommon.meterDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.meterDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.meterDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues meterList = new DropDownValues();
-            meterList.setValues("", items);
-
-            string[] formulas = new string[HeroKitCommon.formulaDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.formulaDatabase.propertiesList.properties.Count; i++)
-            {
-                formulas[i] = HeroKitCommon.formulaDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues formulaList = new DropDownValues();
-            formulaList.setValues("", formulas);
-
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
-
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, meterList, 0, 150);
-                    SimpleLayout.Space();
-                    SimpleLayout.Label("Formula:");
-                    intFields_att[s + itemMaxCount * 2 + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount * 2 + i].value, formulaList, 0, 150);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
-            }
-
-            SimpleLayout.EndVertical();
-        }
-
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
-        public static void DrawStats(List<IntField> intFields_att, List<BoolField> boolFields_att, string title="Change stats")
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            int countField = 22;
-            int itemMaxCount = 10;
-
-            // title bar
-            SimpleLayout.BeginHorizontal();                      
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
-            SimpleLayout.Label(title);
-            SimpleLayout.EndHorizontal();
-
-            // list of modifiers
-            string[] items = new string[HeroKitCommon.statsDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.statsDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.statsDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues statList = new DropDownValues();
-            statList.setValues("", items);
-
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
-
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, statList, 0, 150);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
-            }
-
-            SimpleLayout.EndVertical();
-        }
-        public static void DrawStatsB(List<IntField> intFields_att, List<BoolField> boolFields_att, string title = "Change stats")
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            int countField = 22;
-            int itemMaxCount = 10;
-
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
-            SimpleLayout.Label(title);
-            SimpleLayout.EndHorizontal();
-
-            // list of modifiers
-            string[] items = new string[HeroKitCommon.statsDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.statsDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.statsDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues statList = new DropDownValues();
-            statList.setValues("", items);
-
-            // list of stat change types
             DropDownValues changeList = new DropDownValues();
-            string[] changeItems = { "temporary", "permanent" };
+            string[] changeItems = { "permanent", "temporary" };
             changeList.setValues("", changeItems);
 
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
+            DropDownValues stats = databaseList(statsDatabase);
 
+            DrawItemValueB(stringFields, intFields, title, 2, 3, 13, 2, showStats, toggleStats, stats, changeList, "%");
+        }
+        public static void DrawMeterValue_Abilities(List<StringField> stringFields, List<IntField> intFields, string title = "Change meters on target")
+        {
+            DropDownValues formulas = databaseList(formulaDatabase); 
+            DropDownValues meters = databaseList(meterDatabase);
+
+            DrawItemValueB(stringFields, intFields, title, 14, 15, 16, 9, showMeters2, toggleMeters2, meters, formulas, "points | formula:");
+        }
+
+        //-------------------------------------------
+        // Checkbox, Item name
+        //-------------------------------------------
+        public static void DrawItemValueC(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         DropDownValues itemList)
+        {
+            // resize string if things have changed
+            stringFields[boolMaskID].value = ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = CreateBitArray(stringFields[boolMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
                 SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, statList, 0, 150);
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.IntField(intFields_att[s + itemMaxCount + i].value, 100);
-                    SimpleLayout.Label("%");
-                    SimpleLayout.Space();
-                    intFields_att[s + itemMaxCount * 2 + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount * 2 + i].value, changeList, 0, 100);
-                    SimpleLayout.EndHorizontal();
-                }
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeID].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getDropdownComboarrayC(bitArray, itemList);
             }
 
             SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = CreateBitString(bitArray);
+        }
+        public static void DrawElementValue(List<StringField> stringFields, List<IntField> intFields, string title = "Attach elements to this item")
+        {
+            DropDownValues elements = databaseList(elementDatabase);
+
+            DrawItemValueC(stringFields, intFields, title, 7, 4, showElements, toggleElements, elements);
+        }
+        public static void DrawAffixValue(List<StringField> stringFields, List<IntField> intFields, string title = "Attach affixes to this item")
+        {
+            DropDownValues affix = databaseList(affixDatabase);
+
+            DrawItemValueC(stringFields, intFields, title, 11, 7, showAffix, toggleAffix, affix);
+        }
+        public static void DrawSocketsValue(List<StringField> stringFields, List<IntField> intFields, string title = "Attach sockets to this item")
+        {
+            DropDownValues sockets = databaseList(affixDatabase);
+
+            DrawItemValueC(stringFields, intFields, title, 12, 8, showSockets, toggleSockets, sockets);
         }
 
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
-        public static void DrawElements(List<IntField> intFields_att, List<BoolField> boolFields_att, string title = "Change elements", bool showVal = true)
+        //-------------------------------------------
+        // Checkbox, Item name, drop-down list a, drop-down list b
+        //-------------------------------------------
+        public static void DrawItemValueD(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int selectMaskIDA, int selectMaskIDB, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         DropDownValues itemList, DropDownValues selectionListA, DropDownValues selectionListB)
         {
+            // resize string if things have changed
+            stringFields[boolMaskID].value = ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[selectMaskIDA].value = ResizeIntStringLarge(stringFields[selectMaskIDA].value, itemList.items.Length);
+            stringFields[selectMaskIDB].value = ResizeIntStringLarge(stringFields[selectMaskIDB].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = CreateIntArrayLarge(stringFields[selectMaskIDA].value);
+            int[] selectArray = CreateIntArrayLarge(stringFields[selectMaskIDB].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            int countField = 84;
-            int itemMaxCount = 10;
-
-            // title bar
+            // Line 1: types allowed... [hide or show]
             SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
             SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
             SimpleLayout.EndHorizontal();
 
-            // list of modifiers
-            string[] items = new string[HeroKitCommon.elementDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.elementDatabase.propertiesList.properties.Count; i++)
+            if (showItem)
             {
-                items[i] = HeroKitCommon.elementDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues elementList = new DropDownValues();
-            elementList.setValues("", items);
-            
-            // list of stat change types
-            DropDownValues changeTypeValues = new DropDownValues();
-            string[] changeType = { "1-Very weak against this",
-                                    "2-Weak against this",
-                                    "3-Strong agains this",
-                                    "4-Very strong against this"
-                                    };
-            changeTypeValues.setValues("", changeType);
-
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
-
                 SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, elementList, 0, 150);
-                    if (showVal) intFields_att[s + itemMaxCount + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount + i].value, changeTypeValues, 0, 150);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeID].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getDropdownComboarrayD(bitArray, intArray, selectArray, itemList, selectionListA, selectionListB);
             }
 
             SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = CreateBitString(bitArray);
+            stringFields[selectMaskIDA].value = CreateIntStringLarge(intArray);
+            stringFields[selectMaskIDB].value = CreateIntStringLarge(selectArray);
         }
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
-        public static void DrawConditions(List<IntField> intFields_att, List<BoolField> boolFields_att, string title = "Change conditions", string remove = "Remove all conditions")
+        public static void DrawConditionsValue(List<StringField> stringFields, List<IntField> intFields, string title = "Change conditions")
         {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            int countField = 105;
-            int itemMaxCount = 10;
-
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields_att, countField, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields_att, countField, Button.StyleDefault, 15);
-            SimpleLayout.Label(title);
-            SimpleLayout.Space();          
-            boolFields_att[0].value = SimpleLayout.BoolField(boolFields_att[0].value);
-            SimpleLayout.Label(remove);
-            SimpleLayout.EndHorizontal();
-            
-            // list of modifiers
-            string[] items = new string[HeroKitCommon.conditionDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.conditionDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.conditionDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues condList = new DropDownValues();
-            condList.setValues("", items);
+            DropDownValues conditions = databaseList(conditionDatabase);
 
             // list of stat change types
-            DropDownValues changeTypeValues = new DropDownValues();
-            string[] changeType = { "ON", "OFF" };
-            changeTypeValues.setValues("", changeType);
+            DropDownValues changeType = new DropDownValues();
+            string[] change = { "ON", "OFF" };
+            changeType.setValues("", change);
 
             // list of stat change types
             DropDownValues changePercentage = new DropDownValues();
@@ -972,24 +907,61 @@ namespace HeroKit.RpgEditor
                                     "50% success", "40% success", "30% success", "20% success", "10% success" };
             changePercentage.setValues("", percentage);
 
-            if (intFields_att[countField].value > 0)
-            {
-                int s = countField + 1;
-
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields_att[countField].value; i++)
-                {
-                    SimpleLayout.BeginHorizontal();
-                    intFields_att[s + i].value = SimpleLayout.DropDownList(intFields_att[s + i].value, condList, 0, 150);
-                    intFields_att[s + itemMaxCount + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount + i].value, changeTypeValues, 0, 150);
-                    intFields_att[s + itemMaxCount * 2 + i].value = SimpleLayout.DropDownList(intFields_att[s + itemMaxCount * 2 + i].value, changePercentage, 0, 100);
-                    SimpleLayout.Space();
-                    SimpleLayout.EndHorizontal();
-                }
-            }
-
-            SimpleLayout.EndVertical();
+            DrawItemValueD(stringFields, intFields, title, 8, 9, 10, 5, showConditions, toggleConditions, conditions, changeType, changePercentage);
         }
+
+
+
+        /// <summary>
+        /// Draw when item can be used
+        /// </summary>
+        private static bool showStats = false;
+        private static void toggleStats()
+        {
+            showStats = !showStats;
+        }
+
+        private static bool showMeters = false;
+        private static void toggleMeters()
+        {
+            showMeters = !showMeters;
+        }
+        private static bool showMeters2 = false;
+        private static void toggleMeters2()
+        {
+            showMeters2 = !showMeters2;
+        }
+
+        private static bool showElements = false;
+        private static void toggleElements()
+        {
+            showElements = !showElements;
+        }
+
+        private static bool showConditions = false;
+        private static void toggleConditions()
+        {
+            showConditions = !showConditions;
+        }
+
+        private static bool showMoney = false;
+        private static void toggleMoney()
+        {
+            showMoney = !showMoney;
+        }
+
+        private static bool showAffix = false;
+        private static void toggleAffix()
+        {
+            showAffix = !showAffix;
+        }
+
+        private static bool showSockets = false;
+        private static void toggleSockets()
+        {
+            showSockets = !showSockets;
+        }
+
         /// <summary>
         /// Draw when item can be used
         /// </summary>
@@ -1003,7 +975,6 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndHorizontal();
             SimpleLayout.EndVertical();
         }
-
         /// <summary>
         /// Draw item type
         /// </summary>
@@ -1011,7 +982,7 @@ namespace HeroKit.RpgEditor
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.BeginHorizontal();     
-            intFields_att[136].value = SimpleLayout.IntField(intFields_att[136].value, 100);
+            intFields_att[6].value = SimpleLayout.IntField(intFields_att[6].value, 100);
             SimpleLayout.Label(title);
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
@@ -1041,8 +1012,6 @@ namespace HeroKit.RpgEditor
             if (intFields_att[id].value > 0)
                 intFields_att[id].value--;
         }
-
-
 
         // make bit = 0
         static int ZeroBit(int value, int position)
@@ -1274,18 +1243,37 @@ namespace HeroKit.RpgEditor
             }
         }
         // generate a list of items of a specific type in bit array
-        public static void getOnInBitarray(BitArray bitArray, DropDownValues items, int itemType, HeroObject database, int itemTypeSlot)
+        public static void getOnInBitarray(BitArray bitArray, DropDownValues items, int itemType, 
+                                           HeroObject database, int itemTypeSlot, int show)
         {
             for (int i = 0; i < bitArray.Length; i++)
             {
                 if (database.propertiesList.properties[i].itemProperties.ints.items[itemTypeSlot].value == itemType)
                 {
-                    SimpleLayout.BeginHorizontal();
-                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
-                    SimpleLayout.Label(items.items[i]);
-                    SimpleLayout.EndHorizontal();
+                    // draw all
+                    if (show <= 1)
+                    {
+                        drawBitarrayField(bitArray, i, items);
+                    }
+                    // draw selected
+                    if (show == 2 && bitArray[i])
+                    {
+                        drawBitarrayField(bitArray, i, items);
+                    }
+                    // draw un-selected
+                    if (show == 3 && !bitArray[i])
+                    {
+                        drawBitarrayField(bitArray, i, items);
+                    }
                 }
             }
+        }
+        private static void drawBitarrayField(BitArray bitArray, int bitID, DropDownValues items)
+        {
+            SimpleLayout.BeginHorizontal();
+            bitArray[bitID] = SimpleLayout.BoolField(bitArray[bitID]);
+            SimpleLayout.Label(items.items[bitID]);
+            SimpleLayout.EndHorizontal();
         }
 
 
@@ -1385,5 +1373,83 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
+
+        // generate a list of items in bit array (checkbox, name, drop down list)
+        public static void getDropdownComboarray(BitArray bitArray, int[] intArray, DropDownValues items, DropDownValues listItems)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Space(4);
+                    intArray[i] = SimpleLayout.DropDownList(intArray[i], listItems, 0, 200);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.Space();
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+
+        // generate a list of items in bit array (checkbox, item name, int field, drop-down list
+        public static void getDropdownComboarrayB(BitArray bitArray, int[] intArray, int[] choiceArray, 
+                                                  DropDownValues items, DropDownValues listItems, string intFieldLabel)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Space(4);
+                    intArray[i] = SimpleLayout.IntField(intArray[i]);
+                    if (intFieldLabel != "") SimpleLayout.Label(intFieldLabel);
+                    SimpleLayout.Space(4);
+                    choiceArray[i] = SimpleLayout.DropDownList(choiceArray[i], listItems, 0, 100);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.Space();
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+
+        // generate a list of items in bit array (checkbox, item name)
+        public static void getDropdownComboarrayC(BitArray bitArray, DropDownValues items)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Space(4);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.Space();
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+
+        // generate a list of items in bit array (checkbox, item name, drop-down list, drop-down list
+        public static void getDropdownComboarrayD(BitArray bitArray, int[] choiceArrayA, int[] choiceArrayB, DropDownValues items, DropDownValues choiceItemsA, DropDownValues choiceItemsB)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (bitArray[i])
+                {
+                    SimpleLayout.BeginHorizontal();
+                    bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+                    SimpleLayout.Space(4);
+                    choiceArrayA[i] = SimpleLayout.DropDownList(choiceArrayA[i], choiceItemsA, 0, 100);
+                    SimpleLayout.Space(4);
+                    choiceArrayB[i] = SimpleLayout.DropDownList(choiceArrayB[i], choiceItemsB, 0, 100);
+                    SimpleLayout.Label(items.items[i]);
+                    SimpleLayout.Space();
+                    SimpleLayout.EndHorizontal();
+                }
+            }
+        }
+
     }
 }

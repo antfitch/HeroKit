@@ -142,22 +142,27 @@ namespace HeroKit.RpgEditor
         {
             DrawItemType();
             BasicFields();
-            HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
+            HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
             HeroKitCommon.DrawItemWeight(intFields_att);
             DrawAttackSpeed();
             HeroKitCommon.DrawStackItems(boolFields_att);
             DrawIsTwoHanded();            
             DrawUsesAmmo();
             SimpleLayout.Line();
-            DrawAffixes();
-            DrawSockets();
+            HeroKitCommon.DrawAffixValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawSocketsValue(stringFields_att, intFields_att);
             SimpleLayout.Line();
-            HeroKitCommon.DrawMeters(intFields_att, boolFields_att, "Change meters (on attack target)");
-            HeroKitCommon.DrawStats(intFields_att, boolFields_att, "Change stats (on character who has this weapon)");           
+            HeroKitCommon.DrawMeterValue(stringFields_att, intFields_att, "Change meters (on attack target)");
+            //HeroKitCommon.DrawMeters(intFields_att, boolFields_att, "Change meters (on attack target)");
+            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Change stats (on character who has this weapon)");
+            //HeroKitCommon.DrawStats(intFields_att, boolFields_att, "Change stats (on character who has this weapon)");           
             //HeroKitCommon.DrawExtras(intFields_att, "Add variance");
             SimpleLayout.Line();
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
+            //HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this item");
+            //HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
             SimpleLayout.Line();
             DrawActions(heroObject.propertiesList.properties);
         }
@@ -167,16 +172,7 @@ namespace HeroKit.RpgEditor
         private static void DrawItemType()
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // item type field
-            string[] items = new string[HeroKitCommon.weaponTypeDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.weaponTypeDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.weaponTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues itemList = new DropDownValues();
-            itemList.setValues("", items);
-
+            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.weaponTypeDatabase);
             SimpleLayout.Label("Weapon Type" + ":");
             intFields[14].value = SimpleLayout.DropDownList(intFields[14].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
             SimpleLayout.EndVertical();
@@ -246,13 +242,7 @@ namespace HeroKit.RpgEditor
                 SimpleLayout.Line();
 
                 // item type field
-                string[] items = new string[HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties.Count];
-                for (int i = 0; i < HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties.Count; i++)
-                {
-                    items[i] = HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-                }
-                DropDownValues itemList = new DropDownValues();
-                itemList.setValues("", items);
+                DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.ammunitionTypeDatabase);
 
                 SimpleLayout.BeginHorizontal();
                 intFields[16].value = SimpleLayout.DropDownList(intFields[16].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
@@ -269,74 +259,7 @@ namespace HeroKit.RpgEditor
 
             SimpleLayout.EndVertical();
         }
-        /// <summary>
-        /// Draw affixes
-        /// </summary>
-        private static void DrawAffixes()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields, 0, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields, 0, Button.StyleDefault, 15);
-            SimpleLayout.Label("Attach affixes");
-            SimpleLayout.EndHorizontal();
-
-            // list of affixes
-            string[] items = new string[HeroKitCommon.affixDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.affixDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.affixDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues affixList = new DropDownValues();
-            affixList.setValues("", items);
-
-            if (intFields[0].value > 0)
-            {
-                int a = 1;
-
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields[0].value; i++)
-                    intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
-            }
-
-            SimpleLayout.EndVertical();
-        }
-        /// <summary>
-        /// Draw sockets
-        /// </summary>
-        private static void DrawSockets()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields, 7, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields, 7, Button.StyleDefault, 15);
-            SimpleLayout.Label("Attach sockets");
-            SimpleLayout.EndHorizontal();
-
-            // list of affixes
-            string[] items = new string[HeroKitCommon.affixDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.affixDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.affixDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues affixList = new DropDownValues();
-            affixList.setValues("", items);
-
-            if (intFields[7].value > 0)
-            {
-                int a = 8;
-
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields[7].value; i++)
-                    intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
-            }
-
-            SimpleLayout.EndVertical();
-        }
         /// <summary>
         /// Draw Actions
         /// </summary>

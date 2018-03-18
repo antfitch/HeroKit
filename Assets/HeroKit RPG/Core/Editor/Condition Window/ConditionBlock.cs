@@ -115,10 +115,10 @@ namespace HeroKit.RpgEditor
             DrawCantBeAttacked();
             DrawCantEvade();
             SimpleLayout.Line();
-            HeroKitCommon.DrawMetersB(intFields_att, boolFields_att);
-            HeroKitCommon.DrawStatsB(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Change effect of elements on the character");
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att, "Change other conditions", "Remove all other conditions");  
+            HeroKitCommon.DrawMeterValue_Conditions(stringFields_att, intFields_att);
+            HeroKitCommon.DrawStatValue_Conditions(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Change effect of elements on the character");
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att, "Change other conditions");
             SimpleLayout.Line();
             DrawTimerEndCond();
             DrawAttackEndCond();

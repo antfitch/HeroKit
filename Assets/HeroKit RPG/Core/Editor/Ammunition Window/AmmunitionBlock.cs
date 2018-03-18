@@ -142,12 +142,16 @@ namespace HeroKit.RpgEditor
         {
             DrawItemType();
             BasicFields();
-            HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
+            HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
             HeroKitCommon.DrawItemWeight(intFields_att);
             SimpleLayout.Line();
-            HeroKitCommon.DrawStats(intFields_att, boolFields_att);           
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
+            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawStats(intFields_att, boolFields_att);           
+            //HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this item");
+            //HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
             SimpleLayout.Line();
             DrawActions(heroObject.propertiesList.properties);
         }
@@ -157,16 +161,7 @@ namespace HeroKit.RpgEditor
         private static void DrawItemType()
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // item type field
-            string[] items = new string[HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.ammunitionTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues itemList = new DropDownValues();
-            itemList.setValues("", items);
-
+            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.ammunitionTypeDatabase);
             SimpleLayout.Label("Ammunition Type" + ":");
             intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
             SimpleLayout.EndVertical();

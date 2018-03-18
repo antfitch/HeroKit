@@ -142,19 +142,19 @@ namespace HeroKit.RpgEditor
         {
             DrawItemType();
             BasicFields();
-            HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
+            HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawItemWeight(intFields_att);
             HeroKitCommon.DrawStackItems(boolFields_att);
             SimpleLayout.Line();
-            DrawAffixes();
-            DrawSockets();
+            HeroKitCommon.DrawAffixValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawSocketsValue(stringFields_att, intFields_att);
             SimpleLayout.Line();
-            HeroKitCommon.DrawMeters(intFields_att, boolFields_att);
-            HeroKitCommon.DrawStats(intFields_att, boolFields_att);           
+            HeroKitCommon.DrawMeterValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawExtras(intFields_att);
             SimpleLayout.Line();
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att);
             SimpleLayout.Line();
             DrawActions(heroObject.propertiesList.properties);
         }
@@ -164,16 +164,7 @@ namespace HeroKit.RpgEditor
         private static void DrawItemType()
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // item type field
-            string[] items = new string[HeroKitCommon.itemTypeDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.itemTypeDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.itemTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues itemList = new DropDownValues();
-            itemList.setValues("", items);
-
+            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.itemTypeDatabase);
             SimpleLayout.Label("Item Type" + ":");
             intFields[14].value = SimpleLayout.DropDownList(intFields[14].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
             SimpleLayout.EndVertical();
@@ -199,74 +190,66 @@ namespace HeroKit.RpgEditor
 
             SimpleLayout.EndVertical();
         }
-        /// <summary>
-        /// Draw affixes
-        /// </summary>
-        private static void DrawAffixes()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields, 0, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields, 0, Button.StyleDefault, 15);
-            SimpleLayout.Label("Attach affixes");
-            SimpleLayout.EndHorizontal();
 
-            // list of affixes
-            string[] items = new string[HeroKitCommon.affixDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.affixDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.affixDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues affixList = new DropDownValues();
-            affixList.setValues("", items);
+        ///// <summary>
+        ///// Draw affixes
+        ///// </summary>
+        //private static void DrawAffixes()
+        //{
+        //    SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            if (intFields[0].value > 0)
-            {
-                int a = 1;
+        //    // title bar
+        //    SimpleLayout.BeginHorizontal();
+        //    SimpleLayout.Button("[+]", addItem, intFields, 0, Button.StyleDefault, 20);
+        //    SimpleLayout.Button("[–]", removeItem, intFields, 0, Button.StyleDefault, 15);
+        //    SimpleLayout.Label("Attach affixes");
+        //    SimpleLayout.EndHorizontal();
 
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields[0].value; i++)
-                    intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
-            }
+        //    // list of affixes
+        //    DropDownValues affixList = HeroKitCommon.databaseList(HeroKitCommon.affixDatabase);
 
-            SimpleLayout.EndVertical();
-        }
-        /// <summary>
-        /// Draw sockets
-        /// </summary>
-        private static void DrawSockets()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+        //    if (intFields[0].value > 0)
+        //    {
+        //        int a = 1;
 
-            // title bar
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Button("[+]", addItem, intFields, 7, Button.StyleDefault, 20);
-            SimpleLayout.Button("[–]", removeItem, intFields, 7, Button.StyleDefault, 15);
-            SimpleLayout.Label("Attach sockets");
-            SimpleLayout.EndHorizontal();
+        //        SimpleLayout.Line();
+        //        for (int i = 0; i < intFields[0].value; i++)
+        //            intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
+        //    }
 
-            // list of affixes
-            string[] items = new string[HeroKitCommon.affixDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.affixDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.affixDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues affixList = new DropDownValues();
-            affixList.setValues("", items);
+        //    SimpleLayout.EndVertical();
+        //}
+        ///// <summary>
+        ///// Draw sockets
+        ///// </summary>
+        //private static void DrawSockets()
+        //{
+        //    SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            if (intFields[7].value > 0)
-            {
-                int a = 8;
+        //    // title bar
+        //    SimpleLayout.BeginHorizontal();
+        //    SimpleLayout.Button("[+]", addItem, intFields, 7, Button.StyleDefault, 20);
+        //    SimpleLayout.Button("[–]", removeItem, intFields, 7, Button.StyleDefault, 15);
+        //    SimpleLayout.Label("Attach sockets");
+        //    SimpleLayout.EndHorizontal();
 
-                SimpleLayout.Line();
-                for (int i = 0; i < intFields[7].value; i++)
-                    intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
-            }
+        //    // list of affixes
+        //    DropDownValues affixList = HeroKitCommon.databaseList(HeroKitCommon.affixDatabase);
 
-            SimpleLayout.EndVertical();
-        }
+        //    if (intFields[7].value > 0)
+        //    {
+        //        int a = 8;
+
+        //        SimpleLayout.Line();
+        //        for (int i = 0; i < intFields[7].value; i++)
+        //            intFields[a + i].value = SimpleLayout.DropDownList(intFields[a + i].value, affixList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 225));
+        //    }
+
+        //    SimpleLayout.EndVertical();
+        //}
+
+
         /// <summary>
         /// Draw Actions
         /// </summary>

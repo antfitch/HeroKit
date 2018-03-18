@@ -135,8 +135,6 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndVertical();
         }
 
-
-
         /// <summary>
         /// Draw fields for an item
         /// </summary>
@@ -151,14 +149,11 @@ namespace HeroKit.RpgEditor
             DrawChainAttack();
             DrawExpMeter();
             SimpleLayout.Line();
-            HeroKitCommon.DrawMeters(intFields, boolFields, "Change meters (on caster)", 1);
+            HeroKitCommon.DrawMeterValue(stringFields_att, intFields_att, "Change meters (on caster)");
+            HeroKitCommon.DrawMeterValue_Abilities(stringFields_att, intFields_att);
             SimpleLayout.Line();
-            HeroKitCommon.DrawMetersC(intFields_att, boolFields_att, "Change meters (on target)");
-            //HeroKitCommon.DrawStats(intFields_att, boolFields_att, "Change stats (on target)");           
-            //HeroKitCommon.DrawExtras(intFields_att, "Add variance (on target)");
-            SimpleLayout.Line();
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this item");
             SimpleLayout.Line();
             DrawActions(heroObject.propertiesList.properties);
         }
@@ -168,16 +163,7 @@ namespace HeroKit.RpgEditor
         private static void DrawItemType()
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // item type field
-            string[] items = new string[HeroKitCommon.abilityTypeDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.abilityTypeDatabase.propertiesList.properties.Count; i++)
-            {
-                items[i] = HeroKitCommon.abilityTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues itemList = new DropDownValues();
-            itemList.setValues("", items);
-
+            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.abilityTypeDatabase);
             SimpleLayout.Label("Ability Type" + ":");
             intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
             SimpleLayout.EndVertical();
@@ -356,8 +342,6 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawTarget2()
         {
-            
-
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.BeginHorizontal();
             SimpleLayout.Label("Uses Ammunition" + ":");
@@ -441,15 +425,7 @@ namespace HeroKit.RpgEditor
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
-                // item type field
-                string[] items = new string[HeroKitCommon.abilityDatabase.propertiesList.properties.Count];
-                for (int i = 0; i < HeroKitCommon.abilityDatabase.propertiesList.properties.Count; i++)
-                {
-                    items[i] = HeroKitCommon.abilityDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-                }
-                DropDownValues itemList = new DropDownValues();
-                itemList.setValues("", items);
-
+                DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.abilityDatabase);
                 SimpleLayout.BeginHorizontal();
                 intFields[43].value = SimpleLayout.DropDownList(intFields[43].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
                 SimpleLayout.Label("Morph into...");

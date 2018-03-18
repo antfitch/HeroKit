@@ -31,6 +31,10 @@ MonoBehaviour:
         value: 0
       - name: Stats ID
         value: 0
+      - name: Stats Inc ID
+        value: 0
+      - name: Meter Inc ID
+        value: 0
     floats:
       visible: 0
       items: []
@@ -80,7 +84,23 @@ MonoBehaviour:
         value: 
         useVariables: 0
         useTextField: 0
-      - name: Stats Mask (ints)
+      - name: Stats Mask Start (ints)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Stats Mask Increment (bools for checkboxes)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Stats Mask Increment (ints)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Meter Mask Increment (bools for checkboxes)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Meter Mask Increment (ints)
         value: 
         useVariables: 0
         useTextField: 0

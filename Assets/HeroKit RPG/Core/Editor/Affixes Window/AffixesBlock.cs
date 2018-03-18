@@ -113,18 +113,22 @@ namespace HeroKit.RpgEditor
         {
             DrawCategory();
             DrawBasics();
-            HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
+            HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
 
             SimpleLayout.Line();
 
-            HeroKitCommon.DrawMeters(intFields_att, boolFields_att);
-            HeroKitCommon.DrawStats(intFields_att, boolFields_att);
+            HeroKitCommon.DrawMeterValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawMeters(intFields_att, boolFields_att);
+            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawStats(intFields_att, boolFields_att);
             HeroKitCommon.DrawExtras(intFields_att);
 
             SimpleLayout.Line();
 
-            HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
-            HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this affix", false);
+            //HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
+            HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
+            HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this affix");
+            //HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this affix", false);
         }
 
         /// <summary>
@@ -155,15 +159,7 @@ namespace HeroKit.RpgEditor
 
         private static void DrawCategory()
         {
-            // list of affix types
-            string[] itemValues = new string[HeroKitCommon.affixTypeDatabase.propertiesList.properties.Count];
-            for (int i = 0; i < HeroKitCommon.affixTypeDatabase.propertiesList.properties.Count; i++)
-            {
-                itemValues[i] = HeroKitCommon.affixTypeDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value;
-            }
-            DropDownValues targetValues = new DropDownValues();
-            targetValues.setValues("", itemValues);
-
+            DropDownValues targetValues = HeroKitCommon.databaseList(HeroKitCommon.affixTypeDatabase);
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.Label("Affix Type:");
             intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, targetValues, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
