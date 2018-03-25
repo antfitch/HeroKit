@@ -97,25 +97,7 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
-            DrawBasics();
-        }
-
-        /// <summary>
-        /// Draw first group of fields (name, desc, icon, price)
-        /// </summary>
-        private static void DrawBasics()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // name field
-            SimpleLayout.Label("Name" + ":");
-            stringFields[0].value = SimpleLayout.TextField(stringFields[0].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // description field
-            SimpleLayout.Label("Description" + ":");
-            stringFields[1].value = SimpleLayout.TextField(stringFields[1].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            SimpleLayout.EndVertical();
+            HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
         }
     }
 }

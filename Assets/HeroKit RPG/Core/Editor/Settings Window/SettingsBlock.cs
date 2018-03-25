@@ -109,7 +109,20 @@ namespace HeroKit.RpgEditor
             SimpleLayout.BeginHorizontal();
             // elements db button
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Element Types", OpenElementTypeDB, Button.StyleBig, 270);
+            //SimpleLayout.Line();
+            SimpleLayout.EndVertical();
+            // elements db button
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             SimpleLayout.Button("Elements", OpenElementsDB, Button.StyleBig, 270);
+            //SimpleLayout.Line();
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndHorizontal();
+
+            SimpleLayout.BeginHorizontal();
+            // elements db button
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Condition Types", OpenConditionTypeDB, Button.StyleBig, 270);
             //SimpleLayout.Line();
             SimpleLayout.EndVertical();
             // elements db button
@@ -301,6 +314,18 @@ namespace HeroKit.RpgEditor
         {
             HeroKitEditor.heroObject = HeroKitCommon.classDatabase;
             HeroKitEditor.typeID = 19;
+        }
+
+        public static void OpenElementTypeDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.elementTypeDatabase;
+            HeroKitEditor.typeID = 20;
+        }
+
+        public static void OpenConditionTypeDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.conditionTypeDatabase;
+            HeroKitEditor.typeID = 21;
         }
     }
 }

@@ -177,6 +177,10 @@ namespace HeroKit.RpgEditor
                 name = "Formula";
             else if (typeID == 19)
                 name = "Class";
+            else if (typeID == 20)
+                name = "Element Type";
+            else if (typeID == 21)
+                name = "Condition Type";
 
             SimpleLayout.BeginHorizontal(Box.StyleTitleWindow);
             TitleButtonBlock.Block();
@@ -305,6 +309,16 @@ namespace HeroKit.RpgEditor
             else if (typeID == 19)
             {
                 ClassBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw element type database
+            else if (typeID == 20)
+            {
+                ElementTypeBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw condition type database
+            else if (typeID == 21)
+            {
+                ConditionTypeBlock.Block(heroObject, HeroKitMenuBlock.itemID);
             }
 
             SimpleLayout.EndVertical();

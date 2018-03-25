@@ -143,6 +143,12 @@ namespace HeroKit.RpgEditor
             // draw the class list
             else if (HeroKitEditor.typeID == 19)
                 ClassMenuBlock.Block(heroObject);
+            // draw the element type list
+            else if (HeroKitEditor.typeID == 20)
+                ElementTypeMenuBlock.Block(heroObject);
+            // draw the condition type list
+            else if (HeroKitEditor.typeID == 21)
+                ConditionTypeMenuBlock.Block(heroObject);
         }
 
         // --------------------------------------------------------------

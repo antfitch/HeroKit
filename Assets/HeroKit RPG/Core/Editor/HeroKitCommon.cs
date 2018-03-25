@@ -95,9 +95,15 @@ namespace HeroKit.RpgEditor
         // formula database variables
         public static HeroObject formulaDatabase;
         public static HeroKitProperty formulaProperties;
-        // state database variables
+        // class database variables
         public static HeroObject classDatabase;
         public static HeroKitProperty classProperties;
+        // element type database variables
+        public static HeroObject elementTypeDatabase;
+        public static HeroKitProperty elementTypeProperties;
+        // conditions type database variables
+        public static HeroObject conditionTypeDatabase;
+        public static HeroKitProperty conditionTypeProperties;
 
         // attribute database variables
         public static HeroObject itemDatabase_attributes;
@@ -107,6 +113,7 @@ namespace HeroKit.RpgEditor
         public static HeroObject armorDatabase_attributes;
         public static HeroObject ammunitionDatabase_attributes;
         public static HeroObject abilityDatabase_attributes;
+        public static HeroObject classDatabase_attributes;
         public static HeroKitProperty attributeProperties;
 
         public static void LoadHeroKitRpgDatabases()
@@ -150,6 +157,8 @@ namespace HeroKit.RpgEditor
             armorDatabase_attributes = (armorDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ArmorDatabase_attributes", dbPath) : armorDatabase_attributes;
             ammunitionDatabase_attributes = (ammunitionDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AmmunitionDatabase_attributes", dbPath) : ammunitionDatabase_attributes;
             abilityDatabase_attributes = (abilityDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AbilityDatabase_attributes", dbPath) : abilityDatabase_attributes;
+            classDatabase_attributes = (classDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ClassDatabase_attributes", dbPath) : classDatabase_attributes;
+
             attributeProperties = (attributeProperties == null) ? GetScriptableObject<HeroKitProperty>("AttributeProperties", propertiesPath) : attributeProperties;
 
             // element database  
@@ -199,6 +208,14 @@ namespace HeroKit.RpgEditor
             // state database
             classDatabase = (classDatabase == null) ? GetScriptableObject<HeroObject>("ClassDatabase", dbPath) : classDatabase;
             classProperties = (classProperties == null) ? GetScriptableObject<HeroKitProperty>("ClassProperties", propertiesPath) : classProperties;
+
+            // element type database  
+            elementTypeDatabase = (elementTypeDatabase == null) ? GetScriptableObject<HeroObject>("ElementTypeDatabase", dbPath) : elementTypeDatabase;
+            elementTypeProperties = (elementTypeProperties == null) ? GetScriptableObject<HeroKitProperty>("ElementTypeProperties", propertiesPath) : elementTypeProperties;
+
+            // condition type database  
+            conditionTypeDatabase = (conditionTypeDatabase == null) ? GetScriptableObject<HeroObject>("ConditionTypeDatabase", dbPath) : conditionTypeDatabase;
+            conditionTypeProperties = (conditionTypeProperties == null) ? GetScriptableObject<HeroKitProperty>("ConditionTypeProperties", propertiesPath) : conditionTypeProperties;
 
         }
         public static T GetScriptableObject<T>(string name, string path) where T : UnityEngine.ScriptableObject
@@ -666,6 +683,10 @@ namespace HeroKit.RpgEditor
         {
             DrawItemValue(stringFields, intFields, title, 2, 3, 2, showStats, toggleStats, HeroKitCommon.statsDatabase);
         }
+        public static void DrawMeterMaxList(List<StringField> stringFields, List<IntField> intFields, string title = "Meters (max starting values)")
+        {
+            DrawItemValue(stringFields, intFields, title, 24, 25, 13, showMeters, toggleMeters, HeroKitCommon.meterDatabase);
+        }
 
         //-------------------------------------------
         // Checkbox, Item name, item value (int), drop-down list
@@ -910,7 +931,443 @@ namespace HeroKit.RpgEditor
             DrawItemValueD(stringFields, intFields, title, 8, 9, 10, 5, showConditions, toggleConditions, conditions, changeType, changePercentage);
         }
 
+        //-------------------------------------------
+        // Checkbox, Item name (show all items of specific type)
+        //-------------------------------------------
+        public static void DrawItemValueE(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int itemTypeID, bool showItem, 
+                                         UnityAction toggleItem, int itemDatabase_itemType,
+                                         HeroObject itemTypeDatabase, HeroObject itemDatabase,
+                                         ref int showOnItem)
+        {
+            // weapon type field
+            DropDownValues itemTypeList = HeroKitCommon.databaseList(itemTypeDatabase);
+            DropDownValues itemList = HeroKitCommon.databaseList(itemDatabase);
 
+            // resize string if things have changed
+            stringFields[boolMaskID].value = HeroKitCommon.ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+
+            // convert bitstring into bitarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[boolMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemTypeList, 0, 150);
+                SimpleLayout.Space(4);
+                showOnItem = SimpleLayout.DropDownList(showOnItem, showList(), 0, 150);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                HeroKitCommon.getOnInBitarray(bitArray, itemList, intFields[itemTypeID].value, itemDatabase, itemDatabase_itemType, showOnItem);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = HeroKitCommon.CreateBitString(bitArray);
+        }
+        public static void DrawWeaponList(List<StringField> stringFields, List<IntField> intFields, string title = "Weapons allowed for this class")
+        {
+            DrawItemValueE(stringFields, intFields, title, 17, 10, 
+                           showWeapons, toggleWeaponType, 0,
+                           weaponTypeDatabase, weaponDatabase, ref showOnWeapons);
+        }
+        public static void DrawArmorList(List<StringField> stringFields, List<IntField> intFields, string title = "Armor allowed for this class")
+        {
+            DrawItemValueE(stringFields, intFields, title, 18, 12,
+                           showArmor, toggleArmorType, 0,
+                           armorTypeDatabase, armorDatabase, ref showOnArmor);
+        }
+        public static void DrawAbilityList(List<StringField> stringFields, List<IntField> intFields, string title = "Abilities allowed for this class")
+        {
+            DrawItemValueE(stringFields, intFields, title, 19, 13,
+                           showAbility, toggleAbility, 0,
+                           abilityTypeDatabase, abilityDatabase, ref showOnAbility);
+        }
+
+        //-------------------------------------------
+        // Checkbox, Item name, drop-down list
+        //-------------------------------------------
+        public static void DrawItemValueF(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int selectMaskID, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         DropDownValues itemList, DropDownValues selectionList)
+        {
+            // resize string if things have changed
+            stringFields[boolMaskID].value = ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[selectMaskID].value = ResizeIntStringLarge(stringFields[selectMaskID].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = CreateIntArrayLarge(stringFields[selectMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeID].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getDropdownComboarray(bitArray, intArray, itemList, selectionList);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = CreateBitString(bitArray);
+            stringFields[selectMaskID].value = CreateIntStringLarge(intArray);
+        }
+        public static void DrawMeterIncrementList(List<StringField> stringFields, List<IntField> intFields, string title = "Meters (formula to use on max when level up)")
+        {
+            DropDownValues meters = databaseList(meterDatabase);
+            DropDownValues formulas = databaseList(formulaDatabase);
+
+            DrawItemValueF(stringFields, intFields, title,
+                           28, 29, 17, showMeters2, toggleMeters2,
+                           meters, formulas);
+        }
+        public static void DrawStatIncrementList(List<StringField> stringFields, List<IntField> intFields, string title = "Stats (formula to use when level up)")
+        {
+            DropDownValues stats = databaseList(statsDatabase);
+            DropDownValues formulas = databaseList(formulaDatabase);
+
+            DrawItemValueF(stringFields, intFields, title,
+                           26, 27, 16, showStats2, toggleStats2,
+                           stats, formulas);
+        }
+
+        //-------------------------------------------
+        // Checkbox, Item name, drop-down (show all items of specific type)
+        //-------------------------------------------
+        public static void DrawItemValueG(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int selectMaskID, int itemTypeID, 
+                                         bool showItem, UnityAction toggleItem, 
+                                         int itemDatabase_itemType,
+                                         HeroObject itemTypeDatabase, HeroObject itemDatabase, DropDownValues selectionList,
+                                         ref int showOnItem)
+        {
+            // weapon type field
+            DropDownValues itemTypeList = HeroKitCommon.databaseList(itemTypeDatabase);
+            DropDownValues itemList = HeroKitCommon.databaseList(itemDatabase);
+
+            // resize string if things have changed
+            stringFields[boolMaskID].value = HeroKitCommon.ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[selectMaskID].value = ResizeIntStringLarge(stringFields[selectMaskID].value, itemList.items.Length);
+
+            // convert bitstring into bitarray
+            BitArray bitArray = HeroKitCommon.CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = CreateIntArrayLarge(stringFields[selectMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemTypeList, 0, 150);
+                SimpleLayout.Space(4);
+                showOnItem = SimpleLayout.DropDownList(showOnItem, showList(), 0, 150);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                //getOnInBitarray(bitArray, itemList, intFields[itemTypeID].value, 
+                //                itemDatabase, itemDatabase_itemType, showOnItem);
+
+                getDropdownComboarrayE(bitArray, intArray, itemList, selectionList, itemDatabase,
+                                       intFields[itemTypeID].value, itemDatabase_itemType, showOnItem);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = HeroKitCommon.CreateBitString(bitArray);
+            stringFields[selectMaskID].value = CreateIntStringLarge(intArray);
+        }
+        public static void DrawConditionsList(List<StringField> stringFields, List<IntField> intFields, string title = "Conditions that affect this class")
+        {
+            DropDownValues severity = conditionSeverityList();
+
+            DrawItemValueG(stringFields, intFields, title,
+                           19, 20, 14, 
+                           showConditions, toggleConditions,
+                           3,
+                           conditionTypeDatabase, conditionDatabase, severity,
+                           ref showOnCondition);
+        }
+        public static void DrawElementsList(List<StringField> stringFields, List<IntField> intFields, string title = "Elements that affect this class")
+        {
+            DropDownValues severity = conditionSeverityList();
+
+            DrawItemValueG(stringFields, intFields, title,
+                           21, 22, 15,
+                           showElements, toggleElements,
+                           0,
+                           elementTypeDatabase, elementDatabase, severity,
+                           ref showOnElement);
+        }
+
+
+        //-------------------------------------------
+        // Drop-down list
+        //-------------------------------------------
+        public static void DrawItemDropdown(List<IntField> intFields, string title, int itemID, HeroObject itemDatabase)
+        {
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+            DropDownValues itemList = HeroKitCommon.databaseList(itemDatabase);
+            SimpleLayout.Label(title + ":");
+            intFields[itemID].value = SimpleLayout.DropDownList(intFields[itemID].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+            SimpleLayout.EndVertical();
+        }
+
+        //-------------------------------------------
+        // Name, Icon, Description Group
+        //-------------------------------------------
+        public static void BasicFieldsA(List<StringField> stringFields, List<UnityObjectField> uoFields, int nameID, int descID, int iconID)
+        {
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // name field
+            SimpleLayout.Label("Name" + ":");
+            stringFields[nameID].value = SimpleLayout.TextField(stringFields[nameID].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+
+            // icon field
+            SimpleLayout.Label("Icon" + ":");
+            uoFields[iconID].value = SimpleLayout.ObjectField(uoFields[iconID].value as Sprite, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+
+            // description field
+            SimpleLayout.Label("Description" + ":");
+            stringFields[descID].value = SimpleLayout.TextArea(stringFields[descID].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450), 50);
+
+            SimpleLayout.EndVertical();
+        }
+
+        //-------------------------------------------
+        // Name, Description Group
+        //-------------------------------------------
+        public static void BasicFieldsB(List<StringField> stringFields, int nameID, int descID)
+        {
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // name field
+            SimpleLayout.Label("Name" + ":");
+            stringFields[nameID].value = SimpleLayout.TextField(stringFields[nameID].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+
+            // description field
+            SimpleLayout.Label("Description" + ":");
+            stringFields[descID].value = SimpleLayout.TextArea(stringFields[descID].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450), 50);
+
+            SimpleLayout.EndVertical();
+        }
+
+        //-------------------------------------------
+        // In-Line Actions Editor
+        //-------------------------------------------
+        public static void DrawActions(HeroObject heroObject, List<HeroAction> heroActions, 
+                                        UnityAction addItem, UnityAction<int> showBlockContent, 
+                                        UnityAction<int> showContextMenu)
+        {
+            List<HeroProperties> items = heroObject.propertiesList.properties;
+            int indent = 0;
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label("Additional actions to perform when used:");
+            SimpleLayout.Space();
+            SimpleLayout.Button("[+Action]", addItem, 65);
+            SimpleLayout.EndHorizontal();
+
+            SimpleLayout.Line();
+
+            // exit early if there are no items
+            if (heroActions != null && heroActions.Count > 0)
+            {
+                // display items  
+                for (int i = 0; i < heroActions.Count; i++)
+                {
+                    //---------------------------------------------
+                    // get the prefix to show before the name of the item
+                    //---------------------------------------------
+                    string prefix = (heroActions[i].actionTemplate != null) ? heroActions[i].actionTemplate.title : "";
+
+                    //---------------------------------------------
+                    // get the name to show for the action
+                    //---------------------------------------------
+                    string itemName = heroActions[i].name;
+                    if (heroActions[i].actionTemplate != null)
+                    {
+                        itemName = (heroActions[i].name != "") ? heroActions[i].name : heroActions[i].actionTemplate.name;
+                    }
+
+                    // dont show item name if prefix found and if item has no name
+                    itemName = (prefix != "" && heroActions[i].name == "") ? "" : itemName;
+
+                    // if no item, take note
+                    if (itemName == "")
+                        itemName = "[none]";
+
+                    //---------------------------------------------
+                    // set indent level of this action
+                    //---------------------------------------------
+                    if (heroActions[i].actionTemplate != null)
+                    {
+                        // get new indent
+                        indent = indent + heroActions[i].actionTemplate.indentThis;
+
+                        // if indent is negative, change it to zero (happens if too many end statements added)
+                        if (indent < 0) indent = 0;
+                    }
+                    heroActions[i].indent = indent;
+                    string space = "".PadRight(indent * 5);
+
+                    //---------------------------------------------
+                    // set the color of the action title text
+                    //---------------------------------------------
+                    string hexColor = (SimpleGUICommon.isProSkin) ? "FFFFFF" : "000000";
+                    if (heroActions[i].actionTemplate != null)
+                    {
+                        hexColor = SimpleGUICommon.GetHexFromColor(heroActions[i].actionTemplate.titleColor);
+
+                        // lighten colors for dark skin
+                        if (SimpleGUICommon.isProSkin)
+                            hexColor = SimpleGUICommon.AlterHexBrightness(hexColor, 150);
+                    }
+
+                    //---------------------------------------------
+                    // draw this action
+                    //---------------------------------------------
+
+                    // get the box to draw around the foldout
+                    GUIStyle style = Box.StyleMenu2Selected; // Box.StyleDefault;
+                    GUIStyle buttonStyle = Button.StyleFoldoutText;
+                    //if (HeroKitMenuBlock.itemFocus && HeroKitMenuBlock.itemID == i)
+                    //{
+                    //    style = Box.StyleMenuSelected;
+                    //    buttonStyle = Button.StyleFoldoutTextB;
+                    //}
+
+                    // show foldout
+                    SimpleLayout.BeginHorizontal(style);
+                    GUIStyle foldoutStyle = (heroActions[i].visible) ? Button.StyleFoldoutOpen : Button.StyleFoldoutClosed;
+                    SimpleLayout.Button("", showBlockContent, showContextMenu, i, foldoutStyle, 10);
+                    SimpleLayout.Button(i + ": " + space + "<color=#" + hexColor + ">" + prefix + itemName + "</color>", showBlockContent, showContextMenu, i, buttonStyle);
+                    //SimpleLayout.Button("▲", blah, 20);
+                    //SimpleLayout.Button("▼", blah, 20);
+                    //SimpleLayout.Button("[+]", blah, 20);
+                    //SimpleLayout.Space(5);
+                    //SimpleLayout.Button("[–]", blah, 20);
+                    SimpleLayout.EndHorizontal();
+
+                    HeroKitAction oldTemplate = heroActions[i].actionTemplate;
+                    if (heroActions[i].visible)
+                    {
+                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleC);
+
+                        SimpleLayout.Space(5);
+                        SimpleLayout.BeginHorizontal();
+                        SimpleLayout.Space(5);
+
+                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+                        SimpleLayout.Label("Action:");
+                        heroActions[i].actionTemplate = SimpleLayout.ObjectField(heroActions[i].actionTemplate, 450);
+                        SimpleLayout.EndVertical();
+
+                        SimpleLayout.EndHorizontal();
+
+                        if (heroActions[i].actionTemplate)
+                            HeroKit.Editor.ActionBlockBuilder.BuildFields(heroObject, heroActions[i], heroActions[i].actionTemplate, oldTemplate);
+
+                        SimpleLayout.EndVertical();
+                    }
+
+
+                    //---------------------------------------------
+                    // set indent level of next action
+                    //---------------------------------------------
+
+                    // note if delete called, the last item in list won't exist. check to make sure it is still there.
+                    if (heroActions.Count > i && heroActions[i].actionTemplate != null)
+                    {
+                        // get new indent
+                        indent = indent + heroActions[i].actionTemplate.indentNext;
+
+                        // if indent is negative, change it to zero (happens if too many end statements added)
+                        if (indent < 0) indent = 0;
+                    }
+
+                    // if we are at the end of the action list, reset indent
+                    if (i == (heroActions.Count - 1)) indent = 0;
+                }
+            }
+            SimpleLayout.EndVertical();
+        }
 
         /// <summary>
         /// Draw when item can be used
@@ -919,6 +1376,11 @@ namespace HeroKit.RpgEditor
         private static void toggleStats()
         {
             showStats = !showStats;
+        }
+        private static bool showStats2 = false;
+        private static void toggleStats2()
+        {
+            showStats2 = !showStats2;
         }
 
         private static bool showMeters = false;
@@ -937,12 +1399,14 @@ namespace HeroKit.RpgEditor
         {
             showElements = !showElements;
         }
+        private static int showOnElement = 0;
 
         private static bool showConditions = false;
         private static void toggleConditions()
         {
             showConditions = !showConditions;
         }
+        private static int showOnCondition = 0;
 
         private static bool showMoney = false;
         private static void toggleMoney()
@@ -961,6 +1425,27 @@ namespace HeroKit.RpgEditor
         {
             showSockets = !showSockets;
         }
+
+        private static bool showWeapons = false;
+        private static void toggleWeaponType()
+        {
+            showWeapons = !showWeapons;
+        }
+        private static int showOnWeapons = 0;
+
+        private static bool showArmor = false;
+        private static void toggleArmorType()
+        {
+            showArmor = !showArmor;
+        }
+        private static int showOnArmor = 0;
+
+        private static bool showAbility = false;
+        private static void toggleAbility()
+        {
+            showAbility = !showAbility;
+        }
+        private static int showOnAbility = 0;
 
         /// <summary>
         /// Draw when item can be used
@@ -1242,7 +1727,7 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-        // generate a list of items of a specific type in bit array
+        // generate a list of items of a specific type in bit array (checkbox, name)
         public static void getOnInBitarray(BitArray bitArray, DropDownValues items, int itemType, 
                                            HeroObject database, int itemTypeSlot, int show)
         {
@@ -1275,7 +1760,6 @@ namespace HeroKit.RpgEditor
             SimpleLayout.Label(items.items[bitID]);
             SimpleLayout.EndHorizontal();
         }
-
 
 
         // [add] [remove] buttons for search that gets all items of a type or one item of a type 
@@ -1449,6 +1933,43 @@ namespace HeroKit.RpgEditor
                     SimpleLayout.EndHorizontal();
                 }
             }
+        }
+
+        // generate a list of items in bit array (checkbox, name, drop down list) (specific item type)
+        public static void getDropdownComboarrayE(BitArray bitArray, int[] intArray, DropDownValues itemsList, DropDownValues selectionList, 
+                                                  HeroObject database, int itemType, int itemTypeSlot, int show)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                if (database.propertiesList.properties[i].itemProperties.ints.items[itemTypeSlot].value == itemType)
+                {
+                    // draw all
+                    if (show <= 1)
+                    {
+                        drawDropdownComboEField(bitArray, intArray, i, itemsList, selectionList);
+                    }
+                    // draw selected
+                    if (show == 2 && bitArray[i])
+                    {
+                        drawDropdownComboEField(bitArray, intArray, i, itemsList, selectionList);
+                    }
+                    // draw un-selected
+                    if (show == 3 && !bitArray[i])
+                    {
+                        drawDropdownComboEField(bitArray, intArray, i, itemsList, selectionList);
+                    }
+                }
+            }
+        }
+        private static void drawDropdownComboEField(BitArray bitArray, int[] intArray, int i, DropDownValues itemsList, DropDownValues selectionList)
+        {
+            SimpleLayout.BeginHorizontal();
+            bitArray[i] = SimpleLayout.BoolField(bitArray[i]);
+            SimpleLayout.Space(4);
+            intArray[i] = SimpleLayout.DropDownList(intArray[i], selectionList, 0, 200);
+            SimpleLayout.Label(itemsList.items[i]);
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
         }
 
     }

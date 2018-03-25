@@ -44,7 +44,9 @@ MonoBehaviour:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Element Type
+            value: 0
         floats:
           visible: 0
           items: []
@@ -77,7 +79,9 @@ MonoBehaviour:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Element Type
+            value: 1
         floats:
           visible: 0
           items: []
@@ -110,7 +114,9 @@ MonoBehaviour:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Element Type
+            value: 1
         floats:
           visible: 0
           items: []

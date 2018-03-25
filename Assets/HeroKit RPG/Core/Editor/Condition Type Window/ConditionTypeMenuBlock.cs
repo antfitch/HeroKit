@@ -15,7 +15,7 @@ namespace HeroKit.RpgEditor
     /// <summary>
     /// Menu Block for an item that appears in Hero Kit RPG Editor. 
     /// </summary>
-    internal class ClassMenuBlock : EditorWindow
+    internal class ConditionTypeMenuBlock : EditorWindow
     {
         // --------------------------------------------------------------
         // Variables
@@ -28,22 +28,33 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Name of the block.
         /// </summary>
-        private const string blockName = "Class";
+        private const string blockName = "Condition Type";
         /// <summary>
         /// Indent level for the items in the menu.
         /// </summary>
         private static readonly int indentMenu = HeroKitMenuBlock.indentLevel;
 
+        /// <summary>
+        /// List of states.
+        /// </summary>
         private static List<HeroProperties> items;
+        /// <summary>
+        /// List of states where context menu was openend.
+        /// </summary>
         private static List<HeroProperties> itemsContextMenu;
+        /// <summary>
+        /// List of states that were copied (and can be pasted somewhere).
+        /// </summary>
         private static List<HeroProperties> savedFieldList;
+        /// <summary>
+        /// List of the most recently deleted states.
+        /// </summary>
         private static readonly LinkedList<HeroProperties> deletedFields;
+        /// <summary>
+        /// List of the index values for the most recently deleted states.
+        /// The index tells us where the state was in the list before it was deleted.
+        /// </summary>
         private static readonly LinkedList<int> deletedFieldsIndex;
-
-        private static List<HeroProperties> attributes;
-        private static List<HeroProperties> savedAttributesList;
-        private static readonly LinkedList<HeroProperties> deletedAttributes;
-        private static readonly LinkedList<int> deletedAttributesIndex;
 
 
         // --------------------------------------------------------------
@@ -53,14 +64,11 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Constructor.
         /// </summary>
-        static ClassMenuBlock()
+        static ConditionTypeMenuBlock()
         {
             // create deleted field list
             deletedFields = new LinkedList<HeroProperties>();
             deletedFieldsIndex = new LinkedList<int>();
-
-            deletedAttributes = new LinkedList<HeroProperties>();
-            deletedAttributesIndex = new LinkedList<int>();
         }
         /// <summary>
         /// Block to display in the menu. Get list from hero kit object.
@@ -77,7 +85,6 @@ namespace HeroKit.RpgEditor
             // assign hero object to this class
             heroObject = heroKitObject;
             items = heroObject.propertiesList.properties;
-            attributes = HeroKitCommon.classDatabase_attributes.propertiesList.properties;
 
             // draw components
             DrawBlock();
@@ -88,7 +95,7 @@ namespace HeroKit.RpgEditor
         private static void DrawBlock()
         {
             HeroKit.Editor.HeroKitCommon.DrawMenuItems(blockName, deleteItem, addItem);
-            DrawItems();       
+            DrawItems();
         }
         /// <summary>
         /// Draw the body of the block.
@@ -126,11 +133,7 @@ namespace HeroKit.RpgEditor
 
         private static HeroProperties getHeroProperties()
         {
-            return HeroKitCommon.getHeroProperties(HeroKitCommon.classProperties);
-        }
-        private static HeroProperties getAttributeProperties()
-        {
-            return HeroKitCommon.getHeroProperties(HeroKitCommon.attributeProperties);
+            return HeroKitCommon.getHeroProperties(HeroKitCommon.conditionTypeProperties);
         }
 
         // --------------------------------------------------------------
@@ -208,7 +211,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             HeroKitCommon.moveItemUp(items, index);
-            HeroKitCommon.moveItemUp(attributes, index);
         }
         /// <summary>
         /// Move item down.
@@ -218,7 +220,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             HeroKitCommon.moveItemDown(items, index);
-            HeroKitCommon.moveItemDown(attributes, index);
         }
         /// <summary>
         /// Add item at end of list.
@@ -226,7 +227,6 @@ namespace HeroKit.RpgEditor
         private static void addItem()
         {
             HeroKitCommon.addItem(items, getHeroProperties());
-            HeroKitCommon.addItem(attributes, getAttributeProperties());
         }
         /// <summary>
         /// Add item above another item in the list.
@@ -236,7 +236,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             HeroKitCommon.addItem(items, getHeroProperties(), index);
-            HeroKitCommon.addItem(attributes, getAttributeProperties(), index);
         }
         /// <summary>
         /// Add item below another item in the list.
@@ -246,7 +245,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj + 1;
             HeroKitCommon.addItem(items, getHeroProperties(), index);
-            HeroKitCommon.addItem(attributes, getAttributeProperties(), index);
         }
         /// <summary>
         /// Copy an item.
@@ -256,7 +254,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             savedFieldList = HeroKitCommon.copyItem(items, savedFieldList, index);
-            savedAttributesList = HeroKitCommon.copyItem(attributes, savedAttributesList, index);
         }
         /// <summary>
         /// Insert item above another item in the list.
@@ -267,7 +264,6 @@ namespace HeroKit.RpgEditor
             // this is called when item right clicked
             int index = (int)obj;
             HeroKitCommon.pasteItem(items, savedFieldList, index);
-            HeroKitCommon.pasteItem(attributes, savedAttributesList, index);
         }
         /// <summary>
         /// Insert item below another item in the list.
@@ -278,7 +274,6 @@ namespace HeroKit.RpgEditor
             // this is called when item right clicked
             int index = (int)obj + 1;
             HeroKitCommon.pasteItem(items, savedFieldList, index);
-            HeroKitCommon.pasteItem(attributes, savedAttributesList, index);
         }
         /// <summary>
         /// Delete an item and replace it with this item.
@@ -288,7 +283,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             HeroKitCommon.pasteItemHere(items, savedFieldList, index);
-            HeroKitCommon.pasteItemHere(attributes, savedAttributesList, index);
         }
         /// <summary>
         /// Delete item at end of list.
@@ -297,7 +291,6 @@ namespace HeroKit.RpgEditor
         {
             int index = items.Count - 1;
             HeroKitCommon.deleteItem(items, deletedFields, deletedFieldsIndex, blockName, index);
-            HeroKitCommon.deleteItem(attributes, deletedAttributes, deletedAttributesIndex, "", index);
         }
         /// <summary>
         /// Delete an item.
@@ -307,7 +300,6 @@ namespace HeroKit.RpgEditor
         {
             int index = (int)obj;
             HeroKitCommon.deleteItem(items, deletedFields, deletedFieldsIndex, blockName, index);
-            HeroKitCommon.deleteItem(attributes, deletedAttributes, deletedAttributesIndex, "", index);
         }
         /// <summary>
         /// Restore the last item that was deleted from the list.
@@ -315,7 +307,6 @@ namespace HeroKit.RpgEditor
         private static void restoreItem(object obj)
         {
             HeroKitCommon.restoreItem(items, deletedFields, deletedFieldsIndex);
-            HeroKitCommon.restoreItem(attributes, deletedAttributes, deletedAttributesIndex);
         }
     }
 }

@@ -47,92 +47,32 @@ MonoBehaviour:
           items:
           - name: Item Type
             value: 1
-          - name: Meter Count
-            value: 1
-          - name: Meter ID 1
-            value: 2
-          - name: Meter ID 2
-            value: 0
-          - name: Meter ID 3
-            value: 0
-          - name: Meter ID 4
-            value: 0
-          - name: Meter ID 5
-            value: 0
-          - name: Meter ID 6
-            value: 0
-          - name: Meter ID 7
-            value: 0
-          - name: Meter ID 8
-            value: 0
-          - name: Meter ID 9
-            value: 0
-          - name: Meter ID 10
-            value: 0
-          - name: Meter Value 1
-            value: 25
-          - name: Meter Value 2
-            value: 0
-          - name: Meter Value 3
-            value: 0
-          - name: Meter Value 4
-            value: 0
-          - name: Meter Value 5
-            value: 0
-          - name: Meter Value 6
-            value: 0
-          - name: Meter Value 7
-            value: 0
-          - name: Meter Value 8
-            value: 0
-          - name: Meter Value 9
-            value: 0
-          - name: Meter Value 10
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 1
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
           - name: Target of Ability
-            value: 5
+            value: 1
           - name: How to use Ability on Target
-            value: 3
-          - name: Range of Ability
-            value: 20
-          - name: Speed of projectile
-            value: 10
-          - name: Success Rate
-            value: 1
-          - name: Incantation Time
-            value: 0
-          - name: Target Count A
             value: 2
-          - name: Target Count B
-            value: 3
-          - name: Chain radius
+          - name: Range of Ability
             value: 10
-          - name: 'Exp Meter: Max'
-            value: 100
-          - name: Exp on Use
-            value: 5
-          - name: Ability Morph ID
+          - name: Speed of projectile
+            value: 0
+          - name: Success Rate
+            value: 15
+          - name: Incantation Time
             value: 1
+          - name: Target Count A
+            value: 1
+          - name: Target Count B
+            value: 0
+          - name: Chain radius
+            value: 3
+          - name: 'Exp Meter: Max'
+            value: 4
+          - name: Exp on Use
+            value: 2
+          - name: Ability Morph ID
+            value: 2
+          - name: Wait time after cast
+            value: 2
         floats:
           visible: 0
           items: []
@@ -202,68 +142,6 @@ MonoBehaviour:
           items:
           - name: Item Type
             value: 1
-          - name: Meter Count
-            value: 0
-          - name: Meter ID 1
-            value: 0
-          - name: Meter ID 2
-            value: 0
-          - name: Meter ID 3
-            value: 0
-          - name: Meter ID 4
-            value: 0
-          - name: Meter ID 5
-            value: 0
-          - name: Meter ID 6
-            value: 0
-          - name: Meter ID 7
-            value: 0
-          - name: Meter ID 8
-            value: 0
-          - name: Meter ID 9
-            value: 0
-          - name: Meter ID 10
-            value: 0
-          - name: Meter Value 1
-            value: 0
-          - name: Meter Value 2
-            value: 0
-          - name: Meter Value 3
-            value: 0
-          - name: Meter Value 4
-            value: 0
-          - name: Meter Value 5
-            value: 0
-          - name: Meter Value 6
-            value: 0
-          - name: Meter Value 7
-            value: 0
-          - name: Meter Value 8
-            value: 0
-          - name: Meter Value 9
-            value: 0
-          - name: Meter Value 10
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 0
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
           - name: Target of Ability
             value: 0
           - name: How to use Ability on Target
@@ -287,6 +165,8 @@ MonoBehaviour:
           - name: Exp on Use
             value: 0
           - name: Ability Morph ID
+            value: 0
+          - name: Wait time after cast
             value: 0
         floats:
           visible: 0
@@ -357,68 +237,6 @@ MonoBehaviour:
           items:
           - name: Item Type
             value: 2
-          - name: Meter Count
-            value: 0
-          - name: Meter ID 1
-            value: 0
-          - name: Meter ID 2
-            value: 0
-          - name: Meter ID 3
-            value: 0
-          - name: Meter ID 4
-            value: 0
-          - name: Meter ID 5
-            value: 0
-          - name: Meter ID 6
-            value: 0
-          - name: Meter ID 7
-            value: 0
-          - name: Meter ID 8
-            value: 0
-          - name: Meter ID 9
-            value: 0
-          - name: Meter ID 10
-            value: 0
-          - name: Meter Value 1
-            value: 0
-          - name: Meter Value 2
-            value: 0
-          - name: Meter Value 3
-            value: 0
-          - name: Meter Value 4
-            value: 0
-          - name: Meter Value 5
-            value: 0
-          - name: Meter Value 6
-            value: 0
-          - name: Meter Value 7
-            value: 0
-          - name: Meter Value 8
-            value: 0
-          - name: Meter Value 9
-            value: 0
-          - name: Meter Value 10
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 0
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
           - name: Target of Ability
             value: 0
           - name: How to use Ability on Target
@@ -442,6 +260,8 @@ MonoBehaviour:
           - name: Exp on Use
             value: 0
           - name: Ability Morph ID
+            value: 0
+          - name: Wait time after cast
             value: 0
         floats:
           visible: 0
@@ -512,68 +332,6 @@ MonoBehaviour:
           items:
           - name: Item Type
             value: 2
-          - name: Meter Count
-            value: 0
-          - name: Meter ID 1
-            value: 0
-          - name: Meter ID 2
-            value: 0
-          - name: Meter ID 3
-            value: 0
-          - name: Meter ID 4
-            value: 0
-          - name: Meter ID 5
-            value: 0
-          - name: Meter ID 6
-            value: 0
-          - name: Meter ID 7
-            value: 0
-          - name: Meter ID 8
-            value: 0
-          - name: Meter ID 9
-            value: 0
-          - name: Meter ID 10
-            value: 0
-          - name: Meter Value 1
-            value: 0
-          - name: Meter Value 2
-            value: 0
-          - name: Meter Value 3
-            value: 0
-          - name: Meter Value 4
-            value: 0
-          - name: Meter Value 5
-            value: 0
-          - name: Meter Value 6
-            value: 0
-          - name: Meter Value 7
-            value: 0
-          - name: Meter Value 8
-            value: 0
-          - name: Meter Value 9
-            value: 0
-          - name: Meter Value 10
-            value: 0
-          - name: 'Meter 1: Change Type'
-            value: 0
-          - name: 'Meter 2: Change Type'
-            value: 0
-          - name: 'Meter 3: Change Type'
-            value: 0
-          - name: 'Meter 4: Change Type'
-            value: 0
-          - name: 'Meter 5: Change Type'
-            value: 0
-          - name: 'Meter 6: Change Type'
-            value: 0
-          - name: 'Meter 7: Change Type'
-            value: 0
-          - name: 'Meter 8: Change Type'
-            value: 0
-          - name: 'Meter 9: Change Type'
-            value: 0
-          - name: 'Meter 10: Change Type'
-            value: 0
           - name: Target of Ability
             value: 0
           - name: How to use Ability on Target
@@ -597,6 +355,8 @@ MonoBehaviour:
           - name: Exp on Use
             value: 0
           - name: Ability Morph ID
+            value: 0
+          - name: Wait time after cast
             value: 0
         floats:
           visible: 0
@@ -666,7 +426,14 @@ MonoBehaviour:
       heroEvent:
       - name: 
         visible: 0
-        actions: []
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 0}
+          actionFields: []
+          gameObjectFields: 
         eventType: 4
         messageSettings: 00000000000000000000000000000000
         messageTag: 

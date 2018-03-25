@@ -23,6 +23,8 @@ MonoBehaviour:
         value: 0
       - name: Chance Attack Ends Cond
         value: 0
+      - name: Condition Type
+        value: 0
     floats:
       visible: 0
       items: []

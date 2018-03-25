@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
-  m_Name: ConditionDatabase
+  m_Name: ElementTypeDatabase
   m_EditorClassIdentifier: 
   properties:
     propertyTemplate: {fileID: 0}
@@ -38,48 +38,30 @@ MonoBehaviour:
         items: []
   propertiesList:
     properties:
-    - propertyTemplate: {fileID: 11400000, guid: 823354ff0fd99e54aa280d7fd7b98633,
+    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items:
-          - name: Time Type
-            value: 1
-          - name: Time Value
-            value: 30
-          - name: Chance Attack Ends Cond
-            value: 0
-          - name: Condition Type
-            value: 0
+          items: []
         floats:
           visible: 0
           items: []
         bools:
           visible: 0
-          items:
-          - name: Timer releases condition
-            value: 0
-          - name: Attack releases condition
-            value: 0
-          - name: Can't attack
-            value: 1
-          - name: Can't defend
-            value: 0
-          - name: Can't be attacked
-            value: 1
+          items: []
         strings:
           visible: 0
           items:
           - name: Name
-            value: Death
+            value: Gems
             useVariables: 0
             useTextField: 0
           - name: Description
             value: 
             useVariables: 0
-            useTextField: 1
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -88,54 +70,31 @@ MonoBehaviour:
           items: []
         unityObjects:
           visible: 0
-          items:
-          - name: Animation to play
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-    - propertyTemplate: {fileID: 11400000, guid: 823354ff0fd99e54aa280d7fd7b98633,
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items:
-          - name: Time Type
-            value: 0
-          - name: Time Value
-            value: 0
-          - name: Chance Attack Ends Cond
-            value: 0
-          - name: Condition Type
-            value: 1
+          items: []
         floats:
           visible: 0
           items: []
         bools:
           visible: 0
-          items:
-          - name: Timer releases condition
-            value: 0
-          - name: Attack releases condition
-            value: 0
-          - name: Can't attack
-            value: 0
-          - name: Can't defend
-            value: 0
-          - name: Can't be attacked
-            value: 0
+          items: []
         strings:
           visible: 0
           items:
           - name: Name
-            value: Poisoned
+            value: Waves
             useVariables: 0
             useTextField: 0
           - name: Description
             value: 
             useVariables: 0
-            useTextField: 1
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -144,13 +103,8 @@ MonoBehaviour:
           items: []
         unityObjects:
           visible: 0
-          items:
-          - name: Animation to play
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-    visible: 1
+          items: []
+    visible: 0
   states:
     states: []
     visible: 0

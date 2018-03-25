@@ -111,8 +111,9 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
-            DrawCategory();
-            DrawBasics();
+            HeroKitCommon.DrawItemDropdown(intFields, "Affix Type", 0, HeroKitCommon.affixTypeDatabase);
+            HeroKitCommon.BasicFieldsA(stringFields, uoFields, 0, 1, 0);
+            DrawColorField();
             HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
 
             SimpleLayout.Line();
@@ -134,35 +135,14 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Draw first group of fields (name, desc, icon, price)
         /// </summary>
-        private static void DrawBasics()
+        private static void DrawColorField()
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            // name field
-            SimpleLayout.Label("Name" + ":");
-            stringFields[0].value = SimpleLayout.TextField(stringFields[0].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // icon field
-            SimpleLayout.Label("Icon" + ":");
-            uoFields[0].value = SimpleLayout.ObjectField(uoFields[0].value as Sprite, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // description field
-            SimpleLayout.Label("Description" + ":");
-            stringFields[1].value = SimpleLayout.TextField(stringFields[1].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
 
             // color field
             SimpleLayout.Label("Color" + ":");
             stringFields[2].value = SimpleLayout.ColorField(stringFields[2].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
 
-            SimpleLayout.EndVertical();
-        }
-
-        private static void DrawCategory()
-        {
-            DropDownValues targetValues = HeroKitCommon.databaseList(HeroKitCommon.affixTypeDatabase);
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-            SimpleLayout.Label("Affix Type:");
-            intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, targetValues, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
             SimpleLayout.EndVertical();
         }
     }

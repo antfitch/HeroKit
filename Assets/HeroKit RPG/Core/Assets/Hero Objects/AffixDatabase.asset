@@ -90,7 +90,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Affix Type ID
-            value: 0
+            value: 1
         floats:
           visible: 0
           items: []

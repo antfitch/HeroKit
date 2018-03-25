@@ -45,42 +45,14 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 1
           - name: Attack Speed
-            value: 10
+            value: 0
           - name: Ammo Type
-            value: 1
+            value: 0
           - name: Ammo Distance
-            value: 25
+            value: 0
         floats:
           visible: 0
           items: []
@@ -127,34 +99,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 2
           - name: Attack Speed
@@ -209,34 +153,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 1
           - name: Attack Speed
@@ -291,34 +207,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 2
           - name: Attack Speed
@@ -369,6 +257,36 @@ MonoBehaviour:
     visible: 1
   states:
     states:
+    - name: 
+      visible: 0
+      heroEvent:
+      - name: 
+        visible: 0
+        actions: []
+        eventType: 4
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions: []
+      heroVisuals:
+        visualType: 0
+        imageType: 0
+        rigidbodyType: 0
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
     - name: 
       visible: 0
       heroEvent:

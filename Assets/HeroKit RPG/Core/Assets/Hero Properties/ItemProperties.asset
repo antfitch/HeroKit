@@ -17,34 +17,6 @@ MonoBehaviour:
     ints:
       visible: 0
       items:
-      - name: Affix Count
-        value: 0
-      - name: Affix ID 1
-        value: 0
-      - name: Affix ID 2
-        value: 0
-      - name: Affix ID 3
-        value: 0
-      - name: Affix ID 4
-        value: 0
-      - name: Affix ID 5
-        value: 0
-      - name: Affix ID 6
-        value: 0
-      - name: Socket Count
-        value: 0
-      - name: Socket Count 1
-        value: 0
-      - name: Socket Count 2
-        value: 0
-      - name: Socket Count 3
-        value: 0
-      - name: Socket Count 4
-        value: 0
-      - name: Socket Count 5
-        value: 0
-      - name: Socket Count 6
-        value: 0
       - name: Item Type
         value: 0
     floats:

@@ -196,55 +196,55 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Money ID Mask (bools)
-            value: 
+            value: 00
             useVariables: 0
             useTextField: 0
           - name: Money Value Mask (ints)
-            value: 
+            value: 0|0|
             useVariables: 0
             useTextField: 0
           - name: Stat ID Mask (bools)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
           - name: Stat Value Mask (ints)
-            value: 
+            value: 0|0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Meter ID Mask (bools)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Value Mask (ints)
-            value: 
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Meter Type Mask (ints)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Element ID Mask (bools)
-            value: 
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Conditions ID Mask (bools)
-            value: 
+            value: 00
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask (drop-down, ints)
-            value: 
+            value: 0|0|
             useVariables: 0
             useTextField: 0
           - name: Condition Percentage Mask (drop-down, ints)
-            value: 
+            value: 0|0|
             useVariables: 0
             useTextField: 0
           - name: Affix ID Mask (bools)
-            value: 
+            value: 000000000
             useVariables: 0
             useTextField: 0
           - name: Socket ID Mask (bools)
-            value: 
+            value: 000000000
             useVariables: 0
             useTextField: 0
           - name: Stat Type Mask (drop-down, int)
@@ -272,7 +272,241 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    visible: 0
+    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Variance
+            value: 0
+          - name: Money ID
+            value: 0
+          - name: Stats ID
+            value: 0
+          - name: Meter ID
+            value: 0
+          - name: Element ID
+            value: 0
+          - name: Condition ID
+            value: 0
+          - name: Item Weight
+            value: 0
+          - name: Affix ID
+            value: 0
+          - name: Socket ID
+            value: 0
+          - name: Meter 2 ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Remove all conditions
+            value: 0
+          - name: Is Stackable
+            value: 0
+        strings:
+          visible: 0
+          items:
+          - name: Money ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Money Value Mask (ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stat ID Mask (bools)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Value Mask (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter ID Mask (bools)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Value Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Type Mask (ints)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Element ID Mask (bools)
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Conditions ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Percentage Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Affix ID Mask (bools)
+            value: 000000000
+            useVariables: 0
+            useTextField: 0
+          - name: Socket ID Mask (bools)
+            value: 000000000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Type Mask (drop-down, int)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items:
+          - name: Variance
+            value: 0
+          - name: Money ID
+            value: 0
+          - name: Stats ID
+            value: 0
+          - name: Meter ID
+            value: 0
+          - name: Element ID
+            value: 0
+          - name: Condition ID
+            value: 0
+          - name: Item Weight
+            value: 0
+          - name: Affix ID
+            value: 0
+          - name: Socket ID
+            value: 0
+          - name: Meter 2 ID
+            value: 0
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items:
+          - name: Remove all conditions
+            value: 0
+          - name: Is Stackable
+            value: 0
+        strings:
+          visible: 0
+          items:
+          - name: Money ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Money Value Mask (ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Stat ID Mask (bools)
+            value: 00000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Value Mask (ints)
+            value: 0|0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter ID Mask (bools)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Value Mask (ints)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Meter Type Mask (ints)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Element ID Mask (bools)
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Conditions ID Mask (bools)
+            value: 00
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Type Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Condition Percentage Mask (drop-down, ints)
+            value: 0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Affix ID Mask (bools)
+            value: 000000000
+            useVariables: 0
+            useTextField: 0
+          - name: Socket ID Mask (bools)
+            value: 000000000
+            useVariables: 0
+            useTextField: 0
+          - name: Stat Type Mask (drop-down, int)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 ID Mask (bools)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Value Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Meter 2 Type Mask (ints)
+            value: 
+            useVariables: 0
+            useTextField: 0
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
+    visible: 1
   states:
     states: []
     visible: 0

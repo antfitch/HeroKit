@@ -140,8 +140,8 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
-            DrawItemType();
-            BasicFields();
+            HeroKitCommon.DrawItemDropdown(intFields, "Ability Type", 0, HeroKitCommon.abilityTypeDatabase);
+            HeroKitCommon.BasicFieldsA(stringFields, uoFields, 0, 1, 0);
             DrawAttackSpeed();
             DrawTarget();
             DrawSuccess();
@@ -155,40 +155,9 @@ namespace HeroKit.RpgEditor
             HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this item");
             SimpleLayout.Line();
-            DrawActions(heroObject.propertiesList.properties);
+            HeroKitCommon.DrawActions(heroObject, heroActions, addItem, showBlockContent, showContextMenu);
         }
-        /// <summary>
-        /// Draw item type
-        /// </summary>
-        private static void DrawItemType()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.abilityTypeDatabase);
-            SimpleLayout.Label("Ability Type" + ":");
-            intFields[0].value = SimpleLayout.DropDownList(intFields[0].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-            SimpleLayout.EndVertical();
-        }
-        /// <summary>
-        /// Draw first group of fields (name, desc, icon, price)
-        /// </summary>
-        private static void BasicFields()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            // name field
-            SimpleLayout.Label("Name" + ":");
-            stringFields[0].value = SimpleLayout.TextField(stringFields[0].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // icon field
-            SimpleLayout.Label("Icon" + ":");
-            uoFields[0].value = SimpleLayout.ObjectField(uoFields[0].value as Sprite, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // description field
-            SimpleLayout.Label("Description" + ":");
-            stringFields[1].value = SimpleLayout.TextArea(stringFields[1].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450), 50);
-
-            SimpleLayout.EndVertical();
-        }
         /// <summary>
         /// Draw item type
         /// </summary>
@@ -197,13 +166,13 @@ namespace HeroKit.RpgEditor
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
             SimpleLayout.BeginHorizontal();
-            intFields[37].value = SimpleLayout.IntField(intFields[37].value);
+            intFields[6].value = SimpleLayout.IntField(intFields[6].value);
             SimpleLayout.Label("Wait time before cast");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
 
             SimpleLayout.BeginHorizontal(); 
-            intFields[15].value = SimpleLayout.IntField(intFields[15].value);
+            intFields[13].value = SimpleLayout.IntField(intFields[13].value);
             SimpleLayout.Label("Wait time after cast");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
@@ -228,21 +197,21 @@ namespace HeroKit.RpgEditor
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
             SimpleLayout.BeginHorizontal();
-            intFields[32].value = SimpleLayout.DropDownList(intFields[32].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
+            intFields[1].value = SimpleLayout.DropDownList(intFields[1].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
             SimpleLayout.Label("Target");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
 
             SimpleLayout.BeginHorizontal();
-            intFields[38].value = SimpleLayout.DropDownList(intFields[38].value, scopeList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
+            intFields[7].value = SimpleLayout.DropDownList(intFields[7].value, scopeList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
             SimpleLayout.Label("Scope");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
 
-            if (intFields[38].value == 2)
+            if (intFields[7].value == 2)
             {
                 SimpleLayout.BeginHorizontal();
-                intFields[39].value = SimpleLayout.IntField(intFields[39].value);
+                intFields[8].value = SimpleLayout.IntField(intFields[8].value);
                 SimpleLayout.Label("Max number of targets");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
@@ -270,7 +239,7 @@ namespace HeroKit.RpgEditor
 
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.BeginHorizontal();
-            intFields[36].value = SimpleLayout.DropDownList(intFields[36].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
+            intFields[5].value = SimpleLayout.DropDownList(intFields[5].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
             SimpleLayout.Label("Chance of success");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
@@ -288,26 +257,26 @@ namespace HeroKit.RpgEditor
 
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.BeginHorizontal();
-            intFields[33].value = SimpleLayout.DropDownList(intFields[33].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
+            intFields[2].value = SimpleLayout.DropDownList(intFields[2].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
             SimpleLayout.Label("How ability is used");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
 
             // projectile or radius
-            if (intFields[33].value == 1 || intFields[33].value == 2)
+            if (intFields[2].value == 1 || intFields[2].value == 2)
             {
                 SimpleLayout.BeginHorizontal();
-                intFields[34].value = SimpleLayout.IntField(intFields[34].value);
+                intFields[3].value = SimpleLayout.IntField(intFields[3].value);
                 SimpleLayout.Label("Range (in meters)");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
             }
 
             // projectile
-            if (intFields[33].value == 1)
+            if (intFields[2].value == 1)
             {
                 SimpleLayout.BeginHorizontal();
-                intFields[35].value = SimpleLayout.IntField(intFields[35].value);
+                intFields[4].value = SimpleLayout.IntField(intFields[4].value);
                 SimpleLayout.Label("Speed of projectile");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
@@ -360,7 +329,7 @@ namespace HeroKit.RpgEditor
                 itemList.setValues("", items);
 
                 SimpleLayout.BeginHorizontal();
-                intFields[32].value = SimpleLayout.DropDownList(intFields[32].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
+                intFields[1].value = SimpleLayout.DropDownList(intFields[1].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
                 SimpleLayout.Label("Target");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
@@ -390,7 +359,7 @@ namespace HeroKit.RpgEditor
             if (boolFields[5].value)
             {
                 SimpleLayout.BeginHorizontal();
-                intFields[40].value = SimpleLayout.IntField(intFields[40].value);
+                intFields[9].value = SimpleLayout.IntField(intFields[9].value);
                 SimpleLayout.Label("Radius around target");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
@@ -414,162 +383,25 @@ namespace HeroKit.RpgEditor
             if (boolFields[6].value)
             {
                 SimpleLayout.BeginHorizontal();
-                intFields[42].value = SimpleLayout.IntField(intFields[42].value);
+                intFields[11].value = SimpleLayout.IntField(intFields[11].value);
                 SimpleLayout.Label("Experience gained per use of this ability");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
                 SimpleLayout.BeginHorizontal();
-                intFields[41].value = SimpleLayout.IntField(intFields[41].value);
+                intFields[10].value = SimpleLayout.IntField(intFields[10].value);
                 SimpleLayout.Label("Experience needed to morph ability");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
                 DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.abilityDatabase);
                 SimpleLayout.BeginHorizontal();
-                intFields[43].value = SimpleLayout.DropDownList(intFields[43].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
+                intFields[12].value = SimpleLayout.DropDownList(intFields[12].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 250));
                 SimpleLayout.Label("Morph into...");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
             }
 
-            SimpleLayout.EndVertical();
-        }
-        /// <summary>
-        /// Draw Actions
-        /// </summary>
-        private static void DrawActions(List<HeroProperties> items)
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Label("Additional actions to perform when used:");
-            SimpleLayout.Space();
-            SimpleLayout.Button("[+Action]", addItem, 65);
-            SimpleLayout.EndHorizontal();
-
-            SimpleLayout.Line();
-
-            // exit early if there are no items
-            if (heroActions != null && heroActions.Count > 0)
-            {
-                // display items  
-                for (int i = 0; i < heroActions.Count; i++)
-                {
-                    //---------------------------------------------
-                    // get the prefix to show before the name of the item
-                    //---------------------------------------------
-                    string prefix = (heroActions[i].actionTemplate != null) ? heroActions[i].actionTemplate.title : "";
-
-                    //---------------------------------------------
-                    // get the name to show for the action
-                    //---------------------------------------------
-                    string itemName = heroActions[i].name;
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        itemName = (heroActions[i].name != "") ? heroActions[i].name : heroActions[i].actionTemplate.name;
-                    }
-
-                    // dont show item name if prefix found and if item has no name
-                    itemName = (prefix != "" && heroActions[i].name == "") ? "" : itemName;
-
-                    // if no item, take note
-                    if (itemName == "")
-                        itemName = "[none]";
-
-                    //---------------------------------------------
-                    // set indent level of this action
-                    //---------------------------------------------
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        // get new indent
-                        indent = indent + heroActions[i].actionTemplate.indentThis;
-
-                        // if indent is negative, change it to zero (happens if too many end statements added)
-                        if (indent < 0) indent = 0;
-                    }
-                    heroActions[i].indent = indent;
-                    string space = "".PadRight(indent * 5);
-
-                    //---------------------------------------------
-                    // set the color of the action title text
-                    //---------------------------------------------
-                    string hexColor = (SimpleGUICommon.isProSkin) ? "FFFFFF" : "000000";
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        hexColor = SimpleGUICommon.GetHexFromColor(heroActions[i].actionTemplate.titleColor);
-
-                        // lighten colors for dark skin
-                        if (SimpleGUICommon.isProSkin)
-                            hexColor = SimpleGUICommon.AlterHexBrightness(hexColor, 150);
-                    }
-
-                    //---------------------------------------------
-                    // draw this action
-                    //---------------------------------------------
-
-                    // get the box to draw around the foldout
-                    GUIStyle style = Box.StyleMenu2Selected; // Box.StyleDefault;
-                    GUIStyle buttonStyle = Button.StyleFoldoutText;
-                    //if (HeroKitMenuBlock.itemFocus && HeroKitMenuBlock.itemID == i)
-                    //{
-                    //    style = Box.StyleMenuSelected;
-                    //    buttonStyle = Button.StyleFoldoutTextB;
-                    //}
-
-                    // show foldout
-                    SimpleLayout.BeginHorizontal(style);
-                    GUIStyle foldoutStyle = (heroActions[i].visible) ? Button.StyleFoldoutOpen : Button.StyleFoldoutClosed;
-                    SimpleLayout.Button("", showBlockContent, showContextMenu, i, foldoutStyle, 10);                  
-                    SimpleLayout.Button(i + ": " + space + "<color=#" + hexColor + ">" + prefix + itemName + "</color>", showBlockContent, showContextMenu, i, buttonStyle);
-                    //SimpleLayout.Button("▲", blah, 20);
-                    //SimpleLayout.Button("▼", blah, 20);
-                    //SimpleLayout.Button("[+]", blah, 20);
-                    //SimpleLayout.Space(5);
-                    //SimpleLayout.Button("[–]", blah, 20);
-                    SimpleLayout.EndHorizontal();
-
-                    HeroKitAction oldTemplate = heroActions[i].actionTemplate;
-                    if (heroActions[i].visible)
-                    {
-                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleC);
-
-                        SimpleLayout.Space(5);
-                        SimpleLayout.BeginHorizontal();
-                        SimpleLayout.Space(5);
-
-                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-                        SimpleLayout.Label("Action:");
-                        heroActions[i].actionTemplate = SimpleLayout.ObjectField(heroActions[i].actionTemplate, 450);
-                        SimpleLayout.EndVertical();
-
-                        SimpleLayout.EndHorizontal();
-
-                        if (heroActions[i].actionTemplate)
-                            HeroKit.Editor.ActionBlockBuilder.BuildFields(heroObject, heroActions[i], heroActions[i].actionTemplate, oldTemplate);
-
-                        SimpleLayout.EndVertical();
-                    }
-
-
-                    //---------------------------------------------
-                    // set indent level of next action
-                    //---------------------------------------------
-
-                    // note if delete called, the last item in list won't exist. check to make sure it is still there.
-                    if (heroActions.Count > i && heroActions[i].actionTemplate != null)
-                    {
-                        // get new indent
-                        indent = indent + heroActions[i].actionTemplate.indentNext;
-
-                        // if indent is negative, change it to zero (happens if too many end statements added)
-                        if (indent < 0) indent = 0;
-                    }
-
-                    // if we are at the end of the action list, reset indent
-                    if (i == (heroActions.Count - 1)) indent = 0;
-                }
-            }
             SimpleLayout.EndVertical();
         }
 

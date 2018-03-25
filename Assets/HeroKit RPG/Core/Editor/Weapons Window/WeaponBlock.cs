@@ -140,10 +140,9 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
-            DrawItemType();
-            BasicFields();
+            HeroKitCommon.DrawItemDropdown(intFields, "Weapon Type", 0, HeroKitCommon.weaponTypeDatabase);
+            HeroKitCommon.BasicFieldsA(stringFields, uoFields, 0, 1, 0);
             HeroKitCommon.DrawMoneyValue(stringFields_att, intFields_att);
-            //HeroKitCommon.DrawMonetaryValue(intFields_att, boolFields_att);
             HeroKitCommon.DrawItemWeight(intFields_att);
             DrawAttackSpeed();
             HeroKitCommon.DrawStackItems(boolFields_att);
@@ -154,50 +153,14 @@ namespace HeroKit.RpgEditor
             HeroKitCommon.DrawSocketsValue(stringFields_att, intFields_att);
             SimpleLayout.Line();
             HeroKitCommon.DrawMeterValue(stringFields_att, intFields_att, "Change meters (on attack target)");
-            //HeroKitCommon.DrawMeters(intFields_att, boolFields_att, "Change meters (on attack target)");
             HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Change stats (on character who has this weapon)");
-            //HeroKitCommon.DrawStats(intFields_att, boolFields_att, "Change stats (on character who has this weapon)");           
-            //HeroKitCommon.DrawExtras(intFields_att, "Add variance");
             SimpleLayout.Line();
-            //HeroKitCommon.DrawConditions(intFields_att, boolFields_att);
             HeroKitCommon.DrawConditionsValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawElementValue(stringFields_att, intFields_att, "Attach elements to this item");
-            //HeroKitCommon.DrawElements(intFields_att, boolFields_att, "Attach elements to this item", false);
             SimpleLayout.Line();
-            DrawActions(heroObject.propertiesList.properties);
+            HeroKitCommon.DrawActions(heroObject, heroActions, addItem, showBlockContent, showContextMenu);
         }
-        /// <summary>
-        /// Draw item type
-        /// </summary>
-        private static void DrawItemType()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-            DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.weaponTypeDatabase);
-            SimpleLayout.Label("Weapon Type" + ":");
-            intFields[14].value = SimpleLayout.DropDownList(intFields[14].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-            SimpleLayout.EndVertical();
-        }
-        /// <summary>
-        /// Draw first group of fields (name, desc, icon, price)
-        /// </summary>
-        private static void BasicFields()
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
 
-            // name field
-            SimpleLayout.Label("Name" + ":");
-            stringFields[0].value = SimpleLayout.TextField(stringFields[0].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // icon field
-            SimpleLayout.Label("Icon" + ":");
-            uoFields[0].value = SimpleLayout.ObjectField(uoFields[0].value as Sprite, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
-
-            // description field
-            SimpleLayout.Label("Description" + ":");
-            stringFields[1].value = SimpleLayout.TextArea(stringFields[1].value, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450), 50);
-
-            SimpleLayout.EndVertical();
-        }
         /// <summary>
         /// Draw item type
         /// </summary>
@@ -218,7 +181,7 @@ namespace HeroKit.RpgEditor
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             SimpleLayout.BeginHorizontal(); 
-            intFields[15].value = SimpleLayout.IntField(intFields[15].value);
+            intFields[1].value = SimpleLayout.IntField(intFields[1].value);
             SimpleLayout.Label("Pause time between attacks");
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
@@ -245,156 +208,18 @@ namespace HeroKit.RpgEditor
                 DropDownValues itemList = HeroKitCommon.databaseList(HeroKitCommon.ammunitionTypeDatabase);
 
                 SimpleLayout.BeginHorizontal();
-                intFields[16].value = SimpleLayout.DropDownList(intFields[16].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
+                intFields[2].value = SimpleLayout.DropDownList(intFields[2].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 200));
                 SimpleLayout.Label("Ammunition type");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
 
                 SimpleLayout.BeginHorizontal();
-                intFields[17].value = SimpleLayout.IntField(intFields[17].value);
+                intFields[3].value = SimpleLayout.IntField(intFields[3].value);
                 SimpleLayout.Label("Range (in meters)");
                 SimpleLayout.Space();
                 SimpleLayout.EndHorizontal();
             }
 
-            SimpleLayout.EndVertical();
-        }
-
-        /// <summary>
-        /// Draw Actions
-        /// </summary>
-        private static void DrawActions(List<HeroProperties> items)
-        {
-            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-
-            SimpleLayout.BeginHorizontal();
-            SimpleLayout.Label("Additional actions to perform when used:");
-            SimpleLayout.Space();
-            SimpleLayout.Button("[+Action]", addItem, 65);
-            SimpleLayout.EndHorizontal();
-
-            SimpleLayout.Line();
-
-            // exit early if there are no items
-            if (heroActions != null && heroActions.Count > 0)
-            {
-                // display items  
-                for (int i = 0; i < heroActions.Count; i++)
-                {
-                    //---------------------------------------------
-                    // get the prefix to show before the name of the item
-                    //---------------------------------------------
-                    string prefix = (heroActions[i].actionTemplate != null) ? heroActions[i].actionTemplate.title : "";
-
-                    //---------------------------------------------
-                    // get the name to show for the action
-                    //---------------------------------------------
-                    string itemName = heroActions[i].name;
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        itemName = (heroActions[i].name != "") ? heroActions[i].name : heroActions[i].actionTemplate.name;
-                    }
-
-                    // dont show item name if prefix found and if item has no name
-                    itemName = (prefix != "" && heroActions[i].name == "") ? "" : itemName;
-
-                    // if no item, take note
-                    if (itemName == "")
-                        itemName = "[none]";
-
-                    //---------------------------------------------
-                    // set indent level of this action
-                    //---------------------------------------------
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        // get new indent
-                        indent = indent + heroActions[i].actionTemplate.indentThis;
-
-                        // if indent is negative, change it to zero (happens if too many end statements added)
-                        if (indent < 0) indent = 0;
-                    }
-                    heroActions[i].indent = indent;
-                    string space = "".PadRight(indent * 5);
-
-                    //---------------------------------------------
-                    // set the color of the action title text
-                    //---------------------------------------------
-                    string hexColor = (SimpleGUICommon.isProSkin) ? "FFFFFF" : "000000";
-                    if (heroActions[i].actionTemplate != null)
-                    {
-                        hexColor = SimpleGUICommon.GetHexFromColor(heroActions[i].actionTemplate.titleColor);
-
-                        // lighten colors for dark skin
-                        if (SimpleGUICommon.isProSkin)
-                            hexColor = SimpleGUICommon.AlterHexBrightness(hexColor, 150);
-                    }
-
-                    //---------------------------------------------
-                    // draw this action
-                    //---------------------------------------------
-
-                    // get the box to draw around the foldout
-                    GUIStyle style = Box.StyleMenu2Selected; // Box.StyleDefault;
-                    GUIStyle buttonStyle = Button.StyleFoldoutText;
-                    //if (HeroKitMenuBlock.itemFocus && HeroKitMenuBlock.itemID == i)
-                    //{
-                    //    style = Box.StyleMenuSelected;
-                    //    buttonStyle = Button.StyleFoldoutTextB;
-                    //}
-
-                    // show foldout
-                    SimpleLayout.BeginHorizontal(style);
-                    GUIStyle foldoutStyle = (heroActions[i].visible) ? Button.StyleFoldoutOpen : Button.StyleFoldoutClosed;
-                    SimpleLayout.Button("", showBlockContent, showContextMenu, i, foldoutStyle, 10);                  
-                    SimpleLayout.Button(i + ": " + space + "<color=#" + hexColor + ">" + prefix + itemName + "</color>", showBlockContent, showContextMenu, i, buttonStyle);
-                    //SimpleLayout.Button("▲", blah, 20);
-                    //SimpleLayout.Button("▼", blah, 20);
-                    //SimpleLayout.Button("[+]", blah, 20);
-                    //SimpleLayout.Space(5);
-                    //SimpleLayout.Button("[–]", blah, 20);
-                    SimpleLayout.EndHorizontal();
-
-                    HeroKitAction oldTemplate = heroActions[i].actionTemplate;
-                    if (heroActions[i].visible)
-                    {
-                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleC);
-
-                        SimpleLayout.Space(5);
-                        SimpleLayout.BeginHorizontal();
-                        SimpleLayout.Space(5);
-
-                        SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-                        SimpleLayout.Label("Action:");
-                        heroActions[i].actionTemplate = SimpleLayout.ObjectField(heroActions[i].actionTemplate, 450);
-                        SimpleLayout.EndVertical();
-
-                        SimpleLayout.EndHorizontal();
-
-                        if (heroActions[i].actionTemplate)
-                            HeroKit.Editor.ActionBlockBuilder.BuildFields(heroObject, heroActions[i], heroActions[i].actionTemplate, oldTemplate);
-
-                        SimpleLayout.EndVertical();
-                    }
-
-
-                    //---------------------------------------------
-                    // set indent level of next action
-                    //---------------------------------------------
-
-                    // note if delete called, the last item in list won't exist. check to make sure it is still there.
-                    if (heroActions.Count > i && heroActions[i].actionTemplate != null)
-                    {
-                        // get new indent
-                        indent = indent + heroActions[i].actionTemplate.indentNext;
-
-                        // if indent is negative, change it to zero (happens if too many end statements added)
-                        if (indent < 0) indent = 0;
-                    }
-
-                    // if we are at the end of the action list, reset indent
-                    if (i == (heroActions.Count - 1)) indent = 0;
-                }
-            }
             SimpleLayout.EndVertical();
         }
 

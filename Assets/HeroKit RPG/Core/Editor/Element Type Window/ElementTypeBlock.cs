@@ -14,7 +14,7 @@ namespace HeroKit.RpgEditor
     /// <summary>
     /// Block for Hero Properties that appears in Hero Kit Editor.
     /// </summary>
-    internal static class ElementBlock
+    internal static class ElementTypeBlock
     {
         // --------------------------------------------------------------
         // Variables
@@ -27,7 +27,7 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Name of the block.
         /// </summary>
-        private static string blockName = "Element";
+        private static string blockName = "Element Type";
         /// <summary>
         /// The Hero Property.
         /// </summary>
@@ -97,7 +97,6 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
-            HeroKitCommon.DrawItemDropdown(intFields, "Element Type", 0, HeroKitCommon.elementTypeDatabase);
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
         }
     }

@@ -16,25 +16,7 @@ MonoBehaviour:
     visible: 0
     ints:
       visible: 0
-      items:
-      - name: Weapon Type ID
-        value: 0
-      - name: Ability Type ID
-        value: 0
-      - name: Armor Type ID
-        value: 0
-      - name: Meter ID
-        value: 0
-      - name: Condition ID
-        value: 0
-      - name: Element ID
-        value: 0
-      - name: Stats ID
-        value: 0
-      - name: Stats Inc ID
-        value: 0
-      - name: Meter Inc ID
-        value: 0
+      items: []
     floats:
       visible: 0
       items: []
@@ -52,58 +34,6 @@ MonoBehaviour:
         value: 
         useVariables: 0
         useTextField: 1
-      - name: Weapon Type Mask
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Armor Type Mask
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Condition Type Mask
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Element Type Mask
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Abilities Type Mask
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Meter Mask (bools for checkboxes)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Meter Mask (ints)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Stats Mask (bools for checkboxes)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Stats Mask Start (ints)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Stats Mask Increment (bools for checkboxes)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Stats Mask Increment (ints)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Meter Mask Increment (bools for checkboxes)
-        value: 
-        useVariables: 0
-        useTextField: 0
-      - name: Meter Mask Increment (ints)
-        value: 
-        useVariables: 0
-        useTextField: 0
     gameObjects:
       visible: 0
       items: []

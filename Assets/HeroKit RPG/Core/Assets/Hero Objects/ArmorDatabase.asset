@@ -45,34 +45,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 1
         floats:
@@ -112,21 +84,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 969d9190b2dd32246b003456f38f5631,
         type: 2}
       itemProperties:
@@ -134,34 +91,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 2
         floats:
@@ -201,21 +130,6 @@ MonoBehaviour:
             objectType: 2
             sceneID: 0
             sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
-            sceneID: 0
-            sceneName: 
     - propertyTemplate: {fileID: 11400000, guid: 969d9190b2dd32246b003456f38f5631,
         type: 2}
       itemProperties:
@@ -223,34 +137,6 @@ MonoBehaviour:
         ints:
           visible: 0
           items:
-          - name: Affix Count
-            value: 0
-          - name: Affix ID 1
-            value: 0
-          - name: Affix ID 2
-            value: 0
-          - name: Affix ID 3
-            value: 0
-          - name: Affix ID 4
-            value: 0
-          - name: Affix ID 5
-            value: 0
-          - name: Affix ID 6
-            value: 0
-          - name: Socket Count
-            value: 0
-          - name: Socket Count 1
-            value: 0
-          - name: Socket Count 2
-            value: 0
-          - name: Socket Count 3
-            value: 0
-          - name: Socket Count 4
-            value: 0
-          - name: Socket Count 5
-            value: 0
-          - name: Socket Count 6
-            value: 0
           - name: Item Type
             value: 3
         floats:
@@ -288,21 +174,6 @@ MonoBehaviour:
           - name: Icon for Item
             value: {fileID: 0}
             objectType: 2
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 4
-            sceneID: 0
-            sceneName: 
-          - name: N/A
-            value: {fileID: 0}
-            objectType: 1
             sceneID: 0
             sceneName: 
     visible: 1
