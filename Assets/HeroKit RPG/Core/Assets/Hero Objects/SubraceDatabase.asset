@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
-  m_Name: ElementTypeDatabase
+  m_Name: SubraceDatabase
   m_EditorClassIdentifier: 
   properties:
     propertyTemplate: {fileID: 0}
@@ -38,13 +38,15 @@ MonoBehaviour:
         items: []
   propertiesList:
     properties:
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: 1e5433cccb6db0048a6e6590366e60c5,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Race ID
+            value: 1
         floats:
           visible: 0
           items: []
@@ -55,11 +57,11 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Nature
+            value: Tree Elf
             useVariables: 0
             useTextField: 0
-          - name: Description
-            value: 
+          - name: Subrace
+            value: An elf that lives in the trees.
             useVariables: 0
             useTextField: 0
         gameObjects:
@@ -71,13 +73,15 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: 1e5433cccb6db0048a6e6590366e60c5,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Race ID
+            value: 1
         floats:
           visible: 0
           items: []
@@ -88,10 +92,10 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Holy
+            value: Night Elf
             useVariables: 0
             useTextField: 0
-          - name: Description
+          - name: Subrace
             value: 
             useVariables: 0
             useTextField: 0

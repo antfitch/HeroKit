@@ -104,6 +104,39 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
+    - propertyTemplate: {fileID: 11400000, guid: 7c2cf32442ac64741a3c277246509897,
+        type: 2}
+      itemProperties:
+        visible: 0
+        ints:
+          visible: 0
+          items: []
+        floats:
+          visible: 0
+          items: []
+        bools:
+          visible: 0
+          items: []
+        strings:
+          visible: 0
+          items:
+          - name: Name
+            value: Rogue
+            useVariables: 0
+            useTextField: 0
+          - name: Description
+            value: 
+            useVariables: 0
+            useTextField: 1
+        gameObjects:
+          visible: 0
+          items: []
+        heroObjects:
+          visible: 0
+          items: []
+        unityObjects:
+          visible: 0
+          items: []
     visible: 1
   states:
     states: []

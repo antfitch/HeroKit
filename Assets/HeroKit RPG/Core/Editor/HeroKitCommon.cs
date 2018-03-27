@@ -41,6 +41,7 @@ namespace HeroKit.RpgEditor
         //-------------------------------------------
 
         // item database variables
+        #region Databases
         public static HeroObject itemDatabase;
         public static HeroKitProperty itemProperties; 
         // item type database variables
@@ -95,15 +96,27 @@ namespace HeroKit.RpgEditor
         // formula database variables
         public static HeroObject formulaDatabase;
         public static HeroKitProperty formulaProperties;
-        // class database variables
-        public static HeroObject classDatabase;
-        public static HeroKitProperty classProperties;
         // element type database variables
         public static HeroObject elementTypeDatabase;
         public static HeroKitProperty elementTypeProperties;
         // conditions type database variables
         public static HeroObject conditionTypeDatabase;
         public static HeroKitProperty conditionTypeProperties;
+        // class database variables
+        public static HeroObject classDatabase;
+        public static HeroKitProperty classProperties;
+        // subclass database variables
+        public static HeroObject subclassDatabase;
+        public static HeroKitProperty subclassProperties;
+        // race database variables
+        public static HeroObject raceDatabase;
+        public static HeroKitProperty raceProperties;
+        // subrace database variables
+        public static HeroObject subraceDatabase;
+        public static HeroKitProperty subraceProperties;
+        // alignment database variables
+        public static HeroObject alignmentDatabase;
+        public static HeroKitProperty alignmentProperties;
 
         // attribute database variables
         public static HeroObject itemDatabase_attributes;
@@ -114,6 +127,10 @@ namespace HeroKit.RpgEditor
         public static HeroObject ammunitionDatabase_attributes;
         public static HeroObject abilityDatabase_attributes;
         public static HeroObject classDatabase_attributes;
+        public static HeroObject subclassDatabase_attributes;
+        public static HeroObject raceDatabase_attributes;
+        public static HeroObject subraceDatabase_attributes;
+        public static HeroObject alignmentDatabase_attributes;
         public static HeroKitProperty attributeProperties;
 
         public static void LoadHeroKitRpgDatabases()
@@ -148,18 +165,6 @@ namespace HeroKit.RpgEditor
             // money database
             moneyDatabase = (moneyDatabase == null) ? GetScriptableObject<HeroObject>("MoneyDatabase", dbPath) : moneyDatabase;
             moneyProperties = (moneyProperties == null) ? GetScriptableObject<HeroKitProperty>("MoneyProperties", propertiesPath) : moneyProperties;
-
-            // attribute database
-            itemDatabase_attributes = (itemDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ItemDatabase_attributes", dbPath) : itemDatabase_attributes;
-            affixDatabase_attributes = (affixDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AffixDatabase_attributes", dbPath) : affixDatabase_attributes;
-            conditionDatabase_attributes = (conditionDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ConditionDatabase_attributes", dbPath) : conditionDatabase_attributes;
-            weaponDatabase_attributes = (weaponDatabase_attributes == null) ? GetScriptableObject<HeroObject>("WeaponDatabase_attributes", dbPath) : weaponDatabase_attributes;
-            armorDatabase_attributes = (armorDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ArmorDatabase_attributes", dbPath) : armorDatabase_attributes;
-            ammunitionDatabase_attributes = (ammunitionDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AmmunitionDatabase_attributes", dbPath) : ammunitionDatabase_attributes;
-            abilityDatabase_attributes = (abilityDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AbilityDatabase_attributes", dbPath) : abilityDatabase_attributes;
-            classDatabase_attributes = (classDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ClassDatabase_attributes", dbPath) : classDatabase_attributes;
-
-            attributeProperties = (attributeProperties == null) ? GetScriptableObject<HeroKitProperty>("AttributeProperties", propertiesPath) : attributeProperties;
 
             // element database  
             elementDatabase = (elementDatabase == null) ? GetScriptableObject<HeroObject>("ElementDatabase", dbPath) : elementDatabase;
@@ -205,10 +210,6 @@ namespace HeroKit.RpgEditor
             formulaDatabase = (formulaDatabase == null) ? GetScriptableObject<HeroObject>("FormulaDatabase", dbPath) : formulaDatabase;
             formulaProperties = (formulaProperties == null) ? GetScriptableObject<HeroKitProperty>("FormulaProperties", propertiesPath) : formulaProperties;
 
-            // state database
-            classDatabase = (classDatabase == null) ? GetScriptableObject<HeroObject>("ClassDatabase", dbPath) : classDatabase;
-            classProperties = (classProperties == null) ? GetScriptableObject<HeroKitProperty>("ClassProperties", propertiesPath) : classProperties;
-
             // element type database  
             elementTypeDatabase = (elementTypeDatabase == null) ? GetScriptableObject<HeroObject>("ElementTypeDatabase", dbPath) : elementTypeDatabase;
             elementTypeProperties = (elementTypeProperties == null) ? GetScriptableObject<HeroKitProperty>("ElementTypeProperties", propertiesPath) : elementTypeProperties;
@@ -216,6 +217,42 @@ namespace HeroKit.RpgEditor
             // condition type database  
             conditionTypeDatabase = (conditionTypeDatabase == null) ? GetScriptableObject<HeroObject>("ConditionTypeDatabase", dbPath) : conditionTypeDatabase;
             conditionTypeProperties = (conditionTypeProperties == null) ? GetScriptableObject<HeroKitProperty>("ConditionTypeProperties", propertiesPath) : conditionTypeProperties;
+
+            // class database
+            classDatabase = (classDatabase == null) ? GetScriptableObject<HeroObject>("ClassDatabase", dbPath) : classDatabase;
+            classProperties = (classProperties == null) ? GetScriptableObject<HeroKitProperty>("ClassProperties", propertiesPath) : classProperties;
+
+            // subclass database
+            subclassDatabase = (subclassDatabase == null) ? GetScriptableObject<HeroObject>("SubclassDatabase", dbPath) : subclassDatabase;
+            subclassProperties = (subclassProperties == null) ? GetScriptableObject<HeroKitProperty>("SubclassProperties", propertiesPath) : subclassProperties;
+
+            // race database
+            raceDatabase = (raceDatabase == null) ? GetScriptableObject<HeroObject>("RaceDatabase", dbPath) : raceDatabase;
+            raceProperties = (raceProperties == null) ? GetScriptableObject<HeroKitProperty>("RaceProperties", propertiesPath) : raceProperties;
+
+            // subrace database
+            subraceDatabase = (subraceDatabase == null) ? GetScriptableObject<HeroObject>("SubraceDatabase", dbPath) : subraceDatabase;
+            subraceProperties = (subraceProperties == null) ? GetScriptableObject<HeroKitProperty>("SubraceProperties", propertiesPath) : subraceProperties;
+
+            // alignment database
+            alignmentDatabase = (alignmentDatabase == null) ? GetScriptableObject<HeroObject>("AlignmentDatabase", dbPath) : alignmentDatabase;
+            alignmentProperties = (alignmentProperties == null) ? GetScriptableObject<HeroKitProperty>("AlignmentProperties", propertiesPath) : alignmentProperties;
+
+            // attribute database
+            itemDatabase_attributes = (itemDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ItemDatabase_attributes", dbPath) : itemDatabase_attributes;
+            affixDatabase_attributes = (affixDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AffixDatabase_attributes", dbPath) : affixDatabase_attributes;
+            conditionDatabase_attributes = (conditionDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ConditionDatabase_attributes", dbPath) : conditionDatabase_attributes;
+            weaponDatabase_attributes = (weaponDatabase_attributes == null) ? GetScriptableObject<HeroObject>("WeaponDatabase_attributes", dbPath) : weaponDatabase_attributes;
+            armorDatabase_attributes = (armorDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ArmorDatabase_attributes", dbPath) : armorDatabase_attributes;
+            ammunitionDatabase_attributes = (ammunitionDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AmmunitionDatabase_attributes", dbPath) : ammunitionDatabase_attributes;
+            abilityDatabase_attributes = (abilityDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AbilityDatabase_attributes", dbPath) : abilityDatabase_attributes;
+            classDatabase_attributes = (classDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ClassDatabase_attributes", dbPath) : classDatabase_attributes;
+            subclassDatabase_attributes = (subclassDatabase_attributes == null) ? GetScriptableObject<HeroObject>("SubclassDatabase_attributes", dbPath) : subclassDatabase_attributes;
+            raceDatabase_attributes = (raceDatabase_attributes == null) ? GetScriptableObject<HeroObject>("RaceDatabase_attributes", dbPath) : raceDatabase_attributes;
+            subraceDatabase_attributes = (subraceDatabase_attributes == null) ? GetScriptableObject<HeroObject>("SubraceDatabase_attributes", dbPath) : subraceDatabase_attributes;
+            alignmentDatabase_attributes = (alignmentDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AlignmentDatabase_attributes", dbPath) : alignmentDatabase_attributes;
+
+            attributeProperties = (attributeProperties == null) ? GetScriptableObject<HeroKitProperty>("AttributeProperties", propertiesPath) : attributeProperties;
 
         }
         public static T GetScriptableObject<T>(string name, string path) where T : UnityEngine.ScriptableObject
@@ -238,11 +275,20 @@ namespace HeroKit.RpgEditor
 
             return heroItem;
         }
+        #endregion
 
         //-------------------------------------------
         // Item lists
         //-------------------------------------------
-
+        # region drop-down lists
+        // get properties for a database
+        public static HeroProperties getHeroProperties(HeroKitProperty heroKitProperty)
+        {
+            HeroProperties hp = new HeroProperties();
+            hp.propertyTemplate = heroKitProperty;
+            hp.itemProperties = heroKitProperty.properties.Clone(heroKitProperty.properties);
+            return hp;
+        }
         // get a list of all items in a database
         public static DropDownValues databaseList(HeroObject database)
         {
@@ -290,7 +336,7 @@ namespace HeroKit.RpgEditor
             itemsList.setValues("", items);
             return itemsList;
         }
-
+        // show all, show selected, show not selected
         public static DropDownValues showList()
         {
             // list of stat change types              
@@ -299,11 +345,12 @@ namespace HeroKit.RpgEditor
             itemsList.setValues("", changeType);
             return itemsList;
         }
+        #endregion
 
         //-------------------------------------------
-        // Modify data in a menu
+        // Left Menu Actions
         //-------------------------------------------
-
+        #region Right-Click Menu Actions
         /// <summary>
         /// Add item at end of list.
         /// </summary>      
@@ -317,7 +364,6 @@ namespace HeroKit.RpgEditor
             HeroKit.Editor.HeroKitCommon.deselectField();
             items.Insert(index, newItem);
         }
-
         /// <summary>
         /// Move item up.
         /// </summary>
@@ -353,7 +399,6 @@ namespace HeroKit.RpgEditor
                 items[indexB] = fieldA;
             }
         }
-
         /// <summary>
         /// Copy an item.
         /// </summary>
@@ -393,7 +438,6 @@ namespace HeroKit.RpgEditor
                 items.InsertRange(index, itemsToPaste);
             }
         }
-
         /// <summary>
         /// Delete an item.
         /// </summary>
@@ -451,15 +495,12 @@ namespace HeroKit.RpgEditor
                 deletedIDs.RemoveFirst();
             }
         }
+        #endregion
 
-        public static HeroProperties getHeroProperties(HeroKitProperty heroKitProperty)
-        {
-            HeroProperties hp = new HeroProperties();
-            hp.propertyTemplate = heroKitProperty;
-            hp.itemProperties = heroKitProperty.properties.Clone(heroKitProperty.properties);
-            return hp;
-        }
-
+        //-------------------------------------------
+        // In-Line Actions
+        //-------------------------------------------
+        #region Right-Click In-Line Actions
         // !!! IOC not available for scriptable objects (if things have changed, merge this)
         /// <summary>
         /// Copy an item.
@@ -538,7 +579,6 @@ namespace HeroKit.RpgEditor
                 deletedIDs.RemoveLast();
             }
         }
-
         /// <summary>
         /// Copy an item.
         /// </summary>
@@ -617,7 +657,23 @@ namespace HeroKit.RpgEditor
             }
         }
 
+        public static void addItem(List<IntField> intFields_att, int id)
+        {
+            if (intFields_att[id].value < 10)
+                intFields_att[id].value++;
+        }
+        public static void removeItem(List<IntField> intFields_att, int id)
+        {
+            if (intFields_att[id].value > 0)
+                intFields_att[id].value--;
+        }
+        #endregion
 
+        //-------------------------------------------
+        // Fields and Field Groups
+        //-------------------------------------------
+
+        #region field groups: draw value / draw list
         //-------------------------------------------
         // Checkbox, Item name, item value (int)
         //-------------------------------------------
@@ -854,6 +910,12 @@ namespace HeroKit.RpgEditor
 
             DrawItemValueC(stringFields, intFields, title, 12, 8, showSockets, toggleSockets, sockets);
         }
+        public static void DrawAlignmentValue(List<StringField> stringFields, List<IntField> intFields, string title = "Alignments available for this")
+        {
+            DropDownValues alignments = databaseList(alignmentDatabase);
+
+            DrawItemValueC(stringFields, intFields, title, 30, 18, showAlignment, toggleAlignment, alignments);
+        }
 
         //-------------------------------------------
         // Checkbox, Item name, drop-down list a, drop-down list b
@@ -990,24 +1052,25 @@ namespace HeroKit.RpgEditor
             // create bit string from bit array & save
             stringFields[boolMaskID].value = HeroKitCommon.CreateBitString(bitArray);
         }
-        public static void DrawWeaponList(List<StringField> stringFields, List<IntField> intFields, string title = "Weapons allowed for this class")
+        public static void DrawWeaponList(List<StringField> stringFields, List<IntField> intFields, string title = "Weapons allowed for this")
         {
             DrawItemValueE(stringFields, intFields, title, 17, 10, 
                            showWeapons, toggleWeaponType, 0,
                            weaponTypeDatabase, weaponDatabase, ref showOnWeapons);
         }
-        public static void DrawArmorList(List<StringField> stringFields, List<IntField> intFields, string title = "Armor allowed for this class")
+        public static void DrawArmorList(List<StringField> stringFields, List<IntField> intFields, string title = "Armor allowed for this")
         {
             DrawItemValueE(stringFields, intFields, title, 18, 12,
                            showArmor, toggleArmorType, 0,
                            armorTypeDatabase, armorDatabase, ref showOnArmor);
         }
-        public static void DrawAbilityList(List<StringField> stringFields, List<IntField> intFields, string title = "Abilities allowed for this class")
+        public static void DrawAbilityList(List<StringField> stringFields, List<IntField> intFields, string title = "Abilities allowed for this")
         {
             DrawItemValueE(stringFields, intFields, title, 19, 13,
                            showAbility, toggleAbility, 0,
                            abilityTypeDatabase, abilityDatabase, ref showOnAbility);
         }
+
 
         //-------------------------------------------
         // Checkbox, Item name, drop-down list
@@ -1150,7 +1213,7 @@ namespace HeroKit.RpgEditor
             stringFields[boolMaskID].value = HeroKitCommon.CreateBitString(bitArray);
             stringFields[selectMaskID].value = CreateIntStringLarge(intArray);
         }
-        public static void DrawConditionsList(List<StringField> stringFields, List<IntField> intFields, string title = "Conditions that affect this class")
+        public static void DrawConditionsList(List<StringField> stringFields, List<IntField> intFields, string title = "Conditions that affect this")
         {
             DropDownValues severity = conditionSeverityList();
 
@@ -1161,7 +1224,7 @@ namespace HeroKit.RpgEditor
                            conditionTypeDatabase, conditionDatabase, severity,
                            ref showOnCondition);
         }
-        public static void DrawElementsList(List<StringField> stringFields, List<IntField> intFields, string title = "Elements that affect this class")
+        public static void DrawElementsList(List<StringField> stringFields, List<IntField> intFields, string title = "Elements that affect this")
         {
             DropDownValues severity = conditionSeverityList();
 
@@ -1372,84 +1435,6 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Draw when item can be used
         /// </summary>
-        private static bool showStats = false;
-        private static void toggleStats()
-        {
-            showStats = !showStats;
-        }
-        private static bool showStats2 = false;
-        private static void toggleStats2()
-        {
-            showStats2 = !showStats2;
-        }
-
-        private static bool showMeters = false;
-        private static void toggleMeters()
-        {
-            showMeters = !showMeters;
-        }
-        private static bool showMeters2 = false;
-        private static void toggleMeters2()
-        {
-            showMeters2 = !showMeters2;
-        }
-
-        private static bool showElements = false;
-        private static void toggleElements()
-        {
-            showElements = !showElements;
-        }
-        private static int showOnElement = 0;
-
-        private static bool showConditions = false;
-        private static void toggleConditions()
-        {
-            showConditions = !showConditions;
-        }
-        private static int showOnCondition = 0;
-
-        private static bool showMoney = false;
-        private static void toggleMoney()
-        {
-            showMoney = !showMoney;
-        }
-
-        private static bool showAffix = false;
-        private static void toggleAffix()
-        {
-            showAffix = !showAffix;
-        }
-
-        private static bool showSockets = false;
-        private static void toggleSockets()
-        {
-            showSockets = !showSockets;
-        }
-
-        private static bool showWeapons = false;
-        private static void toggleWeaponType()
-        {
-            showWeapons = !showWeapons;
-        }
-        private static int showOnWeapons = 0;
-
-        private static bool showArmor = false;
-        private static void toggleArmorType()
-        {
-            showArmor = !showArmor;
-        }
-        private static int showOnArmor = 0;
-
-        private static bool showAbility = false;
-        private static void toggleAbility()
-        {
-            showAbility = !showAbility;
-        }
-        private static int showOnAbility = 0;
-
-        /// <summary>
-        /// Draw when item can be used
-        /// </summary>
         public static void DrawExtras(List<IntField> intFields_att, string title = "Add variance to stats and meters")
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
@@ -1486,31 +1471,9 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndHorizontal();
             SimpleLayout.EndVertical();
         }
+        #endregion
 
-        public static void addItem(List<IntField> intFields_att, int id)
-        {
-            if (intFields_att[id].value < 10)
-                intFields_att[id].value++;
-        }
-        public static void removeItem(List<IntField> intFields_att, int id)
-        {
-            if (intFields_att[id].value > 0)
-                intFields_att[id].value--;
-        }
-
-        // make bit = 0
-        static int ZeroBit(int value, int position)
-        {
-            return value & ~(1 << position);
-        }
-
-        // make bit = 1
-        static int OneBit(int value, int position)
-        {
-            return value | (1 << position);
-        }
-
-
+        #region create, resize, add, remove bitarrays, intarrays
         public static BitArray CreateBitArray(string str)
         {
             bool[] bits = new bool[str.Length];
@@ -1660,9 +1623,6 @@ namespace HeroKit.RpgEditor
             }
             return -1;
         }
-
-
-
         // [add] [remove] buttons for search that gets all items of a type or one item of a type 
         public static void addRemoveButton(BitArray bitArray, int itemID, DropDownValues itemList)
         {
@@ -1838,8 +1798,9 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
+        #endregion
 
-
+        #region work with combo arrays
         // generate a list of items in bit array
         public static void getOnInComboarray(BitArray bitArray, int[] intArray, DropDownValues items)
         {
@@ -1857,7 +1818,6 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-
         // generate a list of items in bit array (checkbox, name, drop down list)
         public static void getDropdownComboarray(BitArray bitArray, int[] intArray, DropDownValues items, DropDownValues listItems)
         {
@@ -1875,7 +1835,6 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-
         // generate a list of items in bit array (checkbox, item name, int field, drop-down list
         public static void getDropdownComboarrayB(BitArray bitArray, int[] intArray, int[] choiceArray, 
                                                   DropDownValues items, DropDownValues listItems, string intFieldLabel)
@@ -1897,7 +1856,6 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-
         // generate a list of items in bit array (checkbox, item name)
         public static void getDropdownComboarrayC(BitArray bitArray, DropDownValues items)
         {
@@ -1914,7 +1872,6 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-
         // generate a list of items in bit array (checkbox, item name, drop-down list, drop-down list
         public static void getDropdownComboarrayD(BitArray bitArray, int[] choiceArrayA, int[] choiceArrayB, DropDownValues items, DropDownValues choiceItemsA, DropDownValues choiceItemsB)
         {
@@ -1934,7 +1891,6 @@ namespace HeroKit.RpgEditor
                 }
             }
         }
-
         // generate a list of items in bit array (checkbox, name, drop down list) (specific item type)
         public static void getDropdownComboarrayE(BitArray bitArray, int[] intArray, DropDownValues itemsList, DropDownValues selectionList, 
                                                   HeroObject database, int itemType, int itemTypeSlot, int show)
@@ -1971,6 +1927,95 @@ namespace HeroKit.RpgEditor
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
         }
+        #endregion
 
+        //-------------------------------------------
+        // Exapand / Collapse field groups
+        //-------------------------------------------
+        #region expand / collapse field groups
+        /// <summary>
+        /// Draw when item can be used
+        /// </summary>
+        private static bool showStats = false;
+        private static void toggleStats()
+        {
+            showStats = !showStats;
+        }
+        private static bool showStats2 = false;
+        private static void toggleStats2()
+        {
+            showStats2 = !showStats2;
+        }
+
+        private static bool showMeters = false;
+        private static void toggleMeters()
+        {
+            showMeters = !showMeters;
+        }
+        private static bool showMeters2 = false;
+        private static void toggleMeters2()
+        {
+            showMeters2 = !showMeters2;
+        }
+
+        private static bool showElements = false;
+        private static void toggleElements()
+        {
+            showElements = !showElements;
+        }
+        private static int showOnElement = 0;
+
+        private static bool showConditions = false;
+        private static void toggleConditions()
+        {
+            showConditions = !showConditions;
+        }
+        private static int showOnCondition = 0;
+
+        private static bool showMoney = false;
+        private static void toggleMoney()
+        {
+            showMoney = !showMoney;
+        }
+
+        private static bool showAffix = false;
+        private static void toggleAffix()
+        {
+            showAffix = !showAffix;
+        }
+
+        private static bool showSockets = false;
+        private static void toggleSockets()
+        {
+            showSockets = !showSockets;
+        }
+
+        private static bool showWeapons = false;
+        private static void toggleWeaponType()
+        {
+            showWeapons = !showWeapons;
+        }
+        private static int showOnWeapons = 0;
+
+        private static bool showArmor = false;
+        private static void toggleArmorType()
+        {
+            showArmor = !showArmor;
+        }
+        private static int showOnArmor = 0;
+
+        private static bool showAbility = false;
+        private static void toggleAbility()
+        {
+            showAbility = !showAbility;
+        }
+        private static int showOnAbility = 0;
+
+        private static bool showAlignment = false;
+        private static void toggleAlignment()
+        {
+            showAlignment = !showAlignment;
+        }
+        #endregion
     }
 }

@@ -15,7 +15,7 @@ namespace HeroKit.RpgEditor
     /// <summary>
     /// Block for Hero Properties that appears in Hero Kit Editor.
     /// </summary>
-    internal static class ClassBlock
+    internal static class SubclassBlock
     {
         // --------------------------------------------------------------
         // Variables
@@ -28,7 +28,7 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Name of the block.
         /// </summary>
-        private static string blockName = "Class";
+        private static string blockName = "Subclass";
         /// <summary>
         /// The Hero Property.
         /// </summary>
@@ -77,7 +77,7 @@ namespace HeroKit.RpgEditor
             // save the id of the property that this event belongs in
             itemIndex = indexProperty;
             propertyBlock = heroObject.propertiesList.properties[itemIndex];
-            attributeBlock = HeroKitCommon.classDatabase_attributes.propertiesList.properties[itemIndex];
+            attributeBlock = HeroKitCommon.subclassDatabase_attributes.propertiesList.properties[itemIndex];
 
             // save the fields
             stringFields = propertyBlock.itemProperties.strings.items;
@@ -115,6 +115,7 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
+            HeroKitCommon.DrawItemDropdown(intFields, "Class", 0, HeroKitCommon.classDatabase);
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
             HeroKitCommon.DrawAlignmentValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawWeaponList(stringFields_att, intFields_att);
@@ -127,6 +128,5 @@ namespace HeroKit.RpgEditor
             HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Stats (start values)");
             HeroKitCommon.DrawStatIncrementList(stringFields_att, intFields_att);
         }
-
     }
 }

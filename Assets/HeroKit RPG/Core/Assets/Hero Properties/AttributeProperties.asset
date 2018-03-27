@@ -53,6 +53,8 @@ MonoBehaviour:
         value: 0
       - name: Meter Inc ID (class list)
         value: 0
+      - name: Alignment ID
+        value: 0
     floats:
       visible: 0
       items: []
@@ -183,6 +185,10 @@ MonoBehaviour:
         useVariables: 0
         useTextField: 0
       - name: Meter Mask Increment (ints) (class list)
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Alignment Mask (bools for checkboxes)
         value: 
         useVariables: 0
         useTextField: 0

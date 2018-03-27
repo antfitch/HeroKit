@@ -15,7 +15,7 @@ namespace HeroKit.RpgEditor
     /// <summary>
     /// Block for Hero Properties that appears in Hero Kit Editor.
     /// </summary>
-    internal static class ClassBlock
+    internal static class AlignmentBlock
     {
         // --------------------------------------------------------------
         // Variables
@@ -28,7 +28,7 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Name of the block.
         /// </summary>
-        private static string blockName = "Class";
+        private static string blockName = "Alignment";
         /// <summary>
         /// The Hero Property.
         /// </summary>
@@ -77,7 +77,7 @@ namespace HeroKit.RpgEditor
             // save the id of the property that this event belongs in
             itemIndex = indexProperty;
             propertyBlock = heroObject.propertiesList.properties[itemIndex];
-            attributeBlock = HeroKitCommon.classDatabase_attributes.propertiesList.properties[itemIndex];
+            attributeBlock = HeroKitCommon.alignmentDatabase_attributes.propertiesList.properties[itemIndex];
 
             // save the fields
             stringFields = propertyBlock.itemProperties.strings.items;
@@ -116,7 +116,6 @@ namespace HeroKit.RpgEditor
         private static void DrawItemFields()
         {
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
-            HeroKitCommon.DrawAlignmentValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawWeaponList(stringFields_att, intFields_att);
             HeroKitCommon.DrawArmorList(stringFields_att, intFields_att);
             HeroKitCommon.DrawAbilityList(stringFields_att, intFields_att);

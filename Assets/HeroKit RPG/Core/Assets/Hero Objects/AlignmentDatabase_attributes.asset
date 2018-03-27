@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
-  m_Name: ConditionDatabase_attributes
+  m_Name: AlignmentDatabase_attributes
   m_EditorClassIdentifier: 
   properties:
     propertyTemplate: {fileID: 0}
@@ -50,197 +50,6 @@ MonoBehaviour:
           - name: Money ID
             value: 0
           - name: Stats ID
-            value: 3
-          - name: Meter ID
-            value: 2
-          - name: Element ID
-            value: 0
-          - name: Condition ID
-            value: 0
-          - name: Item Weight
-            value: 0
-          - name: Affix ID
-            value: 0
-          - name: Socket ID
-            value: 0
-          - name: Meter 2 ID
-            value: 1
-          - name: Weapon Type ID (class list)
-            value: 0
-          - name: Ability Type ID (class list)
-            value: 0
-          - name: Armor Type ID (class list)
-            value: 0
-          - name: Meter ID (class list)
-            value: 0
-          - name: Condition ID (class list)
-            value: 0
-          - name: Element ID (class list)
-            value: 0
-          - name: Stats Inc ID (class list)
-            value: 0
-          - name: Meter Inc ID (class list)
-            value: 0
-          - name: Alignment ID
-            value: 0
-        floats:
-          visible: 0
-          items: []
-        bools:
-          visible: 0
-          items:
-          - name: Remove all conditions
-            value: 0
-          - name: Is Stackable
-            value: 1
-        strings:
-          visible: 0
-          items:
-          - name: Money ID Mask (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Money Value Mask (ints)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Stat ID Mask (bools)
-            value: 00000
-            useVariables: 0
-            useTextField: 0
-          - name: Stat Value Mask (ints)
-            value: 0|0|0|0|0|
-            useVariables: 0
-            useTextField: 0
-          - name: Meter ID Mask (bools)
-            value: 1100
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Value Mask (ints)
-            value: 0|0|0|0|
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Type Mask (ints)
-            value: 1000
-            useVariables: 0
-            useTextField: 0
-          - name: Element ID Mask (bools)
-            value: 000
-            useVariables: 0
-            useTextField: 0
-          - name: Conditions ID Mask (bools)
-            value: 00
-            useVariables: 0
-            useTextField: 0
-          - name: Condition Type Mask (drop-down, ints)
-            value: 0|0|
-            useVariables: 0
-            useTextField: 0
-          - name: Condition Percentage Mask (drop-down, ints)
-            value: 0|0|
-            useVariables: 0
-            useTextField: 0
-          - name: Affix ID Mask (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Socket ID Mask (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Stat Type Mask (drop-down, int)
-            value: 20000
-            useVariables: 0
-            useTextField: 0
-          - name: Meter 2 ID Mask (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter 2 Value Mask (ints)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter 2 Type Mask (ints)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Weapon Type Mask (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Armor Type Mask (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Condition Type Mask (class list) (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Condition Percentage Mask (class list) (ints)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Element Type Mask (class list) (bools)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Element Percentage Mask (class list) (ints)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Abilities Type Mask (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Mask (bools for checkboxes) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Mask (ints) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Stats Mask Increment (bools for checkboxes) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Stats Mask Increment (ints) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Mask Increment (bools for checkboxes) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Meter Mask Increment (ints) (class list)
-            value: 
-            useVariables: 0
-            useTextField: 0
-          - name: Alignment Mask (bools for checkboxes)
-            value: 
-            useVariables: 0
-            useTextField: 0
-        gameObjects:
-          visible: 0
-          items: []
-        heroObjects:
-          visible: 0
-          items: []
-        unityObjects:
-          visible: 0
-          items: []
-    - propertyTemplate: {fileID: 11400000, guid: 139d85889309db442ae0d08cea8592a7,
-        type: 2}
-      itemProperties:
-        visible: 0
-        ints:
-          visible: 0
-          items:
-          - name: Variance
-            value: 0
-          - name: Money ID
-            value: 0
-          - name: Stats ID
             value: 0
           - name: Meter ID
             value: 0
@@ -255,7 +64,7 @@ MonoBehaviour:
           - name: Socket ID
             value: 0
           - name: Meter 2 ID
-            value: 1
+            value: 0
           - name: Weapon Type ID (class list)
             value: 0
           - name: Ability Type ID (class list)
@@ -304,31 +113,31 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Meter ID Mask (bools)
-            value: 0000
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Meter Value Mask (ints)
-            value: 0|0|0|0|
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Meter Type Mask (ints)
-            value: 0000
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Element ID Mask (bools)
-            value: 000
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Conditions ID Mask (bools)
-            value: 00
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask (drop-down, ints)
-            value: 0|0|
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Condition Percentage Mask (drop-down, ints)
-            value: 0|0|
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Affix ID Mask (bools)
@@ -340,7 +149,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Stat Type Mask (drop-down, int)
-            value: 00000
+            value: 
             useVariables: 0
             useTextField: 0
           - name: Meter 2 ID Mask (bools)
@@ -356,27 +165,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Weapon Type Mask (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Armor Type Mask (class list)
-            value: 
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask (class list) (bools)
-            value: 
+            value: 00
             useVariables: 0
             useTextField: 0
           - name: Condition Percentage Mask (class list) (ints)
-            value: 
+            value: 0|0|
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask (class list) (bools)
-            value: 
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Element Percentage Mask (class list) (ints)
-            value: 
+            value: 0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask (class list)
@@ -384,27 +193,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes) (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints) (class list)
-            value: 
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Stats Mask Increment (bools for checkboxes) (class list)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
           - name: Stats Mask Increment (ints) (class list)
-            value: 
+            value: 0|0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Meter Mask Increment (bools for checkboxes) (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask Increment (ints) (class list)
-            value: 
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Alignment Mask (bools for checkboxes)
@@ -487,11 +296,11 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Stat ID Mask (bools)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
           - name: Stat Value Mask (ints)
-            value: 
+            value: 0|0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Meter ID Mask (bools)
@@ -547,27 +356,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Weapon Type Mask (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Armor Type Mask (class list)
-            value: 
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask (class list) (bools)
-            value: 
+            value: 00
             useVariables: 0
             useTextField: 0
           - name: Condition Percentage Mask (class list) (ints)
-            value: 
+            value: 0|0|
             useVariables: 0
             useTextField: 0
           - name: Element Type Mask (class list) (bools)
-            value: 
+            value: 000
             useVariables: 0
             useTextField: 0
           - name: Element Percentage Mask (class list) (ints)
-            value: 
+            value: 0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Abilities Type Mask (class list)
@@ -575,27 +384,27 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (bools for checkboxes) (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask (ints) (class list)
-            value: 
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Stats Mask Increment (bools for checkboxes) (class list)
-            value: 
+            value: 00000
             useVariables: 0
             useTextField: 0
           - name: Stats Mask Increment (ints) (class list)
-            value: 
+            value: 0|0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Meter Mask Increment (bools for checkboxes) (class list)
-            value: 
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Meter Mask Increment (ints) (class list)
-            value: 
+            value: 0|0|0|0|
             useVariables: 0
             useTextField: 0
           - name: Alignment Mask (bools for checkboxes)

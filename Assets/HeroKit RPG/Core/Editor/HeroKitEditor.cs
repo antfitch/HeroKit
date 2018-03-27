@@ -181,6 +181,14 @@ namespace HeroKit.RpgEditor
                 name = "Element Type";
             else if (typeID == 21)
                 name = "Condition Type";
+            else if (typeID == 22)
+                name = "Subclass";
+            else if (typeID == 23)
+                name = "Race";
+            else if (typeID == 24)
+                name = "Subrace";
+            else if (typeID == 25)
+                name = "Alignment";
 
             SimpleLayout.BeginHorizontal(Box.StyleTitleWindow);
             TitleButtonBlock.Block();
@@ -320,6 +328,26 @@ namespace HeroKit.RpgEditor
             {
                 ConditionTypeBlock.Block(heroObject, HeroKitMenuBlock.itemID);
             }
+            // draw subclass database
+            else if (typeID == 22)
+            {
+                SubclassBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw race database
+            else if (typeID == 23)
+            {
+                RaceBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw subrace database
+            else if (typeID == 24)
+            {
+                SubraceBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw alignment database
+            else if (typeID == 25)
+            {
+                AlignmentBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
 
             SimpleLayout.EndVertical();
             EditorGUILayout.EndScrollView();
@@ -418,75 +446,3 @@ namespace HeroKit.RpgEditor
         }
     }
 }
-
-
-//namespace HeroKit.RpgEditor
-//{
-//    public class HeroKitRpgEditor : EditorWindow
-//    {
-//        // structure this window as a singleton class 
-//        public static HeroKitRpgEditor Instance { get; private set; }
-
-//        // the asset to display in the window
-//        public static HeroObject asset { get; set; }
-
-//        //// on double-click of asset, open asset in window
-//        //[OnOpenAsset(1)]
-//        //public static bool OnOpenAsset(int instanceID, int line)
-//        //{
-//        //    UnityEngine.Object selectedAsset = EditorUtility.InstanceIDToObject(instanceID);
-//        //    bool foundAsset = (selectedAsset is CustomAsset);
-//        //    if (foundAsset)
-//        //    {
-//        //        asset = (CustomAsset)selectedAsset;
-//        //        DoubleClickAsset();
-//        //    }
-//        //    return foundAsset;
-//        //}
-
-//        //// double click an asset in project window
-//        //public static void DoubleClickAsset()
-//        //{
-//        //    if (!IsOpen)
-//        //        ShowWindow();
-//        //}
-
-//        //// single-click asset in project window
-//        //public static void SingleClickAsset(CustomAsset selectedAsset)
-//        //{
-//        //    if (IsOpen)
-//        //    {
-//        //        asset = (CustomAsset)selectedAsset;
-//        //        ShowWindow();
-//        //    }
-//        //}
-
-//        // is the CustomEditor window open?
-
-//        public static bool IsOpen
-//        {
-//            get { return (Instance != null); }
-//        }
-
-//        // show window if it's not open
-//        public static void ShowWindow()
-//        {
-//            if (!IsOpen)
-//                GetWindow<HeroKitRpgEditor>("HeroKit RPG");
-//        }
-
-//        // enable the class
-//        void OnEnable()
-//        {
-//            Instance = this;
-//        }
-
-//        // draw elements for the class
-//        void OnGUI()
-//        {
-//            GUILayout.BeginHorizontal();
-//            GUILayout.Label((asset != null) ? asset.name : "NULL", EditorStyles.boldLabel);
-//            GUILayout.EndHorizontal();
-//        }
-//    }
-//}

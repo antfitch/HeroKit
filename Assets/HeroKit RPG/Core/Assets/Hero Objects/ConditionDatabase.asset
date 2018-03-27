@@ -52,7 +52,7 @@ MonoBehaviour:
           - name: Chance Attack Ends Cond
             value: 0
           - name: Condition Type
-            value: 0
+            value: 1
         floats:
           visible: 0
           items: []

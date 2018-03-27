@@ -49,148 +49,194 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawBody()
         {
+            int bsize = 140;
+
             SimpleLayout.Space(22);
             SimpleLayout.BeginHorizontal();
             SimpleLayout.BeginVertical(Box.StyleA);
 
-            SimpleLayout.BeginHorizontal();
-            // item type db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Item Types", OpenItemTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // items db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Items", OpenItemsDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
 
-            SimpleLayout.BeginHorizontal();
-            // affixes db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Affix Types", OpenAffixTypeDB, Button.StyleBig, 270);          
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // affixes type db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Affixes", OpenAffixDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
-
-            SimpleLayout.BeginHorizontal();
-            // stats db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Stats", OpenStatsDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // meter db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Meter Stats", OpenMeterDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
-
-            SimpleLayout.BeginHorizontal();
-            // money db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Currency Types", OpenMoneyDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // formula db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
+            // -----------------------------------
 
 
             SimpleLayout.BeginHorizontal();
-            // elements db button
+
+            SimpleLayout.BeginVertical();
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Element Types", OpenElementTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Item Types", OpenItemTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
-            // elements db button
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Elements", OpenElementsDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Items", OpenItemsDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Affix Types", OpenAffixTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Affixes", OpenAffixDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Stats", OpenStatsDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Meter Stats", OpenMeterDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Currency Types", OpenMoneyDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
             SimpleLayout.EndHorizontal();
 
-            SimpleLayout.BeginHorizontal();
-            // elements db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Condition Types", OpenConditionTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // elements db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Conditions", OpenConditionDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
+
+            // -----------------------------------
+
 
             SimpleLayout.BeginHorizontal();
-            // weapon type db button
+
+            SimpleLayout.BeginVertical();
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Weapon Types", OpenWeaponTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Element Types", OpenElementTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
-            // weapon db button
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Weapons", OpenWeaponDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Elements", OpenElementsDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Condition Types", OpenConditionTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Conditions", OpenConditionDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Weapon Types", OpenWeaponTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Weapons", OpenWeaponDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Armor Types", OpenArmorTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Armor", OpenArmorDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
             SimpleLayout.EndHorizontal();
 
-            SimpleLayout.BeginHorizontal();
-            // armor type db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Armor Types", OpenArmorTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // armor db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Armor", OpenArmorDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
+
+            // -----------------------------------
+
 
             SimpleLayout.BeginHorizontal();
-            // armor type db button
+
+            SimpleLayout.BeginVertical();
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ammunition Types", OpenAmmunitionTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Ammunition Types", OpenAmmunitionTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
-            // armor db button
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ammunition", OpenAmmunitionDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Ammunition", OpenAmmunitionDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Subclasses", OpenSubclassDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Race", OpenRaceDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Subrace", OpenSubraceDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
             SimpleLayout.EndHorizontal();
 
-            SimpleLayout.BeginHorizontal();
-            // armor type db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            // armor db button
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndHorizontal();
+
+            // -----------------------------------
+
+            // -----------------------------------
+
 
             SimpleLayout.BeginHorizontal();
-            // armor type db button
+
+            SimpleLayout.BeginVertical();
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, 270);
-            //SimpleLayout.Line();
+            SimpleLayout.Button("Alignments", OpenAlignmentDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Alignments", OpenAmmunitionDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            //SimpleLayout.BeginVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.EndVertical();
+
+            //SimpleLayout.BeginVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Subclasses", OpenSubclassDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.EndVertical();
+
+            //SimpleLayout.BeginVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Race", OpenRaceDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Subrace", OpenSubraceDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            //SimpleLayout.EndVertical();
+
             SimpleLayout.EndHorizontal();
+
+
+            // -----------------------------------
+
+
 
             SimpleLayout.EndHorizontal();
             SimpleLayout.Space();
@@ -326,6 +372,30 @@ namespace HeroKit.RpgEditor
         {
             HeroKitEditor.heroObject = HeroKitCommon.conditionTypeDatabase;
             HeroKitEditor.typeID = 21;
+        }
+
+        public static void OpenSubclassDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.subclassDatabase;
+            HeroKitEditor.typeID = 22;
+        }
+
+        public static void OpenRaceDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.raceDatabase;
+            HeroKitEditor.typeID = 23;
+        }
+
+        public static void OpenSubraceDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.subraceDatabase;
+            HeroKitEditor.typeID = 24;
+        }
+
+        public static void OpenAlignmentDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.alignmentDatabase;
+            HeroKitEditor.typeID = 25;
         }
     }
 }

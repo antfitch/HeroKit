@@ -149,6 +149,18 @@ namespace HeroKit.RpgEditor
             // draw the condition type list
             else if (HeroKitEditor.typeID == 21)
                 ConditionTypeMenuBlock.Block(heroObject);
+            // draw the subclass list
+            else if (HeroKitEditor.typeID == 22)
+                SubclassMenuBlock.Block(heroObject);
+            // draw the race list
+            else if (HeroKitEditor.typeID == 23)
+                RaceMenuBlock.Block(heroObject);
+            // draw the subrace list
+            else if (HeroKitEditor.typeID == 24)
+                SubraceMenuBlock.Block(heroObject);
+            // draw the alignment list
+            else if (HeroKitEditor.typeID == 25)
+                AlignmentMenuBlock.Block(heroObject);
         }
 
         // --------------------------------------------------------------
@@ -174,7 +186,6 @@ namespace HeroKit.RpgEditor
             // refresh the editor
             heroEditor.Repaint();
         }
-
         /// <summary>
         /// Go down to state X using arrow keys.
         /// </summary>

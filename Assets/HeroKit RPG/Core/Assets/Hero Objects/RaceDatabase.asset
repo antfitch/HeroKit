@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
-  m_Name: ElementTypeDatabase
+  m_Name: RaceDatabase
   m_EditorClassIdentifier: 
   properties:
     propertyTemplate: {fileID: 0}
@@ -38,7 +38,7 @@ MonoBehaviour:
         items: []
   propertiesList:
     properties:
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: d9d32c38e874292489e63bbaa6483e0e,
         type: 2}
       itemProperties:
         visible: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Nature
+            value: Elf
             useVariables: 0
             useTextField: 0
           - name: Description
@@ -71,7 +71,7 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: d9d32c38e874292489e63bbaa6483e0e,
         type: 2}
       itemProperties:
         visible: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Holy
+            value: Human
             useVariables: 0
             useTextField: 0
           - name: Description
@@ -104,7 +104,7 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    visible: 0
+    visible: 1
   states:
     states: []
     visible: 0

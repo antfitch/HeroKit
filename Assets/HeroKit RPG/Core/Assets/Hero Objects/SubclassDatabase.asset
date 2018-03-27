@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
-  m_Name: ElementTypeDatabase
+  m_Name: SubclassDatabase
   m_EditorClassIdentifier: 
   properties:
     propertyTemplate: {fileID: 0}
@@ -38,13 +38,15 @@ MonoBehaviour:
         items: []
   propertiesList:
     properties:
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: 476f8cdc725187142b3ddd1e534e2f08,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Class ID
+            value: 2
         floats:
           visible: 0
           items: []
@@ -55,13 +57,13 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Nature
+            value: Blue Mage
             useVariables: 0
             useTextField: 0
           - name: Description
             value: 
             useVariables: 0
-            useTextField: 0
+            useTextField: 1
         gameObjects:
           visible: 0
           items: []
@@ -71,13 +73,15 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    - propertyTemplate: {fileID: 11400000, guid: 4ae7d304135551148b57cf90d5581e8a,
+    - propertyTemplate: {fileID: 11400000, guid: 476f8cdc725187142b3ddd1e534e2f08,
         type: 2}
       itemProperties:
         visible: 0
         ints:
           visible: 0
-          items: []
+          items:
+          - name: Class ID
+            value: 2
         floats:
           visible: 0
           items: []
@@ -88,13 +92,13 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Holy
+            value: Red Mage
             useVariables: 0
             useTextField: 0
           - name: Description
-            value: 
+            value: Loves fire, hates ice.
             useVariables: 0
-            useTextField: 0
+            useTextField: 1
         gameObjects:
           visible: 0
           items: []
@@ -104,7 +108,7 @@ MonoBehaviour:
         unityObjects:
           visible: 0
           items: []
-    visible: 0
+    visible: 1
   states:
     states: []
     visible: 0

@@ -15,7 +15,7 @@ namespace HeroKit.RpgEditor
     /// <summary>
     /// Block for Hero Properties that appears in Hero Kit Editor.
     /// </summary>
-    internal static class ClassBlock
+    internal static class SubraceBlock
     {
         // --------------------------------------------------------------
         // Variables
@@ -28,7 +28,7 @@ namespace HeroKit.RpgEditor
         /// <summary>
         /// Name of the block.
         /// </summary>
-        private static string blockName = "Class";
+        private static string blockName = "Subrace";
         /// <summary>
         /// The Hero Property.
         /// </summary>
@@ -77,7 +77,7 @@ namespace HeroKit.RpgEditor
             // save the id of the property that this event belongs in
             itemIndex = indexProperty;
             propertyBlock = heroObject.propertiesList.properties[itemIndex];
-            attributeBlock = HeroKitCommon.classDatabase_attributes.propertiesList.properties[itemIndex];
+            attributeBlock = HeroKitCommon.subraceDatabase_attributes.propertiesList.properties[itemIndex];
 
             // save the fields
             stringFields = propertyBlock.itemProperties.strings.items;
@@ -115,8 +115,8 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
+            HeroKitCommon.DrawItemDropdown(intFields, "Race", 0, HeroKitCommon.raceDatabase);
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
-            HeroKitCommon.DrawAlignmentValue(stringFields_att, intFields_att);
             HeroKitCommon.DrawWeaponList(stringFields_att, intFields_att);
             HeroKitCommon.DrawArmorList(stringFields_att, intFields_att);
             HeroKitCommon.DrawAbilityList(stringFields_att, intFields_att);
@@ -127,6 +127,5 @@ namespace HeroKit.RpgEditor
             HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Stats (start values)");
             HeroKitCommon.DrawStatIncrementList(stringFields_att, intFields_att);
         }
-
     }
 }
