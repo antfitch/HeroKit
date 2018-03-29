@@ -189,6 +189,10 @@ namespace HeroKit.RpgEditor
                 name = "Subrace";
             else if (typeID == 25)
                 name = "Alignment";
+            else if (typeID == 26)
+                name = "Character Type";
+            else if (typeID == 27)
+                name = "Character";
 
             SimpleLayout.BeginHorizontal(Box.StyleTitleWindow);
             TitleButtonBlock.Block();
@@ -347,6 +351,16 @@ namespace HeroKit.RpgEditor
             else if (typeID == 25)
             {
                 AlignmentBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw character type database
+            else if (typeID == 26)
+            {
+                CharacterTypeBlock.Block(heroObject, HeroKitMenuBlock.itemID);
+            }
+            // draw character database
+            else if (typeID == 27)
+            {
+                CharacterBlock.Block(heroObject, HeroKitMenuBlock.itemID);
             }
 
             SimpleLayout.EndVertical();

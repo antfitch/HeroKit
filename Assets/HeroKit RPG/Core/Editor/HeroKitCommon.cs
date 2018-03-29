@@ -117,6 +117,12 @@ namespace HeroKit.RpgEditor
         // alignment database variables
         public static HeroObject alignmentDatabase;
         public static HeroKitProperty alignmentProperties;
+        // character type database variables
+        public static HeroObject characterTypeDatabase;
+        public static HeroKitProperty characterTypeProperties;
+        // character database variables
+        public static HeroObject characterDatabase;
+        public static HeroKitProperty characterProperties;
 
         // attribute database variables
         public static HeroObject itemDatabase_attributes;
@@ -131,6 +137,7 @@ namespace HeroKit.RpgEditor
         public static HeroObject raceDatabase_attributes;
         public static HeroObject subraceDatabase_attributes;
         public static HeroObject alignmentDatabase_attributes;
+        public static HeroObject characterDatabase_attributes;
         public static HeroKitProperty attributeProperties;
 
         public static void LoadHeroKitRpgDatabases()
@@ -238,6 +245,14 @@ namespace HeroKit.RpgEditor
             alignmentDatabase = (alignmentDatabase == null) ? GetScriptableObject<HeroObject>("AlignmentDatabase", dbPath) : alignmentDatabase;
             alignmentProperties = (alignmentProperties == null) ? GetScriptableObject<HeroKitProperty>("AlignmentProperties", propertiesPath) : alignmentProperties;
 
+            // character type database
+            characterTypeDatabase = (characterTypeDatabase == null) ? GetScriptableObject<HeroObject>("CharacterTypeDatabase", dbPath) : characterTypeDatabase;
+            characterTypeProperties = (characterTypeProperties == null) ? GetScriptableObject<HeroKitProperty>("CharacterTypeProperties", propertiesPath) : characterTypeProperties;
+
+            // character database
+            characterDatabase = (characterDatabase == null) ? GetScriptableObject<HeroObject>("CharacterDatabase", dbPath) : characterDatabase;
+            characterProperties = (characterProperties == null) ? GetScriptableObject<HeroKitProperty>("CharacterProperties", propertiesPath) : characterProperties;
+
             // attribute database
             itemDatabase_attributes = (itemDatabase_attributes == null) ? GetScriptableObject<HeroObject>("ItemDatabase_attributes", dbPath) : itemDatabase_attributes;
             affixDatabase_attributes = (affixDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AffixDatabase_attributes", dbPath) : affixDatabase_attributes;
@@ -251,6 +266,7 @@ namespace HeroKit.RpgEditor
             raceDatabase_attributes = (raceDatabase_attributes == null) ? GetScriptableObject<HeroObject>("RaceDatabase_attributes", dbPath) : raceDatabase_attributes;
             subraceDatabase_attributes = (subraceDatabase_attributes == null) ? GetScriptableObject<HeroObject>("SubraceDatabase_attributes", dbPath) : subraceDatabase_attributes;
             alignmentDatabase_attributes = (alignmentDatabase_attributes == null) ? GetScriptableObject<HeroObject>("AlignmentDatabase_attributes", dbPath) : alignmentDatabase_attributes;
+            characterDatabase_attributes = (characterDatabase_attributes == null) ? GetScriptableObject<HeroObject>("CharacterDatabase_attributes", dbPath) : characterDatabase_attributes;
 
             attributeProperties = (attributeProperties == null) ? GetScriptableObject<HeroKitProperty>("AttributeProperties", propertiesPath) : attributeProperties;
 

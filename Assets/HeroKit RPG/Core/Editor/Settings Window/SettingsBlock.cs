@@ -204,14 +204,14 @@ namespace HeroKit.RpgEditor
             //SimpleLayout.EndVertical();
             SimpleLayout.EndVertical();
 
-            //SimpleLayout.BeginVertical();
-            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            //SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, bsize);
-            //SimpleLayout.EndVertical();
-            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            //SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, bsize);
-            //SimpleLayout.EndVertical();
-            //SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Character Types", OpenCharacterTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Characters", OpenCharacterDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
 
             //SimpleLayout.BeginVertical();
             //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
@@ -396,6 +396,18 @@ namespace HeroKit.RpgEditor
         {
             HeroKitEditor.heroObject = HeroKitCommon.alignmentDatabase;
             HeroKitEditor.typeID = 25;
+        }
+
+        public static void OpenCharacterTypeDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.characterTypeDatabase;
+            HeroKitEditor.typeID = 26;
+        }
+
+        public static void OpenCharacterDB()
+        {
+            HeroKitEditor.heroObject = HeroKitCommon.characterDatabase;
+            HeroKitEditor.typeID = 27;
         }
     }
 }

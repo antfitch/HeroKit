@@ -161,6 +161,12 @@ namespace HeroKit.RpgEditor
             // draw the alignment list
             else if (HeroKitEditor.typeID == 25)
                 AlignmentMenuBlock.Block(heroObject);
+            // draw the character type list
+            else if (HeroKitEditor.typeID == 26)
+                CharacterTypeMenuBlock.Block(heroObject);
+            // draw the character list
+            else if (HeroKitEditor.typeID == 27)
+                CharacterMenuBlock.Block(heroObject);
         }
 
         // --------------------------------------------------------------

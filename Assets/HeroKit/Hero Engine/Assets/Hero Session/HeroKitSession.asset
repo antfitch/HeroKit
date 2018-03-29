@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4099316608df6468036816bed9a822, type: 3}
   m_Name: HeroKitSession
   m_EditorClassIdentifier: 
-  heroObject: {fileID: 11400000, guid: 2bf8e9958500f214e9b65a7ef5696844, type: 2}
+  heroObject: {fileID: 11400000, guid: ca4ae7dd92faaeb449d960c9a6915c43, type: 2}
   mainMenuTypeID: 4
   mainMenuStateID: -1
   mainMenuEventID: -1
