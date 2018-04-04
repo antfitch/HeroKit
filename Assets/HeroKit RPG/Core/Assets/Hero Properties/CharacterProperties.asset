@@ -16,7 +16,23 @@ MonoBehaviour:
     visible: 0
     ints:
       visible: 0
-      items: []
+      items:
+      - name: Character Type
+        value: 0
+      - name: Starting Weapon Type
+        value: 0
+      - name: Starting Weapon
+        value: 0
+      - name: Starting Class Type
+        value: 0
+      - name: Starting Subclass
+        value: 0
+      - name: Starting Alignment
+        value: 0
+      - name: Starting Race
+        value: 0
+      - name: Starting Subrace
+        value: 0
     floats:
       visible: 0
       items: []
@@ -31,6 +47,10 @@ MonoBehaviour:
         useVariables: 0
         useTextField: 0
       - name: Description
+        value: 
+        useVariables: 0
+        useTextField: 0
+      - name: Equipment Mask (ids)
         value: 
         useVariables: 0
         useTextField: 0

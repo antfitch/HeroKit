@@ -115,17 +115,26 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawItemFields()
         {
+            HeroKitCommon.DrawItemDropdown(intFields, "Character Type", 0, HeroKitCommon.characterTypeDatabase);
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
-            HeroKitCommon.DrawAlignmentValue(stringFields_att, intFields_att);
-            HeroKitCommon.DrawWeaponList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawArmorList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawAbilityList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawConditionsList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawElementsList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawMeterMaxList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawMeterIncrementList(stringFields_att, intFields_att);
-            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Stats (start values)");
-            HeroKitCommon.DrawStatIncrementList(stringFields_att, intFields_att);
+            HeroKitCommon.DrawItemDropdownB(intFields, "Starting Class", 4, 3, HeroKitCommon.classDatabase, HeroKitCommon.subclassDatabase);
+            HeroKitCommon.DrawItemDropdownB(intFields, "Starting Race", 7, 6, HeroKitCommon.raceDatabase, HeroKitCommon.subraceDatabase);
+            HeroKitCommon.DrawItemDropdown(intFields, "Starting Alignment", 5, HeroKitCommon.alignmentDatabase, 200);
+            HeroKitCommon.DrawItemDropdownB(intFields, "Starting Weapon", 2, 1, HeroKitCommon.weaponTypeDatabase, HeroKitCommon.weaponDatabase);
+            HeroKitCommon.DrawFirstEquip(stringFields, intFields);
+            HeroKitCommon.DrawAbilityList(stringFields_att, intFields_att, "Starting Abilities");
+            HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Starting Stats");
+
+            //HeroKitCommon.DrawAlignmentValue(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawWeaponList(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawArmorList(stringFields_att, intFields_att);
+
+            //HeroKitCommon.DrawConditionsList(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawElementsList(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawMeterMaxList(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawMeterIncrementList(stringFields_att, intFields_att);
+            //HeroKitCommon.DrawStatsValue(stringFields_att, intFields_att, "Stats (start values)");
+            //HeroKitCommon.DrawStatIncrementList(stringFields_att, intFields_att);
         }
 
     }

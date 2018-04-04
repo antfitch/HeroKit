@@ -49,11 +49,12 @@ namespace HeroKit.RpgEditor
         /// </summary>
         private static void DrawBody()
         {
-            int bsize = 140;
+            int bsize = 150;
 
             SimpleLayout.Space(22);
             SimpleLayout.BeginHorizontal();
-            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.Space(22);
+            SimpleLayout.BeginVertical();
 
 
             // -----------------------------------
@@ -61,7 +62,7 @@ namespace HeroKit.RpgEditor
 
             SimpleLayout.BeginHorizontal();
 
-            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleA);
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             SimpleLayout.Button("Item Types", OpenItemTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
@@ -70,7 +71,7 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndVertical();
             SimpleLayout.EndVertical();
 
-            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleA);
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             SimpleLayout.Button("Affix Types", OpenAffixTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
@@ -79,7 +80,7 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndVertical();
             SimpleLayout.EndVertical();
 
-            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleA);
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             SimpleLayout.Button("Stats", OpenStatsDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
@@ -88,123 +89,7 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndVertical();
             SimpleLayout.EndVertical();
 
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Currency Types", OpenMoneyDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.EndHorizontal();
-
-
-            // -----------------------------------
-
-
-            SimpleLayout.BeginHorizontal();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Element Types", OpenElementTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Elements", OpenElementsDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Condition Types", OpenConditionTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Conditions", OpenConditionDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Weapon Types", OpenWeaponTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Weapons", OpenWeaponDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Armor Types", OpenArmorTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Armor", OpenArmorDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.EndHorizontal();
-
-
-            // -----------------------------------
-
-
-            SimpleLayout.BeginHorizontal();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ammunition Types", OpenAmmunitionTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ammunition", OpenAmmunitionDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Subclasses", OpenSubclassDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Race", OpenRaceDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Subrace", OpenSubraceDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.EndHorizontal();
-
-
-            // -----------------------------------
-
-            // -----------------------------------
-
-
-            SimpleLayout.BeginHorizontal();
-
-            SimpleLayout.BeginVertical();
-            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            SimpleLayout.Button("Alignments", OpenAlignmentDB, Button.StyleBig, bsize);
-            SimpleLayout.EndVertical();
-            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            //SimpleLayout.Button("Alignments", OpenAmmunitionDB, Button.StyleBig, bsize);
-            //SimpleLayout.EndVertical();
-            SimpleLayout.EndVertical();
-
-            SimpleLayout.BeginVertical();
+            SimpleLayout.BeginVertical(Box.StyleA);
             SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             SimpleLayout.Button("Character Types", OpenCharacterTypeDB, Button.StyleBig, bsize);
             SimpleLayout.EndVertical();
@@ -213,16 +98,135 @@ namespace HeroKit.RpgEditor
             SimpleLayout.EndVertical();
             SimpleLayout.EndVertical();
 
-            //SimpleLayout.BeginVertical();
-            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            //SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, bsize);
-            //SimpleLayout.EndVertical();
-            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
-            //SimpleLayout.Button("Subclasses", OpenSubclassDB, Button.StyleBig, bsize);
-            //SimpleLayout.EndVertical();
-            //SimpleLayout.EndVertical();
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+            SimpleLayout.Space(10);
 
-            //SimpleLayout.BeginVertical();
+            // -----------------------------------
+
+
+            SimpleLayout.BeginHorizontal();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Element Types", OpenElementTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Elements", OpenElementsDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Condition Types", OpenConditionTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Conditions", OpenConditionDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Weapon Types", OpenWeaponTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Weapons", OpenWeaponDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Armor Types", OpenArmorTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Armor", OpenArmorDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+            SimpleLayout.Space(10);
+
+            // -----------------------------------
+
+
+            SimpleLayout.BeginHorizontal();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Ammunition Types", OpenAmmunitionTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Ammunition", OpenAmmunitionDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Ability Types", OpenAbilityTypeDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Abilities", OpenAbilityDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Classes", OpenClassDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Subclasses", OpenSubclassDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Race", OpenRaceDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Subrace", OpenSubraceDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+            SimpleLayout.Space(10);
+
+            // -----------------------------------
+
+            // -----------------------------------
+
+
+            SimpleLayout.BeginHorizontal();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Alignments", OpenAlignmentDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Alignments", OpenAmmunitionDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Currency Types", OpenMoneyDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleA);
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, bsize);
+            SimpleLayout.EndVertical();
+            //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            //SimpleLayout.Button("Formulas", OpenFormulaDB, Button.StyleBig, bsize);
+            //SimpleLayout.EndVertical();
+            SimpleLayout.EndVertical();
+
+            //SimpleLayout.BeginVertical(Box.StyleA);
             //SimpleLayout.BeginVertical(Box.StyleCanvasBox);
             //SimpleLayout.Button("Race", OpenRaceDB, Button.StyleBig, bsize);
             //SimpleLayout.EndVertical();
@@ -231,8 +235,9 @@ namespace HeroKit.RpgEditor
             //SimpleLayout.EndVertical();
             //SimpleLayout.EndVertical();
 
+            SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
-
+            SimpleLayout.Space(10);
 
             // -----------------------------------
 

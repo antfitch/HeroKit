@@ -24,7 +24,9 @@ MonoBehaviour:
       items: []
     bools:
       visible: 0
-      items: []
+      items:
+      - name: Start Full
+        value: 0
     strings:
       visible: 0
       items:

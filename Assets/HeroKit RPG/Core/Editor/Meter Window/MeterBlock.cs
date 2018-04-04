@@ -99,6 +99,7 @@ namespace HeroKit.RpgEditor
         {
             HeroKitCommon.BasicFieldsB(stringFields, 0, 1);
             DrawMaxValue();
+            HeroKitCommon.DrawCheckbox(boolFields, 0, "Start meter at max");
         }
 
         /// <summary>

@@ -66,7 +66,7 @@ MonoBehaviour:
           - name: Meter 2 ID
             value: 0
           - name: Weapon Type ID (class list)
-            value: 2
+            value: 1
           - name: Ability Type ID (class list)
             value: 0
           - name: Armor Type ID (class list)
@@ -165,7 +165,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Weapon Type Mask (class list)
-            value: 0100
+            value: 0000
             useVariables: 0
             useTextField: 0
           - name: Armor Type Mask (class list)
@@ -173,7 +173,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Condition Type Mask (class list) (bools)
-            value: 10
+            value: 00
             useVariables: 0
             useTextField: 0
           - name: Condition Percentage Mask (class list) (ints)
@@ -217,7 +217,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Alignment Mask (bools for checkboxes)
-            value: 0
+            value: 00
             useVariables: 0
             useTextField: 0
         gameObjects:

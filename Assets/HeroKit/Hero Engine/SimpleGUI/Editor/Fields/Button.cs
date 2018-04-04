@@ -314,6 +314,8 @@ namespace SimpleGUI.Fields
             styleBig.padding = new RectOffset(12, 12, 12, 12);
             styleBig.margin = new RectOffset(2, 2, 2, 2);
             styleBig.clipping = TextClipping.Overflow;
+            styleBig.fontSize = 14;
+            //styleBig.fontStyle = FontStyle.Bold;
         }
 
         /// <summary>

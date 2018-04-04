@@ -396,7 +396,7 @@ namespace SimpleGUI
         /// <param name="titleWidth">The width of the title assigned to the drop down list. If set to 0, the title is hidden.</param>
         /// <param name="fieldWidth">The width of the drop-down list.</param>
         /// <returns>The selection in the drop-down list.</returns>
-        public static int DropDownList(int selectedValue, Fields.DropDownValues list, int titleWidth, int fieldWidth = 0)
+        public static int DropDownList(int selectedValue, Fields.DropDownValues list, int titleWidth, int fieldWidth = 0, bool lenIsListID = false)
         {
             if (titleWidth == 0) titleWidth = -3;
 
@@ -409,8 +409,15 @@ namespace SimpleGUI
                 return 0;
             }
 
+            // get the length of the list
+            int listLength = list.ids.Length;
+
+            // if size of list does not represent all list.ids, get the id of the last item in list
+            if (lenIsListID)
+                listLength = list.ids[listLength-1];
+
             // if the selected value is out of range, set it to 0
-            if (selectedValue > list.items.Length)
+            if (selectedValue > listLength)
                 selectedValue = 0;
 
             BeginHorizontal();

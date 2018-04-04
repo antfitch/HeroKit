@@ -39,9 +39,8 @@ namespace HeroKit.RpgEditor
         //-------------------------------------------
         // Databases
         //-------------------------------------------
-
-        // item database variables
         #region Databases
+        // item database variables
         public static HeroObject itemDatabase;
         public static HeroKitProperty itemProperties; 
         // item type database variables
@@ -318,18 +317,17 @@ namespace HeroKit.RpgEditor
             return itemsList;
         }
         // get a list of items that are of a specific item type
-        public static DropDownValues databaseTypeList(HeroObject database, int itemType, int itemTypeTarget)
+        public static DropDownValues databaseTypeList(HeroObject itemDatabase, int itemType)
         {
             List<string> items = new List<string>();
             List<int> ids = new List<int>();
-            items.Add("All");
-            ids.Add(-1);
-            for (int i = 0; i < database.propertiesList.properties.Count; i++)
+            for (int i = 0; i < itemDatabase.propertiesList.properties.Count; i++)
             {
-                // ony get weapons that match weapon type
-                if (database.propertiesList.properties[i].itemProperties.ints.items[itemType].value == itemTypeTarget)
+                // ony get weapons that match weapon type (type id should always be stored in int list 0 pos
+                if (itemDatabase.propertiesList.properties[i].itemProperties.ints.items[0].value == itemType)
                 {
-                    items.Add(database.propertiesList.properties[i].itemProperties.strings.items[0].value);
+                    // name of the item should always be stored in string list 0 pos
+                    items.Add(itemDatabase.propertiesList.properties[i].itemProperties.strings.items[0].value);
                     ids.Add(i);
                 }
             }
@@ -688,9 +686,9 @@ namespace HeroKit.RpgEditor
         //-------------------------------------------
         // Fields and Field Groups
         //-------------------------------------------
-
         #region field groups: draw value / draw list
         //-------------------------------------------
+        // [item list] [add] [remove]
         // Checkbox, Item name, item value (int)
         //-------------------------------------------
         public static void DrawItemValue(List<StringField> stringFields, List<IntField> intFields, string title, 
@@ -761,6 +759,7 @@ namespace HeroKit.RpgEditor
         }
 
         //-------------------------------------------
+        // [item list] [add] [remove]
         // Checkbox, Item name, item value (int), drop-down list
         //-------------------------------------------
         public static void DrawItemValueB(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -857,6 +856,69 @@ namespace HeroKit.RpgEditor
         }
 
         //-------------------------------------------
+        // [type list] [item list]
+        // Checkbox, Item name, item value (int), drop-down list
+        //-------------------------------------------
+        public static void DrawItemValueBB(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int boolMaskID, int intMaskID, int selectMaskID, int itemTypeIDA, int itemTypeIDB,
+                                         bool showItem, UnityAction toggleItem,
+                                         DropDownValues itemList, DropDownValues selectionList, string intFieldLabel = "")
+        {
+            // resize string if things have changed
+            stringFields[boolMaskID].value = ResizeBitString(stringFields[boolMaskID].value, itemList.items.Length);
+            stringFields[intMaskID].value = ResizeIntStringLarge(stringFields[intMaskID].value, itemList.items.Length);
+            stringFields[selectMaskID].value = ResizeBitString(stringFields[selectMaskID].value, itemList.items.Length);
+
+            // convert intstring into intarray
+            BitArray bitArray = CreateBitArray(stringFields[boolMaskID].value);
+            int[] intArray = CreateIntArrayLarge(stringFields[intMaskID].value);
+            int[] selectArray = CreateIntArray(stringFields[selectMaskID].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
+                SimpleLayout.Line();
+
+                // -------------------------------------
+                // Create the add item drop down box
+                // -------------------------------------
+                SimpleLayout.BeginHorizontal();
+                intFields[itemTypeIDA].value = SimpleLayout.DropDownList(intFields[itemTypeIDA].value, itemList, 0, 150);
+                addRemoveButton(bitArray, intFields[itemTypeIDA].value, itemList);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+
+                // -------------------------------------
+                // Create the items list
+                // -------------------------------------
+                SimpleLayout.Line();
+                getDropdownComboarrayB(bitArray, intArray, selectArray, itemList, selectionList, intFieldLabel);
+            }
+
+            SimpleLayout.EndVertical();
+
+            // create bit string from bit array & save
+            stringFields[boolMaskID].value = CreateBitString(bitArray);
+            stringFields[intMaskID].value = CreateIntStringLarge(intArray);
+            stringFields[selectMaskID].value = CreateIntString(selectArray);
+        }
+
+
+        //-------------------------------------------
+        // [item list] [add] [remove]
         // Checkbox, Item name
         //-------------------------------------------
         public static void DrawItemValueC(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -934,6 +996,7 @@ namespace HeroKit.RpgEditor
         }
 
         //-------------------------------------------
+        // [type list] [item list]
         // Checkbox, Item name, drop-down list a, drop-down list b
         //-------------------------------------------
         public static void DrawItemValueD(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -1010,6 +1073,7 @@ namespace HeroKit.RpgEditor
         }
 
         //-------------------------------------------
+        // [type list] [item list]
         // Checkbox, Item name (show all items of specific type)
         //-------------------------------------------
         public static void DrawItemValueE(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -1071,13 +1135,13 @@ namespace HeroKit.RpgEditor
         public static void DrawWeaponList(List<StringField> stringFields, List<IntField> intFields, string title = "Weapons allowed for this")
         {
             DrawItemValueE(stringFields, intFields, title, 17, 10, 
-                           showWeapons, toggleWeaponType, 0,
+                           showWeapons, toggleWeapons, 0,
                            weaponTypeDatabase, weaponDatabase, ref showOnWeapons);
         }
         public static void DrawArmorList(List<StringField> stringFields, List<IntField> intFields, string title = "Armor allowed for this")
         {
             DrawItemValueE(stringFields, intFields, title, 18, 12,
-                           showArmor, toggleArmorType, 0,
+                           showArmor, toggleArmor, 0,
                            armorTypeDatabase, armorDatabase, ref showOnArmor);
         }
         public static void DrawAbilityList(List<StringField> stringFields, List<IntField> intFields, string title = "Abilities allowed for this")
@@ -1089,6 +1153,7 @@ namespace HeroKit.RpgEditor
 
 
         //-------------------------------------------
+        // [item list] [add] [remove]
         // Checkbox, Item name, drop-down list
         //-------------------------------------------
         public static void DrawItemValueF(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -1163,6 +1228,7 @@ namespace HeroKit.RpgEditor
         }
 
         //-------------------------------------------
+        // [type list] [item list]
         // Checkbox, Item name, drop-down (show all items of specific type)
         //-------------------------------------------
         public static void DrawItemValueG(List<StringField> stringFields, List<IntField> intFields, string title,
@@ -1254,17 +1320,82 @@ namespace HeroKit.RpgEditor
 
 
         //-------------------------------------------
+        // [no list or buttons]
+        // drop-down list a, drop-down list b
+        //-------------------------------------------
+        public static void DrawItemValueH(List<StringField> stringFields, List<IntField> intFields, string title,
+                                         int selectMaskIDB, int itemTypeID, bool showItem, UnityAction toggleItem,
+                                         DropDownValues selectionListA, HeroObject selectionListB_Database)
+        {
+            DropDownValues selectionListB = databaseList(selectionListB_Database);
+
+            // resize string if things have changed
+            stringFields[selectMaskIDB].value = ResizeIntStringLarge(stringFields[selectMaskIDB].value, selectionListB.items.Length);
+
+            // convert intstring into intarray
+            int[] selectArray = CreateIntArrayLarge(stringFields[selectMaskIDB].value);
+
+            // -------------------------------------
+            // Draw form fields
+            // -------------------------------------
+
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+
+            // Line 1: types allowed... [hide or show]
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title);
+            SimpleLayout.Space();
+            string buttonText = showItem ? "hide" : "show";
+            SimpleLayout.Button(buttonText, toggleItem, Button.StyleA);
+            SimpleLayout.EndHorizontal();
+
+            if (showItem)
+            {
+                getDropdownComboarrayF(stringFields, selectArray, selectionListA, selectionListB_Database);
+            }
+
+            SimpleLayout.EndVertical();
+            stringFields[selectMaskIDB].value = CreateIntStringLarge(selectArray);
+        }
+        public static void DrawFirstEquip(List<StringField> stringFields, List<IntField> intFields)
+        {
+            DropDownValues armorTypes = databaseList(armorTypeDatabase);
+            DrawItemValueH(stringFields, intFields, "Starting Equipment", 2, 3, showArmor, toggleArmor,
+                           armorTypes, armorDatabase);
+        }
+
+        //-------------------------------------------
         // Drop-down list
         //-------------------------------------------
-        public static void DrawItemDropdown(List<IntField> intFields, string title, int itemID, HeroObject itemDatabase)
+        public static void DrawItemDropdown(List<IntField> intFields, string title, int itemID, HeroObject itemDatabase, int width=0)
         {
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
             DropDownValues itemList = HeroKitCommon.databaseList(itemDatabase);
             SimpleLayout.Label(title + ":");
-            intFields[itemID].value = SimpleLayout.DropDownList(intFields[itemID].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+            if (width == 0)
+                intFields[itemID].value = SimpleLayout.DropDownList(intFields[itemID].value, itemList, 0, HeroKit.Editor.HeroKitCommon.GetWidthForField(60, 450));
+            else
+                intFields[itemID].value = SimpleLayout.DropDownList(intFields[itemID].value, itemList, 0, width);
             SimpleLayout.EndVertical();
         }
 
+        //-------------------------------------------
+        // Drop-down list (type), Drop-down List (item)
+        //-------------------------------------------
+        public static void DrawItemDropdownB(List<IntField> intFields, string title, int itemID, int itemTypeID, HeroObject itemTypeDB, HeroObject itemDB)
+        {
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+            DropDownValues itemTypes = HeroKitCommon.databaseList(itemTypeDB);
+            SimpleLayout.Label(title + ":");
+            SimpleLayout.BeginHorizontal();
+            intFields[itemTypeID].value = SimpleLayout.DropDownList(intFields[itemTypeID].value, itemTypes, 0, 200);
+
+            DropDownValues itemList = databaseTypeList(itemDB, intFields[itemTypeID].value);
+            intFields[itemID].value = SimpleLayout.DropDownList(intFields[itemID].value, itemList, 0, 200);
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+            SimpleLayout.EndVertical();
+        }
         //-------------------------------------------
         // Name, Icon, Description Group
         //-------------------------------------------
@@ -1483,6 +1614,21 @@ namespace HeroKit.RpgEditor
             SimpleLayout.BeginHorizontal();
             SimpleLayout.Label(title + ":");
             boolFields_att[1].value = SimpleLayout.BoolField(boolFields_att[1].value);
+            SimpleLayout.Space();
+            SimpleLayout.EndHorizontal();
+            SimpleLayout.EndVertical();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static void DrawCheckbox(List<BoolField> boolFields, int boolID, string title)
+        {
+            SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
+            SimpleLayout.BeginHorizontal();
+            SimpleLayout.Label(title + ":");
+            boolFields[boolID].value = SimpleLayout.BoolField(boolFields[boolID].value);
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
             SimpleLayout.EndVertical();
@@ -1943,6 +2089,20 @@ namespace HeroKit.RpgEditor
             SimpleLayout.Space();
             SimpleLayout.EndHorizontal();
         }
+        // generate a list of items in bit array (drop-down list type, drop-down list)
+        public static void getDropdownComboarrayF(List<StringField> stringFields, int[] itemsArray, DropDownValues itemTypesDD, HeroObject itemDatabase)
+        {
+            for (int i = 0; i < itemTypesDD.items.Length; i++)
+            {
+                SimpleLayout.BeginHorizontal();             
+                DropDownValues itemList = databaseTypeList(itemDatabase, itemTypesDD.ids[i]);
+                itemsArray[i] = SimpleLayout.DropDownList(itemsArray[i], itemList, 0, 200, true);
+                SimpleLayout.Label(itemTypesDD.items[i]);
+                SimpleLayout.Space();
+                SimpleLayout.EndHorizontal();
+            }
+        }
+
         #endregion
 
         //-------------------------------------------
@@ -2007,14 +2167,14 @@ namespace HeroKit.RpgEditor
         }
 
         private static bool showWeapons = false;
-        private static void toggleWeaponType()
+        private static void toggleWeapons()
         {
             showWeapons = !showWeapons;
         }
         private static int showOnWeapons = 0;
 
         private static bool showArmor = false;
-        private static void toggleArmorType()
+        private static void toggleArmor()
         {
             showArmor = !showArmor;
         }
