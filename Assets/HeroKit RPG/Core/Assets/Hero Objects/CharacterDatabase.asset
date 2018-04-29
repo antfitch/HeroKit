@@ -50,17 +50,17 @@ MonoBehaviour:
           - name: Starting Weapon Type
             value: 1
           - name: Starting Weapon
-            value: 0
+            value: 1
           - name: Starting Class Type
-            value: 2
+            value: 1
           - name: Starting Subclass
             value: 0
           - name: Starting Alignment
-            value: 2
+            value: 1
           - name: Starting Race
             value: 1
           - name: Starting Subrace
-            value: 0
+            value: 1
         floats:
           visible: 0
           items: []
@@ -71,7 +71,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Name
-            value: Rhen
+            value: Ryat
             useVariables: 0
             useTextField: 0
           - name: Description
@@ -79,7 +79,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Equipment Mask (ids)
-            value: 0|1|2|
+            value: 1|0|3|
             useVariables: 0
             useTextField: 0
         gameObjects:

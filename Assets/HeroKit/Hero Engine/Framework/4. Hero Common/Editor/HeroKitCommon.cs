@@ -951,7 +951,7 @@ namespace HeroKit.Editor
                 globals = Resources.Load<HeroKitGlobals>("Hero Globals/HeroKitGlobals");
                 if (globals == null)
                 {
-                    globals = CreateCustomAsset.CreateAsset<HeroKitGlobals>("HeroKitGlobals", false, "Assets/HeroKit/Assets/Resources/Hero Globals");
+                    globals = CreateCustomAsset.CreateAsset<HeroKitGlobals>("HeroKitGlobals", false, "Assets/HeroKit/Hero Engine/Assets/Resources/Hero Globals");
                 }
             }
 
@@ -1045,7 +1045,9 @@ namespace HeroKit.Editor
             // return the hero object
             return heroObject;
         }
-
+        /// <summary>
+        /// Get the session info for hero kit
+        /// </summary>
         public static void GetHeroKitSession()
         {
             string[] guids = AssetDatabase.FindAssets("t:HeroKitSession");
@@ -1062,6 +1064,126 @@ namespace HeroKit.Editor
                 Debug.Log("no session data.");
             }
                 
+        }
+
+        // --------------------------------------------------------------
+        // Hero Kit Settings
+        // --------------------------------------------------------------
+
+        /// <summary>
+        /// Store hero kit settings here.
+        /// </summary>
+        private static HeroKitSettings settingsData;
+        /// <summary>
+        /// Reload the hero kit editor settings.
+        /// </summary>
+        public static void RefreshHeroSettings()
+        {
+            // get the template
+            if (settingsData == null)
+            {
+                GetHeroKitSettings();
+            }
+
+            // if menus missing, add defaults
+            if (settingsData != null)
+            {
+                string settingsPath = "Hero Templates/Menus/";
+
+                if (settingsData.dialogBox == null)
+                    settingsData.dialogBox = Resources.Load<GameObject>(settingsPath + "HeroKit Dialog Box A");
+
+                if (settingsData.fadeInOutScreen == null)
+                    settingsData.fadeInOutScreen = Resources.Load<GameObject>(settingsPath + "HeroKit Fade Screen In Out");
+
+                if (settingsData.gameoverMenu == null)
+                    settingsData.gameoverMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Game Over Menu");
+
+                if (settingsData.gameoverMenuController == null)
+                    settingsData.gameoverMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Game Over Menu Controller");
+
+                if (settingsData.inventoryMenu == null)
+                    settingsData.inventoryMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Inventory Menu");
+
+                if (settingsData.journalMenu == null)
+                    settingsData.journalMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Journal Menu");
+
+                if (settingsData.optionsMenu == null)
+                    settingsData.optionsMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Options Menu");
+
+                if (settingsData.optionsMenuController == null)
+                    settingsData.optionsMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Options Menu Controller");
+
+                if (settingsData.saveMenu == null)
+                    settingsData.saveMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Save Menu");
+
+                if (settingsData.saveMenuController == null)
+                    settingsData.saveMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Save Menu Controller");
+
+                if (settingsData.startMenu == null)
+                    settingsData.startMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Start Menu");
+
+                if (settingsData.startMenuController == null)
+                    settingsData.startMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Start Menu Controller");
+
+                if (settingsData.inventoryItem == null)
+                    settingsData.inventoryItem = Resources.Load<HeroKitProperty>(settingsPath + "Inventory Item");
+
+                if (settingsData.inventorySlotController == null)
+                    settingsData.inventorySlotController = Resources.Load<HeroObject>(settingsPath + "Inventory Slot Controller");
+
+                if (settingsData.journalItem == null)
+                    settingsData.journalItem = Resources.Load<HeroKitProperty>(settingsPath + "Journal Item");
+
+                if (settingsData.journalSlot == null)
+                    settingsData.journalSlot = Resources.Load<GameObject>(settingsPath + "Journal Slot");
+
+                if (settingsData.journalSlotController == null)
+                    settingsData.journalSlotController = Resources.Load<HeroObject>(settingsPath + "Journal Slot Controller");
+
+                if (settingsData.saveSlot == null)
+                    settingsData.saveSlot = Resources.Load<GameObject>(settingsPath + "Save Slot");
+
+                if (settingsData.saveSlotController == null)
+                    settingsData.saveSlotController = Resources.Load<HeroObject>(settingsPath + "Save Slot Controller");
+
+                EditorUtility.SetDirty(settingsData);
+            }
+        }
+        /// <summary>
+        /// Load the hero kit editor settings information. 
+        /// </summary>
+        /// <returns></returns>
+        public static HeroKitSettings LoadHeroSettings()
+        {
+            // get the template
+            if (settingsData == null)
+            {
+                GetHeroKitSettings();
+            }
+
+            // return the hero object
+            return settingsData;
+        }
+        /// <summary>
+        /// Get the settings info for hero kit
+        /// </summary>
+        public static void GetHeroKitSettings()
+        {
+            string[] guids = AssetDatabase.FindAssets("t:HeroKitSettings");
+
+            if (guids != null && guids.Length > 0)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
+                settingsData = (HeroKitSettings)AssetDatabase.LoadAssetAtPath(path, typeof(HeroKitSettings));
+            }
+
+            if (settingsData == null)
+            {
+                settingsData = CreateCustomAsset.CreateAsset<HeroKitSettings>("HeroKitSettings", false, "Assets/HeroKit/Hero Engine/Assets/Hero Settings");
+                Debug.Log("no settings data.");
+            }
+
         }
     }
 }

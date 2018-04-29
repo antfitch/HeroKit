@@ -2,6 +2,8 @@
 // Copyright (c) 2016-2017 Aveyond Studios. 
 // All Rights Reserved.
 // --------------------------------------------------------------
+using System.Linq;
+
 namespace SimpleGUI.Fields
 {
     /// <summary>
@@ -27,19 +29,38 @@ namespace SimpleGUI.Fields
         /// </summary>
         /// <param name="name">Title of the drop-down list.</param>
         /// <param name="items">Names of the items in the drop-down list.</param>
-        public void setValues(string name, string[] items)
+        public void setValues(string name, string[] items, bool firstIsNone=false)
         {
-            this.name = name;
-            this.items = items;
-
-            int count = items.Length;
-            ids = new int[count];
-            for (int i = 0; i < count; i++)
+            if (!firstIsNone)
             {
-                int number = i + 1;
-                ids[i] = number;
+                this.name = name;
+                this.items = items;
+
+                int count = items.Length;
+                ids = new int[count];
+                for (int i = 0; i < count; i++)
+                {
+                    int number = i + 1;
+                    ids[i] = number;
+                }
+            }
+            else
+            {
+                this.name = name;
+                this.items = new string[items.Length + 1];
+                items.CopyTo(this.items, 1);
+                this.items[0] = "None";
+
+                int count = items.Length + 1;
+                ids = new int[count];
+                for (int i = 0; i < count; i++)
+                {
+                    int number = i;
+                    ids[i] = number;
+                }
             }
         }
+
 
         /// <summary>
         /// Set the values and IDs for a drop-down list. 
@@ -47,11 +68,22 @@ namespace SimpleGUI.Fields
         /// <param name="name">Title of the drop-down list.</param>
         /// <param name="items">Names of the items in the drop-down list.</param>
         /// <param name="items">IDs of the items in the drop-down list.</param>
-        public void setValues(string name, string[] items, int[] itemIDs)
+        public void setValues(string name, string[] items, int[] itemIDs, bool firstIsNone=false)
         {
-            this.name = name;
-            this.items = items;
-            ids = itemIDs;
+            if (!firstIsNone)
+            {
+                this.name = name;
+                this.items = items;
+                this.ids = itemIDs;
+            }
+            else
+            {
+                this.name = name;
+                string[] firstItem = { "None" };
+                this.items = firstItem.Concat(items).ToArray();
+                int[] firstID = { 0 };
+                this.ids = firstID.Concat(itemIDs).ToArray();
+            }
         }
 
         /// <summary>

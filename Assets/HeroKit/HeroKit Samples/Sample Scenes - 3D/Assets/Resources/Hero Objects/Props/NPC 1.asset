@@ -1589,6 +1589,7 @@ MonoBehaviour:
         boolConditions: []
         inputConditions: []
       heroVisuals:
+        visualType: 1
         imageType: 2
         rigidbodyType: 2
         prefab: {fileID: 1000014069041812, guid: 36cecc81010e6c8439a9df25455518ab,
@@ -1603,6 +1604,7 @@ MonoBehaviour:
         avatar: {fileID: 9000000, guid: 3acd256e7b3b8f94fbb8dd23972c5b41, type: 3}
         rigidbody: {fileID: 54600503265479996, guid: 02c3c71a94003384b9cd4c01f82b22ef,
           type: 2}
+        rigidbody2D: {fileID: 0}
       intConditions: []
       boolConditions:
       - itemA:
@@ -3917,6 +3919,7 @@ MonoBehaviour:
         boolConditions: []
         inputConditions: []
       heroVisuals:
+        visualType: 0
         imageType: 2
         rigidbodyType: 2
         prefab: {fileID: 1000014069041812, guid: 36cecc81010e6c8439a9df25455518ab,
@@ -3931,6 +3934,7 @@ MonoBehaviour:
         avatar: {fileID: 9000000, guid: 3acd256e7b3b8f94fbb8dd23972c5b41, type: 3}
         rigidbody: {fileID: 54600503265479996, guid: 02c3c71a94003384b9cd4c01f82b22ef,
           type: 2}
+        rigidbody2D: {fileID: 0}
       intConditions: []
       boolConditions:
       - itemA:
@@ -4651,6 +4655,7 @@ MonoBehaviour:
         boolConditions: []
         inputConditions: []
       heroVisuals:
+        visualType: 0
         imageType: 2
         rigidbodyType: 2
         prefab: {fileID: 1000014069041812, guid: 36cecc81010e6c8439a9df25455518ab,
@@ -4665,6 +4670,7 @@ MonoBehaviour:
         avatar: {fileID: 9000000, guid: 3acd256e7b3b8f94fbb8dd23972c5b41, type: 3}
         rigidbody: {fileID: 54600503265479996, guid: 02c3c71a94003384b9cd4c01f82b22ef,
           type: 2}
+        rigidbody2D: {fileID: 0}
       intConditions: []
       boolConditions:
       - itemA:

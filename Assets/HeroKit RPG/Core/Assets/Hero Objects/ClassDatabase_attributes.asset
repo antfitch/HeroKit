@@ -165,7 +165,7 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Weapon Type Mask (class list)
-            value: 0000
+            value: 1000
             useVariables: 0
             useTextField: 0
           - name: Armor Type Mask (class list)
@@ -220,6 +220,30 @@ MonoBehaviour:
             value: 00
             useVariables: 0
             useTextField: 0
+          - name: Weapon Mask (bools for level checkboxes)
+            value: 1000
+            useVariables: 0
+            useTextField: 0
+          - name: Weapons Mask (int for level field)
+            value: 7|0|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (bools for level checkboxes)
+            value: 000
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (int for level field)
+            value: 3|0|0|
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (bools for level checkboxes)
+            value: 0000
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (int for level field)
+            value: 0|0|0|0|
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -411,6 +435,30 @@ MonoBehaviour:
             value: 0
             useVariables: 0
             useTextField: 0
+          - name: Weapon Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Weapons Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -602,6 +650,30 @@ MonoBehaviour:
             value: 0
             useVariables: 0
             useTextField: 0
+          - name: Weapon Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Weapons Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
         gameObjects:
           visible: 0
           items: []
@@ -790,6 +862,30 @@ MonoBehaviour:
             useVariables: 0
             useTextField: 0
           - name: Alignment Mask (bools for checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Weapon Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Weapons Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Armor Mask (int for level field)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (bools for level checkboxes)
+            value: 
+            useVariables: 0
+            useTextField: 0
+          - name: Abilities Mask (int for level field)
             value: 
             useVariables: 0
             useTextField: 0

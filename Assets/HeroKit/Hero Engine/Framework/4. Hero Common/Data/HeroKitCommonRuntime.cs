@@ -1055,7 +1055,7 @@ namespace HeroKit.Scene
 
             // if collider has rigidbody, get game object assigned to hero block this way.
             // otherwise look for hero kit object component in parent 
-            hko = (collider.attachedRigidbody != null) ? collider.gameObject.GetComponent<HeroKitObject>() : collider.gameObject.GetComponentInParent<HeroKitObject>();
+            hko = (collider.attachedRigidbody != null) ? collider.attachedRigidbody.gameObject.GetComponent<HeroKitObject>() : collider.gameObject.GetComponentInParent<HeroKitObject>();
 
             return hko;
         }

@@ -556,27 +556,48 @@ MonoBehaviour:
   heroState:
     name: 
     visible: 0
-    showTools: 0
     heroEvent: []
-    heroImage:
+    heroVisuals:
+      visualType: 0
       imageType: 0
-      imageTemplateTypeOld: 0
-      imageTemplateType: 0
+      rigidbodyType: 0
       prefab: {fileID: 0}
       hasMesh: 0
       imageMesh: {fileID: 0}
-      imageMaterial: []
       hasAnimator: 0
       animator: {fileID: 0}
       animatorController: {fileID: 0}
       avatar: {fileID: 0}
-      customCollider: 0
-      colliderType: 0
-      colliderCenter: {x: 0, y: 0, z: 0}
-      colliderSize: {x: 0, y: 0, z: 0}
       rigidbody: {fileID: 0}
+      rigidbody2D: {fileID: 0}
+    intConditions: []
+    boolConditions: []
   heroProperties:
-    propertyTemplate: {fileID: 0}
+  - propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  - propertyTemplate: {fileID: 0}
     itemProperties:
       visible: 0
       ints:
@@ -623,7 +644,32 @@ MonoBehaviour:
     unityObjects:
       visible: 0
       items: []
+  heroGlobals:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
   persist: 0
+  collisionsList: []
+  triggersList: []
 --- !u!114 &114447555626398028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,7 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3634c8a4c0d6bd54680d2e2c9290b271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentType: 0
   inputType: 0
   itemID: 3
   item: {fileID: 0}
@@ -977,7 +1022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3634c8a4c0d6bd54680d2e2c9290b271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentType: 0
   inputType: 0
   itemID: 2
   item: {fileID: 0}
@@ -1056,7 +1100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3634c8a4c0d6bd54680d2e2c9290b271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentType: 0
   inputType: 0
   itemID: 1
   item: {fileID: 0}

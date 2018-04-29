@@ -78,7 +78,17 @@ namespace HeroKit.Editor
             SimpleLayout.Button("Migrate HeroKit data to Beta 1.02", UpdateHeroKit1_2, Button.StyleA);
             SimpleLayout.Label("This move your properties on hero objects into the new Property \n" +
                                 "structure on hero objects. Once you've done this, you need to update your \n" +
-                                "actions to point to the updated properties");
+                                "actions to point to the updated properties.");
+
+            SimpleLayout.Line();
+            SimpleLayout.EndVertical();
+
+            SimpleLayout.BeginVertical(Box.StyleCanvasBox);
+            SimpleLayout.Button("Show/Hide Menu Templates", ShowMenuSkins, Button.StyleA);
+            SimpleLayout.Label("You can use the default templates we provide for your menus \n" +
+                               "or you can use your own. The default templates are stored here: \n" +
+                               "HeroKit/Hero Engine/Assets/Resources/Hero Templates/Menus");
+            MenuSkins();
 
             SimpleLayout.Line();
             SimpleLayout.EndVertical();
@@ -87,6 +97,114 @@ namespace HeroKit.Editor
         // --------------------------------------------------------------
         // Methods (Misc)
         // --------------------------------------------------------------
+
+        public static bool toggleMenuSkins;
+        public static void ShowMenuSkins()
+        {
+            toggleMenuSkins = !toggleMenuSkins;
+        }
+        public static void MenuSkins()
+        {
+            // exit early if we don't want to show the menu skins.
+            if (!toggleMenuSkins)
+                return;
+
+            HeroKitSettings settings = HeroKitCommon.LoadHeroSettings();
+            int distance = 10;
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Dialog Box");
+            settings.dialogBox = SimpleLayout.ObjectField(settings.dialogBox, HeroKitCommon.GetWidthForField(65));
+            if (settings.dialogBox == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Fade Screen In and Out Window");
+            settings.fadeInOutScreen = SimpleLayout.ObjectField(settings.fadeInOutScreen, HeroKitCommon.GetWidthForField(65));
+            if (settings.fadeInOutScreen == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Game Over Menu");
+            settings.gameoverMenu = SimpleLayout.ObjectField(settings.gameoverMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.gameoverMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Game Over Menu Controller");
+            settings.gameoverMenuController = SimpleLayout.ObjectField(settings.gameoverMenuController, HeroKitCommon.GetWidthForField(65));
+            if (settings.gameoverMenuController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Inventory Menu");
+            settings.inventoryMenu = SimpleLayout.ObjectField(settings.inventoryMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.inventoryMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Inventory Item");
+            settings.inventoryItem = SimpleLayout.ObjectField(settings.inventoryItem, HeroKitCommon.GetWidthForField(65));
+            if (settings.inventoryItem == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Inventory Slot");
+            settings.inventorySlot = SimpleLayout.ObjectField(settings.inventorySlot, HeroKitCommon.GetWidthForField(65));
+            if (settings.inventorySlot == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Inventory Slot Controller");
+            settings.inventorySlotController = SimpleLayout.ObjectField(settings.inventorySlotController, HeroKitCommon.GetWidthForField(65));
+            if (settings.inventorySlotController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Journal Menu");
+            settings.journalMenu = SimpleLayout.ObjectField(settings.journalMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.journalMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Journal Item");
+            settings.journalItem = SimpleLayout.ObjectField(settings.journalItem, HeroKitCommon.GetWidthForField(65));
+            if (settings.journalItem == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Journal Slot");
+            settings.journalSlot = SimpleLayout.ObjectField(settings.journalSlot, HeroKitCommon.GetWidthForField(65));
+            if (settings.journalSlot == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Journal Slot Controller");
+            settings.journalSlotController = SimpleLayout.ObjectField(settings.journalSlotController, HeroKitCommon.GetWidthForField(65));
+            if (settings.journalSlotController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Options Menu");
+            settings.optionsMenu = SimpleLayout.ObjectField(settings.optionsMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.optionsMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Options Menu Controller");
+            settings.optionsMenuController = SimpleLayout.ObjectField(settings.optionsMenuController, HeroKitCommon.GetWidthForField(65));
+            if (settings.optionsMenuController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Save Menu");
+            settings.saveMenu = SimpleLayout.ObjectField(settings.saveMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.saveMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Save Menu Controller");
+            settings.saveMenuController = SimpleLayout.ObjectField(settings.saveMenuController, HeroKitCommon.GetWidthForField(65));
+            if (settings.saveMenuController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Save Slot");
+            settings.saveSlot = SimpleLayout.ObjectField(settings.saveSlot, HeroKitCommon.GetWidthForField(65));
+            if (settings.saveSlot == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Save Slot Controller");
+            settings.saveSlotController = SimpleLayout.ObjectField(settings.saveSlotController, HeroKitCommon.GetWidthForField(65));
+            if (settings.saveSlotController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+
+            SimpleLayout.BeginVertical(Box.StyleB);
+            SimpleLayout.Label("Start Menu");
+            settings.startMenu = SimpleLayout.ObjectField(settings.startMenu, HeroKitCommon.GetWidthForField(65));
+            if (settings.startMenu == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.Label("Start Menu Controller");
+            settings.startMenuController = SimpleLayout.ObjectField(settings.startMenuController, HeroKitCommon.GetWidthForField(65));
+            if (settings.startMenuController == null) HeroKitCommon.RefreshHeroSettings();
+            SimpleLayout.EndVertical();
+            SimpleLayout.Space(distance);
+        }
+
 
         /// <summary>
         /// Clean up all hero objects in the project.

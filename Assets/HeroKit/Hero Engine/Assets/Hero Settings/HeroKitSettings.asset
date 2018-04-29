@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568a59b53aa032044aac432f18fb1fc7, type: 3}
+  m_Name: HeroKitSettings
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 1841128617952812, guid: 8ff0621aab248d244b7099c24f72948b, type: 2}
+  fadeInOutScreen: {fileID: 1276288637755818, guid: 6bec3bc72c9a4594dbef1e99c98440c8,
+    type: 2}
+  gameoverMenu: {fileID: 1786290332141580, guid: 95ffdbff1619b734a994197053e1c2c7,
+    type: 2}
+  gameoverMenuController: {fileID: 11400000, guid: 41bdf59c046b5504aa25095a50e1c493,
+    type: 2}
+  inventoryMenu: {fileID: 1448204053910732, guid: bd1eafce2ed6a1045ba24d4f812391c1,
+    type: 2}
+  journalMenu: {fileID: 1448204053910732, guid: 3484fa252345b5343b885130ee084fcd,
+    type: 2}
+  optionsMenu: {fileID: 1032927374966534, guid: 0d15fe84537928448a67cb6211d04787,
+    type: 2}
+  optionsMenuController: {fileID: 11400000, guid: 5c9e6fad33d75ac42a93f513adce2f71,
+    type: 2}
+  saveMenu: {fileID: 1397273096359204, guid: 410ad6571f3ea924c99cb1565f0120fe, type: 2}
+  saveMenuController: {fileID: 11400000, guid: 76754db56f95ff149a48f6bfdf807068, type: 2}
+  startMenu: {fileID: 1489775226640826, guid: e3cfa027b6562f346bc2369ccc4a5308, type: 2}
+  startMenuController: {fileID: 11400000, guid: fae59e7d2f2ebea4f9bb5a14e0ff6e1a,
+    type: 2}
+  inventoryItem: {fileID: 11400000, guid: e9b85e3bbd7f4074890ee4af7f2a7360, type: 2}
+  inventorySlot: {fileID: 0}
+  inventorySlotController: {fileID: 11400000, guid: a14ff68cc4332ca4db3bae3370e97b0c,
+    type: 2}
+  journalItem: {fileID: 11400000, guid: 3f3576edf4378b749924e81b2a0622fa, type: 2}
+  journalSlot: {fileID: 1546554814976592, guid: 1c6282a7674a1684e99dea895be02092,
+    type: 2}
+  journalSlotController: {fileID: 11400000, guid: f581c9865f538b14cb742aca3d2dd936,
+    type: 2}
+  saveSlot: {fileID: 1426007900987502, guid: 40ebaee1cde251848a8a0ccf79d524e3, type: 2}
+  saveSlotController: {fileID: 11400000, guid: 7a205987e0e94bd4f8d23f3ad472afe4, type: 2}
