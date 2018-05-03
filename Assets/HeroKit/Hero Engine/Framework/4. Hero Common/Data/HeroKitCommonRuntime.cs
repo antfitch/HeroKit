@@ -56,6 +56,9 @@ namespace HeroKit.Scene
                 // create directories for save data
                 Directory.CreateDirectory(Application.persistentDataPath + "/HeroSaves/");
                 Directory.CreateDirectory(Application.temporaryCachePath + "/HeroScenes/");
+
+                // save the settings scriptable object to a variable
+                GetHeroKitSettings();
             }
         }
         /// <summary>
@@ -120,6 +123,29 @@ namespace HeroKit.Scene
             }
 
             return saveData;
+        }
+        /// <summary>
+        /// The hero kit settings scriptable object.
+        /// </summary>
+        public static HeroKitSettings settingsInfo;
+        /// <summary>
+        /// Get the hero kit settings scriptable object. This object stores
+        /// the menu prefabs and general settings stored in the 
+        /// HeroKit Editor's Settings page.
+        /// </summary>
+        /// <returns>The settings scriptable object</returns>
+        public static HeroKitSettings GetHeroKitSettings()
+        {
+            settingsInfo = Resources.Load<HeroKitSettings>("Hero Settings/HeroKitSettings");
+
+            // if session still does not exist, raise error
+            if (settingsInfo == null)
+            {
+                Debug.LogError("HeroKitSettings file not found in HeroKit/Hero Engine/Assets/Hero Settings directory. Reinstall this file.");
+                return null;
+            }
+
+            return settingsInfo;
         }
 
         //-------------------------------------------
@@ -712,6 +738,55 @@ namespace HeroKit.Scene
                 makePersistent.ExecuteOnTarget(prefabHKO);
             }
         }
+
+
+        public static HeroKitObject GetPrefabFromAssets(GameObject prefab, bool persistent)
+        {
+            // add prefab to scene if it doesn't exist
+            if (!HeroKitDatabase.PersistentObjectDictionary.ContainsKey(prefab.name))
+            {
+                AddPrefabToScene(prefab, persistent);
+            }
+
+            // get the hero kit object attached to the prefab
+            GameObject targetGameObject = HeroKitDatabase.GetPersistentObject(prefab.name);
+            HeroKitObject targetObject = targetGameObject.GetComponent<HeroKitObject>();
+
+            return targetObject;
+        }
+        private static void AddPrefabToScene(GameObject template, bool persistent)
+        {
+            // add prefab to scene if it doesn't already exist
+            if (template == null)
+            {
+                Debug.LogError("Can't add prefab to scene because template does not exist.");
+                return;
+            }
+
+            GameObject gameObject = Object.Instantiate(template, new Vector3(), new Quaternion());
+            //gameObject.name = prefabName;
+
+            // add the object to the game object dictionary
+            HeroKitDatabase.AddPersistentObject(template.name, gameObject);
+
+            // hide it
+            gameObject.SetActive(false);
+
+            // make prefab persistent
+            if (persistent)
+            {
+                HeroKitObject prefabHKO = gameObject.GetComponent<HeroKitObject>();
+                if (prefabHKO == null)
+                {
+                    Debug.LogError("Can't make prefab persistent because hero kit object component is missing.");
+                    return;
+                }
+
+                MakePersistent makePersistent = new MakePersistent();
+                makePersistent.ExecuteOnTarget(prefabHKO);
+            }
+        }
+
 
         //-------------------------------------------
         // 3D Rigidbodies

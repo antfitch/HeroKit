@@ -48,7 +48,8 @@ namespace HeroKit.Scene.Actions
             heroKitObject = hko;
 
             // get common values
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Dialog Box A", "Hero Templates/Menus/", true);
+            //HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Dialog Box A", "Hero Templates/Menus/", true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.dialogBox, true);
             bool runThis = (targetObject != null);
 
             if (runThis)

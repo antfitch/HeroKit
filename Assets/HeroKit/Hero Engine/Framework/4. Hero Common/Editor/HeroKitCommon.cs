@@ -1170,7 +1170,7 @@ namespace HeroKit.Editor
         /// </summary>
         public static void GetHeroKitSettings()
         {
-            string[] guids = AssetDatabase.FindAssets("t:HeroKitSettings");
+            string[] guids = AssetDatabase.FindAssets("t:HeroKitSettings"); 
 
             if (guids != null && guids.Length > 0)
             {
@@ -1180,7 +1180,7 @@ namespace HeroKit.Editor
 
             if (settingsData == null)
             {
-                settingsData = CreateCustomAsset.CreateAsset<HeroKitSettings>("HeroKitSettings", false, "Assets/HeroKit/Hero Engine/Assets/Hero Settings");
+                settingsData = CreateCustomAsset.CreateAsset<HeroKitSettings>("HeroKitSettings", false, "Assets/HeroKit/Hero Engine/Assets/Resources/Hero Settings");
                 Debug.Log("no settings data.");
             }
 
