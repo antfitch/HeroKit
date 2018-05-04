@@ -1099,9 +1099,6 @@ namespace HeroKit.Editor
                 if (settingsData.gameoverMenu == null)
                     settingsData.gameoverMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Game Over Menu");
 
-                if (settingsData.gameoverMenuController == null)
-                    settingsData.gameoverMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Game Over Menu Controller");
-
                 if (settingsData.inventoryMenu == null)
                     settingsData.inventoryMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Inventory Menu");
 
@@ -1111,26 +1108,17 @@ namespace HeroKit.Editor
                 if (settingsData.optionsMenu == null)
                     settingsData.optionsMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Options Menu");
 
-                if (settingsData.optionsMenuController == null)
-                    settingsData.optionsMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Options Menu Controller");
-
                 if (settingsData.saveMenu == null)
                     settingsData.saveMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Save Menu");
-
-                if (settingsData.saveMenuController == null)
-                    settingsData.saveMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Save Menu Controller");
 
                 if (settingsData.startMenu == null)
                     settingsData.startMenu = Resources.Load<GameObject>(settingsPath + "HeroKit Start Menu");
 
-                if (settingsData.startMenuController == null)
-                    settingsData.startMenuController = Resources.Load<HeroObject>(settingsPath + "HeroKit Start Menu Controller");
-
                 if (settingsData.inventoryItem == null)
                     settingsData.inventoryItem = Resources.Load<HeroKitProperty>(settingsPath + "Inventory Item");
 
-                if (settingsData.inventorySlotController == null)
-                    settingsData.inventorySlotController = Resources.Load<HeroObject>(settingsPath + "Inventory Slot Controller");
+                if (settingsData.inventorySlot == null)
+                    settingsData.inventorySlot = Resources.Load<GameObject>(settingsPath + "Inventory Slot");
 
                 if (settingsData.journalItem == null)
                     settingsData.journalItem = Resources.Load<HeroKitProperty>(settingsPath + "Journal Item");
@@ -1138,14 +1126,8 @@ namespace HeroKit.Editor
                 if (settingsData.journalSlot == null)
                     settingsData.journalSlot = Resources.Load<GameObject>(settingsPath + "Journal Slot");
 
-                if (settingsData.journalSlotController == null)
-                    settingsData.journalSlotController = Resources.Load<HeroObject>(settingsPath + "Journal Slot Controller");
-
                 if (settingsData.saveSlot == null)
                     settingsData.saveSlot = Resources.Load<GameObject>(settingsPath + "Save Slot");
-
-                if (settingsData.saveSlotController == null)
-                    settingsData.saveSlotController = Resources.Load<HeroObject>(settingsPath + "Save Slot Controller");
 
                 EditorUtility.SetDirty(settingsData);
             }

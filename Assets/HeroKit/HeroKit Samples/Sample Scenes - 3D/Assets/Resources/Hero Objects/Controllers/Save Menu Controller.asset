@@ -175,6 +175,7 @@ MonoBehaviour:
             pressType: 1
             key: 26
       heroVisuals:
+        visualType: 0
         imageType: 1
         rigidbodyType: 0
         prefab: {fileID: 0}
@@ -185,6 +186,7 @@ MonoBehaviour:
         animatorController: {fileID: 0}
         avatar: {fileID: 0}
         rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
       intConditions: []
       boolConditions: []
     visible: 1

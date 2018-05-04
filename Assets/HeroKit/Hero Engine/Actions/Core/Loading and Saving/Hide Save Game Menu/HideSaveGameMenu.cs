@@ -56,7 +56,7 @@ namespace HeroKit.Scene.Actions
         public void CloseSaveMenu()
         {
             // get the menu
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Save Menu", "Hero Templates/Menus/", true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.saveMenu, true);
 
             if (targetObject != null)
             {

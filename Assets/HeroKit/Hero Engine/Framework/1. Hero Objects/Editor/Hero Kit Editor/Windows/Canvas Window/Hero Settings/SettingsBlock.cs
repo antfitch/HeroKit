@@ -130,9 +130,6 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Game Over Menu");
             settings.gameoverMenu = SimpleLayout.ObjectField(settings.gameoverMenu, HeroKitCommon.GetWidthForField(65));
             if (settings.gameoverMenu == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Game Over Menu Controller");
-            settings.gameoverMenuController = SimpleLayout.ObjectField(settings.gameoverMenuController, HeroKitCommon.GetWidthForField(65));
-            if (settings.gameoverMenuController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
 
@@ -146,9 +143,6 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Inventory Slot");
             settings.inventorySlot = SimpleLayout.ObjectField(settings.inventorySlot, HeroKitCommon.GetWidthForField(65));
             if (settings.inventorySlot == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Inventory Slot Controller");
-            settings.inventorySlotController = SimpleLayout.ObjectField(settings.inventorySlotController, HeroKitCommon.GetWidthForField(65));
-            if (settings.inventorySlotController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
 
@@ -162,9 +156,6 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Journal Slot");
             settings.journalSlot = SimpleLayout.ObjectField(settings.journalSlot, HeroKitCommon.GetWidthForField(65));
             if (settings.journalSlot == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Journal Slot Controller");
-            settings.journalSlotController = SimpleLayout.ObjectField(settings.journalSlotController, HeroKitCommon.GetWidthForField(65));
-            if (settings.journalSlotController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
 
@@ -172,9 +163,6 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Options Menu");
             settings.optionsMenu = SimpleLayout.ObjectField(settings.optionsMenu, HeroKitCommon.GetWidthForField(65));
             if (settings.optionsMenu == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Options Menu Controller");
-            settings.optionsMenuController = SimpleLayout.ObjectField(settings.optionsMenuController, HeroKitCommon.GetWidthForField(65));
-            if (settings.optionsMenuController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
 
@@ -182,15 +170,9 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Save Menu");
             settings.saveMenu = SimpleLayout.ObjectField(settings.saveMenu, HeroKitCommon.GetWidthForField(65));
             if (settings.saveMenu == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Save Menu Controller");
-            settings.saveMenuController = SimpleLayout.ObjectField(settings.saveMenuController, HeroKitCommon.GetWidthForField(65));
-            if (settings.saveMenuController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.Label("Save Slot");
             settings.saveSlot = SimpleLayout.ObjectField(settings.saveSlot, HeroKitCommon.GetWidthForField(65));
             if (settings.saveSlot == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Save Slot Controller");
-            settings.saveSlotController = SimpleLayout.ObjectField(settings.saveSlotController, HeroKitCommon.GetWidthForField(65));
-            if (settings.saveSlotController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
 
@@ -198,9 +180,6 @@ namespace HeroKit.Editor
             SimpleLayout.Label("Start Menu");
             settings.startMenu = SimpleLayout.ObjectField(settings.startMenu, HeroKitCommon.GetWidthForField(65));
             if (settings.startMenu == null) HeroKitCommon.RefreshHeroSettings();
-            SimpleLayout.Label("Start Menu Controller");
-            settings.startMenuController = SimpleLayout.ObjectField(settings.startMenuController, HeroKitCommon.GetWidthForField(65));
-            if (settings.startMenuController == null) HeroKitCommon.RefreshHeroSettings();
             SimpleLayout.EndVertical();
             SimpleLayout.Space(distance);
         }

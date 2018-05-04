@@ -46,12 +46,13 @@ namespace HeroKit.Scene.Actions
             heroKitObject = hko;
 
             // add menu to scene if it doesn't exist
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Journal Menu", "Hero Templates/Menus/", true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.journalMenu, true);
             HeroObject item = null;
             bool runThis = (targetObject != null);
 
             if (runThis)
             {
+                targetObject.gameObject.name = HeroKitCommonRuntime.settingsInfo.journalMenu.name;
                 targetObject.gameObject.SetActive(true);
 
                 // get the container for the inventory slots

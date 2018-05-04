@@ -47,7 +47,7 @@ namespace HeroKit.Scene.Actions
             heroKitObject = hko;
 
             // add menu to scene if it doesn't exist
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Journal Menu", "Hero Templates/Menus/", true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.journalMenu, true);
             HeroObject item = null;
             bool runThis = (targetObject != null);
 
@@ -71,9 +71,9 @@ namespace HeroKit.Scene.Actions
                         if (gameObject == null)
                         {
                             // get the inventory slot 
-                            GameObject prefab = Resources.Load<GameObject>("Hero Templates/Menus/Journal Slot");
+                            GameObject prefab = HeroKitCommonRuntime.settingsInfo.journalSlot;
                             if (prefab == null)
-                                Debug.LogError("Prefab for journal slot is missing. (Hero Templates/Menus/Journal Slot)");
+                                Debug.LogError("Prefab for journal slot is missing. (Journal Slot)");
 
                             // add prefab to parent
                             if (parent != null && prefab != null)

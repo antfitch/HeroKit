@@ -254,7 +254,7 @@ MonoBehaviour:
             component: {fileID: 0}
           - name: 
             id: 0
-            ints: 0000000000000000010000000100000000000000
+            ints: 000000000000000001000000010000000000000000000000
             floats: []
             strings:
             - 
@@ -342,6 +342,7 @@ MonoBehaviour:
             pressType: 1
             key: 14
       heroVisuals:
+        visualType: 1
         imageType: 1
         rigidbodyType: 0
         prefab: {fileID: 0}
@@ -352,6 +353,7 @@ MonoBehaviour:
         animatorController: {fileID: 0}
         avatar: {fileID: 0}
         rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
       intConditions: []
       boolConditions: []
     visible: 1

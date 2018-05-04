@@ -66,7 +66,7 @@ namespace HeroKit.Scene.Actions
         public HeroKitObject SetupSaveMenu(string menuTitle, int menuID)
         {
             // add menu to scene if it doesn't exist
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Save Menu", "Hero Templates/Menus/", true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.saveMenu, true);
             targetObject.gameObject.SetActive(true);
 
             // change title
@@ -79,7 +79,7 @@ namespace HeroKit.Scene.Actions
             GameObject parentObject = HeroKitCommonRuntime.GetChildGameObject(targetObject.gameObject, "Save Menu Content", true);
             if (parentObject.transform.childCount == 0)
             {
-                HeroKitObject saveObject = HeroKitCommonRuntime.GetPrefabFromAssets("Save Slot", "Hero Templates/Menus/", false);
+                HeroKitObject saveObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.saveSlot, false);
                 DuplicateHeroUIObject dup = new DuplicateHeroUIObject();
                 dup.CreateUIObjects(saveObject.gameObject, parentObject, 20, true, saveObject, 1, 4, true);
             }

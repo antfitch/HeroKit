@@ -52,9 +52,7 @@ namespace HeroKit.Scene.Actions
             speed = IntegerFieldValue.GetValueA(heroKitObject, 1) * 0.01f;
             
             // get the fade UI
-            string fadeBoxName = "HeroKit Fade Screen In Out";
-            string directory = "Hero Templates/Menus/";
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(fadeBoxName, directory, true);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.fadeInOutScreen, true);
             bool runThis = (targetObject != null);
 
             if (runThis)

@@ -51,7 +51,7 @@ namespace HeroKit.Scene.Actions
             int currentIndent = heroKitObject.heroState.heroEvent[eventID].actions[actionID].indent;
 
             // evaluate the if statement
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Start Menu", "Hero Templates/Menus/", false);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.startMenu, false);
             bool evaluation = false;
             bool runThis = (targetObject != null);
 

@@ -764,7 +764,7 @@ namespace HeroKit.Scene
             }
 
             GameObject gameObject = Object.Instantiate(template, new Vector3(), new Quaternion());
-            //gameObject.name = prefabName;
+            gameObject.name = template.name;
 
             // add the object to the game object dictionary
             HeroKitDatabase.AddPersistentObject(template.name, gameObject);

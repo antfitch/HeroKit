@@ -46,7 +46,7 @@ namespace HeroKit.Scene.Actions
             heroKitObject = hko;
 
             // add menu to scene if it doesn't exist
-            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets("HeroKit Start Menu", "Hero Templates/Menus/", false);
+            HeroKitObject targetObject = HeroKitCommonRuntime.GetPrefabFromAssets(HeroKitCommonRuntime.settingsInfo.startMenu, false);
             bool runThis = (targetObject != null);
 
             if (runThis)
