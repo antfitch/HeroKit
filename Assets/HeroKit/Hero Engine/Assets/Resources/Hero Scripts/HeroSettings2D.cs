@@ -72,6 +72,10 @@ namespace HeroKit.Scene.Scripts
         // Variables (2D specific - animation bools and triggers)
         // --------------------------------------------------------------
 
+        public enum FaceDir { none, left, right, up, down, leftDown, leftUp, rightDown, rightUp };
+        public FaceDir faceDir = FaceDir.none;
+        public FaceDir lastFaceDir = FaceDir.none;
+
         public string lookDefault = "Look Default";
         public string lookLeft = "Look Left";
         public string lookRight = "Look Right";
@@ -199,14 +203,22 @@ namespace HeroKit.Scene.Scripts
 
         public void AnimateCharacterP()
         {
-            bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < -0.01f));
+            TurnCharacterP(move.x);
+            animator.SetBool(groundedParam, grounded);
+            animator.SetFloat(xVelocityParam, Mathf.Abs(velocity.x) / moveSpeed);
+        }
+        public void TurnCharacterP(float direction)
+        {
+            if (direction < 0)
+                faceDir = FaceDir.left;
+            else if (direction > 0)
+                faceDir = FaceDir.right;
+
+            bool flipSprite = (spriteRenderer.flipX ? (direction > 0) : (direction < 0));
             if (flipSprite)
             {
                 spriteRenderer.flipX = !spriteRenderer.flipX;
             }
-
-            animator.SetBool(groundedParam, grounded);
-            animator.SetFloat(xVelocityParam, Mathf.Abs(velocity.x) / moveSpeed);
         }
         public void AnimateCharacterStopP()
         {
@@ -303,12 +315,7 @@ namespace HeroKit.Scene.Scripts
         /// </summary>
         public enum MoveType { fourWay, eightWay };
         public MoveType moveType = MoveType.eightWay;
-        /// <summary>
-        /// A list of directions to which a sprite can face.
-        /// </summary>
-        public enum FaceDir { none, left, right, up, down, leftDown, leftUp, rightDown, rightUp };
-        public FaceDir faceDir = FaceDir.none;
-        public FaceDir lastFaceDir = FaceDir.none;
+
         public string animationName = "Move Default";
         public string lastAnimationName = "";
 

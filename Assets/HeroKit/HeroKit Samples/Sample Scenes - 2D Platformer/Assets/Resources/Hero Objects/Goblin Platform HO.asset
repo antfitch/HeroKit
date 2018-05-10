@@ -140,6 +140,349 @@ MonoBehaviour:
         intConditions: []
         boolConditions: []
         inputConditions: []
+      - name: On Press Z - Raycast
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 0993031a928542e4d864f292efce03a2,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000002000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 00000000000000000000000001000000000000006400000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 010000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 
+            gameObjects:
+            - {fileID: 0}
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000ca9a3b00000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 03000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 01
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 50
+      - name: On Press C - Turn Left
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 922c4c18528d5c349bb8bb2351bd1205,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 27
+      - name: On Press X - Turn Right
+        visible: 1
+        actions:
+        - name: 
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: c997d56713fcbfd4797ce4c59f606703,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 00000000000000000000000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 48
       heroVisuals:
         visualType: 2
         imageType: 2
@@ -181,6 +524,9 @@ MonoBehaviour:
       visible: 0
       items:
       - name: Item
+        value: {fileID: 0}
+        heroKitGameObjects: []
+      - name: HOs hit by ray
         value: {fileID: 0}
         heroKitGameObjects: []
     unityObjects:

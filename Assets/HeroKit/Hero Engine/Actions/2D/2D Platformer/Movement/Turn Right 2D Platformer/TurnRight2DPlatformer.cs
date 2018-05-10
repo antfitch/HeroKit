@@ -3,7 +3,6 @@
 // All Rights Reserved.
 // --------------------------------------------------------------
 using UnityEngine;
-using System;
 using HeroKit.Scene.ActionField;
 using HeroKit.Scene.Scripts;
 
@@ -11,9 +10,9 @@ namespace HeroKit.Scene.Actions
 {
 
     /// <summary>
-    /// Enable player controller B.
+    /// Turn an object right.
     /// </summary>
-    public class PlatformerControllerOn2D : IHeroKitAction
+    public class TurnRight2DPlatformer : IHeroKitAction
     {
         // set up properties needed for all actions
         private HeroKitObject _heroKitObject;
@@ -36,9 +35,9 @@ namespace HeroKit.Scene.Actions
         }
 
         // This is used by HeroKitCommon.GetAction() to add this action to the ActionDictionary. Don't delete!
-        public static PlatformerControllerOn2D Create()
+        public static TurnRight2DPlatformer Create()
         {
-            PlatformerControllerOn2D action = new PlatformerControllerOn2D();
+            TurnRight2DPlatformer action = new TurnRight2DPlatformer();
             return action;
         }
 
@@ -47,13 +46,17 @@ namespace HeroKit.Scene.Actions
         {
             heroKitObject = hko;
             HeroKitObject[] targetObject = HeroObjectFieldValue.GetValueE(heroKitObject, 0, 1);
-            int speed = IntegerFieldValue.GetValueA(heroKitObject, 2);
-            int jump = IntegerFieldValue.GetValueA(heroKitObject, 3); 
             bool runThis = (targetObject != null);
 
             // execute action for all objects in list
             for (int i = 0; runThis && i < targetObject.Length; i++)
-                ExecuteOnTarget(targetObject[i], speed, jump);
+                ExecuteOnTarget(targetObject[i]);
+
+            // set up the long action
+            eventID = heroKitObject.heroStateData.eventBlock;
+            heroKitObject.heroState.heroEvent[eventID].waiting = true;
+            updateIsDone = false;
+            heroKitObject.longActions.Add(this);
 
             if (heroKitObject.debugHeroObject)
             {
@@ -63,22 +66,28 @@ namespace HeroKit.Scene.Actions
             return -99;
         }
 
-        public void ExecuteOnTarget(HeroKitObject targetObject, int speed, int jump)
+        public void ExecuteOnTarget(HeroKitObject targetObject)
         {
             PlatformController2D moveObject = targetObject.GetHeroComponent<PlatformController2D>("PlatformController2D", true);
-            moveObject.settings.moveSpeed = speed;
-            moveObject.settings.jumpHeight = jump;
             moveObject.settings.TurnCharacterP(1);
         }
 
-        // Not used
+        // ---------------------------------------
+        // Long Update Data
+        // ---------------------------------------
+        private RpgMovement2D moveObject;
+
+        // has action completed?
         public bool RemoveFromLongActions()
         {
-            throw new NotImplementedException();
+            return HeroActionCommonRuntime.RemoveFromLongActions(updateIsDone, eventID, heroKitObject);
         }
+
+        // update the action
         public void Update()
         {
-            throw new NotImplementedException();
+            if (moveObject == null || !moveObject.enabled)
+                updateIsDone = true;
         }
     }
 }

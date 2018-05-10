@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: NPC Platform HO
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties: []
+    visible: 1
+  states:
+    states:
+    - name: 
+      visible: 1
+      heroEvent: []
+      heroVisuals:
+        visualType: 2
+        imageType: 2
+        rigidbodyType: 1
+        prefab: {fileID: 1759773667711340, guid: afec04f2236762440ba4b50140d48ffb,
+          type: 2}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 1
+        animator: {fileID: 95229887955222340, guid: afec04f2236762440ba4b50140d48ffb,
+          type: 2}
+        animatorController: {fileID: 22100000, guid: 67480fec81dbfd845938fc78957367a9,
+          type: 2}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 50476722184036004, guid: d56edfb8a046a5c48866dceba3b9376b,
+          type: 2}
+      intConditions: []
+      boolConditions: []
+    visible: 1
+  lists:
+    visible: 1
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items:
+      - name: Item
+        value: {fileID: 0}
+        heroKitGameObjects: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

@@ -72,6 +72,7 @@ namespace HeroKit.Scene.Actions
             moveSettings.moveType = (HeroSettings2D.MoveType)(moveType-1);
             moveSettings.animator = targetObject.GetHeroChildComponent<Animator>("Animator", HeroKitCommonRuntime.visualsName);
             moveSettings.moveSpeed = speed;
+            moveSettings.faceDir = HeroSettings2D.FaceDir.down;
 
             RpgController2D moveObject = targetObject.GetHeroComponent<RpgController2D>("RpgController2D", true);
         }

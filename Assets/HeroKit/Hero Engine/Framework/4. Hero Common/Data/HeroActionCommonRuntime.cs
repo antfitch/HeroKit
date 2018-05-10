@@ -3,6 +3,7 @@
 // All Rights Reserved.
 // --------------------------------------------------------------
 using HeroKit.Scene.ActionField;
+using HeroKit.Scene.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -364,7 +365,7 @@ namespace HeroKit.Scene.Actions
                     if (value1 < value2) success = true;
                     break;
                 case 4:
-                    if (value1 <= value2) success = true; 
+                    if (value1 <= value2) success = true;
                     break;
                 case 5:
                     if (value1 > value2) success = true;
@@ -826,7 +827,7 @@ namespace HeroKit.Scene.Actions
             return heroKitObjects;
         }
         /// <summary>
-        /// Get a list of hero kit objects that were hit with a ray. 
+        /// Get a list of hero kit objects that were hit with a 3D ray. 
         /// </summary>
         /// <param name="items">The hero kit objects.</param>
         /// <param name="objectCount">The number of objects to include in the new list.</param>
@@ -836,26 +837,26 @@ namespace HeroKit.Scene.Actions
         /// <param name="rayDistance">The distance of the ray.</param>
         /// <param name="debugRay">Show the ray in the editor?</param>
         /// <returns>A new list of hero kit objects.</returns>
-        public static List<HeroKitObject> GetHeroObjectsRay(int objectCount, GameObject originObject, int rayType, int rayDirectionType, float rayDistance, bool debugRay=false)
+        public static List<HeroKitObject> GetHeroObjectsRay(int objectCount, GameObject originObject, int rayType, int rayDirectionType, float rayDistance, bool debugRay = false)
         {
             GameObject[] gameObjects = new GameObject[0];
 
             // origin is the main camera
             if (rayType == 1)
             {
-                gameObjects = UseRayFromCamera(null, rayDirectionType, rayDistance, debugRay);
+                gameObjects = UseRayFromCamera3D(null, rayDirectionType, rayDistance, debugRay);
             }
 
             // origin is a camera
             else if (rayType == 2)
             {
-                gameObjects = UseRayFromCamera(originObject, rayDirectionType, rayDistance, debugRay);
+                gameObjects = UseRayFromCamera3D(originObject, rayDirectionType, rayDistance, debugRay);
             }
 
             // origin is a hero object
             else if (rayType == 3)
             {
-               gameObjects = UseRayFromObject(originObject, rayDirectionType, rayDistance, debugRay);
+                gameObjects = UseRayFromObject3D(originObject, rayDirectionType, rayDistance, debugRay);
             }
 
             // get only game objects that have hero kit objects attached to them
@@ -872,10 +873,62 @@ namespace HeroKit.Scene.Actions
 
             // delete the unneeded objects
             heroKitObjects.RemoveRange(index, count);
-            
+
             // return the hero kit objects
             return heroKitObjects;
         }
+        /// <summary>
+        /// Get a list of hero kit objects that were hit with a 2D ray. 
+        /// </summary>
+        /// <param name="items">The hero kit objects.</param>
+        /// <param name="objectCount">The number of objects to include in the new list.</param>
+        /// <param name="originObject">The object from which the ray originated.</param>
+        /// <param name="rayType">The type of ray.</param>
+        /// <param name="rayDirectionType">The direction of the ray.</param>
+        /// <param name="rayDistance">The distance of the ray.</param>
+        /// <param name="debugRay">Show the ray in the editor?</param>
+        /// <returns>A new list of hero kit objects.</returns>
+        public static List<HeroKitObject> GetHeroObjectsRay2D(int objectCount, HeroKitObject targetHKO, GameObject originObject, int rayType, int rayDirectionType, float rayDistance, bool debugRay = false)
+        {
+            GameObject[] gameObjects = new GameObject[0];
+
+            // origin is the main camera
+            if (rayType == 1)
+            {
+                gameObjects = UseRayFromCamera2D(null, rayDirectionType, true);
+            }
+
+            // origin is a camera
+            else if (rayType == 2)
+            {
+                gameObjects = UseRayFromCamera2D(originObject, rayDirectionType, false);
+            }
+
+            // origin is a hero object
+            else if (rayType == 3)
+            {
+                gameObjects = UseRayFromObject2D(targetHKO, originObject, rayDirectionType, rayDistance, debugRay);
+            }
+
+            // get only game objects that have hero kit objects attached to them
+            List<HeroKitObject> heroKitObjects = FilterHeroObjects(gameObjects);
+
+            // exit early if there are no objects to truncate
+            if (heroKitObjects == null || heroKitObjects.Count <= objectCount) return heroKitObjects;
+
+            // get index to start deletion
+            int index = objectCount;
+
+            // get # of entries to delete
+            int count = objectCount - heroKitObjects.Count;
+
+            // delete the unneeded objects
+            heroKitObjects.RemoveRange(index, count);
+
+            // return the hero kit objects
+            return heroKitObjects;
+        }
+
         ///// <summary>
         ///// Get a list of hero kit objects that were hit with a ray (field of view, specific object in scene). 
         ///// </summary>
@@ -938,7 +991,7 @@ namespace HeroKit.Scene.Actions
             {
                 // exit early if object count has been reached
                 if (objectCount <= 0) break;
-                
+
                 Vector3 objectPos = items[i].gameObject.transform.position;
                 Vector3 objectScale = items[i].gameObject.transform.localScale;
 
@@ -1045,13 +1098,13 @@ namespace HeroKit.Scene.Actions
 
                 // check if target is in origin's field of view
                 Vector3 rayDirection = targetObjects[i].transform.position - originObject.transform.position;
-                Vector3 originDirection = GetRayDirection(originObject, rayDirectionType);
+                Vector3 originDirection = GetRayDirection3D(originObject, rayDirectionType);
                 float angle = Vector3.Angle(rayDirection, originDirection);
                 if (angle <= fieldOfView * 0.5f)
                 {
                     // get the distance between the origin and target
                     float distanceToTarget = Vector3.Distance(targetObjects[i].transform.position, originObject.transform.position);
-                    GameObject[] rayObjects = UseRayFromObject(originObject, targetObjects[i].gameObject, distanceToTarget);
+                    GameObject[] rayObjects = UseRayFromObject3D(originObject, targetObjects[i].gameObject, distanceToTarget);
 
                     // get the target object if it was hit. First make sure it was hit. Then check it's name.
                     // if the name looks good, use getComponent to do the final comparison.
@@ -1125,7 +1178,7 @@ namespace HeroKit.Scene.Actions
         {
             if (gameObjects == null || gameObjects.Length == 0) return null;
 
-            List<HeroKitObject> heroKitObjects = new List<HeroKitObject>(); 
+            List<HeroKitObject> heroKitObjects = new List<HeroKitObject>();
 
             for (int i = 0; i < gameObjects.Length; i++)
             {
@@ -1145,7 +1198,7 @@ namespace HeroKit.Scene.Actions
         /// </summary>
         /// <param name="raycastHits">The raycast hits.</param>
         /// <returns>The game objects.</returns>
-        public static GameObject[] ConvertRaysToGameObjects(RaycastHit[] raycastHits)
+        public static GameObject[] ConvertRaysToGameObjects3D(RaycastHit[] raycastHits)
         {
             int length = (raycastHits != null) ? raycastHits.Length : 0;
             GameObject[] gameObjects = new GameObject[length];
@@ -1158,12 +1211,35 @@ namespace HeroKit.Scene.Actions
             return gameObjects;
         }
         /// <summary>
+        /// Convert 2D raycast hits to game objects.
+        /// </summary>
+        /// <param name="raycastHits">The raycast hits.</param>
+        /// <returns>The game objects.</returns>
+        public static GameObject[] ConvertRaysToGameObjects2D(RaycastHit2D[] raycastHits, GameObject origin = null)
+        {
+            int length = (raycastHits != null) ? raycastHits.Length : 0;
+            List<GameObject> gameObjects = new List<GameObject>();
+
+            for (int i = 0; i < raycastHits.Length; i++)
+            {
+                // if we are shooting ray from an object, don't let object hit itself. 
+                // this is only an issue with 2D.
+                if (origin != null && raycastHits[i].transform.gameObject == origin)
+                    continue;
+
+                gameObjects.Add(raycastHits[i].transform.gameObject);
+            }
+
+            return gameObjects.ToArray();
+        }
+
+        /// <summary>
         /// Get the direction of a ray.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
         /// <param name="rayDirectionType">The direction type of the ray.</param>
         /// <returns>The direction of a ray.</returns>
-        public static Vector3 GetRayDirection(GameObject origin, int rayDirectionType)
+        public static Vector3 GetRayDirection3D(GameObject origin, int rayDirectionType)
         {
             // exit early if no game object origin
             if (origin == null) return new Vector3();
@@ -1195,6 +1271,76 @@ namespace HeroKit.Scene.Actions
             return direction;
         }
         /// <summary>
+        /// Get the direction of a ray.
+        /// </summary>
+        /// <param name="origin">The origin of the ray.</param>
+        /// <param name="rayDirectionType">The direction type of the ray.</param>
+        /// <returns>The direction of a ray.</returns>
+        public static Vector3 GetRayDirection2D(HeroKitObject origin, int rayDirectionType)
+        {
+            // exit early if no game object origin
+            if (origin == null) return new Vector3();
+
+            // get direction
+            Vector2 direction = new Vector2();
+            switch (rayDirectionType)
+            {
+                case 1: // shoot forward from object
+                    direction = GetFacingDirection2D(origin, rayDirectionType);
+                    break;
+                case 2: // shoot behind object
+                    direction = GetFacingDirection2D(origin, rayDirectionType);
+                    break;
+                case 3: // shoot above object
+                    direction = origin.transform.up;
+                    break;
+                case 4: // shoot below object
+                    direction = -origin.transform.up;
+                    break;
+                case 5: // shoot from the left of object
+                    direction = -origin.transform.right;
+                    break;
+                case 6: // shoot from the right of object
+                    direction = origin.transform.right;
+                    break;
+            }
+
+            return direction;
+        }
+        public static Vector2 GetFacingDirection2D(HeroKitObject origin, int rayDirectionType)
+        {
+            Vector2 direction = new Vector2();
+            HeroSettings2D settings = origin.GetHeroComponent<HeroSettings2D>("HeroSettings2D", false, false, false);
+            if (settings != null)
+            {
+                switch (settings.faceDir)
+                {
+                    case HeroSettings2D.FaceDir.up: // shoot above object
+                        direction = origin.transform.up;
+                        break;
+                    case HeroSettings2D.FaceDir.down: // shoot below object
+                        direction = -origin.transform.up;
+                        break;
+                    case HeroSettings2D.FaceDir.left: // shoot from the left of object
+                        direction = -origin.transform.right;
+                        break;
+                    case HeroSettings2D.FaceDir.right: // shoot from the right of object
+                        direction = origin.transform.right;
+                        break;
+                }
+
+                // flip the direction if ray needs to face away from the direction the object is facing
+                if (rayDirectionType == 2)
+                    direction = -direction;
+            }
+            else
+            {
+                Debug.LogWarning("Hero Object needs you to set its facing direction before you use this action.");    
+            }
+            return direction;
+        }
+
+        /// <summary>
         /// Get the game objects that were hit by a 3D ray from a game object in the scene.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
@@ -1202,13 +1348,13 @@ namespace HeroKit.Scene.Actions
         /// <param name="distance">The distance that the ray will travel.</param>
         /// <param name="debugRay">Show the ray in the editor?</param>
         /// <returns>The game objects that were hit by the ray.</returns>
-        public static GameObject[] UseRayFromObject(GameObject origin, int rayDirectionType, float distance, bool debugRay=false)
+        public static GameObject[] UseRayFromObject3D(GameObject origin, int rayDirectionType, float distance, bool debugRay = false)
         {
             // exit early if no game object origin
             if (origin == null) return null;
 
             // get direction
-            Vector3 direction = GetRayDirection(origin, rayDirectionType);
+            Vector3 direction = GetRayDirection3D(origin, rayDirectionType);
 
             // cast the ray
             RaycastHit[] hits = Physics.RaycastAll(origin.transform.position, direction, distance);
@@ -1221,28 +1367,28 @@ namespace HeroKit.Scene.Actions
 
             //if (hits.Length != 0) Debug.Log("boom!");
 
-            GameObject[] gameObjects = ConvertRaysToGameObjects(hits);
+            GameObject[] gameObjects = ConvertRaysToGameObjects3D(hits);
 
             return gameObjects;
         }
         /// <summary>
-        /// Get the game objects that were hit by a 3D ray from a game object in the scene.
+        /// Get the game objects that were hit by a 2D ray from a game object in the scene.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
         /// <param name="rayDirectionType">The direction type of the ray.</param>
         /// <param name="distance">The distance that the ray will travel.</param>
         /// <param name="debugRay">Show the ray in the editor?</param>
         /// <returns>The game objects that were hit by the ray.</returns>
-        public static GameObject[] UseRayFromObject(GameObject origin, GameObject target, float distance, bool debugRay = true)
+        public static GameObject[] UseRayFromObject2D(HeroKitObject targetHKO, GameObject origin, int rayDirectionType, float distance, bool debugRay = false)
         {
             // exit early if no game object origin
             if (origin == null) return null;
 
             // get direction
-            Vector3 direction = (target.transform.localPosition - origin.transform.position);
+            Vector2 direction = GetRayDirection2D(targetHKO, rayDirectionType);
 
             // cast the ray
-            RaycastHit[] hits = Physics.RaycastAll(origin.transform.position, direction, distance*100);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(origin.transform.position, direction, distance);
 
             if (debugRay)
             {
@@ -1252,10 +1398,43 @@ namespace HeroKit.Scene.Actions
 
             //if (hits.Length != 0) Debug.Log("boom!");
 
-            GameObject[] gameObjects = ConvertRaysToGameObjects(hits);
+            GameObject[] gameObjects = ConvertRaysToGameObjects2D(hits, origin);
 
             return gameObjects;
         }
+
+        /// <summary>
+        /// Get the game objects that were hit by a 3D ray from a game object in the scene.
+        /// </summary>
+        /// <param name="origin">The origin of the ray.</param>
+        /// <param name="rayDirectionType">The direction type of the ray.</param>
+        /// <param name="distance">The distance that the ray will travel.</param>
+        /// <param name="debugRay">Show the ray in the editor?</param>
+        /// <returns>The game objects that were hit by the ray.</returns>
+        public static GameObject[] UseRayFromObject3D(GameObject origin, GameObject target, float distance, bool debugRay = true)
+        {
+            // exit early if no game object origin
+            if (origin == null) return null;
+
+            // get direction
+            Vector3 direction = (target.transform.localPosition - origin.transform.position);
+
+            // cast the ray
+            RaycastHit[] hits = Physics.RaycastAll(origin.transform.position, direction, distance * 100);
+
+            if (debugRay)
+            {
+                //Debug.Log("Origin of Ray: " + origin.name + " Direction of Ray: " + direction + " Distance of Ray: " + distance);
+                Debug.DrawRay(origin.transform.position, direction * distance, Color.green, 60);
+            }
+
+            //if (hits.Length != 0) Debug.Log("boom!");
+
+            GameObject[] gameObjects = ConvertRaysToGameObjects3D(hits);
+
+            return gameObjects;
+        }
+
         /// <summary>
         /// Get the game objects that were hit by a 3D ray from a camera in the scene.
         /// </summary>
@@ -1264,7 +1443,7 @@ namespace HeroKit.Scene.Actions
         /// <param name="distance">The distance that the ray will travel.</param>
         /// <param name="mainCamera">Use the main camera?</param>
         /// <returns>The game objects that were hit by the ray.</returns>
-        public static GameObject[] UseRayFromCamera(GameObject origin, int rayDirectionType, float distance, bool mainCamera)
+        public static GameObject[] UseRayFromCamera3D(GameObject origin, int rayDirectionType, float distance, bool mainCamera)
         {
             // get the camera
             Camera camera = null;
@@ -1299,7 +1478,54 @@ namespace HeroKit.Scene.Actions
 
             RaycastHit[] hits = Physics.RaycastAll(direction, distance);
 
-            GameObject[] gameObjects = ConvertRaysToGameObjects(hits);
+            GameObject[] gameObjects = ConvertRaysToGameObjects3D(hits);
+
+            return gameObjects;
+        }
+        /// <summary>
+        /// Get the game objects that were hit by a 2D ray from a camera in the scene.
+        /// </summary>
+        /// <param name="origin">The origin of the ray.</param>
+        /// <param name="rayDirectionType">The direction type of the ray.</param>
+        /// <param name="distance">The distance that the ray will travel.</param>
+        /// <param name="mainCamera">Use the main camera?</param>
+        /// <returns>The game objects that were hit by the ray.</returns>
+        public static GameObject[] UseRayFromCamera2D(GameObject origin, int rayDirectionType, bool mainCamera)
+        {
+            // get the camera
+            Camera camera = null;
+            if (mainCamera)
+            {
+                camera = Camera.main;
+            }
+            else
+            {
+                if (origin != null) camera = origin.GetComponent<Camera>();
+            }
+
+            // if no camera exists, exit early
+            if (camera == null)
+            {
+                if (mainCamera)
+                    Debug.LogError("Cannot cast ray from camera. There is no main camera assigned to the scene.");
+                else
+                    Debug.LogError("Cannot cast ray from camera. There was no camera attached to the game object.");
+
+                return null;
+            }
+
+            // get the direction of the ray
+            Vector2 direction = new Vector2();
+            switch (rayDirectionType)
+            {
+                case 1: // shoot from camera towards mouse position
+                    direction = camera.ScreenToWorldPoint(Input.mousePosition);
+                    break;
+            }
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(direction, Vector2.zero);
+
+            GameObject[] gameObjects = ConvertRaysToGameObjects2D(hits);
 
             return gameObjects;
         }
