@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
+  m_Name: Change Message Box [BETA]
+  m_EditorClassIdentifier: 
+  action: {fileID: 11500000, guid: 75c7b58d9b9623543aa92bd5e4d3f440, type: 3}
+  actionFields: {fileID: 11500000, guid: c7e33df5b7fe16248b73f364b1a78c5a, type: 3}
+  title: 
+  description: 'Use a different template for this menu.
+
+    (HeroKit Dialog Box).
+
+
+    Note: A template is a prefab. The prefab you choose must be stored in an Assets/Resources
+    directory.'
+  indentThis: 0
+  indentNext: 0
+  titleColor: {r: 0, g: 0, b: 0, a: 0}
+  version: 

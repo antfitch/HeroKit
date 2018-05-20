@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1399684396837410
 GameObject:
   m_ObjectHideFlags: 1
@@ -628,27 +628,48 @@ MonoBehaviour:
   heroState:
     name: 
     visible: 0
-    showTools: 0
     heroEvent: []
-    heroImage:
+    heroVisuals:
+      visualType: 0
       imageType: 0
-      imageTemplateTypeOld: 0
-      imageTemplateType: 0
+      rigidbodyType: 0
       prefab: {fileID: 0}
       hasMesh: 0
       imageMesh: {fileID: 0}
-      imageMaterial: []
       hasAnimator: 0
       animator: {fileID: 0}
       animatorController: {fileID: 0}
       avatar: {fileID: 0}
-      customCollider: 0
-      colliderType: 0
-      colliderCenter: {x: 0, y: 0, z: 0}
-      colliderSize: {x: 0, y: 0, z: 0}
       rigidbody: {fileID: 0}
+      rigidbody2D: {fileID: 0}
+    intConditions: []
+    boolConditions: []
   heroProperties:
-    propertyTemplate: {fileID: 0}
+  - propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  - propertyTemplate: {fileID: 0}
     itemProperties:
       visible: 0
       ints:
@@ -695,7 +716,32 @@ MonoBehaviour:
     unityObjects:
       visible: 0
       items: []
+  heroGlobals:
+    visible: 0
+    ints:
+      visible: 0
+      items: []
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items: []
+    unityObjects:
+      visible: 0
+      items: []
   persist: 0
+  collisionsList: []
+  triggersList: []
 --- !u!114 &114971759660369600
 MonoBehaviour:
   m_ObjectHideFlags: 1

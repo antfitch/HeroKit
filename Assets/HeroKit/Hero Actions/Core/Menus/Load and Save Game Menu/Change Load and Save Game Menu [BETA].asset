@@ -9,12 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
-  m_Name: Turn Left 2D Platformer
+  m_Name: Change Load and Save Game Menu [BETA]
   m_EditorClassIdentifier: 
-  action: {fileID: 11500000, guid: bf6963a27ecebfb4d93afe9b9eadd45a, type: 3}
-  actionFields: {fileID: 11500000, guid: 2893732c2bb4cfd429e5499acee1b5b2, type: 3}
+  action: {fileID: 11500000, guid: 723b7a316d0c82c49b1ab0d2ec02e4c4, type: 3}
+  actionFields: {fileID: 11500000, guid: 74a33922d9d57bd49a90a72811ddab8a, type: 3}
   title: 
-  description: Turn a hero object left.
+  description: 'Use a different template for this menu.
+
+    (HeroKit Save Menu).
+
+
+    Note: A template is a prefab. The prefab you choose must be stored in an Assets/Resources
+    directory.'
   indentThis: 0
   indentNext: 0
   titleColor: {r: 0, g: 0, b: 0, a: 0}

@@ -88,21 +88,12 @@ namespace HeroKit.Scene.Actions
                 {
                     uiDialog.selectedChoiceID = 29;
                     uiDialog.numberOfChoices = DropDownListValue.GetValue(heroKitObject, 22);
+                    uiDialog.choiceText = new UnityEngine.UI.Text[3];
                     uiDialog.choice = new string[uiDialog.numberOfChoices];
-                    if (uiDialog.numberOfChoices >= 1)
-                    {
-                        uiDialog.choice[0] = StringFieldValue.GetValueA(heroKitObject, 23, true);
 
-                        if (uiDialog.numberOfChoices >= 2)
-                        {
-                            uiDialog.choice[1] = StringFieldValue.GetValueA(heroKitObject, 24, true);
-
-                            if (uiDialog.numberOfChoices >= 3)
-                            {
-                                uiDialog.choice[2] = StringFieldValue.GetValueA(heroKitObject, 25, true);
-                            }
-                        }
-                    }
+                    if (uiDialog.numberOfChoices >= 1) uiDialog.choice[0] = StringFieldValue.GetValueA(heroKitObject, 23, true);
+                    if (uiDialog.numberOfChoices >= 2) uiDialog.choice[1] = StringFieldValue.GetValueA(heroKitObject, 24, true);
+                    if (uiDialog.numberOfChoices >= 3) uiDialog.choice[2] = StringFieldValue.GetValueA(heroKitObject, 25, true);
                 }
 
                 // get values for left portrait

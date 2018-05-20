@@ -1,0 +1,1552 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e9c23bb37cb640832b346e50034d7, type: 3}
+  m_Name: Dialog Test Player
+  m_EditorClassIdentifier: 
+  properties:
+    propertyTemplate: {fileID: 0}
+    itemProperties:
+      visible: 0
+      ints:
+        visible: 0
+        items: []
+      floats:
+        visible: 0
+        items: []
+      bools:
+        visible: 0
+        items: []
+      strings:
+        visible: 0
+        items: []
+      gameObjects:
+        visible: 0
+        items: []
+      heroObjects:
+        visible: 0
+        items: []
+      unityObjects:
+        visible: 0
+        items: []
+  propertiesList:
+    properties: []
+    visible: 1
+  states:
+    states:
+    - name: 
+      visible: 1
+      heroEvent:
+      - name: Press A to show dialog box
+        visible: 1
+        actions:
+        - name: Use HeroKit Dialog Box B
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 08708a0c2cf82a94b8b0754cabfe0591,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects:
+            - {fileID: 1841128617952812, guid: 0df6a76c98201f141a65e82c9a187b79, type: 2}
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 4 choices...
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: fe5554cf3eb94c146b5f90885b64bbe7,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 01
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 04000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - first choice
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - second choice
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - third choice
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 00000000000000000000000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects:
+            - {fileID: 0}
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000100000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - fourth choice
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 01000000000000000100000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 25
+      - name: Press S to show dialog box
+        visible: 1
+        actions:
+        - name: Use HeroKit Dialog Box A
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: 08708a0c2cf82a94b8b0754cabfe0591,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects:
+            - {fileID: 1841128617952812, guid: 8ff0621aab248d244b7099c24f72948b, type: 2}
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        - name: 3 choices...
+          visible: 0
+          active: 1
+          indent: 0
+          actionTemplate: {fileID: 11400000, guid: c1c402085a4c2974ca7cfa987a612409,
+            type: 2}
+          actionFields:
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 01
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 03000000
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - choice 1
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - choice 2
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 000000000000000000000000010000000000000000000000
+            floats: []
+            strings:
+            - 
+            - choice 3
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 00000000000000000000000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            - 
+            bools: 
+            gameObjects: []
+            heroObjects:
+            - {fileID: 0}
+            unityObjects:
+            - {fileID: 0}
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 01000000000000000100000001000000000000000000000000000000
+            floats: []
+            strings:
+            - 
+            bools: 00
+            gameObjects: []
+            heroObjects:
+            - {fileID: 11400000}
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 00
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          - name: 
+            id: 0
+            ints: 
+            floats: []
+            strings: []
+            bools: 
+            gameObjects: []
+            heroObjects: []
+            unityObjects: []
+            colors: []
+            heroProperties: []
+            method:
+              type:
+                data: ff
+              methodName: 
+              parameters: []
+              flags: 0
+            component: {fileID: 0}
+          gameObjectFields: 
+        eventType: 5
+        messageSettings: 01000000000000000100000000000000
+        messageTag: 
+        messenger: {fileID: 0}
+        currentPosition: 0
+        waiting: 0
+        intConditions: []
+        boolConditions: []
+        inputConditions:
+        - visible: 0
+          items:
+          - name: '[Item Description]'
+            value: 0
+            inputType: 2
+            pressType: 1
+            key: 43
+      heroVisuals:
+        visualType: 1
+        imageType: 3
+        rigidbodyType: 1
+        prefab: {fileID: 0}
+        hasMesh: 0
+        imageMesh: {fileID: 0}
+        hasAnimator: 0
+        animator: {fileID: 0}
+        animatorController: {fileID: 0}
+        avatar: {fileID: 0}
+        rigidbody: {fileID: 0}
+        rigidbody2D: {fileID: 0}
+      intConditions: []
+      boolConditions: []
+    visible: 1
+  lists:
+    visible: 1
+    ints:
+      visible: 0
+      items:
+      - name: the button i selected
+        value: 0
+    floats:
+      visible: 0
+      items: []
+    bools:
+      visible: 0
+      items: []
+    strings:
+      visible: 0
+      items: []
+    gameObjects:
+      visible: 0
+      items: []
+    heroObjects:
+      visible: 0
+      items:
+      - name: '[Item Description]'
+        value: {fileID: 0}
+        heroKitGameObjects: []
+    unityObjects:
+      visible: 0
+      items: []
+  globalsVisible: 0

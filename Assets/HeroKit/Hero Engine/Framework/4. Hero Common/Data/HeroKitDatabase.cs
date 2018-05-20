@@ -686,6 +686,28 @@ namespace HeroKit.Scene
             // returns a new instance of the class stored in the dictionary
             return gameObject;
         }
+        /// <summary>
+        /// Delete a persistent game object from the persistent object dictionary.
+        /// </summary>
+        /// <param name="key">The key for the persistent object.</param>
+        /// <returns>The persistent game object.</returns>
+        public static GameObject DeletePersistentObject(string key)
+        {
+            GameObject deletedObject = null;
+
+            // make sure object exists
+            if (PersistentObjectDictionary.ContainsKey(key))
+            {
+                deletedObject = PersistentObjectDictionary[key];
+                PersistentObjectDictionary.Remove(key);
+            }
+            else
+            {
+                Debug.LogError("Could not delete GameObject. A GameObject called " + key + " does not exist.");
+            }
+
+            return deletedObject;
+        }
 
         // -----------------------------------------------------------------
         // The dictionary that stores localizatons. 

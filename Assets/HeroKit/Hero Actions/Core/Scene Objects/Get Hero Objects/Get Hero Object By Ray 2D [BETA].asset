@@ -9,12 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
-  m_Name: Filter Hero Objects By Collision 3D
+  m_Name: Get Hero Object By Ray 2D [BETA]
   m_EditorClassIdentifier: 
-  action: {fileID: 11500000, guid: 687fc4f4359448745a08ea2b08b98f62, type: 3}
-  actionFields: {fileID: 11500000, guid: 5a271e599973777429e127dbc83c3fe7, type: 3}
+  action: {fileID: 11500000, guid: 470d680b14d873e4d94ac2b69c13c066, type: 3}
+  actionFields: {fileID: 11500000, guid: 311e05f6de266a5449c0f5b2423dd337, type: 3}
   title: 
-  description: 'Get hero objects that a hero object is colliding with.
+  description: 'Shoot a 2D ray in a specific direction from a game object. Get any
+    hero objects it hits. Hero objects must have colliders to be found with the ray.
 
 
     Note: You can only reference one hero object. If you reference a list of hero

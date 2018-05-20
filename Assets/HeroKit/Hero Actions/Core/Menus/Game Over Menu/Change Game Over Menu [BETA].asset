@@ -9,12 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1f161e006be1fd4c9a5591f7290dd54, type: 3}
-  m_Name: Turn Right 2D Platformer
+  m_Name: Change Game Over Menu [BETA]
   m_EditorClassIdentifier: 
-  action: {fileID: 11500000, guid: ed35be69c3d6d46408019b2627e7598d, type: 3}
-  actionFields: {fileID: 11500000, guid: fa43e1332aa2e22409c997bae0d1fd57, type: 3}
+  action: {fileID: 11500000, guid: e698a7d428c7c0a4b9a9dd5c841433c4, type: 3}
+  actionFields: {fileID: 11500000, guid: acf8b873965349343ba3d63f05473cec, type: 3}
   title: 
-  description: Turn a hero object right.
+  description: 'Use a different template for this menu.
+
+    (HeroKit Game Over Menu).
+
+
+    Note: A template is a prefab. The prefab you choose must be stored in an Assets/Resources
+    directory.'
   indentThis: 0
   indentNext: 0
   titleColor: {r: 0, g: 0, b: 0, a: 0}

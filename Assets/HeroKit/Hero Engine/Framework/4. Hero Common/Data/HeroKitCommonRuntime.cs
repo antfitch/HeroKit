@@ -136,14 +136,31 @@ namespace HeroKit.Scene
         /// <returns>The settings scriptable object</returns>
         public static HeroKitSettings GetHeroKitSettings()
         {
-            settingsInfo = Resources.Load<HeroKitSettings>("Hero Settings/HeroKitSettings");
+            HeroKitSettings hkoSettings = Resources.Load<HeroKitSettings>("Hero Settings/HeroKitSettings");
+
 
             // if session still does not exist, raise error
-            if (settingsInfo == null)
+            if (hkoSettings == null)
             {
                 Debug.LogError("HeroKitSettings file not found in HeroKit/Hero Engine/Assets/Hero Settings directory. Reinstall this file.");
                 return null;
             }
+
+            // copy data from hkoSettings. this is important because if you don't, the actual asset will be update.
+            settingsInfo = new HeroKitSettings();
+            settingsInfo.dialogBox = hkoSettings.dialogBox;
+            settingsInfo.fadeInOutScreen = hkoSettings.fadeInOutScreen;
+            settingsInfo.gameoverMenu = hkoSettings.gameoverMenu;
+            settingsInfo.inventoryItem = hkoSettings.inventoryItem;
+            settingsInfo.inventoryMenu = hkoSettings.inventoryMenu;
+            settingsInfo.inventorySlot = hkoSettings.inventorySlot;
+            settingsInfo.journalItem = hkoSettings.journalItem;
+            settingsInfo.journalMenu = hkoSettings.journalMenu;
+            settingsInfo.journalSlot = hkoSettings.journalSlot;
+            settingsInfo.optionsMenu = hkoSettings.optionsMenu;
+            settingsInfo.saveMenu = hkoSettings.saveMenu;
+            settingsInfo.saveSlot = hkoSettings.saveSlot;
+            settingsInfo.startMenu = hkoSettings.startMenu;
 
             return settingsInfo;
         }
@@ -685,61 +702,6 @@ namespace HeroKit.Scene
         /// <param name="directory">The directory of the prefabb.</param>
         /// <param name="persistent">Should this prefab be made persistent when added to the scene?</param>
         /// <returns>The hero kit object attached to the newly created game object.</returns>
-        public static HeroKitObject GetPrefabFromAssets(string prefabName, string directory, bool persistent)
-        {
-            // add prefab to scene if it doesn't exist
-            if (!HeroKitDatabase.PersistentObjectDictionary.ContainsKey(prefabName))
-            {
-                AddPrefabToScene(prefabName, directory, persistent);
-            }
-
-            // get the hero kit object attached to the prefab
-            GameObject targetGameObject = HeroKitDatabase.GetPersistentObject(prefabName);
-            HeroKitObject targetObject = targetGameObject.GetComponent<HeroKitObject>();
-
-            return targetObject;
-        }
-        /// <summary>
-        /// If it doesn't exist, add a prefab to the scene.
-        /// </summary>
-        /// <param name="prefabName">The name of the prefab.</param>
-        /// <param name="directory">The directory of the prefab.</param>
-        /// <param name="persistent">Should this prefab be made persistent when added to the scene?</param>
-        private static void AddPrefabToScene(string prefabName, string directory, bool persistent)
-        {
-            // add prefab to scene if it doesn't already exist
-            GameObject template = Resources.Load<GameObject>(directory + prefabName);
-            if (template == null)
-            {
-                Debug.LogError("Can't add prefab to scene because template for " + prefabName + " does not exist.");
-                return;
-            }
-
-            GameObject gameObject = Object.Instantiate(template, new Vector3(), new Quaternion());
-            gameObject.name = prefabName;
-
-            // add the object to the game object dictionary
-            HeroKitDatabase.AddPersistentObject(prefabName, gameObject);
-
-            // hide it
-            gameObject.SetActive(false);
-
-            // make prefab persistent
-            if (persistent)
-            {
-                HeroKitObject prefabHKO = gameObject.GetComponent<HeroKitObject>();
-                if (prefabHKO == null)
-                {
-                    Debug.LogError("Can't make prefab persistent because hero kit object component is missing.");
-                    return;
-                }
-
-                MakePersistent makePersistent = new MakePersistent();
-                makePersistent.ExecuteOnTarget(prefabHKO);
-            }
-        }
-
-
         public static HeroKitObject GetPrefabFromAssets(GameObject prefab, bool persistent)
         {
             // add prefab to scene if it doesn't exist
@@ -754,7 +716,13 @@ namespace HeroKit.Scene
 
             return targetObject;
         }
-        private static void AddPrefabToScene(GameObject template, bool persistent)
+        /// <summary>
+        /// If it doesn't exist, add a prefab to the scene.
+        /// </summary>
+        /// <param name="prefabName">The name of the prefab.</param>
+        /// <param name="directory">The directory of the prefab.</param>
+        /// <param name="persistent">Should this prefab be made persistent when added to the scene?</param>
+        public static void AddPrefabToScene(GameObject template, bool persistent)
         {
             // add prefab to scene if it doesn't already exist
             if (template == null)
@@ -786,7 +754,42 @@ namespace HeroKit.Scene
                 makePersistent.ExecuteOnTarget(prefabHKO);
             }
         }
+        /// <summary>
+        /// Check if a prefab exists in the scene.
+        /// </summary>
+        /// <param name="prefab">The prefab.</param>
+        /// <param name="persistent">Is the prefab a persistent object?</param>
+        /// <returns>True or false.</returns>
+        public static bool IsPrefabInScene(GameObject prefab, bool persistent)
+        {
+            // add prefab to scene if it doesn't exist
+            if (HeroKitDatabase.PersistentObjectDictionary.ContainsKey(prefab.name))
+                return true;
+            else
+                return false;
+        }
+        /// <summary>
+        /// If it exist, delete a prefab from the scene.
+        /// </summary>
+        /// <param name="prefabName">The name of the prefab.</param>
+        /// <param name="directory">The directory of the prefab.</param>
+        /// <param name="persistent">Is this a persistent object in the scene?</param>
+        public static void DeletePrefabFromScene(GameObject prefab, bool persistent)
+        {
+            // add prefab to scene if it doesn't already exist
+            if (prefab == null)
+            {
+                Debug.LogError("Can't delete prefab from scene because it does not exist.");
+                return;
+            }
 
+            if (IsPrefabInScene(prefab, true))
+            {
+                // delete the old menu in the scene
+                GameObject prefabInScene = HeroKitDatabase.DeletePersistentObject(prefab.name);
+                UnityEngine.Object.Destroy(prefabInScene);
+            }
+        }
 
         //-------------------------------------------
         // 3D Rigidbodies

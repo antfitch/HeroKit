@@ -61,8 +61,8 @@ namespace HeroKit.Scene.Actions
                 // fade out the scene
                 uiColor = targetObject.GetHeroComponent<UIColor>("UIColor", true);
                 uiColor.targetImage = targetObject.GetComponentInChildren<Image>(true);
-                uiColor.targetColor = new Color(0, 0, 0, 0);
-                uiColor.startColor = new Color(0, 0, 0, 1);
+                uiColor.targetColor.a = 0f; // = new Color(0, 0, 0, 0);
+                uiColor.startColor.a = 1f; // = new Color(0, 0, 0, 1);
                 uiColor.speed = speed;
                 uiColor.Initialize();
 

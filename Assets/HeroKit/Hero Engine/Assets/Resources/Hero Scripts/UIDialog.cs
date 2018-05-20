@@ -3,6 +3,7 @@
 // All Rights Reserved.
 // --------------------------------------------------------------
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using HeroKit.Scene.ActionField;
@@ -277,7 +278,7 @@ namespace HeroKit.Scene.Scripts
         /// <summary>
         /// The text components that contain the options button text.
         /// </summary>
-        private readonly Text[] choiceText = new Text[3];
+        public Text[] choiceText;
         /// <summary>
         /// The audio source for the audio file that plays during the display of the message.
         /// </summary>
@@ -453,28 +454,12 @@ namespace HeroKit.Scene.Scripts
                     messageText = element;
                 }
 
-                // get the choice 1 text
-                else if (element.gameObject.name == "Choice Button 1 Text")
+                // get each choice button's text
+                else if (element.gameObject.name.Contains("Choice Button") && element.gameObject.name.Contains("Text"))
                 {
-                    choiceText[0] = element;
-                }
-
-                // get the choice 1 text
-                else if (element.gameObject.name == "Choice Button 1 Text")
-                {
-                    choiceText[0] = element;
-                }
-
-                // get the choice 2 text
-                else if (element.gameObject.name == "Choice Button 2 Text")
-                {
-                    choiceText[1] = element;
-                }
-
-                // get the choice 3 text
-                else if (element.gameObject.name == "Choice Button 3 Text")
-                {
-                    choiceText[2] = element;
+                    string[] words = element.gameObject.name.Split(' ');
+                    int id = Int32.Parse(words[2]);
+                    choiceText[id - 1] = element;
                 }
             }
 
@@ -634,13 +619,10 @@ namespace HeroKit.Scene.Scripts
         /// </summary>
         private void ClearChoices()
         {
-            Text choiceA = choiceText[0];
-            Text choiceB = choiceText[1];
-            Text choiceC = choiceText[2];
-
-            HideChoice(choiceA);
-            HideChoice(choiceB);
-            HideChoice(choiceC);
+            for (int i = 0; i < choiceText.Length; i++)
+            {
+                HideChoice(choiceText[i]);
+            }
         }
 
         /// <summary>
@@ -648,10 +630,6 @@ namespace HeroKit.Scene.Scripts
         /// </summary>
         private void SetChoices()
         {
-            Text choiceA = choiceText[0];
-            Text choiceB = choiceText[1];
-            Text choiceC = choiceText[2];
-
             // exit if we are not adding choices
             if (!addChoices)
             {
@@ -665,20 +643,10 @@ namespace HeroKit.Scene.Scripts
             // if you must choose an option, turn off ability to exit message with spacebar
             chooseOption = true;
 
-            switch (numberOfChoices)
+            // show choices
+            for (int i = 0; i < numberOfChoices; i++)
             {
-                case 1:
-                    ShowChoice(choiceA, 0);
-                    break;
-                case 2:
-                    ShowChoice(choiceA, 0);
-                    ShowChoice(choiceB, 1);
-                    break;
-                case 3:
-                    ShowChoice(choiceA, 0);
-                    ShowChoice(choiceB, 1);
-                    ShowChoice(choiceC, 2);
-                    break;
+                ShowChoice(choiceText[i], i);
             }
         }
 
