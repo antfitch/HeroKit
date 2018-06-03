@@ -28,7 +28,7 @@ namespace HeroKit.Editor.ActionBlockFields
             // create the fields for this action
             //-----------------------------------------
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);
-            HeroObject targetHeroObject = GetHeroObjectField.BuildFieldE("Move a different object?", actionParams, heroAction.actionFields[0], heroAction.actionFields[1]);
+            GetHeroObjectField.BuildFieldE("Move a different object?", actionParams, heroAction.actionFields[0], heroAction.actionFields[1]);
             SimpleLayout.EndVertical();
 
             SimpleLayout.BeginVertical(SimpleGUI.Fields.Box.StyleB);

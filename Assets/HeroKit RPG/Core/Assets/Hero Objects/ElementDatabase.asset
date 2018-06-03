@@ -46,7 +46,7 @@ MonoBehaviour:
           visible: 0
           items:
           - name: Element Type
-            value: 0
+            value: 2
         floats:
           visible: 0
           items: []

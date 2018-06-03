@@ -1217,7 +1217,6 @@ namespace HeroKit.Scene.Actions
         /// <returns>The game objects.</returns>
         public static GameObject[] ConvertRaysToGameObjects2D(RaycastHit2D[] raycastHits, GameObject origin = null)
         {
-            int length = (raycastHits != null) ? raycastHits.Length : 0;
             List<GameObject> gameObjects = new List<GameObject>();
 
             for (int i = 0; i < raycastHits.Length; i++)
@@ -1234,7 +1233,7 @@ namespace HeroKit.Scene.Actions
         }
 
         /// <summary>
-        /// Get the direction of a ray.
+        /// Get the direction of a 3D ray.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
         /// <param name="rayDirectionType">The direction type of the ray.</param>
@@ -1271,7 +1270,7 @@ namespace HeroKit.Scene.Actions
             return direction;
         }
         /// <summary>
-        /// Get the direction of a ray.
+        /// Get the direction of a 2D ray.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
         /// <param name="rayDirectionType">The direction type of the ray.</param>
@@ -1307,6 +1306,12 @@ namespace HeroKit.Scene.Actions
 
             return direction;
         }
+        /// <summary>
+        /// Get the direction in which a 2D object is facing.
+        /// </summary>
+        /// <param name="origin">The herokit object in the scene.</param>
+        /// <param name="rayDirectionType">The direction type of the ray.</param>
+        /// <returns>The direction of a ray.</returns>
         public static Vector2 GetFacingDirection2D(HeroKitObject origin, int rayDirectionType)
         {
             Vector2 direction = new Vector2();

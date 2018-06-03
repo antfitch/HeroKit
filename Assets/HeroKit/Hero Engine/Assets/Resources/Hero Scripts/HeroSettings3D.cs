@@ -106,7 +106,6 @@ namespace HeroKit.Scene.Scripts
         // Use this for initialization
         void OnEnable()
         {
-            HeroKitObject targetObject = this.GetComponent<HeroKitObject>();
             visualsGO = transform.Find(HeroKitCommonRuntime.visualsName).gameObject;
             animator = visualsGO.GetComponent<Animator>();
             animator_legacy = visualsGO.GetComponent<Animation>();
