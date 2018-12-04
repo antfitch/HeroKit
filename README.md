@@ -1,7 +1,7 @@
-# Hi!
+# OVERVIEW
 HeroKit is a free rapid development framework for Unity3D. You can use it to build large games quickly and efficiently. 
 
-# ⭐ MAKE YOUR DREAM GAME FAST! ⭐ 
+## ⭐ MAKE YOUR DREAM GAME FAST! ⭐ 
 
 In minutes, build heroes, enemies, NPCs, items, loot drops, equipment, cutscenes, and ANYTHING else you need. And do it with or without coding. 
 
